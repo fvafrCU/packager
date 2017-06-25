@@ -7,5 +7,6 @@ use_devtools(path = path)
 set_author(path = path, given = "Andreas Dominik", family = "Cullmann", email = "fvafrcu@arcor.de")
 use_bsd2clause_license(path = path)
 r <- git2r::init(path = path)
+git2r::commit(r, "packager changes")
 
 devtools::check()
