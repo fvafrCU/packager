@@ -17,6 +17,9 @@ Suggests:
 VignetteBuilder: knitr
 Imports:
     roxygen2,
+    methods,
+    utils,
+    rprojroot,
     devtools,
     git2r
 RoxygenNote: 5.0.1

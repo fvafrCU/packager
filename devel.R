@@ -1,5 +1,5 @@
-devtools::load_all()
 path <- "."
+devtools::load_all()
 # create_devel(path = path)
 remove_Rproj(path = path)
 use_git(path = path)

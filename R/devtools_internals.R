@@ -17,5 +17,15 @@ write_dcf <- function (path, desc) {
     }
     cat(text, file = path)
 }
+parse_check_results <- function (path) {
+    lines <- paste(readLines(path, warn = FALSE), collapse = "\n")
+    lines <- gsub("^NOTE: There was .*\n$", "", lines)
+    lines <- gsub("^WARNING: There was .*\n$", "", lines)
+    pieces <- strsplit(lines, "\n\\* ")[[1]]
+    structure(list(errors = pieces[grepl("... ERROR", pieces, 
+        fixed = TRUE)], warnings = pieces[grepl("... WARN", pieces, 
+        fixed = TRUE)], notes = pieces[grepl("... NOTE", pieces, 
+        fixed = TRUE)]), path = path, class = "check_results")
+}
 
 

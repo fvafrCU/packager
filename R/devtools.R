@@ -7,7 +7,7 @@ use_devtools <- function(path = ".") {
     result <- c(result, devtools::use_vignette(paste0("An_Introduction_to_", 
                                                      pkg[["package"]])))
     result <- c(result, devtools::use_cran_comments())
-    result <- c(result, devtools::use_test("test-basic.R"))
+    result <- c(result, devtools::use_test("basic.R"))
     result <- c(result, devtools::use_travis())
     result <- c(result, devtools::use_coverage(type = c("codecov")))
     cat("after_success:", "  - Rscript -e 'covr::codecov()'", sep = "\n", 
