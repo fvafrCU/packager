@@ -2,3 +2,4 @@
 
 export(check_codetags)
 export(check_news)
+export(provide_cran_comments)

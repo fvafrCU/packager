@@ -1,18 +1,19 @@
-# unexported from devtools
 is_git_uncommitted <- function(path = ".") {
-  r <- git2r::repository(path, discover = TRUE)
-  status <- vapply(git2r::status(r), length, integer(1))
-  return(any(status != 0))
+    r <- git2r::repository(path, discover = TRUE)
+    status <- vapply(git2r::status(r), length, integer(1))
+    return(any(status != 0))
 }
 
 is_git_clone <- function(path = ".") {
     is_git_clone <- ! is.null(git2r::discover_repository(path, ceiling = 0))
     return(is_git_clone)
 }
+
 warn_and_stop <- function(...) {
     cat(...)
     stop(...)
 } 
+
 git_tag <- function(path = ".", tag_uncommited = FALSE) {
     status <- TRUE
     root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
@@ -29,11 +30,11 @@ git_tag <- function(path = ".", tag_uncommited = FALSE) {
     version <- sub("^Version: ", "", grep("^Version: ", d, value = TRUE))
     if (version != last_version_number)
         cmd <- paste("git tag -a", version)
-        if (interactive()) {
-            status <- system2("git", sub("^git ", "", cmd))
-        } else {
-            warn_and_stop("Run\n\t", cmd, "\non your system.")
-        }
+    if (interactive()) {
+        status <- system2("git", sub("^git ", "", cmd))
+    } else {
+        warn_and_stop("Run\n\t", cmd, "\non your system.")
+    }
     return(status)
 }
 

@@ -12,3 +12,4 @@ git2r::add(r, paths)
 git2r::commit(r, "packager changes")
 
 devtools::check()
+devtools::install()
