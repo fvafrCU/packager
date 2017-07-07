@@ -2,7 +2,8 @@
 #' 
 #' Devtools' \code{\link{release}} reads a file \emph{cran-comments}. This
 #' function provides a template based on your R version and your check log.
-#' @param check_log Path to the check log. Typically 
+#' @param path The path to the package.
+#' @param check_log Path to the check log relative to \code{path}. Typically 
 #' file.path("log", "dev_check.Rout").
 #' @param travis_raw_log Travis check info, search for\cr   
 #' "$ Rscript -e 'sessionInfo()'" \cr 
@@ -16,7 +17,16 @@
 #' @return NULL.
 #' @export
 provide_cran_comments <- function(check_log,
+                                  path = ".",
                                   travis_raw_log = NULL) {
+    pkg <- devtools::as.package(path)
+    if (travis_raw_log == "auto") {
+        r <- git2r::repository(path, discover = TRUE)
+        travis_repo <- sub("https://github.com/", "", 
+                           grep("github", value = TRUE, git2r::remote_url(r)))
+        travis_log <- system(paste("sudo travis logs --repo", travis_repo), 
+                             intern = TRUE)
+    }
     if (is.na(travis_raw_log)) {
             # search for  $ Rscript -e 'sessionInfo()' 
             # in the raw log of the travis build
@@ -26,7 +36,6 @@ provide_cran_comments <- function(check_log,
                                 Running under: Ubuntu precise (12.04.5 LTS) 
                                 ")
     }
-    pkg <- devtools::as.package(".")
     comments_file = file.path(pkg[["path"]], "cran-comments.md")
     cat("Dear CRAN Team,\n", 
         "this is a resubmission of package ", pkg[["package"]], ". I have\n", 
@@ -50,7 +59,7 @@ provide_cran_comments <- function(check_log,
         }
     cat("- win-builder (devel)", "\n", file = comments_file, append = TRUE)
     cat("\n## R CMD check results\n", file = comments_file, append = TRUE)
-    check <- parse_check_results(check_log)
+    check <- parse_check_results(file.path(path, check_log))
     cat(capture.output(devtools:::print.check_results(check), type = "message"),
         "\n" , file = comments_file, 
         append = TRUE, sep = "\n")
