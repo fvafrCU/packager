@@ -20,21 +20,14 @@ provide_cran_comments <- function(check_log,
                                   path = ".",
                                   travis_raw_log = NULL) {
     pkg <- devtools::as.package(path)
-    if (travis_raw_log == "auto") {
+    if (is.na(travis_raw_log)) {
         r <- git2r::repository(path, discover = TRUE)
         travis_repo <- sub("https://github.com/", "", 
                            grep("github", value = TRUE, git2r::remote_url(r)))
-        travis_log <- system(paste("sudo travis logs --repo", travis_repo), 
-                             intern = TRUE)
-    }
-    if (is.na(travis_raw_log)) {
-            # search for  $ Rscript -e 'sessionInfo()' 
-            # in the raw log of the travis build
-            travis_raw_log <- c("
-                                R version 3.4.0 (2017-04-21)
-                                Platform: x86_64-pc-linux-gnu (64-bit)
-                                Running under: Ubuntu precise (12.04.5 LTS) 
-                                ")
+        travis_log <- system2("sudo", paste("travis logs --repo", travis_repo), 
+                              stdout = TRUE)
+        k <- grep("sessionInfo()", travis_log)
+        R_session <- travis_log[(k + 1): (k + 3)]
     }
     comments_file = file.path(pkg[["path"]], "cran-comments.md")
     cat("Dear CRAN Team,\n", 
