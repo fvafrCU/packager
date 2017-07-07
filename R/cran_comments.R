@@ -1,6 +1,6 @@
 #' Provide a Template For Your Comments To CRAN
 #' 
-#' Devtools' \code{\link{release}} reads a file \emph{cran-comments}. This
+#' Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
 #' function provides a template based on your R version and your check log.
 #' @param path The path to the package.
 #' @param check_log Path to the check log relative to \code{path}. Typically 
