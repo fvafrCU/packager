@@ -5,7 +5,7 @@ devtools::create(path)
 
 
 devtools::load_all(".")
-# create_devel(path = path)
+create_devel(path = path)
 remove_Rproj(path = path)
 use_git(path = path)
 use_devtools(path = path)
