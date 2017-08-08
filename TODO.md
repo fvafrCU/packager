@@ -1,0 +1,2 @@
+- pour devel into a function
+- use MakefileR to create a Makefile
