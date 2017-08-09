@@ -1,6 +1,11 @@
-path <- "."
-devtools::load_all()
-# create_devel(path = path)
+package <- "fvafrcu"
+path <- file.path(dirname(getwd()), package)
+devtools::create(path)
+
+
+
+devtools::load_all(".")
+create_devel(path = path)
 remove_Rproj(path = path)
 use_git(path = path)
 use_devtools(path = path)
@@ -11,5 +16,5 @@ paths <- unlist(git2r::status(r))
 git2r::add(r, paths)
 git2r::commit(r, "packager changes")
 
-devtools::check()
-devtools::install()
+devtools::check(path)
+devtools::install(path)

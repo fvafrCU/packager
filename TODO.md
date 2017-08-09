@@ -1,0 +1,3 @@
+- pour devel into a function
+- provide a commented default function to create a functional package
+- use MakefileR to create a Makefile
