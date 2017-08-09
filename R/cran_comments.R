@@ -53,7 +53,8 @@ provide_cran_comments <- function(check_log,
     cat("- win-builder (devel)", "\n", file = comments_file, append = TRUE)
     cat("\n## R CMD check results\n", file = comments_file, append = TRUE)
     check <- parse_check_results(file.path(path, check_log))
-    cat(capture.output(devtools:::print.check_results(check), type = "message"),
+    cat(utils::capture.output(devtools:::print.check_results(check), 
+                              type = "message"),
         "\n" , file = comments_file, 
         append = TRUE, sep = "\n")
     return(invisible(NULL))
