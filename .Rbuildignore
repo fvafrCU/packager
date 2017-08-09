@@ -3,3 +3,4 @@
 ^README-.*\.png$
 ^cran-comments\.md$
 ^\.travis\.yml$
+^TODO.md$
