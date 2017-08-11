@@ -1,10 +1,10 @@
 ---
-title: "An Introduction to *packager*"
+title: "An Introduction to *{{{ package }}}*"
 author: "Andreas Dominik Cullmann"
 date: 2017-08-11, 14:54:18
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{An Introduction to packager }
+  %\VignetteIndexEntry{An Introduction to {{{ package }}} }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

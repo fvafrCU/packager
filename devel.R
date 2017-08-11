@@ -3,9 +3,11 @@ path <- file.path(dirname(getwd()), package)
 devtools::create(path)
 
 
-
+path <- "."
 devtools::load_all(".")
-create_devel(path = path)
+use_intro(force = TRUE)
+use_readme_rmd()
+#create_devel(path = path)
 remove_Rproj(path = path)
 use_git(path = path)
 use_devtools(path = path)

@@ -9,34 +9,29 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
+
 
 # packager
 ## Introduction
 Please read the [vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/Introduction_to_packager.html).
 
 Or, after installation, the help page:
-```{r, eval = FALSE}
+
+```r
 help("packager-package", package = "packager")
 ```
-```{r, echo = FALSE}
-  # insert developement page
-  help_file <- list.files("man", pattern = ".*-package\\.Rd", full.names = TRUE)
-  captured <- gsub('_\b', '',  capture.output(tools:::Rd2txt(help_file) ))
-  cat(captured, sep = "\n")
+
+```
+#> Error in if (file == "") {: argument is of length zero
+#> Error in cat(captured, sep = "\n"): object 'captured' not found
 ```
 
 ## Installation
 
 You can install packager from github with:
 
-```{r gh-installation, eval = FALSE}
+
+```r
 if (! require("devtools")) install.packages("devtools")
 devtools::install_github("fvafrCU/packager")
 ```
@@ -45,6 +40,7 @@ devtools::install_github("fvafrCU/packager")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+
+```r
 ## basic example code
 ```
