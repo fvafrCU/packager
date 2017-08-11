@@ -17,6 +17,7 @@ r <- git2r::init(path = path)
 paths <- unlist(git2r::status(r))
 git2r::add(r, paths)
 roxygen2::roxygenize(".")
+devtools::build_vignettes(pkg = path)
 git2r::commit(r, "packager changes")
 
 devtools::check(path)

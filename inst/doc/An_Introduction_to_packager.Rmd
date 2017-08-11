@@ -1,0 +1,15 @@
+---
+title: "An Introduction to *packager*"
+author: "Andreas Dominik Cullmann"
+date: 2017-08-11, 14:54:18
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Introduction to packager }
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Teaser
+This is just a template.
+# Features
+There are not features.
