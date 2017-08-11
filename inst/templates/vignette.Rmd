@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to *{{{ package }}}*"
 author: "Andreas Dominik Cullmann"
-date: 2017-08-11, 14:54:18
+date: 2017-08-11, 15:56:41
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{An Introduction to {{{ package }}} }
@@ -11,5 +11,6 @@ vignette: >
 
 # Teaser
 This is just a template.
+
 # Features
 There are not features.
