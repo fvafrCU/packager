@@ -1,6 +1,6 @@
 #' Helps Me Build Packages
 #'
-#' This is a set of wrappers around \pkg{devtools} and \pkg{MakefileR} and some
+#' This is a set of wrappers around `devtools` and `MakefileR` and some
 #' sanity checks for developing packages.
 #' @name packager-package
 #' @aliases packager-package

@@ -14,6 +14,8 @@ knitr::knit(input = file.path(path, "README.Rmd"), output = file.path(path, "REA
 remove_Rproj(path = path)
 use_git(path = path)
 use_devtools(path = path)
+set_title(path = path, "Helps Me Build Packages")
+set_description(path = path, "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.")
 set_author(path = path, given = "Andreas Dominik", family = "Cullmann", email = "fvafrcu@arcor.de")
 use_bsd2clause_license(path = path)
 r <- git2r::init(path = path)
