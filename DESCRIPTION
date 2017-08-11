@@ -23,5 +23,6 @@ Imports:
     rprojroot,
     devtools,
     crayon,
-    git2r
+    git2r,
+    whisker
 RoxygenNote: 6.0.1

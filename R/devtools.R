@@ -1,3 +1,14 @@
+load_pkg_description <- function (path, create) {
+    path_desc <- file.path(path, "DESCRIPTION")
+    if (!file.exists(path_desc)) {
+            stop("No description at ", path_desc, call. = FALSE)
+    }
+    desc <- as.list(read.dcf(path_desc)[1, ])
+    names(desc) <- tolower(names(desc))
+    desc$path <- path
+    structure(desc, class = "package")
+}
+
 # extending devtools' version to not hard code the source package of the
 # template. And get rid of call to devtools:::open_in_rstudio().
 use_template <- function (template, save_as = template, data = list(), 
@@ -18,7 +29,7 @@ use_template <- function (template, save_as = template, data = list(),
     writeLines(template_out, path)
     if (ignore) {
         message("* Adding `", save_as, "` to `.Rbuildignore`.")
-        devtools::use_build_ignore(save_as, pkg = pkg)
+        use_build_ignore(save_as, pkg = pkg)
     }
     invisible(TRUE)
 }
@@ -68,7 +79,7 @@ use_devtools <- function(path = ".") {
     pkg <- devtools::as.package(path)
     result <- NULL
     result <- c(result, devtools::use_news_md(pkg = path))
-    result <- c(result, devtools::use_build_ignore("devel.R", pkg = path))
+    result <- c(result, use_build_ignore("devel.R", pkg = path))
     result <- c(result, use_readme_rmd(pkg = path))
     result <- c(result, devtools::use_vignette(paste0("An_Introduction_to_", 
                                                      pkg[["package"]]), pkg = path))

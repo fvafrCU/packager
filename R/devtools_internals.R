@@ -2,12 +2,21 @@
 is_dir <- function (x) file.info(x)$isdir
 
 is.package <- function (x) inherits(x, "package")
-
 as.package <- function (x = NULL, create = NA) {
     if (is.package(x)) 
         return(x)
     x <- package_file(path = x)
     load_pkg_description(x, create = create)
+}
+
+use_build_ignore <- function (files, escape = TRUE, pkg = ".") {
+    pkg <- as.package(pkg)
+    if (escape) {
+        files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
+    }
+    path <- file.path(pkg$path, ".Rbuildignore")
+    union_write(path, files)
+    invisible(TRUE)
 }
 
 use_directory <- function (path, ignore = FALSE, pkg = ".") {
@@ -109,8 +118,8 @@ check_suggested <- function (pkg, version = NULL, compare = NA) {
         else paste0(" >= ", version), " must be installed for this functionality.")
         if (interactive()) {
             message(msg, "\nWould you like to install it?")
-            if (menu(c("Yes", "No")) == 1) {
-                install.packages(pkg)
+            if (utils::menu(c("Yes", "No")) == 1) {
+                utils::install.packages(pkg)
             }
             else {
                 stop(msg, call. = FALSE)
@@ -129,7 +138,7 @@ yesno <- function (...) {
     cat(paste0(..., collapse = ""))
     qs <- c(sample(yeses, 1), sample(nos, 2))
     rand <- sample(length(qs))
-    menu(qs[rand]) != which(rand == 1)
+    utils::menu(qs[rand]) != which(rand == 1)
 }
 
 can_overwrite <- function (path) {
@@ -150,6 +159,8 @@ render_template  <- function (name, data = list()) {
     template <- readLines(path)
     whisker::whisker.render(template, data)
 }
+
+github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
 
 github_info <- function (path = ".", remote_name = NULL) {
     if (!uses_github(path)) 
