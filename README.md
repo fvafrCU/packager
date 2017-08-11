@@ -36,11 +36,4 @@ if (! require("devtools")) install.packages("devtools")
 devtools::install_github("fvafrCU/packager")
 ```
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-
-```r
-## basic example code
-```

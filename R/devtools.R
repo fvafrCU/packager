@@ -25,14 +25,14 @@ use_template <- function (template, save_as = template, data = list(),
 
 # adjust use_readme_rmd to not pass the argument \code{open} with use_template()
 # and fix the test on file.exists()
-use_readme_rmd <- function (pkg = ".", force = FALSE) {
+use_readme_rmd <- function (pkg = ".", ...) {
     pkg <- devtools::as.package(pkg)
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }
     pkg$Rmd <- TRUE
     use_template("omni-README", save_as = "README.Rmd", data = pkg, 
-        ignore = TRUE, pkg = pkg)
+        ignore = TRUE, pkg = pkg, ...)
     devtools::use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
     if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git", 
         "hooks", "pre-commit"))) {

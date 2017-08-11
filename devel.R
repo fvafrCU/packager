@@ -6,7 +6,7 @@ devtools::create(path)
 path <- "."
 devtools::load_all(".")
 use_intro(force = TRUE)
-use_readme_rmd()
+use_readme_rmd(force = TRUE)
 #create_devel(path = path)
 remove_Rproj(path = path)
 use_git(path = path)
