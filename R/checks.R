@@ -24,7 +24,7 @@ grep_directory <- function(path, pattern, exclude = NULL) {
 #' @param pattern The pattern to search for. 
 #' @return A character vector of hits.
 #' @export
-#' @example
+#' @examples
 #' codes <- system.file("R", package = "packager")
 #' check_codetags(codes)
 check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$", 
