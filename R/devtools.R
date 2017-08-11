@@ -48,6 +48,7 @@ use_intro <- function (pkg = ".", ...) {
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }
+    pkg$date <- format(Sys.time(), "%Y-%m-%d, %H:%M:%S")
     vignette_name <- paste0("An_Introduction_to_", 
                                           pkg[["package"]], ".Rmd")
     # use the original to make checks and create the directory
