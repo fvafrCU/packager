@@ -55,16 +55,3 @@ You can install {{{ package }}} from github with:
 if (! require("devtools")) install.packages("devtools")
 devtools::install_github("{{{username}}}/{{{repo}}}")
 ```
-
-{{/github}}
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-{{#Rmd}}
-```{r example}
-{{/Rmd}}
-{{^Rmd}}``` r
-{{/Rmd}}
-## basic example code
-```
