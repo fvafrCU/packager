@@ -1,5 +1,8 @@
+# a collection of devtools' internals from devtools 1.13.3
 is_dir <- function (x) file.info(x)$isdir
+
 is.package <- function (x) inherits(x, "package")
+
 as.package <- function (x = NULL, create = NA) {
     if (is.package(x)) 
         return(x)
@@ -219,6 +222,7 @@ uses_github <- function (path = ".") {
     r_remote_urls <- git2r::remote_url(r)
     any(grepl("github", r_remote_urls))
 }
+
 read_dcf <- function (path) {
     fields <- colnames(read.dcf(path))
     as.list(read.dcf(path, keep.white = fields)[1, ])
