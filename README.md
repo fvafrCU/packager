@@ -22,8 +22,12 @@ help("packager-package", package = "packager")
 ```
 
 ```
-#> Error in if (file == "") {: argument is of length zero
-#> Error in cat(captured, sep = "\n"): object 'captured' not found
+#> Helps Me Build Packages
+#> 
+#> Description:
+#> 
+#>      This is a set of wrappers around 'devtools' and 'MakefileR' and
+#>      some sanity checks for developing packages.
 ```
 
 ## Installation
