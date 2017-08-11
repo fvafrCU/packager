@@ -19,7 +19,8 @@ knitr::opts_chunk$set(
 
 # packager
 ## Introduction
-Please read the [vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/Introduction_to_packager.html).
+Please read the
+[vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/An_Introduction_to_packager.html).
 
 Or, after installation, the help page:
 ```{r, eval = FALSE}
@@ -27,7 +28,7 @@ help("packager-package", package = "packager")
 ```
 ```{r, echo = FALSE}
   # insert developement page
-  help_file <- list.files("man", pattern = ".*-package\\.Rd", full.names = TRUE)
+  help_file <- file.path("man", "packager-package.Rd")
   captured <- gsub('_\b', '',  capture.output(tools:::Rd2txt(help_file) ))
   cat(captured, sep = "\n")
 ```

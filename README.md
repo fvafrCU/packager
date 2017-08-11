@@ -13,7 +13,8 @@ output: github_document
 
 # packager
 ## Introduction
-Please read the [vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/Introduction_to_packager.html).
+Please read the
+[vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/An_Introduction_to_packager.html).
 
 Or, after installation, the help page:
 

@@ -22,3 +22,7 @@ You hopefully use code tags
 (see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/ for example}.
 This functions searches for files under a directory containing such tags.
 }
+\examples{
+codes <- system.file("R", package = "packager")
+check_codetags(codes)
+}
