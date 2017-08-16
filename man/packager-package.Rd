@@ -5,7 +5,7 @@
 \alias{packager-package}
 \title{Helps Me Build Packages}
 \description{
-This is a set of wrappers around \pkg{devtools} and \pkg{MakefileR} and some
+This is a set of wrappers around `devtools` and `MakefileR` and some
 sanity checks for developing packages.
 }
 \keyword{package}
