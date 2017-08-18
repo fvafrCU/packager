@@ -4,7 +4,8 @@
 \alias{provide_cran_comments}
 \title{Provide a Template For Your Comments To CRAN}
 \usage{
-provide_cran_comments(check_log, path = ".", travis_raw_log = NULL)
+provide_cran_comments(check_log = NULL, path = ".", initial = FALSE,
+  travis_session_info = NULL, name = "Dominik")
 }
 \arguments{
 \item{check_log}{Path to the check log relative to \code{path}. Typically 
@@ -12,20 +13,30 @@ file.path("log", "dev_check.Rout").}
 
 \item{path}{The path to the package.}
 
-\item{travis_raw_log}{Travis check info, search for\cr
+\item{initial}{Is this an initial release?}
+
+\item{travis_session_info}{Travis session info, search for\cr
 "$ Rscript -e 'sessionInfo()'" \cr 
 in the raw log of the travis build and copy the
 following three lines. This could read\cr 
-travis_raw_log <- c("\cr 
+travis_session_info <- c("\cr 
                     R version 3.4.0 (2017-04-21)\cr 
                     Platform: x86_64-pc-linux-gnu (64-bit)\cr 
                     Running under: Ubuntu precise (12.04.5 LTS) \cr 
-                    ")\cr}
+                    ")\cr 
+Set to "travis-cli" to retrieve Session info automatically if your system is 
+set up to use \url{https://github.com/travis-ci/travis.rb}.}
+
+\item{name}{The name to sign with.}
 }
 \value{
-NULL.
+Character vector containing the cran comments, which are written to
+cran-comments.md (see Note).
 }
 \description{
 Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
 function provides a template based on your R version and your check log.
+}
+\note{
+This function writes to disk as side effect.
 }
