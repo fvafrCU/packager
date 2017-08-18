@@ -1,7 +1,21 @@
 # a collection of devtools' internals from devtools 1.13.3
+has_description <- function (path) {
+    file.exists(file.path(path, "DESCRIPTION"))
+}
+
+strip_slashes <- function (x) {
+    x <- sub("/*$", "", x)
+    x
+}
+
+is_root <- function (path) {
+    identical(path, dirname(path))
+}
+
 is_dir <- function (x) file.info(x)$isdir
 
 is.package <- function (x) inherits(x, "package")
+
 as.package <- function (x = NULL, create = NA) {
     if (is.package(x)) 
         return(x)

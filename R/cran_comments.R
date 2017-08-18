@@ -41,8 +41,8 @@ provide_cran_comments <- function(check_log = NULL,
     }
     if (! is.null(check_log)) {
         check <- parse_check_results(file.path(path, check_log))
-        check_output <- capture.output(print.check_results(check), 
-                                       type = "message")[2]
+        check_output <- utils::capture.output(print.check_results(check), 
+                                               type = "message")[2]
     } else {
         check_output  <- "ERROR: No check log given!"
     }

@@ -1,3 +1,6 @@
+# exported functions that are used by intermal functions.
+# So I can either change the  _verbatim_ copies of the internal functions or get
+# verbatim copies of the exported ones. Needing new internal ones... 
 package_file <- function (..., path = ".") {
     if (!is.character(path) || length(path) != 1) {
         stop("`path` must be a string.", call. = FALSE)
