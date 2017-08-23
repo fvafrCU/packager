@@ -42,7 +42,7 @@ update_description <- function(path = ".",
                                ) {
     if (is.null(author_at_r)) message("Argument 'author_at_r' is missing. ", 
                                  "Use\n\t", 
-                                 'packager::sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))',
+                                 'packager::sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))',
                                  "\nfor example")
     s <- list(Title = title, Description = description, 
               "Authors@R" = author_at_r)
