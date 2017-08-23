@@ -1,28 +1,15 @@
 Package: packager
 Title: Helps Me Build Packages
 Version: 0.0.0.9000
-Authors@R: person(given = "Andreas Dominik", family = "Cullmann", email = "fvafrcu@arcor.de", 
-                           role = c("aut", "cre"))
-Description: This is a set of wrappers around `devtools` and `MakefileR` and some
-  sanity checks for developing packages.
-Depends:
-    R (>= 3.3.0)
+Authors@R: person(given = "Andreas Dominik", family = "Cullmann", 
+	email = "<fvafrcu@arcor.de>", role = c("aut", "cre"))
+Description: This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.
+Depends: R (>= 3.3.0)
 License: BSD_2_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests:
-    knitr,
-    rmarkdown,
-    testthat,
-    covr
+Suggests: knitr, rmarkdown, testthat, covr
 VignetteBuilder: knitr
-Imports:
-    roxygen2,
-    methods,
-    utils,
-    rprojroot,
-    devtools,
-    crayon,
-    git2r,
-    whisker
+Imports: roxygen2, methods, utils, rprojroot, devtools, crayon, git2r,
+        whisker
 RoxygenNote: 6.0.1
