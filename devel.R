@@ -20,7 +20,7 @@ use_devtools(path = path)
 # these functions should use documenation::alter_description_file
 set_package_info(path = ".",
                  title = "Helps Me Build Packages", 
-                 author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>")),
+                 author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de")),
                  description = "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.",
                  details = "I find devtools very helpful, but not helpful enough.\nSo this very personalised is my extension.")
 use_bsd2clause_license(path = path)
