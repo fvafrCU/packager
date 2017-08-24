@@ -6,7 +6,7 @@ is_failure <- function(result) {
     fail <- as.logical(sum_of_exceptions)
     return(fail)
 }
-
+devtools::load_all()
 unit_dir <- system.file("tests", "runit", package = "packager")
 package_suite <- RUnit::defineTestSuite("packager_unit_test",
                                         dirs = unit_dir,
