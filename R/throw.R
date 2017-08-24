@@ -15,7 +15,6 @@
 #' @examples
 #' tryCatch(packager:::throw("Hello error!"), packager = function(e) return(e))
 throw <- function(message_string, system_call = sys.call(-1), ...) {
-    checkmate::qassert(message_string, "s*")
     condition <- structure(
                            class = c("error", "packager", "condition"),
                            list(message = message_string, call = system_call),
