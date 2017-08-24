@@ -1,0 +1,31 @@
+#!/usr/bin/Rscript --vanilla
+is_failure <- function(result) {
+    res <- result[[1]]
+    names(res) <- tolower(names(res)) # soothe lintr
+    sum_of_exceptions <- res[["nerr"]] + res[["nfail"]]
+    fail <- as.logical(sum_of_exceptions)
+    return(fail)
+}
+
+unit_dir <- system.file("tests", "runit", package = "packager")
+package_suite <- RUnit::defineTestSuite("packager_unit_test",
+                                        dirs = unit_dir,
+                                        testFileRegexp = "^.*\\.[rR]",
+                                        testFuncRegexp = "^test_+")
+test_result <- RUnit::runTestSuite(package_suite)
+root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
+                 error = function(e) return(NULL))
+if (! is.null(root)) {
+    log_dir <- file.path(root, "log")
+    dir.create(log_dir, showWarnings = FALSE)
+    file_name <- file.path(log_dir, "runit.log")
+    html_file <- file.path(log_dir, "runit.html")
+    RUnit::printHTMLProtocol(test_result, fileName = html_file)
+    if (interactive()) {
+        browseURL(paste0("file:", html_file))
+    }
+} else {
+    file_name <- ""
+}
+RUnit::printTextProtocol(test_result, showDetails = TRUE, fileName = file_name)
+if (is_failure(test_result)) stop("RUnit failed. ", print(test_result))
