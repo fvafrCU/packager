@@ -38,37 +38,8 @@ devtools::install(path)
 
 
 devtools::load_all(".")
-package::provide_cran_comments("~/document/log/dev_check.Rout")
+packager::provide_cran_comments("~/document/log/dev_check.Rout")
 auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))
 substitution <- list("Authors@R" = auth)
-package::alter_description_file(path = path, s = substitution)
- 
-
-foo <- function(path, ...) {
-    devtools::use_testthat(pkg = path)
-    pkg <- as.package(path)
-
-    file <- "throw.R"
-    path <- file.path("R", file)
-    use_template(file, save_as = path, data = pkg, 
-                 ignore = FALSE, pkg = pkg, ...)
-
-    file <- "runit.R"
-    path <- file.path("tests", file)
-    use_template(file, save_as = path, data = pkg, 
-                 ignore = FALSE, pkg = pkg, ...)
-
-    dir.create(file.path(pkg[["path"]], "tests", "runit"))
-    file <- "runit-throw.R"
-    path <- file.path("tests", "runit", file)
-    use_template(file, save_as = path, data = pkg, 
-                 ignore = FALSE, pkg = pkg, ...)
-
-    file <- "test-throw.R"
-    path <- file.path("tests", "testthat", file)
-    use_template(file, save_as = path, data = pkg, 
-                 ignore = FALSE, pkg = pkg, ...)
-
-    return(NULL)
-}
-foo(".", force = TRUE)
+document::alter_description_file(path = path, s = substitution)
+packager::provide_throw(".")
