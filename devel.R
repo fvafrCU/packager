@@ -8,7 +8,6 @@ utils:::package.skeleton(package, path = root)
 base::options(packager = list(could_force = TRUE, should_force = FALSE))
 base::getOption("packager")
 base::getOption("packager")[["could_force"]]
-packager::is_null_or_true(getOption("packager")[["overwrite"]])
 path <- "."
 devtools::load_all(".")
 roxygen2::roxygenize(path)
