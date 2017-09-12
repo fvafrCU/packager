@@ -5,25 +5,28 @@ devtools::create(path)
 utils:::package.skeleton(package, path = root)
 
 
-
+base::options(packager = list(could_force = TRUE, should_force = FALSE))
+base::getOption("packager")
+base::getOption("packager")[["could_force"]]
+packager::is_null_or_true(getOption("packager")[["overwrite"]])
 path <- "."
 devtools::load_all(".")
 roxygen2::roxygenize(path)
-use_intro(force = TRUE)
+packager::use_intro()
 devtools::build_vignettes(pkg = path)
-packager::use_readme_rmd(force = TRUE)
-knitr::knit(input = file.path(path, "README.Rmd"), output = file.path(path, "README.md"))
 #create_devel(path = path)
-remove_Rproj(path = path)
-use_git(path = path)
-use_devtools(path = path)
+packager::remove_Rproj(path = path)
+packager::use_git(path = path)
+packager::use_devtools(path = path)
 # these functions should use documenation::alter_description_file
-set_package_info(path = ".",
-                 title = "Helps Me Build Packages", 
-                 author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de")),
-                 description = "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.",
-                 details = "I find devtools very helpful, but not helpful enough.\nSo this very personalised is my extension.")
-use_bsd2clause_license(path = path)
+packager::set_package_info(path = ".",
+                           title = "Helps Me Build Packages", 
+                           author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de")),
+                           description = "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.",
+                           details = "I find devtools very helpful, but not helpful enough.\nSo this is my highly personalised extension.")
+packager::use_readme_rmd()
+knitr::knit(input = file.path(path, "README.Rmd"), output = file.path(path, "README.md"))
+packages.::use_bsd2clause_license(path = path)
 #
 # TODO: create .lintr file excluding vignette codes
 r <- git2r::init(path = path)
@@ -36,8 +39,8 @@ devtools::install(path)
 
 
 devtools::load_all(".")
-provide_cran_comments("~/document/log/dev_check.Rout")
-auth = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))
-substitution = list("Authors@R" = auth)
-alter_description_file(path = path, s = substitution)
+packages.::provide_cran_comments("~/document/log/dev_check.Rout")
+auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))
+substitution <- list("Authors@R" = auth)
+packages.::alter_description_file(path = path, s = substitution)
  

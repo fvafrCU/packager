@@ -24,7 +24,7 @@ package_file <- function (..., path = ".") {
 load_pkg_description <- function (path, create) {
     path_desc <- file.path(path, "DESCRIPTION")
     if (!file.exists(path_desc)) {
-            stop("No description at ", path_desc, call. = FALSE)
+        stop("No description at ", path_desc, call. = FALSE)
     }
     desc <- as.list(read.dcf(path_desc)[1, ])
     names(desc) <- tolower(names(desc))
@@ -34,27 +34,30 @@ load_pkg_description <- function (path, create) {
 
 # extending devtools' version to not hard code the source package of the
 # template. And get rid of call to devtools:::open_in_rstudio().
+# Remove dialog.
 use_template <- function (template, save_as = template, data = list(), 
                           ignore = FALSE, pkg = ".", 
-                          source_package = "packager", force = FALSE) {
+                          source_package = "packager", 
+                          force = false_or_null(getOption("packager")[["force"]])) {
+    status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)
-    if (! isTRUE(force)) {
-        if (! can_overwrite(path)) {
-            stop("`", save_as, "` already exists.", call. = FALSE)
+    if (! file.exists(path) || isTRUE(force)) {
+        template_path <- system.file("templates", template, 
+                                     package = source_package, mustWork = TRUE)
+        template_out <- whisker::whisker.render(readLines(template_path), 
+                                                data)
+        message("* Creating `", save_as, "` from template.")
+        writeLines(template_out, path)
+        if (ignore) {
+            message("* Adding `", save_as, "` to `.Rbuildignore`.")
+            use_build_ignore(save_as, pkg = pkg)
         }
+        status <- TRUE
+    } else {
+       warning("`", save_as, "` already exists.", call. = FALSE) 
     }
-    template_path <- system.file("templates", template, 
-                                 package = source_package, mustWork = TRUE)
-    template_out <- whisker::whisker.render(readLines(template_path), 
-        data)
-    message("* Creating `", save_as, "` from template.")
-    writeLines(template_out, path)
-    if (ignore) {
-        message("* Adding `", save_as, "` to `.Rbuildignore`.")
-        use_build_ignore(save_as, pkg = pkg)
-    }
-    invisible(TRUE)
+    return(invisible(status))
 }
 
 # adjust use_readme_rmd to not pass the argument \code{open} with use_template()
@@ -66,13 +69,13 @@ use_readme_rmd <- function (pkg = ".", ...) {
     }
     pkg$Rmd <- TRUE
     use_template("omni-README", save_as = "README.Rmd", data = pkg, 
-        ignore = TRUE, pkg = pkg, ...)
+                 ignore = TRUE, pkg = pkg, ...)
     devtools::use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
     if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git", 
-        "hooks", "pre-commit"))) {
+                                                     "hooks", "pre-commit"))) {
         message("* Adding pre-commit hook")
         devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
-            pkg = pkg)
+                               pkg = pkg)
     }
     invisible(TRUE)
 }
@@ -84,7 +87,7 @@ use_intro <- function (pkg = ".", ...) {
     }
     pkg$date <- format(Sys.time(), "%Y-%m-%d, %H:%M:%S")
     vignette_name <- paste0("An_Introduction_to_", 
-                                          pkg[["package"]], ".Rmd")
+                            pkg[["package"]], ".Rmd")
     # use the original to make checks and create the directory
     #devtools::use_vignette(vignette_name, pkg = path)
     check_suggested("rmarkdown")
@@ -94,7 +97,7 @@ use_intro <- function (pkg = ".", ...) {
     use_directory("vignettes", pkg = pkg)
     path <- file.path("vignettes", vignette_name)
     use_template("vignette.Rmd", save_as = path, data = pkg, 
-        ignore = FALSE, pkg = pkg, ...)
+                 ignore = FALSE, pkg = pkg, ...)
     invisible(TRUE)
 }
 
@@ -105,7 +108,7 @@ use_devtools <- function(path = ".") {
     result <- c(result, use_build_ignore("devel.R", pkg = path))
     result <- c(result, use_readme_rmd(pkg = path))
     result <- c(result, devtools::use_vignette(paste0("An_Introduction_to_", 
-                                                     pkg[["package"]]), pkg = path))
+                                                      pkg[["package"]]), pkg = path))
     result <- c(result, devtools::use_cran_comments(pkg = path))
     result <- c(result, devtools::use_test("basic", pkg = path))
     result <- c(result, devtools::use_travis(pkg = path))
