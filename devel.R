@@ -12,11 +12,11 @@ path <- "."
 devtools::load_all(".")
 roxygen2::roxygenize(path)
 packager::use_intro()
-devtools::build_vignettes(pkg = path)
 #create_devel(path = path)
 packager::remove_Rproj(path = path)
 packager::use_git(path = path)
 packager::use_devtools(path = path)
+devtools::build_vignettes(pkg = path)
 # these functions should use documenation::alter_description_file
 packager::set_package_info(path = ".",
                            title = "Helps Me Build Packages", 
@@ -38,8 +38,8 @@ devtools::install(path)
 
 
 devtools::load_all(".")
-packages.::provide_cran_comments("~/document/log/dev_check.Rout")
+package::provide_cran_comments("~/document/log/dev_check.Rout")
 auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))
 substitution <- list("Authors@R" = auth)
-packages.::alter_description_file(path = path, s = substitution)
+package::alter_description_file(path = path, s = substitution)
  

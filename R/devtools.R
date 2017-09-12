@@ -18,7 +18,7 @@ package_file <- function (..., path = ".") {
             stop("Could not find package root.", call. = FALSE)
         }
     }
-    file.path(path, ...)
+    return(file.path(path, ...))
 }
 
 load_pkg_description <- function (path, create) {
@@ -51,7 +51,7 @@ use_template <- function (template, save_as = template, data = list(),
         writeLines(template_out, path)
         if (ignore) {
             message("* Adding `", save_as, "` to `.Rbuildignore`.")
-            use_build_ignore(save_as, pkg = pkg)
+            devtools::use_build_ignore(save_as, pkg = pkg)
         }
         status <- TRUE
     } else {
@@ -77,7 +77,14 @@ use_readme_rmd <- function (pkg = ".", ...) {
         devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
                                pkg = pkg)
     }
-    invisible(TRUE)
+    return(invisible(NULL))
+}
+
+use_news_md <- function (pkg = ".", ...) 
+{
+    pkg <- as.package(pkg)
+    use_template("NEWS.md", data = pkg, open = TRUE, pkg = pkg, ...)
+    invisible(NULL)
 }
 
 use_intro <- function (pkg = ".", ...) {
@@ -98,26 +105,26 @@ use_intro <- function (pkg = ".", ...) {
     path <- file.path("vignettes", vignette_name)
     use_template("vignette.Rmd", save_as = path, data = pkg, 
                  ignore = FALSE, pkg = pkg, ...)
-    invisible(TRUE)
+    return(invisible(NULL))
+}
+
+use_travis <- function (pkg = ".", ...) {
+    pkg <- as.package(pkg)
+    use_template("travis.yml", ".travis.yml", ignore = TRUE, 
+        pkg = pkg, ...)
+    return(invisible(NULL))
 }
 
 use_devtools <- function(path = ".") {
     pkg <- devtools::as.package(path)
     result <- NULL
-    result <- c(result, devtools::use_news_md(pkg = path))
-    result <- c(result, use_build_ignore("devel.R", pkg = path))
+    result <- c(result, use_news_md(pkg = path))
     result <- c(result, use_readme_rmd(pkg = path))
-    result <- c(result, devtools::use_vignette(paste0("An_Introduction_to_", 
-                                                      pkg[["package"]]), pkg = path))
-    result <- c(result, devtools::use_cran_comments(pkg = path))
-    result <- c(result, devtools::use_test("basic", pkg = path))
-    result <- c(result, devtools::use_travis(pkg = path))
-    result <- c(result, devtools::use_coverage(type = c("codecov"), pkg = path))
-    cat("after_success:", "  - Rscript -e 'covr::codecov()'", sep = "\n", 
-        file = file.path(path, ".travis.yml"), append = TRUE)
-    result <- c(result, devtools::use_package("roxygen2"), pkg = path)
-    result <- c(result, devtools::use_package("devtools"), pkg = path)
-    result <- c(result, devtools::use_package("git2r"), pkg = path)
+    # add imports to description
+    if (pkg[["package"]] == "packager") { 
+        result <- c(result, devtools::use_package("devtools"), pkg = path)
+        result <- c(result, devtools::use_package("git2r"), pkg = path)
+    }
     return(result)
 }
 
