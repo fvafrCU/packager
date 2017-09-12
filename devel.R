@@ -26,7 +26,7 @@ packager::set_package_info(path = ".",
                            details = "I find devtools very helpful, but not helpful enough.\nSo this is my highly personalised extension.")
 packager::use_readme_rmd()
 knitr::knit(input = file.path(path, "README.Rmd"), output = file.path(path, "README.md"))
-packages.::use_bsd2clause_license(path = path)
+package::use_bsd2clause_license(path = path)
 #
 # TODO: create .lintr file excluding vignette codes
 r <- git2r::init(path = path)
