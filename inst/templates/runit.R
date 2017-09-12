@@ -7,8 +7,8 @@ is_failure <- function(result) {
     return(fail)
 }
 devtools::load_all()
-unit_dir <- system.file("tests", "runit", package = "packager")
-package_suite <- RUnit::defineTestSuite("packager_unit_test",
+unit_dir <- system.file("tests", "runit", package = "{{{ package }}}")
+package_suite <- RUnit::defineTestSuite("{{{ package }}}_unit_test",
                                         dirs = unit_dir,
                                         testFileRegexp = "^.*\\.[rR]",
                                         testFuncRegexp = "^test_+")

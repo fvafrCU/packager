@@ -1,8 +1,8 @@
 #' Throw a Condition
 #'
-#' Throws a condition of class c("error", "packager", "condition").
+#' Throws a condition of class c("error", "{{{ package }}}", "condition").
 #'
-#' We use this condition as an error dedicated to \pkg{ packager }.
+#' We use this condition as an error dedicated to \pkg{ {{{ package}}} }.
 #'
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @keywords internal
@@ -10,13 +10,13 @@
 #' @param system_call The call to be thrown.
 #' @param ... Arguments to be passed to \code{\link{structure}}.
 #' @return FALSE. But it does not return anything, it stops with a
-#' condition of class c("error", "packager", "condition").
+#' condition of class c("error", "{{{ package }}}", "condition").
 #' @keywords internal
 #' @examples
-#' tryCatch(packager:::throw("Hello error!"), packager = function(e) return(e))
+#' tryCatch({{{ package }}}:::throw("Hello error!"), {{{ package }}} = function(e) return(e))
 throw <- function(message_string, system_call = sys.call(-1), ...) {
     condition <- structure(
-                           class = c("error", "packager", "condition"),
+                           class = c("error", "{{{ package }}}", "condition"),
                            list(message = message_string, call = system_call),
                            ...
                            )
