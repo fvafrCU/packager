@@ -43,3 +43,7 @@ auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<f
 substitution <- list("Authors@R" = auth)
 document::alter_description_file(path = path, s = substitution)
 packager::provide_throw(".")
+
+
+
+MakefileR::make_rule("all", c("foo", "bar"))
