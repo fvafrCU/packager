@@ -45,5 +45,5 @@ document::alter_description_file(path = path, s = substitution)
 packager::provide_throw(".")
 
 
-
+devtools::use_build_ignore("Makefile", pkg = path)
 MakefileR::make_rule("all", c("foo", "bar"))
