@@ -21,7 +21,7 @@ condition of class c("error", "packager", "condition").
 Throws a condition of class c("error", "packager", "condition").
 }
 \details{
-We use this condition as an error dedicated to \pkg{packager}.
+We use this condition as an error dedicated to \pkg{ packager }.
 }
 \examples{
 tryCatch(packager:::throw("Hello error!"), packager = function(e) return(e))

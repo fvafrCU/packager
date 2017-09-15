@@ -1,0 +1,25 @@
+  WORD           FOUND IN
+adc            throw.Rd:30
+arcor          throw.Rd:30
+cli            provide_cran_comments.Rd:27
+cran           provide_cran_comments.Rd:33,34,37
+Cullmann       throw.Rd:30
+de             throw.Rd:30
+dev            check_codetags.Rd:22, provide_cran_comments.Rd:12
+devtools       packager-package.Rd:8,12, description:1
+Devtools       provide_cran_comments.Rd:37
+https          check_codetags.Rd:22
+linux          provide_cran_comments.Rd:24
+LTS            provide_cran_comments.Rd:25
+MakefileR      packager-package.Rd:8, description:1
+md             check_news.Rd:5,13,17, provide_cran_comments.Rd:34,37
+org            check_codetags.Rd:22
+pc             provide_cran_comments.Rd:24
+personalised   packager-package.Rd:13
+Rscript        provide_cran_comments.Rd:19
+sessionInfo    provide_cran_comments.Rd:19
+travis         provide_cran_comments.Rd:20,22,27
+Ubuntu         provide_cran_comments.Rd:25
+www            check_codetags.Rd:22
+Warning message:
+spell check failed 

@@ -1,0 +1,44 @@
+
+R Under development (unstable) (2017-08-17 r73106) -- "Unsuffered Consequences"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> roxygen2::roxygenize(".")
+Loading required package: rprojroot
+Loading required package: devtools
+Loading required package: crayon
+Loading required package: git2r
+
+Attaching package: ‘git2r’
+
+The following object is masked from ‘package:crayon’:
+
+    reset
+
+Loading required package: whisker
+Loading required package: document
+
+Attaching package: ‘document’
+
+The following object is masked from ‘package:devtools’:
+
+    document
+
+Loading required package: MakefileR
+Writing provide_cran_comments.Rd
+> 
+> 

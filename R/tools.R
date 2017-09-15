@@ -1,62 +1,54 @@
-use_bsd2clause_license <- function (path = ".") {
-    pkg <- devtools::as.package(path)
-    license = list(License = "BSD_2_clause + file LICENSE")
-    res <- document::alter_description_file(path = path, substitution = license)
-    author <- unlist(eval(parse(text = pkg["authors@r"])))
-    copyright_holder <- paste(author[["given"]], author[["family"]])
-    cat("YEAR: ", format(Sys.Date(), "%Y"), "\n", 
-        "COPYRIGHT HOLDER: ", copyright_holder, 
-        sep = "", file = file.path(pkg[["path"]], "LICENSE"))
-    return(invisible(NULL))
-}
-
-
-##   if (interactive()) setwd(dirname(getwd()))
-##   options(warn = 1) # make warnings appear immediately
-##   
-##   devtools::load_all(quiet = TRUE)
-##   
-##   
-##   #% lintr
-##   lints <- lintr::lint_package(path = ".")
-##   if(interactive()) {
-##       print(lints)
-##   } else {
-##       output_directory <- "log/lintr_output"
-##       unlink(output_directory, recursive = TRUE)
-##       dir.create(output_directory, recursive = TRUE)
-##       lint_file <- file.path(output_directory, "lint_package.out")
-##       if (length(lints) > 0) {
-##           warning("found lints, see ", lint_file)
-##           writeLines(unlist(lapply(lints, paste, collapse = " ")), con = lint_file)
-##       } else {
-##           m <- "Congratulations: no lints found."
-##           message(m)
-##           writeLines(m, con = lint_file)
-##       }
-##   }
-
-author_at_r <- function(given, family, email) {
-    author_at_r <- paste0("person(given = \"", given, 
-                          "\", family = \"", family, 
-                          "\", email = \"", email, 
-                          "\", role = c(\"aut\", \"cre\"))")
-    return(author_at_r)
-}
-
-create_package_help <- function(path = ".", 
-                                title = NULL,
-                                description = NULL,
-                                details = NULL
-                                ) {
-    if (is.null(title)) title  <- "Here Goes the Title"
-    if (is.null(description)) {
-        description  <- paste("A description is a paragraph consisting of one",
-                              "or more sentences.")
-        if (is.null(details)) 
-            description <- paste(description, "You may add another paragraph",
-                                 "for a 'Details' section.")
+#' Check for NEWS.md being up to date
+#' 
+#' Compare your NEWS.md file to the 'Version' entry in DESCRIPTION.
+#' @param path The directory to search. 
+#' @return \code{TRUE} if NEWS.md matches DESCRIPTION, throws an error
+#' otherwise.
+#' @export
+check_news <- function(path = ".") {
+    root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
+    description <- readLines(file.path(root, "DESCRIPTION"))
+    version <- grep("^Version: ", description, value = TRUE)
+    version_number <- trimws(strsplit(version, split = ":")[[1]][2])
+    package <- grep("^Package: ", description, value = TRUE)
+    package_name <- trimws(strsplit(package, split = ":")[[1]][2])
+    news.md <- readLines(file.path(root, "NEWS.md"))
+    devel_versions <- grep("[0-9]+\\.[0-9]+\\.[0-9]+\\.9000", news.md, 
+                           value = TRUE)
+    if (length(devel_versions) > 0) {
+        devel_numbers <- sapply(devel_versions, 
+                                function(x) strsplit(x, split = " ")[[1]][3])
+        extra_devels <- setdiff(devel_numbers, version_number)
+        if (length(extra_devels) > 0) {
+            stop(paste("\nFound unmatched devel version: ", extra_devels)) 
+        }
+        
     }
+    is_covered <- any(grepl(paste("^#", package_name, version_number), news.md)) 
+    if (! is_covered) {
+        stop("Version ", version_number, " not covered!")
+    } else {
+        return(TRUE)
+    }
+}
+
+#' Check for Code Tags 
+#' 
+#' You hopefully use code tags
+#' (see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/ for example}.
+#' This functions searches for files under a directory containing such tags.
+#' @param path The directory to search. 
+#' @param exclude Passed to \code{link{grep}}.
+#' @param pattern The pattern to search for. 
+#' @return A character vector of hits.
+#' @export
+#' @examples
+#' codes <- system.file("R", package = "packager")
+#' check_codetags(codes)
+check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$", 
+                           pattern =  "XXX:|FIXME:|TODO:") {
+    return(grep_directory(path = path, exclude = exclude, pattern =  pattern))
+}
 
 #' Provide a Template For Your Comments To CRAN
 #' 
@@ -75,7 +67,7 @@ create_package_help <- function(path = ".",
 #'                     Platform: x86_64-pc-linux-gnu (64-bit)\cr 
 #'                     Running under: Ubuntu precise (12.04.5 LTS) \cr 
 #'                     ")\cr 
-#' Set to "travis-cli" to retrieve Session info automatically if your system is 
+#' Set to `travis-cli` to retrieve Session info automatically if your system is 
 #' set up to use \url{https://github.com/travis-ci/travis.rb}.
 #' @param name The name to sign with.
 #' @note This function writes to disk as side effect.
@@ -144,6 +136,66 @@ provide_cran_comments <- function(check_log = NULL,
         writeLines(comments, con = comments_file, sep = "")
     return(invisible(comments))
 }
+
+use_bsd2clause_license <- function (path = ".") {
+    pkg <- devtools::as.package(path)
+    license = list(License = "BSD_2_clause + file LICENSE")
+    res <- document::alter_description_file(path = path, substitution = license)
+    author <- unlist(eval(parse(text = pkg["authors@r"])))
+    copyright_holder <- paste(author[["given"]], author[["family"]])
+    cat("YEAR: ", format(Sys.Date(), "%Y"), "\n", 
+        "COPYRIGHT HOLDER: ", copyright_holder, 
+        sep = "", file = file.path(pkg[["path"]], "LICENSE"))
+    return(invisible(NULL))
+}
+
+
+##   if (interactive()) setwd(dirname(getwd()))
+##   options(warn = 1) # make warnings appear immediately
+##   
+##   devtools::load_all(quiet = TRUE)
+##   
+##   
+##   #% lintr
+##   lints <- lintr::lint_package(path = ".")
+##   if(interactive()) {
+##       print(lints)
+##   } else {
+##       output_directory <- "log/lintr_output"
+##       unlink(output_directory, recursive = TRUE)
+##       dir.create(output_directory, recursive = TRUE)
+##       lint_file <- file.path(output_directory, "lint_package.out")
+##       if (length(lints) > 0) {
+##           warning("found lints, see ", lint_file)
+##           writeLines(unlist(lapply(lints, paste, collapse = " ")), con = lint_file)
+##       } else {
+##           m <- "Congratulations: no lints found."
+##           message(m)
+##           writeLines(m, con = lint_file)
+##       }
+##   }
+
+author_at_r <- function(given, family, email) {
+    author_at_r <- paste0("person(given = \"", given, 
+                          "\", family = \"", family, 
+                          "\", email = \"", email, 
+                          "\", role = c(\"aut\", \"cre\"))")
+    return(author_at_r)
+}
+
+create_package_help <- function(path = ".", 
+                                title = NULL,
+                                description = NULL,
+                                details = NULL
+                                ) {
+    if (is.null(title)) title  <- "Here Goes the Title"
+    if (is.null(description)) {
+        description  <- paste("A description is a paragraph consisting of one",
+                              "or more sentences.")
+        if (is.null(details)) 
+            description <- paste(description, "You may add another paragraph",
+                                 "for a 'Details' section.")
+    }
 
 
 get_news <- function(path = ".") {
@@ -215,58 +267,6 @@ grep_directory <- function(path, pattern, exclude = NULL) {
         }
     }
     return(hits)
-}
-
-#' Check for Code Tags 
-#' 
-#' You hopefully use code tags
-#' (see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/ for example}.
-#' This functions searches for files under a directory containing such tags.
-#' @param path The directory to search. 
-#' @param exclude Passed to \code{link{grep}}.
-#' @param pattern The pattern to search for. 
-#' @return A character vector of hits.
-#' @export
-#' @examples
-#' codes <- system.file("R", package = "packager")
-#' check_codetags(codes)
-check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$", 
-                           pattern =  "XXX:|FIXME:|TODO:") {
-    return(grep_directory(path = path, exclude = exclude, pattern =  pattern))
-}
-
-#' Check for NEWS.md being up to date
-#' 
-#' Compare your NEWS.md file to the 'Version' entry in DESCRIPTION.
-#' @param path The directory to search. 
-#' @return \code{TRUE} if NEWS.md matches DESCRIPTION, throws an error
-#' otherwise.
-#' @export
-check_news <- function(path = ".") {
-    root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
-    description <- readLines(file.path(root, "DESCRIPTION"))
-    version <- grep("^Version: ", description, value = TRUE)
-    version_number <- trimws(strsplit(version, split = ":")[[1]][2])
-    package <- grep("^Package: ", description, value = TRUE)
-    package_name <- trimws(strsplit(package, split = ":")[[1]][2])
-    news.md <- readLines(file.path(root, "NEWS.md"))
-    devel_versions <- grep("[0-9]+\\.[0-9]+\\.[0-9]+\\.9000", news.md, 
-                           value = TRUE)
-    if (length(devel_versions) > 0) {
-        devel_numbers <- sapply(devel_versions, 
-                                function(x) strsplit(x, split = " ")[[1]][3])
-        extra_devels <- setdiff(devel_numbers, version_number)
-        if (length(extra_devels) > 0) {
-            stop(paste("\nFound unmatched devel version: ", extra_devels)) 
-        }
-        
-    }
-    is_covered <- any(grepl(paste("^#", package_name, version_number), news.md)) 
-    if (! is_covered) {
-        stop("Version ", version_number, " not covered!")
-    } else {
-        return(TRUE)
-    }
 }
 
 
