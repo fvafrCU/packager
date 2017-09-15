@@ -44,6 +44,6 @@ substitution <- list("Authors@R" = auth)
 document::alter_description_file(path = path, s = substitution)
 packager::provide_throw(".")
 
-use_directory("log", ignore = TRUE)
+packager::use_directory("log", ignore = TRUE)
 devtools::use_build_ignore("Makefile", pkg = path)
 MakefileR::make_rule("all", c("foo", "bar"))
