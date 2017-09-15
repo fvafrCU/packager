@@ -4,6 +4,6 @@
 ^cran-comments\.md$
 ^\.travis\.yml$
 ^TODO.md$
-^log/
 ^codecov\.yml$
 ^Makefile$
+^log$
