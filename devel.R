@@ -47,6 +47,4 @@ packager::provide_throw(".")
 packager::use_directory("log", ignore = TRUE)
 # file.copy Makefile projectroot forced = is_true_or_null
 devtools::use_build_ignore("Makefile", pkg = path)
-
-devtools::use_build_ignore("*.tar.gz", pkg = path)
 packager::use_git_ignore("*.tar.gz", path = path)
