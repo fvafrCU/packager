@@ -1,4 +1,4 @@
-RUNIT TEST PROTOCOL -- Thu Aug 24 23:43:05 2017 
+RUNIT TEST PROTOCOL -- Sat Sep 16 21:09:11 2017 
 *********************************************** 
 Number of test functions: 1 
 Number of errors: 0 
@@ -18,5 +18,5 @@ Test file regexp: ^.*\.[rR]
 Involved directory: 
 /home/qwer/git/cyclops/fvafrcu/packager/tests/runit 
 --------------------------- 
-Test file: /home/qwer/git/cyclops/fvafrcu/packager/tests/runit/throw.R 
+Test file: /home/qwer/git/cyclops/fvafrcu/packager/tests/runit/runit-throw.R 
 test_exception: (1 checks) ... OK (0 seconds)

@@ -23,12 +23,27 @@ Rscript = Rscript-devel
 all: $(PKGNAME)_$(PKGVERS).tar.gz
 
 .PHONY: checks
-checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/news.Rout
+checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout 
 
+.PHONY: coverage
+coverage: $(LOG_DIR)/covr.Rout 
+$(LOG_DIR)/covr.Rout: $(R_FILES) $(TESTTHAT_FILES) $(RUNIT_FILES)
+	$(Rscript) --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)' > $(LOG_DIR)/covr.Rout 2>&1 
+
+.PHONY: testthat
+testthat: $(LOG_DIR)/testthat.Rout 
+$(LOG_DIR)/testthat.Rout: $(LOG_DIR) $(R_FILES) $(TESTTHAT_FILES)
+	$(Rscript) --vanilla -e 'devtools::test()' >  $(LOG_DIR)/testthat.Rout 2>&1
+
+.PHONY: runit
+runit: $(LOG_DIR)/runit.Rout
+$(LOG_DIR)/runit.Rout: $(LOG_DIR) $(R_FILES) $(RUNIT_FILES)
+	$(Rscript) --vanilla tests/runit.R > $(LOG_DIR)/runit.Rout 2>&1 
+	
 .PHONY: news
 news: $(LOG_DIR)/news.Rout
-$(LOG_DIR)/news.Rout: DESCRIPTION NEWS.md
-	$(Rscript) --vanilla -e 'source(file.path("utils", "checks.R")); check_news()' > $(LOG_DIR)/news.Rout 2>&1 
+$(LOG_DIR)/news.Rout: $(LOG_DIR) DESCRIPTION NEWS.md
+	$(Rscript) --vanilla -e 'packager::check_news()' > $(LOG_DIR)/news.Rout 2>&1 
 
 .PHONY: spell
 spell: $(LOG_DIR)/spell.Rout
@@ -141,11 +156,6 @@ $(LOG_DIR):
 ##   .PHONY: devel
 ##   devel: $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout
 ##   
-##   .PHONY: coverage
-##   coverage: $(LOG_DIR)/covr.Rout 
-##   $(LOG_DIR)/covr.Rout: $(R_FILES) $(TESTS_FILES)
-##   	$(Rscript) --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)' > $(LOG_DIR)/covr.Rout 2>&1 
-##   
 ##   .PHONY: cleanr
 ##   cleanr: $(LOG_DIR)/cleanr.Rout 
 ##   $(LOG_DIR)/cleanr.Rout: $(R_FILES)
@@ -155,19 +165,6 @@ $(LOG_DIR):
 ##   lintr: $(LOG_DIR)/lintr.Rout 
 ##   $(LOG_DIR)/lintr.Rout: $(R_FILES) $(VIGNETTES_FILES)
 ##   	$(Rscript) --vanilla utils/lintr.R > $(LOG_DIR)/lintr.Rout 2>&1 
-##   
-##   .PHONY: testthat
-##   testthat: $(LOG_DIR)/testthat.Rout 
-##   $(LOG_DIR)/testthat.Rout: $(R_FILES) $(TESTTHAT_FILES)
-##   	rm $(TEMP_FILE) || true; \
-##   		$(Rscript) --vanilla -e 'devtools::test()' >  $(TEMP_FILE) 2>&1; \
-##   		sed -n -e '/^DONE.*/q;p' < $(TEMP_FILE) | \
-##   		sed -e "s# /.*\($(PKGNAME)\)# \1#" > $(LOG_DIR)/testthat.Rout; rm $(TEMP_FILE)
-##   
-##   .PHONY: runit
-##   runit: $(LOG_DIR)/runit.Rout
-##   $(LOG_DIR)/runit.Rout: $(R_FILES) $(RUNIT_FILES)
-##   	cd ./tests/ && $(Rscript) --vanilla ./runit.R > ../../$(LOG_DIR)/runit.Rout 2>&1 || printf "\nMaybe your installation is stale? \nTry\n\tmake install_bare\n\n"
 ##   
 ##   #% utils
 ##   .PHONY: clean

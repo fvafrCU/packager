@@ -1,0 +1,6 @@
+Loading packager
+
+
+Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
+ done successfully.
+
