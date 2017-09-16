@@ -1,0 +1,8 @@
+[1] "./cran-comments.md: XXX: Describe what it does."                                                                 
+[2] "./devel.R: # TODO: create .lintr file excluding vignette codes"                                                  
+[3] "./Makefile: \t$(Rscript) --vanilla -e 'devtools:::use_directory(\"log\", ignore = TRUE)' # FIXME: use packager::"
+[4] "./man/check_codetags.Rd:   pattern = \"XXX:|FIXME:|TODO:\")"                                                     
+[5] "./R/tools.R:                            pattern =  \"XXX:|FIXME:|TODO:\") {"                                     
+[6] "./R/tools.R:         news <- \"\\nXXX: State your changes and consider using a NEWS.md\\n\\n\""                  
+[7] "./R/tools.R:                       pkg$package, \"'.\\n\\n\", \"XXX: Describe what it does.\\n\\n\","            
+There were 50 or more warnings (use warnings() to see the first 50)

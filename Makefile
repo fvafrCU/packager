@@ -23,7 +23,17 @@ Rscript = Rscript-devel
 all: $(PKGNAME)_$(PKGVERS).tar.gz
 
 .PHONY: checks
-checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout 
+checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout 
+
+.PHONY: cleanr
+cleanr: $(LOG_DIR)/cleanr.Rout 
+$(LOG_DIR)/cleanr.Rout: $(R_FILES)
+	$(Rscript) --vanilla -e 'tryCatch(cleanr::check_directory("R/", check_return = FALSE), cleanr = function(e) print(e))' > $(LOG_DIR)/cleanr.Rout 2>&1 
+
+.PHONY: lintr
+lintr: $(LOG_DIR)/lintr.Rout 
+$(LOG_DIR)/lintr.Rout: $(R_FILES) $(VIGNETTES_FILES)
+	$(Rscript) --vanilla -e 'lintr::lint_package(path = ".")' > $(LOG_DIR)/lintr.Rout 2>&1 
 
 .PHONY: coverage
 coverage: $(LOG_DIR)/covr.Rout 
@@ -44,6 +54,12 @@ $(LOG_DIR)/runit.Rout: $(LOG_DIR) $(R_FILES) $(RUNIT_FILES)
 news: $(LOG_DIR)/news.Rout
 $(LOG_DIR)/news.Rout: $(LOG_DIR) DESCRIPTION NEWS.md
 	$(Rscript) --vanilla -e 'packager::check_news()' > $(LOG_DIR)/news.Rout 2>&1 
+
+.PHONY: codetags
+codetags: $(LOG_DIR)/check_codetags.Rout 
+$(LOG_DIR)/check_codetags.Rout:
+	$(Rscript) --vanilla -e 'packager::check_codetags()' > $(LOG_DIR)/check_codetags.Rout 2>&1 
+
 
 .PHONY: spell
 spell: $(LOG_DIR)/spell.Rout
@@ -155,16 +171,6 @@ $(LOG_DIR):
 ##   
 ##   .PHONY: devel
 ##   devel: $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout
-##   
-##   .PHONY: cleanr
-##   cleanr: $(LOG_DIR)/cleanr.Rout 
-##   $(LOG_DIR)/cleanr.Rout: $(R_FILES)
-##   	$(Rscript) --vanilla -e 'print(cleanr::check_directory("R/",  max_num_arguments = 12, check_return = FALSE))' > $(LOG_DIR)/cleanr.Rout 2>&1 
-##   
-##   .PHONY: lintr
-##   lintr: $(LOG_DIR)/lintr.Rout 
-##   $(LOG_DIR)/lintr.Rout: $(R_FILES) $(VIGNETTES_FILES)
-##   	$(Rscript) --vanilla utils/lintr.R > $(LOG_DIR)/lintr.Rout 2>&1 
 ##   
 ##   #% utils
 ##   .PHONY: clean
