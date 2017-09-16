@@ -28,7 +28,9 @@ cran-comments.md: $(LOG_DIR)/check.Rout
 
 # checks
 .PHONY: checks
-checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout 
+checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/check_codetags.Rout \
+	$(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout \
+	$(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout 
 
 .PHONY: cleanr
 cleanr: $(LOG_DIR)/cleanr.Rout 
@@ -79,14 +81,19 @@ $(LOG_DIR)/install.Rout: $(LOG_DIR)/check.Rout
 
 .PHONY: check
 check: $(LOG_DIR)/check.Rout
-$(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz
+$(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz 
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
 		$(R) --vanilla CMD check --as-cran --run-donttest $(PKGNAME)_$(PKGVERS).tar.gz; \
 		cp $(PKGNAME).Rcheck/00check.log $(LOG_DIR)/check.Rout
 
 .PHONY: build
-build: $(PKGNAME)_$(PKGVERS).tar.gz
-$(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE $(LOG_DIR)/roxygen2.Rout $(R_FILES) $(MAN_FILES) $(TESTTHAT_FILES) $(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) #$(LOG_DIR)/dependencies.Rout
+build: $(PKGNAME)_$(PKGVERS).tar.gz 
+$(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
+	$(LOG_DIR)/roxygen2.Rout $(R_FILES) $(MAN_FILES) $(TESTTHAT_FILES) \
+	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
+	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
+	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
+	$(LOG_DIR)/lintr.Rout
 	$(R) --vanilla CMD build $(PKGSRC)
 
 README.md: README.Rmd R/$(PKGNAME)-package.R

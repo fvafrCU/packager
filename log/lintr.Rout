@@ -157,9 +157,6 @@ R/devtools.R:105:61: style: Trailing whitespace is superfluous.
 R/devtools.R:112:61: style: Trailing whitespace is superfluous.
     use_template("travis.yml", ".travis.yml", ignore = TRUE, 
                                                             ^
-R/devtools.R:120:25: warning: no visible global function definition for ‘use_news_md’
-    result <- c(result, use_news_md(pkg = path))
-                        ^~~~~~~~~~~
 R/devtools.R:123:41: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     if (pkg[["package"]] == "packager") { 
                                         ^
@@ -199,6 +196,9 @@ check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
 R/tools.R:83:19: style: Use <-, not =, for assignment.
     comments_file = file.path(pkg[["path"]], "cran-comments.md")
                   ^
+R/tools.R:90:17: warning: no visible global function definition for ‘get_news’
+        news <- get_news(path = path)
+                ^~~~~~~~
 R/tools.R:96:74: style: Trailing whitespace is superfluous.
         check_output <- utils::capture.output(print.check_results(check), 
                                                                          ^
