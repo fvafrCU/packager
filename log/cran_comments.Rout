@@ -1,6 +1,13 @@
-Error in get_news(path = path) : could not find function "get_news"
-Calls: <Anonymous>
-In addition: Warning message:
+checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
+
+New submission
+
+Version contains large components (0.0.0.9000)
+
+checking top-level files ... NOTE
+Non-standard file/directory found at top level:
+  ‘old_targets.cl’
+Warning message:
 In readLines("/etc/os-release") :
   incomplete final line found on '/etc/os-release'
-Execution halted

@@ -15,4 +15,4 @@ Best, Dominik
 - win-builder (devel)
 
 ## R CMD check results
-ERROR: No check log given!
+0 errors | 0 warnings | 2 notes
