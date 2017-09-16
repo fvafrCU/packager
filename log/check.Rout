@@ -43,13 +43,7 @@ Non-standard file/directory found at top level:
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... NOTE
-provide_cran_comments: no visible global function definition for
-  ‘get_news’
-use_news_md: possible error in use_template("NEWS.md", data = pkg, open
-  = TRUE, pkg = pkg, ...): unused argument (open = TRUE)
-Undefined global functions or variables:
-  get_news
+* checking R code for possible problems ... OK
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -71,4 +65,4 @@ Undefined global functions or variables:
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 3 NOTEs
+Status: 2 NOTEs

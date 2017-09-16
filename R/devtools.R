@@ -82,7 +82,7 @@ use_readme_rmd <- function (pkg = ".", ...) {
 
 use_news_md <- function (pkg = ".", ...) {
     pkg <- as.package(pkg)
-    use_template("NEWS.md", data = pkg, open = TRUE, pkg = pkg, ...)
+    use_template("NEWS.md", data = pkg, pkg = pkg, ...)
     invisible(NULL)
 }
 

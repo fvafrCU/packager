@@ -20,18 +20,66 @@ R = R-devel
 Rscript = Rscript-devel
 
 .PHONY: all
-all: $(LOG_DIR)/install.Rout
+all: $(LOG_DIR)/install.Rout devel
 
-# CRAN stuff
-cran-comments.md: $(LOG_DIR)/check.Rout
+# devel stuff
+.PHONY: devel
+devel: vignettes
+.PHONY: vignettes
+vignettes:
+	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))'
+
+# install
+.PHONY: install
+install: $(LOG_DIR)/install.Rout
+$(LOG_DIR)/install.Rout: $(LOG_DIR)/cran_comments.Rout
+	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
+
+cran-comments.md: #$(LOG_DIR)/check.Rout
 	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
 
-# checks
-.PHONY: checks
-checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/check_codetags.Rout \
-	$(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout \
-	$(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout 
+.PHONY: check
+check: $(LOG_DIR)/check.Rout
+$(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz 
+	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
+		$(R) --vanilla CMD check --as-cran --run-donttest $(PKGNAME)_$(PKGVERS).tar.gz; \
+		cp $(PKGNAME).Rcheck/00check.log $(LOG_DIR)/check.Rout
 
+.PHONY: build
+build: $(PKGNAME)_$(PKGVERS).tar.gz 
+$(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
+	$(LOG_DIR)/roxygen2.Rout $(R_FILES) $(MAN_FILES) $(TESTTHAT_FILES) \
+	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
+	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
+	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
+	$(LOG_DIR)/lintr.Rout
+	$(R) --vanilla CMD build $(PKGSRC)
+
+README.md: README.Rmd R/$(PKGNAME)-package.R
+	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
+
+$(LOG_DIR)/roxygen2.Rout: $(LOG_DIR) $(R_FILES)
+	$(R) --vanilla -e 'roxygen2::roxygenize(".")' > $(LOG_DIR)/roxygen2.Rout 2>&1 
+
+$(LOG_DIR): 
+	$(Rscript) --vanilla -e 'devtools:::use_directory("log", ignore = TRUE)' # FIXME: use packager::
+
+# utils
+.PHONY: clean
+clean:
+	rm -rf $(PKGNAME).Rcheck
+
+.PHONY: remove
+remove:
+	 $(R) --vanilla CMD REMOVE  $(PKGNAME)
+
+.PHONY: viz
+viz: $(LOG_DIR)/make.png 
+$(LOG_DIR)/make.png: $(LOG_DIR) Makefile $(R_FILES) $(MAN_FILES) \
+	$(TESTTHAT_FILES) $(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES)
+	make -Bnd all devel | make2graph | dot -Tpng -o $(LOG_DIR)/make.png
+
+# checks
 .PHONY: cleanr
 cleanr: $(LOG_DIR)/cleanr.Rout 
 $(LOG_DIR)/cleanr.Rout: $(R_FILES)
@@ -67,58 +115,13 @@ codetags: $(LOG_DIR)/check_codetags.Rout
 $(LOG_DIR)/check_codetags.Rout:
 	$(Rscript) --vanilla -e 'packager::check_codetags()' > $(LOG_DIR)/check_codetags.Rout 2>&1 
 
-
 .PHONY: spell
 spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: $(LOG_DIR) DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES)
 	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
-# install
-.PHONY: install
-install: $(LOG_DIR)/install.Rout
-$(LOG_DIR)/install.Rout: $(LOG_DIR)/check.Rout
-	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
-
-.PHONY: check
-check: $(LOG_DIR)/check.Rout
-$(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz 
-	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
-		$(R) --vanilla CMD check --as-cran --run-donttest $(PKGNAME)_$(PKGVERS).tar.gz; \
-		cp $(PKGNAME).Rcheck/00check.log $(LOG_DIR)/check.Rout
-
-.PHONY: build
-build: $(PKGNAME)_$(PKGVERS).tar.gz 
-$(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
-	$(LOG_DIR)/roxygen2.Rout $(R_FILES) $(MAN_FILES) $(TESTTHAT_FILES) \
-	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
-	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
-	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
-	$(LOG_DIR)/lintr.Rout
-	$(R) --vanilla CMD build $(PKGSRC)
-
-README.md: README.Rmd R/$(PKGNAME)-package.R
-	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
-
-$(LOG_DIR)/roxygen2.Rout: $(LOG_DIR) $(R_FILES)
-	$(R) --vanilla -e 'roxygen2::roxygenize(".")' > $(LOG_DIR)/roxygen2.Rout 2>&1 
-
-# visualize the Makefile 
-viz: $(LOG_DIR)/make.png 
-$(LOG_DIR)/make.png: $(LOG_DIR) Makefile $(R_FILES) $(MAN_FILES) $(TESTTHAT_FILES) $(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES)
-	make -Bnd all checks viz | make2graph | dot -Tpng -o $(LOG_DIR)/make.png
-
-# create LOG_DIR
-$(LOG_DIR): 
-	$(Rscript) --vanilla -e 'devtools:::use_directory("log", ignore = TRUE)' # FIXME: use packager::
-
-##   .PHONY: all
-##   all: install devel 
-##   
 ##   #% devtools
 ##   # a loose collection of helpful stuff while developing
-##   
-##   .PHONY: devtools
-##   devtools: cran-comments.md use_dev_version dependencies_forced vignettes codetags tag
 ##   
 ##   .PHONY: tag
 ##   tag: $(LOG_DIR)/git_tag.Rout 
@@ -134,19 +137,6 @@ $(LOG_DIR):
 ##   release: build_win
 ##   	echo "Run \n \t$(R) interacitvely and do 'devtools::release(check = FALSE)'"
 ##   
-##   .PHONY: vignettes
-##   vignettes:
-##   	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))'
-##   
-##   # rerun check without --run-donttest to create Rout for cran-comments
-##   .PHONY: dev_check
-##   dev_check: $(LOG_DIR)/dev_check.Rout
-##   $(LOG_DIR)/dev_check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz
-##   	rm $(TEMP_FILE) || true; \
-##   		$(Rscript) --vanilla -e 'devtools::check(cran = TRUE, check_version = TRUE, args = "--no-tests")' > $(TEMP_FILE) 2>&1; \
-##   		grep -v ".*'/" $(TEMP_FILE) | grep -v ".*‘/" > $(LOG_DIR)/dev_check.Rout ;\
-##   		grep "checking tests ... SKIPPED" $(LOG_DIR)/dev_check.Rout
-##   
 ##   .PHONY: use_dev_version
 ##   use_dev_version: $(LOG_DIR)/use_dev_version.Rout
 ##   .PHONY: $(LOG_DIR)/use_dev_version.Rout
@@ -158,34 +148,3 @@ $(LOG_DIR):
 ##   $(LOG_DIR)/dependencies_forced.Rout:
 ##   	$(Rscript) --vanilla -e 'deps <-c($(DEPS)); for (dep in deps) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies_forced.Rout 2>&1 
 ##   
-##   #% install
-##   
-##   
-##   .PHONY: dependencies
-##   dependencies: $(LOG_DIR)/dependencies.Rout
-##   .PHONY: $(LOG_DIR)/dependencies.Rout
-##   $(LOG_DIR)/dependencies.Rout:
-##   	$(Rscript) --vanilla -e 'deps <-c($(DEPS)); for (dep in deps) (if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/"))' > $(LOG_DIR)/dependencies.Rout 2>&1 
-##   
-##   
-##   #% devel
-##   
-##   .PHONY: devel
-##   devel: $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout
-##   
-##   #% utils
-##   .PHONY: clean
-##   clean:
-##   	rm -rf $(PKGNAME).Rcheck
-##   
-##   .PHONY: remove
-##   remove:
-##   	 $(R) --vanilla CMD REMOVE  $(PKGNAME)
-##   
-##   # visualize the Makefile
-##   .PHONY: viz
-##   
-##   # bare build to install or run test without spell checking and such
-##   .PHONY: build_bare
-##   build_bare:
-##   	$(R) --vanilla CMD build ../$(PKGSRC)

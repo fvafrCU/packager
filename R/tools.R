@@ -157,21 +157,6 @@ author_at_r <- function(given, family, email) {
     return(author_at_r)
 }
 
-create_package_help <- function(path = ".", 
-                                title = NULL,
-                                description = NULL,
-                                details = NULL
-                                ) {
-    if (is.null(title)) title  <- "Here Goes the Title"
-    if (is.null(description)) {
-        description  <- paste("A description is a paragraph consisting of one",
-                              "or more sentences.")
-        if (is.null(details)) 
-            description <- paste(description, "You may add another paragraph",
-                                 "for a 'Details' section.")
-    }
-
-
 get_news <- function(path = ".") {
     root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package, 
                                           path = path),
@@ -186,6 +171,20 @@ get_news <- function(path = ".") {
     news <- sub(paste0(package_pattern, "\n"), "", news)
     return(news)
 }
+
+create_package_help <- function(path = ".", 
+                                title = NULL,
+                                description = NULL,
+                                details = NULL
+                                ) {
+    if (is.null(title)) title  <- "Here Goes the Title"
+    if (is.null(description)) {
+        description  <- paste("A description is a paragraph consisting of one",
+                              "or more sentences.")
+        if (is.null(details)) 
+            description <- paste(description, "You may add another paragraph",
+                                 "for a 'Details' section.")
+    }
     pkg <- devtools::as.package(path)
     package_roxygen_file <- file.path(pkg[["path"]], "R",
                                       paste0(pkg[["package"]], "-package.R"))
