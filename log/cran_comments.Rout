@@ -1,0 +1,21 @@
+checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
+
+New submission
+
+Version contains large components (0.0.0.9000)
+
+checking top-level files ... NOTE
+Non-standard files/directories found at top level:
+  ‘old_targets.cl’ ‘packager_0.0.0.9000.tar.gz’
+
+checking R code for possible problems ... NOTE
+provide_cran_comments: no visible global function definition for
+  ‘get_news’
+use_news_md: possible error in use_template("NEWS.md", data = pkg, open
+  = TRUE, pkg = pkg, ...): unused argument (open = TRUE)
+Undefined global functions or variables:
+  get_news
+Warning message:
+In readLines("/etc/os-release") :
+  incomplete final line found on '/etc/os-release'

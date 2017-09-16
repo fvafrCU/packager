@@ -20,8 +20,13 @@ R = R-devel
 Rscript = Rscript-devel
 
 .PHONY: all
-all: $(PKGNAME)_$(PKGVERS).tar.gz
+all: $(LOG_DIR)/install.Rout
 
+# CRAN stuff
+cran-comments.md: $(LOG_DIR)/check.Rout
+	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
+
+# checks
 .PHONY: checks
 checks: $(LOG_DIR)/spell.Rout $(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout $(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout $(LOG_DIR)/lintr.Rout 
 
@@ -66,6 +71,18 @@ spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: $(LOG_DIR) DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES)
 	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
+# install
+.PHONY: install
+install: $(LOG_DIR)/install.Rout
+$(LOG_DIR)/install.Rout: $(LOG_DIR)/check.Rout
+	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
+
+.PHONY: check
+check: $(LOG_DIR)/check.Rout
+$(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz
+	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
+		$(R) --vanilla CMD check --as-cran --run-donttest $(PKGNAME)_$(PKGVERS).tar.gz; \
+		cp $(PKGNAME).Rcheck/00check.log $(LOG_DIR)/check.Rout
 
 .PHONY: build
 build: $(PKGNAME)_$(PKGVERS).tar.gz
@@ -102,11 +119,6 @@ $(LOG_DIR):
 ##   $(LOG_DIR)/git_tag.Rout: 
 ##   	$(R) --vanilla -e 'source(file.path("utils", "git_tag.R")); git_tag()'
 ##   
-##   .PHONY: codetags
-##   codetags: $(LOG_DIR)/check_codetags.Rout 
-##   $(LOG_DIR)/check_codetags.Rout:
-##   	$(Rscript) --vanilla -e 'source(file.path("utils", "checks.R")); check_codetags()' > $(LOG_DIR)/check_codetags.Rout 2>&1 
-##   
 ##   .PHONY: build_win
 ##   build_win:
 ##   	echo "Run \n \t$(Rscript) --vanilla -e 'devtools::build_win()'"
@@ -119,9 +131,6 @@ $(LOG_DIR):
 ##   vignettes:
 ##   	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))'
 ##   
-##   cran-comments.md: $(LOG_DIR)/dev_check.Rout
-##   	$(Rscript) --vanilla -e 'source("./utils/cran_comments.R"); provide_cran_comments(check_log = "log/dev_check.Rout")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
-##   	
 ##   # rerun check without --run-donttest to create Rout for cran-comments
 ##   .PHONY: dev_check
 ##   dev_check: $(LOG_DIR)/dev_check.Rout
@@ -144,21 +153,6 @@ $(LOG_DIR):
 ##   
 ##   #% install
 ##   
-##   .PHONY: install
-##   install: $(LOG_DIR)/install.Rout
-##   $(LOG_DIR)/install.Rout: $(LOG_DIR)/check.Rout
-##   	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
-##   
-##   # run check with --run-donttest 
-##   .PHONY: check
-##   check: $(LOG_DIR)/check.Rout
-##   $(LOG_DIR)/check.Rout: $(PKGNAME)_$(PKGVERS).tar.gz
-##   	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
-##   		$(R) --vanilla CMD check --as-cran --run-donttest \
-##   		$(PKGNAME)_$(PKGVERS).tar.gz ; \
-##   		cp $(PKGNAME).Rcheck/00check.log $(LOG_DIR)/check.Rout
-##   
-##   .PHONY: build
 ##   
 ##   .PHONY: dependencies
 ##   dependencies: $(LOG_DIR)/dependencies.Rout

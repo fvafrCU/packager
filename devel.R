@@ -47,4 +47,5 @@ packager::provide_throw(".")
 packager::use_directory("log", ignore = TRUE)
 # file.copy Makefile projectroot forced = is_true_or_null
 devtools::use_build_ignore("Makefile", pkg = path)
-packager::use_git_ignore("*.tar.gz", path = path)
+devtools::use_build_ignore("^.*\\.tar\\.gz$", paste0(devtools::as.package(path)$package, ".Rcheck"), pkg = path, escape = FALSE)
+packager::use_git_ignore("*.tar.gz", paste0(devtools::as.package(path)$package, ".Rcheck"), path = path)

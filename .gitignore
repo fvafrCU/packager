@@ -4,3 +4,4 @@
 *.swp
 log/*.png
 *.tar.gz
+packager.Rcheck

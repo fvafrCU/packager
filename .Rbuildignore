@@ -7,3 +7,5 @@
 ^codecov\.yml$
 ^Makefile$
 ^log$
+^.*\.tar\.gz$
+^packager\.Rcheck$
