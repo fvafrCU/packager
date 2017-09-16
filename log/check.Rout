@@ -26,8 +26,8 @@ Version contains large components (0.0.0.9000)
 * checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... NOTE
-Non-standard files/directories found at top level:
-  ‘old_targets.cl’ ‘packager_0.0.0.9000.tar.gz’
+Non-standard file/directory found at top level:
+  ‘old_targets.cl’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
