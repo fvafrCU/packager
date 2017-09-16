@@ -32,10 +32,10 @@ vignettes:
 # install
 .PHONY: install
 install: $(LOG_DIR)/install.Rout
-$(LOG_DIR)/install.Rout: $(LOG_DIR)/cran_comments.Rout
+$(LOG_DIR)/install.Rout: cran-comments.md
 	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
 
-cran-comments.md: #$(LOG_DIR)/check.Rout
+cran-comments.md: $(LOG_DIR)/check.Rout
 	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
 
 .PHONY: check
@@ -77,7 +77,7 @@ remove:
 viz: $(LOG_DIR)/make.png 
 $(LOG_DIR)/make.png: $(LOG_DIR) Makefile $(R_FILES) $(MAN_FILES) \
 	$(TESTTHAT_FILES) $(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES)
-	make -Bnd all devel | make2graph | dot -Tpng -o $(LOG_DIR)/make.png
+	make -Bnd all | make2graph | dot -Tpng -o $(LOG_DIR)/make.png
 
 # checks
 .PHONY: cleanr
@@ -120,8 +120,7 @@ spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: $(LOG_DIR) DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES)
 	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
-##   #% devtools
-##   # a loose collection of helpful stuff while developing
+##   # devtools
 ##   
 ##   .PHONY: tag
 ##   tag: $(LOG_DIR)/git_tag.Rout 
