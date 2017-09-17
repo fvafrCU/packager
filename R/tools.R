@@ -266,27 +266,26 @@ warn_and_stop <- function(...) {
     stop(...)
 } 
 
-git_tag <- function(path = ".", tag_uncommited = FALSE) {
-    status <- TRUE
+git_tag <- function(path = ".", tag_uncommited = FALSE, 
+                    message = "CRAN release") {
+    status <- FALSE
     root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
                      error = function(e) return(path))
+    d <- readLines(file.path(root, "DESCRIPTION"))
+    version <- sub("^Version: ", "", grep("^Version: ", d, value = TRUE))
     if (! is_git_clone(root))
         warn_and_stop("Not a git repository.")
     if (is_git_uncommitted(root) && ! isTRUE(tag_uncommited))
         warn_and_stop("Uncommited changes. Aborting")
     repo <- git2r::repository(root)
     tags <- git2r::tags(repo)
-    last_tag_number <- methods::slot(tags[[length(tags)]], "name")
-    last_version_number <- sub("^v", "", last_tag_number)
-    d <- readLines(file.path(root, "DESCRIPTION"))
-    version <- sub("^Version: ", "", grep("^Version: ", d, value = TRUE))
-    if (version != last_version_number)
-        cmd <- paste("git tag -a", version)
-    if (interactive()) {
-        status <- system2("git", sub("^git ", "", cmd))
-    } else {
-        warn_and_stop("Run\n\t", cmd, "\non your system.")
+    is_first_tag <- length(tags) == 0
+    if (! is_first_tag) {
+        last_tag_number <- methods::slot(tags[[length(tags)]], "name")
+        last_version_number <- sub("^v", "", last_tag_number)
     }
+    if (is_first_tag || version != last_version_number)
+        status <- git2r::tag(repo, version, message)
     return(status)
 }
 

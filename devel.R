@@ -11,7 +11,7 @@ base::getOption("packager")[["could_force"]]
 path <- "."
 devtools::load_all(".")
 roxygen2::roxygenize(path)
-packager::use_intro()
+/ackager::use_intro()
 #create_devel(path = path)
 packager::remove_Rproj(path = path)
 packager::use_git(path = path)
