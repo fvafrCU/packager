@@ -53,6 +53,13 @@ Non-standard file/directory found at top level:
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
+* checking line endings in Makefiles ... OK
+* checking for GNU extensions in Makefiles ... WARNING
+Found the following file(s) containing GNU extensions:
+  inst/templates/Makefile
+Portable Makefiles do not use GNU extensions such as +=, :=, $(shell),
+$(wildcard), ifeq ... endif. See section ‘Writing portable packages’ in
+the ‘Writing R Extensions’ manual.
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
 * checking examples ... OK
@@ -65,4 +72,4 @@ Non-standard file/directory found at top level:
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 2 NOTEs
+Status: 1 WARNING, 2 NOTEs
