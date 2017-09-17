@@ -334,6 +334,6 @@ use_makefile <- function(path = ".",
                          force = is_force(),
                          ignore = TRUE) {
     pkg <- as.package(path)
-    use_template("Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
+    use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
     invisible(NULL)
 }

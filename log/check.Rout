@@ -25,9 +25,7 @@ Version contains large components (0.0.0.9000)
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
-* checking top-level files ... NOTE
-Non-standard file/directory found at top level:
-  ‘old_targets.cl’
+* checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -53,13 +51,6 @@ Non-standard file/directory found at top level:
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
-* checking line endings in Makefiles ... OK
-* checking for GNU extensions in Makefiles ... WARNING
-Found the following file(s) containing GNU extensions:
-  inst/templates/Makefile
-Portable Makefiles do not use GNU extensions such as +=, :=, $(shell),
-$(wildcard), ifeq ... endif. See section ‘Writing portable packages’ in
-the ‘Writing R Extensions’ manual.
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
 * checking examples ... OK
@@ -72,4 +63,4 @@ the ‘Writing R Extensions’ manual.
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 WARNING, 2 NOTEs
+Status: 1 NOTE

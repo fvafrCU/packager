@@ -350,8 +350,8 @@ R/tools.R:333:37: style: Trailing whitespace is superfluous.
 use_makefile <- function(path = ".", 
                                     ^
 R/tools.R:337:1: style: lines should not be more than 80 characters.
-    use_template("Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tests/testthat/test-throw.R:4:73: style: Trailing whitespace is superfluous.
                         testthat::expect_error(throw("hello, testthat"), 
                                                                         ^

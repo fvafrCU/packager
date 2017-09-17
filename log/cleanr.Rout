@@ -18,7 +18,7 @@ R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 27 counts 81 charac
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 123 counts 84 characters.
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 167 counts 88 characters.
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 211 counts 135 characters.
-/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 337 counts 83 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 337 counts 97 characters.
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 339 lines in file.
  /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  check_news  line 19: found width 81 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  get_news  line 7: found width 88 max_line_width was 80
@@ -26,4 +26,4 @@ R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 27 counts 81 charac
 line 42: found width 84 max_line_width was 80
 provide_cran_comments  found 56 lines of code, max_lines_of_code was 50
 /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  update_description  line 3: found width 135 max_line_width was 80
-/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  use_makefile  line 2: found width 83 max_line_width was 80>
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  use_makefile  line 2: found width 97 max_line_width was 80>
