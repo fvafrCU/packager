@@ -289,14 +289,8 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
     return(status)
 }
 
-create_devel <- function(path = rprojroot::find_root(rprojroot::is_r_package)) {
-    file_name <- file.path(path, "devel.R")
-    devtools::use_build_ignore("devel.R", pkg = path)
-    return(cat("devtools::load_all()\n", file = file_name))
-}
-
 provide_throw <- function(path, 
-                          force = is_null_or_true(getOption("packager")[["force"]]),
+                          force = is_force(),
                           ...) {
     devtools::use_testthat(pkg = path)
     pkg <- as.package(path)
@@ -327,3 +321,19 @@ provide_throw <- function(path,
     return(NULL)
 }
 
+
+use_devel <- function(path = ".", 
+                      ignore = TRUE, ...) {
+    pkg <- as.package(path)
+    use_template("devel.R", data = pkg, pkg = pkg, force = force, 
+                 ignore = ignore)
+    invisible(NULL)
+}
+
+use_makefile <- function(path = ".", 
+                         force = is_force(),
+                         ignore = TRUE) {
+    pkg <- as.package(path)
+    use_template("Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
+    invisible(NULL)
+}

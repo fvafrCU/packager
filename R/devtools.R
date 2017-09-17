@@ -35,13 +35,14 @@ load_pkg_description <- function (path, create) {
 # extending devtools' version to not hard code the source package of the
 # template. And get rid of call to devtools:::open_in_rstudio().
 # Remove dialog.
-use_template <- function (template, save_as = template, data = list(), 
-                          ignore = FALSE, pkg = ".", 
-                          source_package = "packager", 
-                          force = false_or_null(getOption("packager")[["force"]])) {
+use_template <- function(template, save_as = template, data = list(), 
+                         ignore = FALSE, pkg = ".", 
+                         source_package = "packager", 
+                         force = isTRUE(getOption("packager")[["force"]])) {
     status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)
+    print(force)
     if (! file.exists(path) || isTRUE(force)) {
         template_path <- system.file("templates", template, 
                                      package = source_package, mustWork = TRUE)
@@ -62,8 +63,8 @@ use_template <- function (template, save_as = template, data = list(),
 
 # adjust use_readme_rmd to not pass the argument \code{open} with use_template()
 # and fix the test on file.exists()
-use_readme_rmd <- function (pkg = ".", ...) {
-    pkg <- devtools::as.package(pkg)
+use_readme_rmd <- function (path = ".", ...) {
+    pkg <- devtools::as.package(path)
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }
@@ -86,8 +87,8 @@ use_news_md <- function (pkg = ".", ...) {
     invisible(NULL)
 }
 
-use_intro <- function (pkg = ".", ...) {
-    pkg <- devtools::as.package(pkg)
+use_intro <- function (path = ".", ...) {
+    pkg <- devtools::as.package(path)
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }

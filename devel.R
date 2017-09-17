@@ -10,15 +10,17 @@ base::getOption("packager")
 base::getOption("packager")[["could_force"]]
 path <- "."
 devtools::load_all(".")
-roxygen2::roxygenize(path)
-/ackager::use_intro()
-#create_devel(path = path)
+#
+packager::use_makefile(path = ".")
+roxygen2::roxygenize(packager.dir = path)
+packager::use_intro(path = path)
+packager::use_devel(path = path)
 packager::remove_Rproj(path = path)
 packager::use_git(path = path)
 packager::use_devtools(path = path)
 devtools::build_vignettes(pkg = path)
 # these functions should use documenation::alter_description_file
-packager::set_package_info(path = ".",
+packager::set_package_info(path = path,
                            title = "Helps Me Build Packages", 
                            author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de")),
                            description = "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.",
@@ -33,21 +35,16 @@ paths <- unlist(git2r::status(r))
 git2r::add(r, paths)
 git2r::commit(r, "packager changes")
 
-devtools::check(path)
-devtools::install(path)
-
-
-devtools::load_all(".")
-packager::provide_cran_comments("~/document/log/dev_check.Rout")
+packager::provide_cran_comments(path = path, travis_session_info = "travis-cli")
 auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "<fvafrcu@arcor.de>"))
 substitution <- list("Authors@R" = auth)
 document::alter_description_file(path = path, s = substitution)
-packager::provide_throw(".")
+packager::provide_throw(path = ".")
 
-packager::use_directory("log", ignore = TRUE)
-# file.copy Makefile projectroot forced = is_true_or_null
-devtools::use_build_ignore("Makefile", pkg = path)
+packager::use_directory("log", pkg = path, ignore = TRUE)
+
 devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
 devtools::use_build_ignore(paste0(devtools::as.package(path)$package, ".Rcheck"), pkg = path)
 packager::use_git_ignore("*.tar.gz", path = path)
 packager::use_git_ignore(paste0(devtools::as.package(path)$package, ".Rcheck"), path = path)
+packager::provide_makefile(path = path)
