@@ -42,7 +42,6 @@ use_template <- function(template, save_as = template, data = list(),
     status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)
-    print(force)
     if (! file.exists(path) || isTRUE(force)) {
         template_path <- system.file("templates", template, 
                                      package = source_package, mustWork = TRUE)
@@ -119,7 +118,7 @@ use_devtools <- function(path = ".") {
     pkg <- devtools::as.package(path)
     result <- NULL
     result <- c(result, use_news_md(pkg = path))
-    result <- c(result, use_readme_rmd(pkg = path))
+    result <- c(result, use_readme_rmd(path = path))
     # add imports to description
     if (pkg[["package"]] == "packager") { 
         result <- c(result, devtools::use_package("devtools"), pkg = path)

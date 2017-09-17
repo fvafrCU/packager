@@ -12,6 +12,9 @@ Best, Dominik
 - R Under development (unstable) (2017-08-17 r73106)
   Platform: x86_64-pc-linux-gnu (64-bit)
   Running under: Devuan GNU/Linux 1 (jessie)
+- R version 3.4.1 (2017-01-27)
+  Platform: x86_64-pc-linux-gnu (64-bit)
+  Running under: Ubuntu 14.04.5 LTS
 - win-builder (devel)
 
 ## R CMD check results
