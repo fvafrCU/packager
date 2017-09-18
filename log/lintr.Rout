@@ -118,52 +118,52 @@ R/devtools.R:39:52: style: Trailing whitespace is superfluous.
 R/devtools.R:40:54: style: Trailing whitespace is superfluous.
                          source_package = "packager", 
                                                      ^
-R/devtools.R:47:60: style: Trailing whitespace is superfluous.
+R/devtools.R:46:60: style: Trailing whitespace is superfluous.
         template_path <- system.file("templates", template, 
                                                            ^
-R/devtools.R:49:74: style: Trailing whitespace is superfluous.
+R/devtools.R:48:74: style: Trailing whitespace is superfluous.
         template_out <- whisker::whisker.render(readLines(template_path), 
                                                                          ^
-R/devtools.R:59:65: style: Trailing whitespace is superfluous.
+R/devtools.R:58:65: style: Trailing whitespace is superfluous.
        warning("`", save_as, "` already exists.", call. = FALSE) 
                                                                 ^
-R/devtools.R:72:68: style: Trailing whitespace is superfluous.
+R/devtools.R:71:68: style: Trailing whitespace is superfluous.
     use_template("omni-README", save_as = "README.Rmd", data = pkg, 
                                                                    ^
-R/devtools.R:75:71: style: Trailing whitespace is superfluous.
+R/devtools.R:74:71: style: Trailing whitespace is superfluous.
     if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git", 
                                                                       ^
-R/devtools.R:78:1: style: lines should not be more than 80 characters.
+R/devtools.R:77:1: style: lines should not be more than 80 characters.
         devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:78:90: style: Trailing whitespace is superfluous.
+R/devtools.R:77:90: style: Trailing whitespace is superfluous.
         devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
                                                                                          ^
-R/devtools.R:96:51: style: Trailing whitespace is superfluous.
+R/devtools.R:95:51: style: Trailing whitespace is superfluous.
     vignette_name <- paste0("An_Introduction_to_", 
                                                   ^
-R/devtools.R:99:6: style: Commented code should be removed.
+R/devtools.R:98:6: style: Commented code should be removed.
     #devtools::use_vignette(vignette_name, pkg = path)
      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:106:61: style: Trailing whitespace is superfluous.
+R/devtools.R:105:61: style: Trailing whitespace is superfluous.
     use_template("vignette.Rmd", save_as = path, data = pkg, 
                                                             ^
-R/devtools.R:113:61: style: Trailing whitespace is superfluous.
+R/devtools.R:112:61: style: Trailing whitespace is superfluous.
     use_template("travis.yml", ".travis.yml", ignore = TRUE, 
                                                             ^
-R/devtools.R:124:41: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+R/devtools.R:123:41: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     if (pkg[["package"]] == "packager") { 
                                         ^
-R/devtools.R:124:42: style: Trailing whitespace is superfluous.
+R/devtools.R:123:42: style: Trailing whitespace is superfluous.
     if (pkg[["package"]] == "packager") { 
                                          ^
+R/devtools.R:170:1: style: Trailing blank lines are superfluous.
+
+^
 R/devtools.R:171:1: style: Trailing blank lines are superfluous.
 
 ^
 R/devtools.R:172:1: style: Trailing blank lines are superfluous.
-
-^
-R/devtools.R:173:1: style: Trailing blank lines are superfluous.
 
 ^
 R/tools.R:16:71: style: Trailing whitespace is superfluous.

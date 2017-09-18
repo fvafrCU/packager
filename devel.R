@@ -18,7 +18,7 @@ create <- function(path, force = TRUE, ...) {
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
     git2r::commit(r, "Initial Commit")
-    infect(path = package_path)
+    infect(path = path)
     return(invisible(NULL))
 }
 
@@ -32,9 +32,8 @@ infect <- function(path, ...) {
     use_devel(path = path)
     remove_Rproj(path = path)
     use_devtools(path = path)
-    print("foo")
     auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", 
-                                      "<fvafrcu@arcor.de>"))
+                                      "fvafrcu@arcor.de"))
     set_package_info(path = path, auth = auth)
     use_bsd2clause_license(path = path)
     substitution <- list("Authors@R" = auth)

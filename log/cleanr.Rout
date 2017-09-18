@@ -10,7 +10,7 @@
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  parse_deps  line 18: found width 95 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  suggests_dep  line 1: found width 83 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  summarise_check_results  line 4: found width 84 max_line_width was 80
-R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R: line 78 counts 90 characters.
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R: line 77 counts 90 characters.
  /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R  use_readme_rmd  line 12: found width 90 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R  use_template  found 7 arguments, max_num_arguments was 5
 R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 27 counts 81 characters.
