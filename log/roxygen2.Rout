@@ -38,5 +38,14 @@ The following object is masked from ‘package:devtools’:
 
     document
 
+Loading required package: withr
+
+Attaching package: ‘withr’
+
+The following objects are masked from ‘package:devtools’:
+
+    with_collate, with_envvar, with_libpaths, with_locale,
+    with_makevars, with_options, with_par, with_path
+
 > 
 > 

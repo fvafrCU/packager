@@ -123,6 +123,7 @@ use_devtools <- function(path = ".") {
     if (pkg[["package"]] == "packager") { 
         result <- c(result, devtools::use_package("devtools"), pkg = path)
         result <- c(result, devtools::use_package("git2r"), pkg = path)
+        result <- c(result, devtools::use_package("withr"), pkg = path)
     }
     return(result)
 }

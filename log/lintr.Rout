@@ -157,13 +157,31 @@ R/devtools.R:123:41: style: Opening curly braces should never go on their own li
 R/devtools.R:123:42: style: Trailing whitespace is superfluous.
     if (pkg[["package"]] == "packager") { 
                                          ^
-R/devtools.R:170:1: style: Trailing blank lines are superfluous.
-
-^
 R/devtools.R:171:1: style: Trailing blank lines are superfluous.
 
 ^
 R/devtools.R:172:1: style: Trailing blank lines are superfluous.
+
+^
+R/devtools.R:173:1: style: Trailing blank lines are superfluous.
+
+^
+R/main.R:15:79: style: Trailing whitespace is superfluous.
+    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]], 
+                                                                              ^
+R/main.R:22:1: style: lines should not be more than 80 characters.
+    auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/main.R:22:81: style: Trailing whitespace is superfluous.
+    auth <- sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", 
+                                                                                ^
+R/main.R:31:67: style: Trailing whitespace is superfluous.
+    use_git_ignore(paste0(devtools::as.package(path)[["package"]], 
+                                                                  ^
+R/main.R:35:12: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+    } else { # run at least roxygen
+           ^
+R/main.R:43:1: style: Trailing blank lines are superfluous.
 
 ^
 R/tools.R:16:71: style: Trailing whitespace is superfluous.
