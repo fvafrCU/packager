@@ -1,1 +1,4 @@
-- pour devel into a functions: create and infect
+- write unit test
+- runit.R didn't find project root on windoof. Fix that
+- document and export at least the functions in main.
+- get devtools_internals.R from apropriate fixed commit.
