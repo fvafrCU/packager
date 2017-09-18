@@ -43,6 +43,7 @@ infect <- function(path, ...) {
     use_git_ignore("*.tar.gz", path = path)
     use_git_ignore(paste0(devtools::as.package(path)[["package"]], 
                                     ".Rcheck"), path = path)
+    roxygen2::roxygenize(package.dir = path)
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
     git2r::commit(r, "Packager Changes")

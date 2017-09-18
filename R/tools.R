@@ -302,6 +302,10 @@ provide_throw <- function(path,
 
     suppressMessages(devtools::use_package("RUnit", type = "Suggests", 
                                            pkg = path))
+    suppressMessages(devtools::use_package("devtools", type = "Suggests", 
+                                           pkg = path))
+    suppressMessages(devtools::use_package("rprojroot", type = "Suggests", 
+                                           pkg = path))
     file <- "runit.R"
     file_path <- file.path("tests", file)
     use_template(file, save_as = file_path, data = pkg, 

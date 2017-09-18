@@ -539,26 +539,30 @@
 546              R/tools.R           provide_throw  306     0
 547              R/tools.R           provide_throw  307     0
 548              R/tools.R           provide_throw  308     0
-549              R/tools.R           provide_throw  310     0
-550              R/tools.R           provide_throw  311     0
-551              R/tools.R           provide_throw  312     0
-552              R/tools.R           provide_throw  313     0
+549              R/tools.R           provide_throw  309     0
+550              R/tools.R           provide_throw  310     0
+551              R/tools.R           provide_throw  311     0
+552              R/tools.R           provide_throw  312     0
 553              R/tools.R           provide_throw  314     0
-554              R/tools.R           provide_throw  316     0
-555              R/tools.R           provide_throw  317     0
-556              R/tools.R           provide_throw  318     0
-557              R/tools.R           provide_throw  319     0
-558              R/tools.R           provide_throw  321     0
-559              R/tools.R               use_devel  327     0
-560              R/tools.R               use_devel  328     0
-561              R/tools.R               use_devel  329     0
-562              R/tools.R               use_devel  330     0
-563              R/tools.R            use_makefile  336     0
-564              R/tools.R            use_makefile  337     0
-565              R/tools.R            use_makefile  338     0
+554              R/tools.R           provide_throw  315     0
+555              R/tools.R           provide_throw  316     0
+556              R/tools.R           provide_throw  317     0
+557              R/tools.R           provide_throw  318     0
+558              R/tools.R           provide_throw  320     0
+559              R/tools.R           provide_throw  321     0
+560              R/tools.R           provide_throw  322     0
+561              R/tools.R           provide_throw  323     0
+562              R/tools.R           provide_throw  325     0
+563              R/tools.R               use_devel  331     0
+564              R/tools.R               use_devel  332     0
+565              R/tools.R               use_devel  333     0
+566              R/tools.R               use_devel  334     0
+567              R/tools.R            use_makefile  340     0
+568              R/tools.R            use_makefile  341     0
+569              R/tools.R            use_makefile  342     0
 1                R/utils.R         is_null_or_true    1     0
 2                R/utils.R                is_force    2     0
-packager Coverage: 1.06%
+packager Coverage: 1.05%
 R/devtools_internals.R: 0.00%
 R/devtools.R: 0.00%
 R/tools.R: 0.00%
