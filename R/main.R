@@ -9,7 +9,7 @@ create <- function(path, force = TRUE, ...) {
     return(invisible(NULL))
 }
 
-infect <- function(path, make = TRUE, ...) {
+infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
     r <- git2r::init(path = path)
     devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
     devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]], 
@@ -32,8 +32,10 @@ infect <- function(path, make = TRUE, ...) {
         roxygen2::roxygenize(package.dir = path)
     }
     paths <- unlist(git2r::status(r))
-    git2r::add(r, paths)
-    git2r::commit(r, "Packager Changes")
+    if (isTRUE(git_add_and_commit)) {
+            git2r::add(r, paths)
+            git2r::commit(r, "Packager Changes")
+    }
     return(invisible(NULL))
 }
 

@@ -21,5 +21,6 @@ packager::infect(path = ".",
                  title = "Helps Me Build Packages", 
                  author_at_r = sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de")),
                  description = "This is a set of wrappers around `devtools` and `MakefileR` and some sanity checks for developing packages.",
-                 details = "I find devtools very helpful, but not helpful enough.\nSo this is my highly personalised extension." )
+                 details = "I find devtools very helpful, but not helpful enough.\nSo this is my highly personalised extension." ,
+                 make = FALSE, git_add_and_commit = FALSE)
 }
