@@ -2,7 +2,7 @@
 #'
 #' Throws a condition of class c("error", "{{{ package }}}", "condition").
 #'
-#' We use this condition as an error dedicated to \pkg{ {{{ package}}} }.
+#' We use this condition as an error dedicated to \pkg{ {{{ package}}}.}
 #'
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @keywords internal
