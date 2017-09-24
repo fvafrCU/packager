@@ -1,6 +1,6 @@
 create <- function(path, force = TRUE, ...) {
     if (isTRUE(force)) unlink(path, recursive = TRUE)
-    devtools::create(path = path, rstudio = FALSE, check = FALSE, quiet = TRUE)
+    devtools::create(path = path, rstudio = FALSE, check = FALSE)
     r <- git2r::init(path = path)
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
