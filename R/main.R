@@ -73,23 +73,10 @@ infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
     if (length(Sys.which("make")) != 0 && isTRUE(make)) {
         withr::with_dir(path, {
                             roxygen2::roxygenize(package.dir = ".");
-                            devtools::load_all("."); print("hurray!"); 
+                            devtools::load_all(".")
                             Sys.setenv("R_HOME" = Sys.which("R-devel"))
-                            print(Sys.getenv("R_HOME"))
                             system("make")})
 
-        ow <- setwd(path)
-        roxygen2::roxygenize(package.dir = ".");
-        devtools::load_all("."); print("huppah!"); 
-        Sys.setenv("R_HOME" = Sys.which("R-devel"))
-        print(Sys.getenv("R_HOME"))
-        print("huppah!"); 
-
-        system("make dependencies")
-        print("HUPPAH!"); 
-
-        system("make ")
-        setwd(ow)
     } else { # run at least roxygen
         roxygen2::roxygenize(package.dir = path)
     }
@@ -105,8 +92,6 @@ infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
 #'
 #' Fill DESCRIPTION and R/xxx-package.R with the same Title and Description,
 #' keeping the info given in both places identical.
-#'
-#' 
 #'
 #' @param path Path to the package.
 #' @param author_at_r A string giving the author. See \code{\link{author_at_r}}.

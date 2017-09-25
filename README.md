@@ -32,8 +32,8 @@ help("packager-package", package = "packager")
 #> 
 #> Details:
 #> 
-#>      I find devtools very helpful, but not helpful enough. So this very
-#>      personalised is my extension.
+#>      I find devtools very helpful, but not helpful enough. So this is
+#>      my highly personalised extension.
 ```
 
 ## Installation

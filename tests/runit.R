@@ -6,9 +6,12 @@ is_failure <- function(result) {
     fail <- as.logical(sum_of_exceptions)
     return(fail)
 }
-devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
-                              # base::system.file()
 unit_dir <- system.file("tests", "runit", package = "packager")
+if (unit_dir == "") {
+    devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
+    # base::system.file()
+    unit_dir <- system.file("tests", "runit", package = "packager")
+}
 package_suite <- RUnit::defineTestSuite("packager_unit_test",
                                         dirs = unit_dir,
                                         testFileRegexp = "^.*\\.[rR]",
