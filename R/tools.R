@@ -289,7 +289,7 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
     return(status)
 }
 
-provide_throw <- function(path, 
+provide_throw <- function(path = ".", 
                           force = is_force(),
                           ...) {
     devtools::use_testthat(pkg = path)
