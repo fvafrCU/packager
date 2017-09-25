@@ -9,7 +9,9 @@ base::options(packager = list(could_force = TRUE, should_force = FALSE))
 base::getOption("packager")
 base::getOption("packager")[["could_force"]]
 devtools::load_all(".")
+packager::provide_throw()
 # test logic
+devtools::load_all(".")
 d <- "/tmp/foo"
 packager::create(path = d) 
 l <- dir(d, recursive = TRUE, full.names = TRUE)

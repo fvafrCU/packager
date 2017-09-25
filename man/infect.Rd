@@ -2,28 +2,37 @@
 % Please edit documentation in R/main.R
 \name{infect}
 \alias{infect}
-\title{Throw a Condition}
+\title{Adjust a Package}
 \usage{
 infect(path, make = TRUE, git_add_and_commit = TRUE, ...)
 }
 \arguments{
-\item{...}{Arguments to be passed to \code{\link{structure}}.}
+\item{path}{Path to the package to get infected.}
 
-\item{message_string}{The message to be thrown.}
+\item{make}{Try to use make on the infected package?
+Option to be disabled for testing.}
 
-\item{system_call}{The call to be thrown.}
+\item{git_add_and_commit}{Add and commit changes in git? 
+Option to be disabled for testing.}
+
+\item{...}{Arguments to be passed to \code{\link{set_package_info}}.}
 }
 \value{
-FALSE. But it does not return anything, it stops with a
+\code{\link[base:invisible]{Invisibly}}
+\code{\link[base:NULL]{NULL}}.
 condition of class c("error", "packager", "condition").
 }
 \description{
-Throws a condition of class c("error", "packager", "condition").
+Add a variety of extensions to a package (skeleton).
 }
 \details{
-We use this condition as an error dedicated to \pkg{ packager }.
+This is \pkg{packager}'s core.
 }
 \examples{
-tryCatch(packager:::throw("Hello error!"), packager = function(e) return(e))
+path <- file.path(tempdir(), "myPackage")
+devtools::create(path = path)
+l1 <- list.files(path, recursive = TRUE, full.names = TRUE)
+packager::infect(path = path)
+l2 <- list.files(path, recursive = TRUE, full.names = TRUE)
+print(l1); print(l2)
 }
-\keyword{internal}

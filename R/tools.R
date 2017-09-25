@@ -149,13 +149,6 @@ use_bsd2clause_license <- function (path = ".") {
     return(invisible(NULL))
 }
 
-author_at_r <- function(given, family, email) {
-    author_at_r <- paste0("person(given = \"", given, 
-                          "\", family = \"", family, 
-                          "\", email = \"", email, 
-                          "\", role = c(\"aut\", \"cre\"))")
-    return(author_at_r)
-}
 
 get_news <- function(path = ".") {
     root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package, 
@@ -208,22 +201,12 @@ update_description <- function(path = ".",
                                ) {
     if (is.null(author_at_r)) message("Argument 'author_at_r' is missing. ", 
                                  "Use\n\t", 
-                                 'packager::sub("(email)", "\n\t\\1", author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))',
+                                 'sub("(email)", "\n\t\\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))',
                                  "\nfor example")
     s <- list(Title = title, Description = description, 
               "Authors@R" = author_at_r)
     res <- document::alter_description_file(path = path, substitution = s)
     return(invisible(res))
-}
-
-set_package_info <- function(path, author_at_r = NULL, title = NULL, 
-                             description = NULL, details = NULL) {
-    r1 <- update_description(path = path, title = title, 
-                             description = description, 
-                             author_at_r = author_at_r)
-    r2 <- create_package_help(path = path, title = title, 
-                              description = description, details = details)
-    return(invisible(list(r1, r2)))
 }
 
 grep_directory <- function(path, pattern, exclude = NULL) {

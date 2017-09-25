@@ -1,9 +1,3 @@
-[1] "./man/check_codetags.Rd:   pattern = \"XXX:|FIXME:|TODO:\")"                                                                             
-[2] "./packager.Rcheck/00_pkg_src/packager/man/check_codetags.Rd:   pattern = \"XXX:|FIXME:|TODO:\")"                                         
-[3] "./packager.Rcheck/00_pkg_src/packager/R/tools.R:                            pattern =  \"XXX:|FIXME:|TODO:\") {"                         
-[4] "./packager.Rcheck/00_pkg_src/packager/R/tools.R:         news <- \"\\nXXX: State your changes and consider using a NEWS.md\\n\\n\""      
-[5] "./packager.Rcheck/00_pkg_src/packager/R/tools.R:                       pkg$package, \"'.\\n\\n\", \"XXX: Describe what it does.\\n\\n\","
-[6] "./R/tools.R:                            pattern =  \"XXX:|FIXME:|TODO:\") {"                                                             
-[7] "./R/tools.R:         news <- \"\\nXXX: State your changes and consider using a NEWS.md\\n\\n\""                                          
-[8] "./R/tools.R:                       pkg$package, \"'.\\n\\n\", \"XXX: Describe what it does.\\n\\n\","                                    
-There were 50 or more warnings (use warnings() to see the first 50)
+Error in loadNamespace(name) : there is no package called ‘packager’
+Calls: :: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted

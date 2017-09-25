@@ -7,14 +7,13 @@
 create(path, force = TRUE, ...)
 }
 \arguments{
+\item{path}{See \code{\link[devtools:create]{devtools::create}}.}
+
 \item{...}{Arguments to be passed to \code{\link{structure}}.}
-
-\item{message_string}{The message to be thrown.}
-
-\item{system_call}{The call to be thrown.}
 }
 \value{
-FALSE. But it does not return anything, it stops with a
+\code{\link[base:invisible]{Invisibly}}
+\code{\link[base:NULL]{NULL}}.
 condition of class c("error", "packager", "condition").
 }
 \description{
@@ -23,5 +22,7 @@ This is just a wrapper to create a package using
 infect it using \code{\link{infect}}.
 }
 \examples{
-tryCatch(packager:::throw("Hello error!"), packager = function(e) return(e))
+path <- file.path(tempdir(), "myPackage")
+packager::create(path = path)
+list.files(path)
 }

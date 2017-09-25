@@ -1,10 +1,6 @@
   WORD           FOUND IN
-adc            throw.Rd:30
-arcor          throw.Rd:30
 cli            provide_cran_comments.Rd:27
 cran           provide_cran_comments.Rd:33,34,37
-Cullmann       throw.Rd:30
-de             throw.Rd:30
 dev            check_codetags.Rd:22, provide_cran_comments.Rd:12
 devtools       packager-package.Rd:8,12, description:1
 Devtools       provide_cran_comments.Rd:37

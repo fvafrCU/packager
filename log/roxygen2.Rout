@@ -47,8 +47,10 @@ The following objects are masked from ‘package:devtools’:
     with_collate, with_envvar, with_libpaths, with_locale,
     with_makevars, with_options, with_par, with_path
 
+Writing NAMESPACE
 Writing create.Rd
 Writing infect.Rd
-Writing throw.Rd
+Writing set_package_info.Rd
+Writing author_at_r.Rd
 > 
 > 
