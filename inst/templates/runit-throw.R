@@ -1,3 +1,3 @@
 test_exception <- function() {
-    RUnit::checkException(throw("Hello, error!"))
+    RUnit::checkException({{{package}}}:::throw("Hello, error!"))
 }

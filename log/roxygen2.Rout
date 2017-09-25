@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2017-08-17 r73106) -- "Unsuffered Consequences"
+R Under development (unstable) (2017-08-18 r73107) -- "Unsuffered Consequences"
 Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -47,5 +47,8 @@ The following objects are masked from ‘package:devtools’:
     with_collate, with_envvar, with_libpaths, with_locale,
     with_makevars, with_options, with_par, with_path
 
+Writing create.Rd
+Writing infect.Rd
+Writing throw.Rd
 > 
 > 

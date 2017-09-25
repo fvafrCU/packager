@@ -4,12 +4,11 @@
 #'
 #' We use this condition as an error dedicated to \pkg{ {{{ package}}}.}
 #'
-#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
-#' @keywords internal
 #' @param message_string The message to be thrown.
 #' @param system_call The call to be thrown.
-#' @param ... Arguments to be passed to \code{\link{structure}}.
-#' @return FALSE. But it does not return anything, it stops with a
+#' @param ... Arguments to be passed to
+#' \code{\link[base:structure]{base::structure}}.
+#' @return The function does never return anything, it stops with a
 #' condition of class c("error", "{{{ package }}}", "condition").
 #' @keywords internal
 #' @examples

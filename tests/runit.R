@@ -6,7 +6,8 @@ is_failure <- function(result) {
     fail <- as.logical(sum_of_exceptions)
     return(fail)
 }
-devtools::load_all()
+devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
+                              # base::system.file()
 unit_dir <- system.file("tests", "runit", package = "packager")
 package_suite <- RUnit::defineTestSuite("packager_unit_test",
                                         dirs = unit_dir,
@@ -15,6 +16,7 @@ package_suite <- RUnit::defineTestSuite("packager_unit_test",
 test_result <- RUnit::runTestSuite(package_suite)
 root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
                  error = function(e) return(NULL))
+
 if (! is.null(root)) {
     log_dir <- file.path(root, "log")
     dir.create(log_dir, showWarnings = FALSE)
@@ -27,5 +29,6 @@ if (! is.null(root)) {
 } else {
     file_name <- ""
 }
+
 RUnit::printTextProtocol(test_result, showDetails = TRUE, fileName = file_name)
 if (is_failure(test_result)) stop("RUnit failed. ", print(test_result))
