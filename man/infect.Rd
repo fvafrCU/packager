@@ -33,6 +33,7 @@ path <- file.path(tempdir(), "myPackage")
 devtools::create(path = path)
 l1 <- list.files(path, recursive = TRUE, full.names = TRUE)
 packager::infect(path = path)
+unlink(path, recursive = TRUE)
 l2 <- list.files(path, recursive = TRUE, full.names = TRUE)
 print(l1); print(l2)
 }

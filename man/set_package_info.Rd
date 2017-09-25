@@ -39,4 +39,5 @@ package_info_file <- file.path(path,
                                "R", paste0(basename(path), "-package.R"))
 readLines(package_desc)
 readLines(package_info_file)
+unlink(path, recursive = TRUE)
 }

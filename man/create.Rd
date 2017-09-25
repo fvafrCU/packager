@@ -9,6 +9,9 @@ create(path, force = TRUE, ...)
 \arguments{
 \item{path}{See \code{\link[devtools:create]{devtools::create}}.}
 
+\item{force}{Recursively \code{\link{unlink}} the path before calling
+\code{\link[devtools:create]{devtools::create}(path)}?}
+
 \item{...}{Arguments to be passed to \code{\link{structure}}.}
 }
 \value{
@@ -25,4 +28,5 @@ infect it using \code{\link{infect}}.
 path <- file.path(tempdir(), "myPackage")
 packager::create(path = path)
 list.files(path)
+unlink(path, recursive = TRUE)
 }

@@ -17,5 +17,6 @@ sessionInfo    provide_cran_comments.Rd:19
 travis         provide_cran_comments.Rd:20,22,27
 Ubuntu         provide_cran_comments.Rd:25
 www            check_codetags.Rd:22
+xxx            author_at_r.Rd:18, set_package_info.Rd:23,26
 Warning message:
 spell check failed 

@@ -6,6 +6,8 @@
 #'
 #'
 #' @param path See \code{\link[devtools:create]{devtools::create}}.
+#' @param force Recursively \code{\link{unlink}} the path before calling
+#' \code{\link[devtools:create]{devtools::create}(path)}?
 #' @param ... Arguments to be passed to \code{\link{structure}}.
 #' @return \code{\link[base:invisible]{Invisibly}}
 #' \code{\link[base:NULL]{NULL}}.
@@ -15,6 +17,7 @@
 #' path <- file.path(tempdir(), "myPackage")
 #' packager::create(path = path)
 #' list.files(path)
+#' unlink(path, recursive = TRUE)
 create <- function(path, force = TRUE, ...) {
     if (isTRUE(force)) unlink(path, recursive = TRUE)
     devtools::create(path = path, rstudio = FALSE, check = FALSE)
@@ -47,6 +50,7 @@ create <- function(path, force = TRUE, ...) {
 #' devtools::create(path = path)
 #' l1 <- list.files(path, recursive = TRUE, full.names = TRUE)
 #' packager::infect(path = path)
+#' unlink(path, recursive = TRUE)
 #' l2 <- list.files(path, recursive = TRUE, full.names = TRUE)
 #' print(l1); print(l2)
 infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
@@ -125,6 +129,7 @@ infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
 #'                                "R", paste0(basename(path), "-package.R"))
 #' readLines(package_desc)
 #' readLines(package_info_file)
+#' unlink(path, recursive = TRUE)
 set_package_info <- function(path, author_at_r = NULL, title = NULL, 
                              description = NULL, details = NULL) {
     r1 <- update_description(path = path, title = title, 

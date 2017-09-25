@@ -1,10 +1,23 @@
+checking top-level files ... WARNING
+Conversion of ‘README.md’ failed:
+pandoc: Could not fetch https://travis-ci.org/fvafrCU/packager.svg?branch=master
+InvalidProxyEnvironmentVariable "https_proxy" "https://10.127.255.17:8080"
+
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
 
 Version contains large components (0.0.0.9000)
-displaying logs for fvafrCU/packager#48.1
-Warning message:
-In readLines("/etc/os-release") :
-  incomplete final line found on '/etc/os-release'
+
+checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+         user system elapsed
+create 39.700  3.040  52.966
+infect 38.184  2.732  50.636
+SSL error: could not verify peer
+Error in (k + 1):(k + 3) : argument of length 0
+Calls: <Anonymous>
+In addition: Warning message:
+running command ''sudo' travis logs --repo fvafrCU/packager' had status 1 
+Execution halted
