@@ -14,10 +14,8 @@
 #' @examples
 #' tryCatch({{{ package }}}:::throw("Hello error!"), {{{ package }}} = function(e) return(e))
 throw <- function(message_string, system_call = sys.call(-1), ...) {
-    condition <- structure(
-                           class = c("error", "{{{ package }}}", "condition"),
+    condition <- structure(class = c("error", "{{{ package }}}", "condition"),
                            list(message = message_string, call = system_call),
-                           ...
-                           )
+                           ...)
     stop(condition)
 }
