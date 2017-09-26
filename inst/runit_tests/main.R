@@ -1,4 +1,4 @@
-test_exception <- function() {
+notest_exception <- function() {
     if (interactive()) devtools::load_all(".")
     d <- file.path(tempdir(), "prutp")
     packager::create(path = d) 
@@ -10,4 +10,3 @@ test_exception <- function() {
     RUnit::checkIdentical(result, expected, 
                           msg = "Value of digest::sha1() differs!")
 }
-
