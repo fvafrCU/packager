@@ -3,11 +3,15 @@ test_create <- function() {
     d <- file.path(tempdir(), "prutp")
     on.exit(unlink(d, recursive = TRUE))
     packager::create(path = d, make = FALSE) 
-    l <- dir(d, recursive = TRUE, full.names = FALSE)
-    # checking on file contents will not work as timestamps and proc.time()
+    files <- dir(d, recursive = TRUE, full.names = FALSE)
+    # checking on file contents may not work as timestamps and proc.time()
     # recordings in files will change. 
-    result <- digest::sha1(l)
-    expected <- "2a1fc4c64dedd343705c0716da7a15751df798d7"
+    f <- dir(d, recursive = TRUE, full.names = TRUE)
+    contents <- sapply(f, readLines)
+    names(contents) <- files
+    contents <- sapply(contents, function(x) grep("date", x, value = TRUE, invert = TRUE))
+    result <- digest::sha1(c(contents, files))
+    expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
     RUnit::checkIdentical(result, expected, 
                           msg = "Value of digest::sha1() differs!")
 }

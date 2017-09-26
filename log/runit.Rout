@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp8EwiA5'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpOkdLSa'
 No DESCRIPTION found. Creating with values:
 
 
@@ -36,9 +36,9 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmp8EwiA5/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmp8EwiA5/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmp8EwiA5/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/RtmpOkdLSa/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpOkdLSa/prutp/.gitignore
+Updating roxygen version in /tmp/RtmpOkdLSa/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
@@ -47,5 +47,8 @@ Writing throw.Rd
 
 
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
+In addition: Warning message:
+In FUN(X[[i]], ...) :
+  incomplete final line found on '/tmp/RtmpOkdLSa/prutp/LICENSE'
  done successfully.
 
