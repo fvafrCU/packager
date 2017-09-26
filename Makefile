@@ -22,6 +22,13 @@ Rscript = Rscript-devel
 .PHONY: all
 all: $(LOG_DIR)/install.Rout
 
+# miscell
+.PHONY: $(LOG_DIR)/info.Rout
+$(LOG_DIR)/info.Rout: Makefile $(LOG_DIR)
+	$(Rscript) --vanilla -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/"); sessionInfo()' >  $(LOG_DIR)/info.Rout 2>&1 
+
+
+
 # devel stuff
 .PHONY: devel
 devel: vignettes build_win release use_dev_version tag_release
