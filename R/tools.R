@@ -289,21 +289,28 @@ provide_throw <- function(path = ".",
                                            pkg = path))
     suppressMessages(devtools::use_package("rprojroot", type = "Suggests", 
                                            pkg = path))
+    file <- "test-throw.R"
+    file_path <- file.path("tests", "testthat", file)
+    use_template(file, save_as = file_path, data = pkg, 
+                 ignore = FALSE, pkg = pkg[["path"]], force = force, ...)
+
     file <- "runit.R"
     file_path <- file.path("tests", file)
     use_template(file, save_as = file_path, data = pkg, 
                  ignore = FALSE, pkg = pkg[["path"]], force = force, ...)
 
-    dir.create(file.path(pkg[["path"]], "tests", "runit"), showWarnings = FALSE)
+    relative_path <- file.path("inst", "runit_tests")
+    dir.create(file.path(pkg[["path"]], relative_path), 
+               showWarnings = FALSE, recursive = TRUE)
+    if (.Platform$OS.type != "windows") {
+        file.symlink(file.path(pkg[["path"]], relative_path),
+                     file.path(pkg[["path"]], "tests", basename(relative_path)))
+    }
     file <- "runit-throw.R"
-    file_path <- file.path("tests", "runit", file)
+    file_path <- file.path(relative_path, file)
     use_template(file, save_as = file_path, data = pkg, 
                  ignore = FALSE, pkg = pkg[["path"]], force = force, ...)
 
-    file <- "test-throw.R"
-    file_path <- file.path("tests", "testthat", file)
-    use_template(file, save_as = file_path, data = pkg, 
-                 ignore = FALSE, pkg = pkg[["path"]], force = force, ...)
 
     return(NULL)
 }

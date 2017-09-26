@@ -1,18 +1,27 @@
 #!/usr/bin/Rscript --vanilla
 is_failure <- function(result) {
-    res <- result[[1]]
+    res <- RUnit::getErrors(result)
     names(res) <- tolower(names(res)) # soothe lintr
     sum_of_exceptions <- res[["nerr"]] + res[["nfail"]]
     fail <- as.logical(sum_of_exceptions)
     return(fail)
 }
-unit_dir <- system.file("tests", "runit", package = {{{ package }}})
-if (unit_dir == "") {
+
+if (interactive()) {
     devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
-    # base::system.file()
-    unit_dir <- system.file("tests", "runit", package = {{{ package }}})
+    # base's system.file
+    unit_dir <- system.file("tests", "runit", package = "{{{ packager }}}")
+} else {
+    unit_dir <- file.path("tests", "runit")
 }
-package_suite <- RUnit::defineTestSuite("{{{ package }}}_unit_test",
+if (unit_dir == "" || ! dir.exists(unit_dir)) {
+    # https://www.rdocumentation.org/packages/RUnit/versions/0.4.31
+    pkgname <- "{{{ packager }}}"
+    require(pkgname, quietly=TRUE, character.only=TRUE) || 
+        stop("package '", pkgname, "' not found")
+    unit_dir <- system.file("tests", "runit", package = "{{{ packager }}}")
+}
+package_suite <- RUnit::defineTestSuite("{{{ packager }}}_unit_test",
                                         dirs = unit_dir,
                                         testFileRegexp = "^.*\\.[rR]",
                                         testFuncRegexp = "^test_+")
