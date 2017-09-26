@@ -1,9 +1,5 @@
-Error in RUnit::runTestSuite(package_suite) : 
-  invalid test suite supplied.
-In addition: Warning messages:
-1: In isValidTestSuite(testSuites) :
-  'testSuite' object does not conform to S3 class definition.
-'dirs' element may not contain empty string.
-2: In isValidTestSuite(testSuites[[1]]) :
-  'testSuite' object is not of class 'RUnitTestSuite'.
-Execution halted
+
+
+Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
+ done successfully.
+

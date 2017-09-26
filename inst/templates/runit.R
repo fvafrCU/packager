@@ -10,25 +10,29 @@ is_failure <- function(result) {
 if (interactive()) {
     devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
     # base's system.file
-    unit_dir <- system.file("tests", "runit", package = "{{{ packager }}}")
+    unit_dir <- system.file("inst", "runit_tests", package = "{{{ package }}}")
 } else {
-    unit_dir <- file.path("tests", "runit")
+    r_call <- commandArgs(trailingOnly = FALSE)
+    if (any(grepl("--file", r_call))) {
+        unit_dir <- file.path("inst", "runit_tests")
+    } else {
+        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
+            stop("package '", pkgname, "' not found")
+        unit_dir <- system.file("runit_tests", package = "{{{ package }}}")
+    }
 }
-if (unit_dir == "" || ! dir.exists(unit_dir)) {
-    # https://www.rdocumentation.org/packages/RUnit/versions/0.4.31
-    pkgname <- "{{{ packager }}}"
-    require(pkgname, quietly=TRUE, character.only=TRUE) || 
-        stop("package '", pkgname, "' not found")
-    unit_dir <- system.file("tests", "runit", package = "{{{ packager }}}")
+if (! dir.exists(unit_dir)) {
+    stop("Can not find RUnit test directory ", unit_dir, 
+         ". Try to (re)install the package first.")
 }
-package_suite <- RUnit::defineTestSuite("{{{ packager }}}_unit_test",
+package_suite <- RUnit::defineTestSuite("{{{ package }}}_unit_test",
                                         dirs = unit_dir,
                                         testFileRegexp = "^.*\\.[rR]",
                                         testFuncRegexp = "^test_+")
 test_result <- RUnit::runTestSuite(package_suite)
+
 root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
                  error = function(e) return(NULL))
-
 if (! is.null(root)) {
     log_dir <- file.path(root, "log")
     dir.create(log_dir, showWarnings = FALSE)
@@ -41,6 +45,6 @@ if (! is.null(root)) {
 } else {
     file_name <- ""
 }
-
 RUnit::printTextProtocol(test_result, showDetails = TRUE, fileName = file_name)
+
 if (is_failure(test_result)) stop("RUnit failed. ", print(test_result))

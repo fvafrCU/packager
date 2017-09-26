@@ -18,8 +18,8 @@ R/   /home/nik/git/cs/fvafrcu/packager/R/tools.R: line 27 counts 81 characters.
 /home/nik/git/cs/fvafrcu/packager/R/tools.R: line 123 counts 84 characters.
 /home/nik/git/cs/fvafrcu/packager/R/tools.R: line 160 counts 88 characters.
 /home/nik/git/cs/fvafrcu/packager/R/tools.R: line 204 counts 135 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 324 counts 97 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: 326 lines in file.
+/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 331 counts 97 characters.
+/home/nik/git/cs/fvafrcu/packager/R/tools.R: 333 lines in file.
  /home/nik/git/cs/fvafrcu/packager/R/tools.R  check_news  line 19: found width 81 max_line_width was 80
 /home/nik/git/cs/fvafrcu/packager/R/tools.R  get_news  line 7: found width 88 max_line_width was 80
 /home/nik/git/cs/fvafrcu/packager/R/tools.R  provide_cran_comments  line 41: found width 82 max_line_width was 80
