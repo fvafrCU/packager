@@ -16,7 +16,7 @@ test_create <- function() {
                           msg = "Value of digest::sha1() differs!")
 }
 
-notest_create_make <- function() {
+test_create_make <- function() {
     if (interactive()) devtools::load_all(".")
     d <- file.path(tempdir(), "prutp")
     packager::create(path = d, make = TRUE) 
