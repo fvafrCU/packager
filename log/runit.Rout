@@ -1,5 +1,51 @@
 
 
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp8EwiA5'
+No DESCRIPTION found. Creating with values:
+
+
+Package: prutp
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends: R (>= 3.5.0)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+* Creating `Makefile` from template.
+* Adding `Makefile` to `.Rbuildignore`.
+* Creating `vignettes`.
+* Creating `vignettes/An_Introduction_to_prutp.Rmd` from template.
+* Creating `devel.R` from template.
+* Adding `devel.R` to `.Rbuildignore`.
+* Creating `NEWS.md` from template.
+* Creating `README.Rmd` from template.
+* Adding `README.Rmd` to `.Rbuildignore`.
+* Adding pre-commit hook
+Argument 'author_at_r' is missing. Use
+	sub("(email)", "
+	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
+for example
+* Adding testthat to Suggests
+* Creating `tests/testthat`.
+* Creating `tests/testthat.R` from template.
+* Creating `R/throw.R` from template.
+* Creating `tests/testthat/test-throw.R` from template.
+* Creating `tests/runit.R` from template.
+* Creating `inst/runit_tests/runit-throw.R` from template.
+* Creating `log`.
+* Adding `log` to `.Rbuildignore`.
+* Adding `*.tar.gz` to /tmp/Rtmp8EwiA5/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp8EwiA5/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmp8EwiA5/prutp/DESCRIPTION
+Writing NAMESPACE
+Writing prutp-package.Rd
+Writing throw.Rd
+ done successfully.
+
+
+
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
  done successfully.
 
