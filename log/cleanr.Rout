@@ -1,29 +1,29 @@
-<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 69 counts 82 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 99 counts 95 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 108 counts 83 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 132 counts 83 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 177 counts 94 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: line 295 counts 84 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R: 307 lines in file.
- /home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R  check_dep_version  line 12: found width 82 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R  check_suggested  line 14: found width 83 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R  parse_deps  line 18: found width 95 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R  suggests_dep  line 1: found width 83 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_internals.R  summarise_check_results  line 4: found width 84 max_line_width was 80
-R/   /home/nik/git/cs/fvafrcu/packager/R/devtools.R: line 77 counts 90 characters.
- /home/nik/git/cs/fvafrcu/packager/R/devtools.R  use_readme_rmd  line 12: found width 90 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools.R  use_template  found 7 arguments, max_num_arguments was 5
-R/   /home/nik/git/cs/fvafrcu/packager/R/tools.R: line 27 counts 81 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 122 counts 82 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 123 counts 84 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 160 counts 88 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 204 counts 135 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: line 331 counts 97 characters.
-/home/nik/git/cs/fvafrcu/packager/R/tools.R: 333 lines in file.
- /home/nik/git/cs/fvafrcu/packager/R/tools.R  check_news  line 19: found width 81 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/tools.R  get_news  line 7: found width 88 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/tools.R  provide_cran_comments  line 41: found width 82 max_line_width was 80
+<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 69 counts 82 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 99 counts 95 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 108 counts 83 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 132 counts 83 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 177 counts 94 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: line 295 counts 84 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R: 307 lines in file.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  check_dep_version  line 12: found width 82 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  check_suggested  line 14: found width 83 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  parse_deps  line 18: found width 95 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  suggests_dep  line 1: found width 83 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_internals.R  summarise_check_results  line 4: found width 84 max_line_width was 80
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R: line 77 counts 90 characters.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R  use_readme_rmd  line 12: found width 90 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools.R  use_template  found 7 arguments, max_num_arguments was 5
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 27 counts 81 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 122 counts 82 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 123 counts 84 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 160 counts 88 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 204 counts 135 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 327 counts 97 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 329 lines in file.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  check_news  line 19: found width 81 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  get_news  line 7: found width 88 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  line 41: found width 82 max_line_width was 80
 line 42: found width 84 max_line_width was 80
 provide_cran_comments  found 56 lines of code, max_lines_of_code was 50
-/home/nik/git/cs/fvafrcu/packager/R/tools.R  update_description  line 3: found width 135 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/tools.R  use_makefile  line 2: found width 97 max_line_width was 80>
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  update_description  line 3: found width 135 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  use_makefile  line 2: found width 97 max_line_width was 80>

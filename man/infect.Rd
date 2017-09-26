@@ -4,7 +4,7 @@
 \alias{infect}
 \title{Adjust a Package}
 \usage{
-infect(path, make = TRUE, git_add_and_commit = TRUE, ...)
+infect(path, make = FALSE, git_add_and_commit = TRUE, ...)
 }
 \arguments{
 \item{path}{Path to the package to get infected.}

@@ -12,4 +12,11 @@ The following object is masked from ‘package:devtools’:
     lint
 
 Loading required package: packager
+
+Attaching package: ‘packager’
+
+The following object is masked from ‘package:devtools’:
+
+    create
+
 Loading required package: roxygen2

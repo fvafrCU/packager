@@ -1,66 +1,39 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/main.R:1:2: style: Commented code should be removed.
-## test_exception <- function() {
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:1:2: style: Commented code should be removed.
-## test_exception <- function() {
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:2:2: style: Commented code should be removed.
-##     d <- file.path(tempdir(), "prutp")
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:2:2: style: Commented code should be removed.
-##     d <- file.path(tempdir(), "prutp")
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:3:2: style: Commented code should be removed.
-##     packager::create(path = d) 
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:3:2: style: Commented code should be removed.
-##     packager::create(path = d) 
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:4:2: style: Commented code should be removed.
-##     l <- dir(d, recursive = TRUE, full.names = FALSE)
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:4:2: style: Commented code should be removed.
-##     l <- dir(d, recursive = TRUE, full.names = FALSE)
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:5:2: style: Commented code should be removed.
-##     # checking on file contents will not work as timestamps and proc.time()
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:5:2: style: Commented code should be removed.
-##     # checking on file contents will not work as timestamps and proc.time()
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:7:2: style: Commented code should be removed.
-##     result <- digest::sha1(l)
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:7:2: style: Commented code should be removed.
-##     result <- digest::sha1(l)
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:8:2: style: Commented code should be removed.
-##     expected <- "76cb57ec226dd9ece66399bdc86939db59b96662"
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:8:2: style: Commented code should be removed.
-##     expected <- "76cb57ec226dd9ece66399bdc86939db59b96662"
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:10:2: style: Commented code should be removed.
-##                           msg = "Value of digest::sha1() differs!")
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:10:2: style: Commented code should be removed.
-##                           msg = "Value of digest::sha1() differs!")
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:11:2: style: Commented code should be removed.
-## }
- ^~~
-inst/runit_tests/main.R:11:2: style: Commented code should be removed.
-## }
- ^~~
-inst/runit_tests/main.R:12:1: style: Trailing blank lines are superfluous.
-
-^
-inst/runit_tests/main.R:12:1: style: Trailing blank lines are superfluous.
-
-^
+inst/runit_tests/main.R:4:45: style: Trailing whitespace is superfluous.
+    packager::create(path = d, make = FALSE) 
+                                            ^
+inst/runit_tests/main.R:7:39: style: Trailing whitespace is superfluous.
+    # recordings in files will change. 
+                                      ^
+inst/runit_tests/main.R:10:44: style: Trailing whitespace is superfluous.
+    RUnit::checkIdentical(result, expected, 
+                                           ^
+inst/runit_tests/main.R:17:44: style: Trailing whitespace is superfluous.
+    packager::create(path = d, make = TRUE) 
+                                           ^
+inst/runit_tests/main.R:20:39: style: Trailing whitespace is superfluous.
+    # recordings in files will change. 
+                                      ^
+inst/runit_tests/main.R:23:44: style: Trailing whitespace is superfluous.
+    RUnit::checkIdentical(result, expected, 
+                                           ^
+inst/templates/runit.R:11:76: style: Trailing whitespace is superfluous.
+    devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
+                                                                           ^
+inst/templates/runit.R:19:43: style: Put spaces around all infix operators.
+        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
+                                         ~^~
+inst/templates/runit.R:19:64: style: Put spaces around all infix operators.
+        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
+                                                              ~^~
+inst/templates/runit.R:19:73: style: Trailing whitespace is superfluous.
+        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
+                                                                        ^
+inst/templates/runit.R:25:57: style: Trailing whitespace is superfluous.
+    stop("Can not find RUnit test directory ", unit_dir, 
+                                                        ^
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
@@ -82,21 +55,6 @@ inst/templates/runit-throw.R:2:39: style: Closing curly-braces should always be 
 inst/templates/runit-throw.R:2:40: error: unexpected ':::'
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                                        ^
-inst/templates/runit.R:11:76: style: Trailing whitespace is superfluous.
-    devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
-                                                                           ^
-inst/templates/runit.R:19:43: style: Put spaces around all infix operators.
-        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
-                                         ~^~
-inst/templates/runit.R:19:64: style: Put spaces around all infix operators.
-        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
-                                                              ~^~
-inst/templates/runit.R:19:73: style: Trailing whitespace is superfluous.
-        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
-                                                                        ^
-inst/templates/runit.R:25:57: style: Trailing whitespace is superfluous.
-    stop("Can not find RUnit test directory ", unit_dir, 
-                                                        ^
 inst/templates/test-throw.R:4:1: style: lines should not be more than 80 characters.
                         testthat::expect_error({{{package}}}:::throw("hello, testthat"),
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -478,19 +436,19 @@ R/tools.R:299:56: style: Trailing whitespace is superfluous.
 R/tools.R:303:56: style: Trailing whitespace is superfluous.
     dir.create(file.path(pkg[["path"]], relative_path), 
                                                        ^
-R/tools.R:311:56: style: Trailing whitespace is superfluous.
+R/tools.R:307:56: style: Trailing whitespace is superfluous.
     use_template(file, save_as = file_path, data = pkg, 
                                                        ^
-R/tools.R:319:34: style: Trailing whitespace is superfluous.
+R/tools.R:315:34: style: Trailing whitespace is superfluous.
 use_devel <- function(path = ".", 
                                  ^
-R/tools.R:322:66: style: Trailing whitespace is superfluous.
+R/tools.R:318:66: style: Trailing whitespace is superfluous.
     use_template("devel.R", data = pkg, pkg = pkg, force = force, 
                                                                  ^
-R/tools.R:327:37: style: Trailing whitespace is superfluous.
+R/tools.R:323:37: style: Trailing whitespace is superfluous.
 use_makefile <- function(path = ".", 
                                     ^
-R/tools.R:331:1: style: lines should not be more than 80 characters.
+R/tools.R:327:1: style: lines should not be more than 80 characters.
     use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tests/runit.R:11:76: style: Trailing whitespace is superfluous.

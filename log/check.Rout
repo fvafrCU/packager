@@ -1,5 +1,5 @@
-* using log directory ‘/home/nik/git/cs/fvafrcu/packager/packager.Rcheck’
-* using R Under development (unstable) (2017-08-18 r73107)
+* using log directory ‘/home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck’
+* using R Under development (unstable) (2017-08-17 r73106)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
@@ -25,12 +25,7 @@ Version contains large components (0.0.0.9000)
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
-* checking top-level files ... WARNING
-Conversion of ‘README.md’ failed:
-pandoc: Could not fetch https://travis-ci.org/fvafrCU/packager.svg?branch=master
-InvalidProxyEnvironmentVariable "https_proxy" "https://10.127.255.17:8080"
-Non-standard file/directory found at top level:
-  ‘runit.Rout’
+* checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -58,11 +53,7 @@ Non-standard file/directory found at top level:
 * checking for unstated dependencies in examples ... OK
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
-* checking examples ... NOTE
-Examples with CPU or elapsed time > 5s
-         user system elapsed
-create 20.728  1.312  26.858
-infect 19.144  1.452  25.774
+* checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... OK
   Running ‘runit.R’
@@ -72,4 +63,4 @@ infect 19.144  1.452  25.774
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 WARNING, 2 NOTEs
+Status: 1 NOTE
