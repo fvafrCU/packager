@@ -12,12 +12,13 @@ test_create <- function() {
     contents <- sapply(contents, function(x) grep("date", x, value = TRUE, invert = TRUE))
     result <- digest::sha1(c(contents, files))
     expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
+    print(as.character(c("XXX", Sys.info()[c("nodename", "login")])))
     if (all.equal(as.character(Sys.info()[c("nodename", "login")]),c("h6", "qwer")))
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
 }
 
-test_create_make <- function() {
+no_test_create_make <- function() {
     if (interactive()) devtools::load_all(".")
     d <- file.path(tempdir(), "prutp")
     packager::create(path = d, make = TRUE) 
@@ -27,7 +28,8 @@ test_create_make <- function() {
     # recordings in files will change. 
     result <- digest::sha1(l)
     expected <- "165e2be7d6b3613eccd23b14e96a3a19c12a90d2"
-    if (all.equal(as.character(Sys.info()[c("nodename", "login")]),c("h6", "qwer")))
+    if (all.equal(as.character(Sys.info()[c("nodename", "login")]),
+                  c("h6", "qwer")))
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
 }
