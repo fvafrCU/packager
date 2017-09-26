@@ -302,10 +302,6 @@ provide_throw <- function(path = ".",
     relative_path <- file.path("inst", "runit_tests")
     dir.create(file.path(pkg[["path"]], relative_path), 
                showWarnings = FALSE, recursive = TRUE)
-    if (.Platform$OS.type != "windows") {
-        file.symlink(file.path(pkg[["path"]], relative_path),
-                     file.path(pkg[["path"]], "tests", basename(relative_path)))
-    }
     file <- "runit-throw.R"
     file_path <- file.path(relative_path, file)
     use_template(file, save_as = file_path, data = pkg, 
