@@ -53,7 +53,7 @@ create <- function(path, force = TRUE, ...) {
 #' unlink(path, recursive = TRUE)
 #' l2 <- list.files(path, recursive = TRUE, full.names = TRUE)
 #' print(l1); print(l2)
-infect <- function(path, make = TRUE, git_add_and_commit = TRUE, ...) {
+infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     r <- git2r::init(path = path)
     devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
     devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]], 
