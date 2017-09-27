@@ -11,15 +11,25 @@ test_create <- function() {
     names(contents) <- files
     contents <- sapply(contents, function(x) grep("date", x, value = TRUE, 
                                                   invert = TRUE))
-    result <- digest::sha1(c(contents, files))
-    expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
-    print(as.character(c("XXX", Sys.info()[c("nodename", "login")])))
     if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
-        c("qwer@h6", "nik@f2053")) {
+        c("qwer@h6")) {
+        result <- digest::sha1(c(contents, files))
+        expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
     } else {
-        stop("=== PACKAGER: r", result, "=== e", expected)
+        message("Not checking file listings but skipping file contents on ", 
+                Sys.info()["nodename"], "!")
+        result <- files
+        expected <- c("DESCRIPTION", "devel.R", 
+                      "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", 
+                      "man/prutp-package.Rd", "man/throw.Rd", "NAMESPACE", 
+                      "NEWS.md", "README.Rmd", "R/prutp-package.R", "R/throw.R",
+                      "tests/runit.R", "tests/testthat.R", 
+                      "tests/testthat/test-throw.R", 
+                      "vignettes/An_Introduction_to_prutp.Rmd")
+        RUnit::checkIdentical(result, expected, 
+                              msg = "File listings differ!")
     }
 }
 
@@ -34,7 +44,10 @@ test_create_make <- function() {
     result <- digest::sha1(l)
     expected <- "165e2be7d6b3613eccd23b14e96a3a19c12a90d2"
     if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
-        c("qwer@h6"))
+        c("qwer@h6")) {
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
+    } else {
+        message("Skipping test_create_make on ", Sys.info()["nodename"], "!")
+    }
 }
