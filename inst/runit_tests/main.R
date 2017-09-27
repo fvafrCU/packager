@@ -19,7 +19,7 @@ test_create <- function() {
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
     } else {
-        stop("=== PACKAGER:", result, expected)
+        stop("=== PACKAGER: r", result, "=== e", expected)
     }
 }
 
