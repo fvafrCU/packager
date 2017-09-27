@@ -18,7 +18,7 @@ test_create <- function() {
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
     } else {
-        message("Not checking file listings but skipping file contents on ", 
+        message("Checking file listings but skipping file contents on ", 
                 Sys.info()["nodename"], "!")
         result <- files
         expected <- c("DESCRIPTION", "devel.R", 
@@ -28,10 +28,11 @@ test_create <- function() {
                       "tests/runit.R", "tests/testthat.R", 
                       "tests/testthat/test-throw.R", 
                       "vignettes/An_Introduction_to_prutp.Rmd")
-        if (! identical(expected, result)){
-            message("=== Only in result: ", paste(setdiff(result, expected), 
+        if (! identical(expected, result)) {
+            message(paste(result, collapse = " "))
+            message("\n=== Only in result: \n", paste(setdiff(result, expected), 
                                                   collapse = "\n"),
-                    "=== Only in expected: ", paste(setdiff(expected, result), 
+                    "\n=== Only in expected: \n", paste(setdiff(expected, result), 
                                                     collapse = "\n")
                     )
         }
