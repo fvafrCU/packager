@@ -24,14 +24,14 @@ test_create <- function() {
         expected <- c("DESCRIPTION", "devel.R", 
                       "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", 
                       "man/prutp-package.Rd", "man/throw.Rd", "NAMESPACE", 
-                      "NEWS.md", "README.Rmd", "R/prutp-package.R", "R/throw.R",
+                      "NEWS.md", "R/prutp-package.R", "R/throw.R", "README.Rmd",
                       "tests/runit.R", "tests/testthat.R", 
-                      "tests/testthat/test-throw.R", 
+                      "tests/testthat/test-throw.R",
                       "vignettes/An_Introduction_to_prutp.Rmd")
-        if (grepl("docker", Sys.info()["nodename"])) {
-            # travis appears to sort the output of dir() (and sort()?) 
-            # differently, I can't seem to get the listings sorted according to the
-            # ones I expect.
+        if (! identical(expected, result)) {
+            # with changing R versions, the output of dir() (and sort()?)
+            # appears change. So I just check the cardinality of the
+            # intersection.
             result <- length(intersect(expected, result))
             expected <- length(expected)
         }

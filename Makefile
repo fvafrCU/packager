@@ -1,8 +1,8 @@
 # Force posix:
 .POSIX:
 
-R = R-devel
-Rscript = Rscript-devel
+R = R
+Rscript = Rscript
 
 PKGNAME = $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGVERS = $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
@@ -16,8 +16,6 @@ INST_FILES = $(shell if [ -d inst/ ] ; then find inst/ -type f -print; fi)
 DEPS = $(shell sed -n "s/.*\(\<.*\>\)::.*/\1/p" < Makefile | sort | uniq)
 TEMP_FILE = $(shell tempfile)
 LOG_DIR = log
-R = R-devel
-Rscript = Rscript-devel
 
 .PHONY: all
 all: $(LOG_DIR)/install.Rout
