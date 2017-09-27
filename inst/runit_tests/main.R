@@ -14,8 +14,8 @@ test_create <- function() {
     result <- digest::sha1(c(contents, files))
     expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
     print(as.character(c("XXX", Sys.info()[c("nodename", "login")])))
-    if (isTRUE(all.equal(as.character(Sys.info()[c("nodename", "login")]), 
-                         c("h6", "qwer"))))
+    if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
+        c("qwer@h6", "nik@f2053"))
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
 }
@@ -30,9 +30,8 @@ test_create_make <- function() {
     # recordings in files will change. 
     result <- digest::sha1(l)
     expected <- "165e2be7d6b3613eccd23b14e96a3a19c12a90d2"
-    if (isTRUE(all.equal(as.character(Sys.info()[c("nodename", "login")]), 
-                         c("h6", "qwer"))))
+    if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
+        c("qwer@h6"))
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
 }
-
