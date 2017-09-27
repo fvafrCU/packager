@@ -15,9 +15,12 @@ test_create <- function() {
     expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
     print(as.character(c("XXX", Sys.info()[c("nodename", "login")])))
     if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
-        c("qwer@h6", "nik@f2053"))
+        c("qwer@h6", "nik@f2053")) {
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
+    } else {
+        print(c("=== PACKAGER:", result, expected))
+    }
 }
 
 test_create_make <- function() {
