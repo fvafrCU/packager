@@ -29,10 +29,10 @@ test_create <- function() {
                       "tests/testthat/test-throw.R", 
                       "vignettes/An_Introduction_to_prutp.Rmd")
         if (! identical(expected, result)) {
-            message(paste(result, collapse = " "))
+            message("=== result: ", paste(result, collapse = " "))
             message("\n=== Only in result: \n", paste(setdiff(result, expected), 
                                                   collapse = "\n"),
-                    "\n=== Only in expected: \n", paste(setdiff(expected, result), 
+                    "\n\n=== Only in expected: \n", paste(setdiff(expected, result), 
                                                     collapse = "\n")
                     )
         }
