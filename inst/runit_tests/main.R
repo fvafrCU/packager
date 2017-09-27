@@ -28,6 +28,13 @@ test_create <- function() {
                       "tests/runit.R", "tests/testthat.R", 
                       "tests/testthat/test-throw.R", 
                       "vignettes/An_Introduction_to_prutp.Rmd")
+        if (! identical(expected, result)){
+            message("=== Only in result: ", paste(setdiff(result, expected), 
+                                                  collapse = "\n"),
+                    "=== Only in expected: ", paste(setdiff(expected, result), 
+                                                    collapse = "\n")
+                    )
+        }
         RUnit::checkIdentical(result, expected, 
                               msg = "File listings differ!")
     }
