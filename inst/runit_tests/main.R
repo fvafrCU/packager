@@ -18,8 +18,6 @@ test_create <- function() {
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
     } else {
-        message("Checking file listings but skipping file contents on ", 
-                Sys.info()["nodename"], "!")
         result <- files
         expected <- c("DESCRIPTION", "devel.R", 
                       "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", 
@@ -28,17 +26,24 @@ test_create <- function() {
                       "tests/runit.R", "tests/testthat.R", 
                       "tests/testthat/test-throw.R",
                       "vignettes/An_Introduction_to_prutp.Rmd")
-        if (! identical(expected, result)) {
+        if (identical(expected, result)) {
+            message("Checking file listings but skipping file contents on ", 
+                    Sys.info()["nodename"], "!")
+            runit_messsage <- "File listings differ!"
+        } else {
             # with changing R versions, the output of dir() (and sort()?)
             # appears change. So I just check the cardinality of the
             # intersection.
             result <- length(intersect(expected, result))
             expected <- length(expected)
+            message("Checking file listings cardinality but skipping file ",  
+                    "contents on ", Sys.info()["nodename"], "!")
+            runit_messsage <- "Cardinality of file listings intersection died!"
         }
         if (! identical(expected, result)) {
             message("=== result: ", paste(result, collapse = " "))
         }
-        RUnit::checkIdentical(result, expected, msg = "File listings differ!")
+        RUnit::checkIdentical(result, expected, msg = runit_messsage)
     }
 }
 
