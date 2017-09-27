@@ -28,16 +28,20 @@ test_create <- function() {
                       "tests/runit.R", "tests/testthat.R", 
                       "tests/testthat/test-throw.R", 
                       "vignettes/An_Introduction_to_prutp.Rmd")
-        result <- length(intersect(expected, result))
-        expected <- length(expected)
+        if (grepl("docker", Sys.info()["nodename"])) {
+            # travis appears to sort the output of dir() (and sort()?) 
+            # differently, I can't seem to get the listings sorted according to the
+            # ones I expect.
+            result <- length(intersect(expected, result))
+            expected <- length(expected)
+        }
         if (! identical(expected, result)) {
             message("=== result: ", paste(result, collapse = " "))
         }
         RUnit::checkIdentical(result, expected, msg = "File listings differ!")
     }
 }
-res <- c("DESCRIPTION", "devel.R", "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", "man/prutp-package.Rd", "man/throw.Rd", "NAMESPACE", "NEWS.md", "R/prutp-package.R", "R/throw.R", "README.Rmd", "tests/runit.R", "tests/testthat.R", "tests/testthat/test-throw.R", "vignettes/An_Introduction_to_prutp.Rmd")
-res == expected
+
 test_create_make <- function() {
     if (interactive()) devtools::load_all(".")
     d <- file.path(tempdir(), "prutp")
