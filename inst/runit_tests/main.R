@@ -14,7 +14,7 @@ test_create <- function() {
     if (paste(Sys.info()[c("login", "nodename")], collapse = "@") %in% 
         c("qwer@h6")) {
         result <- digest::sha1(c(contents, files))
-        expected <- "39010240e1246ddf37474cdd168ff878d1c86c98"
+        expected <- "7a8b6265b697b4f203d55c73511a5b81aa8ffd6f"
         RUnit::checkIdentical(result, expected, 
                               msg = "Value of digest::sha1() differs!")
     } else {
