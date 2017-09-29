@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmpk8hkqZ'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp1ApoUj'
 No DESCRIPTION found. Creating with values:
 
 
@@ -36,17 +36,18 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmpk8hkqZ/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmpk8hkqZ/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmpk8hkqZ/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmp1ApoUj/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp1ApoUj/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmp1ApoUj/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
+Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmpk8hkqZ'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmp1ApoUj'
 No DESCRIPTION found. Creating with values:
 
 
@@ -82,14 +83,14 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmpk8hkqZ/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmpk8hkqZ/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmpk8hkqZ/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmp1ApoUj/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp1ApoUj/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmp1ApoUj/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/Rtmpk8hkqZ/prutp'
+make[1]: Entering directory '/tmp/Rtmp1ApoUj/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -133,9 +134,9 @@ Rscript-devel --vanilla -e 'devtools::test()' >  log/testthat.Rout 2>&1
 Rscript-devel --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)' > log/covr.Rout 2>&1 
 Rscript-devel --vanilla -e 'tryCatch(cleanr::check_directory("R/", check_return = FALSE), cleanr = function(e) print(e))' > log/cleanr.Rout 2>&1 
 Rscript-devel --vanilla -e 'lintr::lint_package(path = ".")' > log/lintr.Rout 2>&1 
-R-devel --vanilla CMD build /tmp/Rtmpk8hkqZ/prutp
+R-devel --vanilla CMD build /tmp/Rtmp1ApoUj/prutp
 WARNING: ignoring environment value of R_HOME
-* checking for file ‘/tmp/Rtmpk8hkqZ/prutp/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/Rtmp1ApoUj/prutp/DESCRIPTION’ ... OK
 * preparing ‘prutp’:
 * checking DESCRIPTION meta-information ... OK
 * installing the package to build vignettes
@@ -148,7 +149,7 @@ export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
 	R-devel --vanilla CMD check --as-cran --run-donttest prutp_0.0.0.9000.tar.gz; \
 	cp prutp.Rcheck/00check.log log/check.Rout
 WARNING: ignoring environment value of R_HOME
-* using log directory ‘/tmp/Rtmpk8hkqZ/prutp/prutp.Rcheck’
+* using log directory ‘/tmp/Rtmp1ApoUj/prutp/prutp.Rcheck’
 * using R Under development (unstable) (2017-08-17 r73106)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -221,13 +222,14 @@ The Title field should be in title case, current version then in title case:
 
 Status: 1 NOTE
 See
-  ‘/tmp/Rtmpk8hkqZ/prutp/prutp.Rcheck/00check.log’
+  ‘/tmp/Rtmp1ApoUj/prutp/prutp.Rcheck/00check.log’
 for details.
 
 
 Rscript-devel --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > log/cran_comments.Rout 2>&1 
 R-devel --vanilla CMD INSTALL  prutp_0.0.0.9000.tar.gz > log/install.Rout 2>&1 
-make[1]: Leaving directory '/tmp/Rtmpk8hkqZ/prutp'
+make[1]: Leaving directory '/tmp/Rtmp1ApoUj/prutp'
+Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
 
@@ -235,6 +237,6 @@ make[1]: Leaving directory '/tmp/Rtmpk8hkqZ/prutp'
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
 In addition: Warning message:
 In FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/Rtmpk8hkqZ/prutp/LICENSE'
+  incomplete final line found on '/tmp/Rtmp1ApoUj/prutp/LICENSE'
  done successfully.
 
