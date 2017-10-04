@@ -8,7 +8,7 @@
 #' @param path See \code{\link[devtools:create]{devtools::create}}.
 #' @param force Recursively \code{\link{unlink}} the path before calling
 #' \code{\link[devtools:create]{devtools::create}(path)}?
-#' @param ... Arguments to be passed to \code{\link{structure}}.
+#' @param ... Arguments to be passed to \code{\link{infect}}.
 #' @return \code{\link[base:invisible]{Invisibly}}
 #' \code{\link[base:NULL]{NULL}}.
 #' condition of class c("error", "packager", "condition").

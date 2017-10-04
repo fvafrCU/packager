@@ -1,8 +1,8 @@
 # Force posix:
 .POSIX:
 
-R = R
-Rscript = Rscript
+R = R-devel
+Rscript = Rscript-devel
 
 PKGNAME = $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGVERS = $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
@@ -92,7 +92,7 @@ $(LOG_DIR):
 .PHONY: dependencies
 dependencies: $(LOG_DIR)/dependencies.Rout
 $(LOG_DIR)/dependencies.Rout: Makefile $(LOG_DIR)
-	$(Rscript) --vanilla -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies.Rout 2>&1 
+	$(Rscript) -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies.Rout 2>&1 
 
 # utils
 utils: clean remove viz
