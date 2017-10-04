@@ -4,8 +4,9 @@
 \alias{set_package_info}
 \title{Set a Package's Info}
 \usage{
-set_package_info(path, author_at_r = NULL, title = NULL,
-  description = NULL, details = NULL)
+set_package_info(path, author_at_r = NULL,
+  title = "What it Does (One Line, Title Case)", description = NULL,
+  details = NULL)
 }
 \arguments{
 \item{path}{Path to the package.}

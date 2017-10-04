@@ -115,12 +115,13 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' readLines(package_desc)
 #' readLines(package_info_file)
 #' unlink(path, recursive = TRUE)
-set_package_info <- function(path, author_at_r = NULL, title = NULL, 
+set_package_info <- function(path, author_at_r = NULL, 
+                             title = "What it Does (One Line, Title Case)", 
                              description = NULL, details = NULL) {
-    r1 <- update_description(path = path, title = title, 
+    r1 <- update_description(path = path, title = tools::toTitleCase(title), 
                              description = description, 
                              author_at_r = author_at_r)
-    r2 <- create_package_help(path = path, title = title, 
+    r2 <- create_package_help(path = path, title = tools::toTitleCase(title), 
                               description = description, details = details)
     return(invisible(list(r1, r2)))
 }
