@@ -107,8 +107,8 @@ use_intro <- function (path = ".", ...) {
     return(invisible(NULL))
 }
 
-use_travis <- function (pkg = ".", ...) {
-    pkg <- as.package(pkg)
+use_travis <- function (path = ".", ...) {
+    pkg <- as.package(path)
     use_template("travis.yml", ".travis.yml", ignore = TRUE, 
         pkg = pkg, ...)
     return(invisible(NULL))

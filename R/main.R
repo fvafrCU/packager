@@ -63,6 +63,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_devel(path = path)
     remove_Rproj(path = path)
     use_devtools(path = path)
+    use_travis(path = path)
     set_package_info(path = path, ...)
     use_bsd2clause_license(path = path)
     provide_throw(path = path)
