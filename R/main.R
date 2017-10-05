@@ -68,6 +68,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_bsd2clause_license(path = path)
     provide_throw(path = path)
     use_directory("log", pkg = path, ignore = TRUE)
+    use_build_ignore("cran-comments.md", pkg = path)
     use_git_ignore("*.tar.gz", path = path)
     use_git_ignore(paste0(devtools::as.package(path)[["package"]], 
                                     ".Rcheck"), path = path)
