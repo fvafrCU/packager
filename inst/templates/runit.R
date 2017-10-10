@@ -12,12 +12,12 @@ if (interactive()) {
     # base's system.file
     unit_dir <- system.file("inst", "runit_tests", package = "{{{ package }}}")
 } else {
+    require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
+    stop("package '", pkgname, "' not found")
     r_call <- commandArgs(trailingOnly = FALSE)
     if (any(grepl("--file", r_call))) {
         unit_dir <- file.path("inst", "runit_tests")
     } else {
-        require("{{{ package }}}", quietly=TRUE, character.only=TRUE) || 
-            stop("package '", pkgname, "' not found")
         unit_dir <- system.file("runit_tests", package = "{{{ package }}}")
     }
 }
