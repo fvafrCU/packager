@@ -6,7 +6,7 @@
 \usage{
 set_package_info(path, author_at_r = NULL,
   title = "What it Does (One Line, Title Case)", description = NULL,
-  details = NULL)
+  details = NA)
 }
 \arguments{
 \item{path}{Path to the package.}
@@ -17,7 +17,8 @@ set_package_info(path, author_at_r = NULL,
 
 \item{description}{A string giving the description.}
 
-\item{details}{A string giving the details.}
+\item{details}{A string giving the details. Defaults to NA in which case a
+default details are inserted. Set to NULL to have no details at all.}
 }
 \value{
 \code{\link[base:invisible]{Invisibly}}

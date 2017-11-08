@@ -9,10 +9,10 @@ Best, Dominik
 
 # Package packager 0.0.0.9000
 ## Test  environments 
-- R Under development (unstable) (2017-08-17 r73106)
+- R Under development (unstable) (2017-11-07 r73685)
   Platform: x86_64-pc-linux-gnu (64-bit)
   Running under: Devuan GNU/Linux 1 (jessie)
-- R version 3.4.1 (2017-01-27)
+- R version 3.4.2 (2017-01-27)
   Platform: x86_64-pc-linux-gnu (64-bit)
   Running under: Ubuntu 14.04.5 LTS
 - win-builder (devel)

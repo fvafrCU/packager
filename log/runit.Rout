@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp1ApoUj'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmpe4OC2C'
 No DESCRIPTION found. Creating with values:
 
 
@@ -23,6 +23,8 @@ LazyData: true
 * Creating `README.Rmd` from template.
 * Adding `README.Rmd` to `.Rbuildignore`.
 * Adding pre-commit hook
+* Creating `.travis.yml` from template.
+* Adding `.travis.yml` to `.Rbuildignore`.
 Argument 'author_at_r' is missing. Use
 	sub("(email)", "
 	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
@@ -36,9 +38,9 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmp1ApoUj/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmp1ApoUj/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmp1ApoUj/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmpe4OC2C/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmpe4OC2C/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmpe4OC2C/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
@@ -47,7 +49,7 @@ Checking file listings cardinality but skipping file contents on h6!
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmp1ApoUj'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmpe4OC2C'
 No DESCRIPTION found. Creating with values:
 
 
@@ -70,6 +72,8 @@ LazyData: true
 * Creating `README.Rmd` from template.
 * Adding `README.Rmd` to `.Rbuildignore`.
 * Adding pre-commit hook
+* Creating `.travis.yml` from template.
+* Adding `.travis.yml` to `.Rbuildignore`.
 Argument 'author_at_r' is missing. Use
 	sub("(email)", "
 	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
@@ -83,14 +87,14 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmp1ApoUj/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmp1ApoUj/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmp1ApoUj/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmpe4OC2C/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmpe4OC2C/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmpe4OC2C/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/Rtmp1ApoUj/prutp'
+make[1]: Entering directory '/tmp/Rtmpe4OC2C/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -130,105 +134,9 @@ Rscript-devel --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) 
 Rscript-devel --vanilla -e 'packager::check_codetags()' > log/check_codetags.Rout 2>&1 
 Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1 
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
-Rscript-devel --vanilla -e 'devtools::test()' >  log/testthat.Rout 2>&1
-Rscript-devel --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)' > log/covr.Rout 2>&1 
-Rscript-devel --vanilla -e 'tryCatch(cleanr::check_directory("R/", check_return = FALSE), cleanr = function(e) print(e))' > log/cleanr.Rout 2>&1 
-Rscript-devel --vanilla -e 'lintr::lint_package(path = ".")' > log/lintr.Rout 2>&1 
-R-devel --vanilla CMD build /tmp/Rtmp1ApoUj/prutp
-WARNING: ignoring environment value of R_HOME
-* checking for file ‘/tmp/Rtmp1ApoUj/prutp/DESCRIPTION’ ... OK
-* preparing ‘prutp’:
-* checking DESCRIPTION meta-information ... OK
-* installing the package to build vignettes
-* creating vignettes ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘prutp_0.0.0.9000.tar.gz’
-
-export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
-	R-devel --vanilla CMD check --as-cran --run-donttest prutp_0.0.0.9000.tar.gz; \
-	cp prutp.Rcheck/00check.log log/check.Rout
-WARNING: ignoring environment value of R_HOME
-* using log directory ‘/tmp/Rtmp1ApoUj/prutp/prutp.Rcheck’
-* using R Under development (unstable) (2017-08-17 r73106)
-* using platform: x86_64-pc-linux-gnu (64-bit)
-* using session charset: UTF-8
-* using options ‘--run-donttest --as-cran’
-* checking for file ‘prutp/DESCRIPTION’ ... OK
-* this is package ‘prutp’ version ‘0.0.0.9000’
-* package encoding: UTF-8
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘First Last <first.last@example.com>’
-
-New submission
-
-Version contains large components (0.0.0.9000)
-
-The Title field should be in title case, current version then in title case:
-‘What the Package Does (one line, title case)’
-‘What the Package Does (One Line, Title Case)’
-* checking package namespace information ... OK
-* checking package dependencies ... OK
-* checking if this is a source package ... OK
-* checking if there is a namespace ... OK
-* checking for executable files ... OK
-* checking for hidden files and directories ... OK
-* checking for portable file names ... OK
-* checking for sufficient/correct file permissions ... OK
-* checking whether package ‘prutp’ can be installed ... OK
-* checking installed package size ... OK
-* checking package directory ... OK
-* checking ‘build’ directory ... OK
-* checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
-* checking for left-over files ... OK
-* checking index information ... OK
-* checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
-* checking R files for syntax errors ... OK
-* checking whether the package can be loaded ... OK
-* checking whether the package can be loaded with stated dependencies ... OK
-* checking whether the package can be unloaded cleanly ... OK
-* checking whether the namespace can be loaded with stated dependencies ... OK
-* checking whether the namespace can be unloaded cleanly ... OK
-* checking use of S3 registration ... OK
-* checking dependencies in R code ... OK
-* checking S3 generic/method consistency ... OK
-* checking replacement functions ... OK
-* checking foreign function calls ... OK
-* checking R code for possible problems ... OK
-* checking Rd files ... OK
-* checking Rd metadata ... OK
-* checking Rd line widths ... OK
-* checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... OK
-* checking Rd contents ... OK
-* checking for unstated dependencies in examples ... OK
-* checking installed files from ‘inst/doc’ ... OK
-* checking files in ‘vignettes’ ... OK
-* checking examples ... OK
-* checking for unstated dependencies in ‘tests’ ... OK
-* checking tests ...
-  Running ‘runit.R’
-  Running ‘testthat.R’
- OK
-* checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in ‘inst/doc’ ... OK
-* checking re-building of vignette outputs ... OK
-* checking PDF version of manual ... OK
-* DONE
-
-Status: 1 NOTE
-See
-  ‘/tmp/Rtmp1ApoUj/prutp/prutp.Rcheck/00check.log’
-for details.
-
-
-Rscript-devel --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > log/cran_comments.Rout 2>&1 
-R-devel --vanilla CMD INSTALL  prutp_0.0.0.9000.tar.gz > log/install.Rout 2>&1 
-make[1]: Leaving directory '/tmp/Rtmp1ApoUj/prutp'
+Makefile:130: recipe for target 'log/runit.Rout' failed
+make[1]: *** [log/runit.Rout] Error 1
+make[1]: Leaving directory '/tmp/Rtmpe4OC2C/prutp'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
@@ -237,6 +145,6 @@ Checking file listings cardinality but skipping file contents on h6!
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
 In addition: Warning message:
 In FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/Rtmp1ApoUj/prutp/LICENSE'
+  incomplete final line found on '/tmp/Rtmpe4OC2C/prutp/LICENSE'
  done successfully.
 
