@@ -195,7 +195,7 @@ create_package_help <- function(path = ".",
     content <- c(content, strwrap(details, prefix = "#' "), "#'")
     content <- c(content, strwrap(package_roxygen_end, prefix = "#' "))
     content <- c(content, "NULL")
-    #writeLines(content, con = package_roxygen_file, sep = "\n")
+    writeLines(content, con = package_roxygen_file, sep = "\n")
     return(invisible(content))
 }
 
