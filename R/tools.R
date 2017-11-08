@@ -168,7 +168,7 @@ get_news <- function(path = ".") {
 create_package_help <- function(path = ".", 
                                 title = NULL,
                                 description = NULL,
-                                details = NULL
+                                details = NA
                                 ) {
     if (is.null(title)) title  <- "Here Goes the Title"
     if (is.null(description)) {
@@ -179,6 +179,11 @@ create_package_help <- function(path = ".",
                                  "for a 'Details' section.")
     }
     pkg <- devtools::as.package(path)
+    if (is.na(details)) 
+        details <- paste0("You will find the details in\\cr",
+                         "\\code{vignette(\"An_Introduction_to_",
+                         pkg[["package"]], "package = \"", pkg[["package"]],
+                         "\")}.")
     package_roxygen_file <- file.path(pkg[["path"]], "R",
                                       paste0(pkg[["package"]], "-package.R"))
     package_roxygen_end <- c(paste0("@name ", pkg[["package"]], "-package"), 
@@ -190,7 +195,7 @@ create_package_help <- function(path = ".",
     content <- c(content, strwrap(details, prefix = "#' "), "#'")
     content <- c(content, strwrap(package_roxygen_end, prefix = "#' "))
     content <- c(content, "NULL")
-    writeLines(content, con = package_roxygen_file, sep = "\n")
+    #writeLines(content, con = package_roxygen_file, sep = "\n")
     return(invisible(content))
 }
 

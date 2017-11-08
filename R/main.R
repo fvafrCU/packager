@@ -99,7 +99,8 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' @param author_at_r A string giving the author. See \code{\link{author_at_r}}.
 #' @param title A string giving the title.
 #' @param description A string giving the description.
-#' @param details A string giving the details.
+#' @param details A string giving the details. Defaults to NA in which case a
+#' default details are inserted. Set to NULL to have no details at all.
 #' @return \code{\link[base:invisible]{Invisibly}}
 #' a list of results of setting the xxx-package.R and the DESCRIPTION.
 #' @export
@@ -119,7 +120,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' unlink(path, recursive = TRUE)
 set_package_info <- function(path, author_at_r = NULL, 
                              title = "What it Does (One Line, Title Case)", 
-                             description = NULL, details = NULL) {
+                             description = NULL, details = NA) {
     r1 <- update_description(path = path, title = tools::toTitleCase(title), 
                              description = description, 
                              author_at_r = author_at_r)
