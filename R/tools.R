@@ -182,7 +182,7 @@ create_package_help <- function(path = ".",
     if (is.na(details)) 
         details <- paste0("You will find the details in\\cr\n",
                          "\\code{vignette(\"An_Introduction_to_",
-                         pkg[["package"]], "package = \"", pkg[["package"]],
+                         pkg[["package"]], "\", package = \"", pkg[["package"]],
                          "\")}.")
     package_roxygen_file <- file.path(pkg[["path"]], "R",
                                       paste0(pkg[["package"]], "-package.R"))
