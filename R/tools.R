@@ -180,7 +180,7 @@ create_package_help <- function(path = ".",
     }
     pkg <- devtools::as.package(path)
     if (is.na(details)) 
-        details <- paste0("You will find the details in\\cr",
+        details <- paste0("You will find the details in\\cr\n",
                          "\\code{vignette(\"An_Introduction_to_",
                          pkg[["package"]], "package = \"", pkg[["package"]],
                          "\")}.")
