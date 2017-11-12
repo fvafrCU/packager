@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmpe4OC2C'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpyvsJGT'
 No DESCRIPTION found. Creating with values:
 
 
@@ -38,9 +38,9 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmpe4OC2C/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmpe4OC2C/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmpe4OC2C/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/RtmpyvsJGT/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpyvsJGT/prutp/.gitignore
+Updating roxygen version in /tmp/RtmpyvsJGT/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
@@ -49,7 +49,7 @@ Checking file listings cardinality but skipping file contents on h6!
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmpe4OC2C'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpyvsJGT'
 No DESCRIPTION found. Creating with values:
 
 
@@ -87,14 +87,14 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/Rtmpe4OC2C/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmpe4OC2C/prutp/.gitignore
-Updating roxygen version in /tmp/Rtmpe4OC2C/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/RtmpyvsJGT/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpyvsJGT/prutp/.gitignore
+Updating roxygen version in /tmp/RtmpyvsJGT/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/Rtmpe4OC2C/prutp'
+make[1]: Entering directory '/tmp/RtmpyvsJGT/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -136,7 +136,7 @@ Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
 Makefile:130: recipe for target 'log/runit.Rout' failed
 make[1]: *** [log/runit.Rout] Error 1
-make[1]: Leaving directory '/tmp/Rtmpe4OC2C/prutp'
+make[1]: Leaving directory '/tmp/RtmpyvsJGT/prutp'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
@@ -145,6 +145,6 @@ Checking file listings cardinality but skipping file contents on h6!
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
 In addition: Warning message:
 In FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/Rtmpe4OC2C/prutp/LICENSE'
+  incomplete final line found on '/tmp/RtmpyvsJGT/prutp/LICENSE'
  done successfully.
 

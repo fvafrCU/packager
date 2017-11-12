@@ -2,7 +2,7 @@
 % Please edit documentation in R/tools.R
 \name{check_news}
 \alias{check_news}
-\title{Check for NEWS.md being up to date}
+\title{Check for NEWS.md Being Up to Date}
 \usage{
 check_news(path = ".")
 }

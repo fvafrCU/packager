@@ -31,13 +31,13 @@ keeping the info given in both places identical.
 \examples{
 path <- file.path(tempdir(), "myPackage")
 devtools::create(path = path)
-a  <- sub("(email)", "\\n\\t\\\\1", 
+a  <- sub("(email)", "\\n\\t\\\\1",
           packager::author_at_r("Your", "Name", "some@whe.re"))
 set_package_info(path = path, author_at_r = a, title = "What Now?",
                  description = "This package does nothing.",
                  details = "Details do not show up in DESCRIPTION.")
 package_desc <- file.path(path, "DESCRIPTION")
-package_info_file <- file.path(path, 
+package_info_file <- file.path(path,
                                "R", paste0(basename(path), "-package.R"))
 readLines(package_desc)
 readLines(package_info_file)

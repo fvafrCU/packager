@@ -7,7 +7,7 @@ Devtools       provide_cran_comments.Rd:37
 https          check_codetags.Rd:22
 linux          provide_cran_comments.Rd:24
 LTS            provide_cran_comments.Rd:25
-MakefileR      packager-package.Rd:8, description:1
+MakefileR      packager-package.Rd:8, description:2
 md             check_news.Rd:5,13,17, provide_cran_comments.Rd:34,37
 org            check_codetags.Rd:22
 pc             provide_cran_comments.Rd:24

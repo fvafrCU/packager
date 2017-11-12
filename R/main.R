@@ -2,7 +2,7 @@
 #'
 #' This is just a wrapper to create a package using
 #' \code{\link[devtools:create]{devtools::create}} and
-#' infect it using \code{\link{infect}}. 
+#' infect it using \code{\link{infect}}.
 #'
 #'
 #' @param path See \code{\link[devtools:create]{devtools::create}}.
@@ -38,7 +38,7 @@ create <- function(path, force = TRUE, ...) {
 #' @param path Path to the package to get infected.
 #' @param make Try to use make on the infected package?
 #' Option to be disabled for testing.
-#' @param git_add_and_commit Add and commit changes in git? 
+#' @param git_add_and_commit Add and commit changes in git?
 #' Option to be disabled for testing.
 #' @param ... Arguments to be passed to \code{\link{set_package_info}}.
 #' @return \code{\link[base:invisible]{Invisibly}}
@@ -56,7 +56,7 @@ create <- function(path, force = TRUE, ...) {
 infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     r <- git2r::init(path = path)
     devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
-    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]], 
+    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]],
                                       ".Rcheck"), pkg = path)
     use_makefile(path = path)
     use_intro(path = path, force = TRUE)
@@ -70,16 +70,20 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_directory("log", pkg = path, ignore = TRUE)
     use_build_ignore("cran-comments.md", pkg = path)
     use_git_ignore("*.tar.gz", path = path)
-    use_git_ignore(paste0(devtools::as.package(path)[["package"]], 
+    use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
     if (length(Sys.which("make")) != 0 && isTRUE(make)) {
-        withr::with_dir(path, {
-                            roxygen2::roxygenize(package.dir = ".");
+        withr::with_dir(path, 
+                        {
+                            roxygen2::roxygenize(package.dir = ".")
                             devtools::load_all(".")
                             Sys.setenv("R_HOME" = Sys.which("R-devel"))
-                            system("make")})
+                            system("make")
+                        }
+        )
 
-    } else { # run at least roxygen
+    } else {
+        # run at least roxygen
         roxygen2::roxygenize(package.dir = path)
     }
     paths <- unlist(git2r::status(r))
@@ -107,24 +111,24 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' @examples
 #' path <- file.path(tempdir(), "myPackage")
 #' devtools::create(path = path)
-#' a  <- sub("(email)", "\n\t\\1", 
+#' a  <- sub("(email)", "\n\t\\1",
 #'           packager::author_at_r("Your", "Name", "some@whe.re"))
 #' set_package_info(path = path, author_at_r = a, title = "What Now?",
 #'                  description = "This package does nothing.",
 #'                  details = "Details do not show up in DESCRIPTION.")
 #' package_desc <- file.path(path, "DESCRIPTION")
-#' package_info_file <- file.path(path, 
+#' package_info_file <- file.path(path,
 #'                                "R", paste0(basename(path), "-package.R"))
 #' readLines(package_desc)
 #' readLines(package_info_file)
 #' unlink(path, recursive = TRUE)
-set_package_info <- function(path, author_at_r = NULL, 
-                             title = "What it Does (One Line, Title Case)", 
+set_package_info <- function(path, author_at_r = NULL,
+                             title = "What it Does (One Line, Title Case)",
                              description = NULL, details = NA) {
-    r1 <- update_description(path = path, title = tools::toTitleCase(title), 
-                             description = description, 
+    r1 <- update_description(path = path, title = tools::toTitleCase(title),
+                             description = description,
                              author_at_r = author_at_r)
-    r2 <- create_package_help(path = path, title = tools::toTitleCase(title), 
+    r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
                               description = description, details = details)
     return(invisible(list(r1, r2)))
 }
@@ -140,9 +144,9 @@ set_package_info <- function(path, author_at_r = NULL,
 #' @examples
 #' author_at_r("Your", "Name", "some@whe.re")
 author_at_r <- function(given, family, email) {
-    author_at_r <- paste0("person(given = \"", given, 
-                          "\", family = \"", family, 
-                          "\", email = \"", email, 
+    author_at_r <- paste0("person(given = \"", given,
+                          "\", family = \"", family,
+                          "\", email = \"", email,
                           "\", role = c(\"aut\", \"cre\"))")
     return(author_at_r)
 }

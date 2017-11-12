@@ -2,29 +2,29 @@
 % Please edit documentation in R/tools.R
 \name{provide_cran_comments}
 \alias{provide_cran_comments}
-\title{Provide a Template For Your Comments To CRAN}
+\title{Provide a Template for Your Comments To CRAN}
 \usage{
 provide_cran_comments(check_log = NULL, path = ".", initial = FALSE,
   travis_session_info = NULL, name = "Dominik")
 }
 \arguments{
-\item{check_log}{Path to the check log relative to \code{path}. Typically 
+\item{check_log}{Path to the check log relative to \code{path}. Typically
 file.path("log", "dev_check.Rout").}
 
 \item{path}{The path to the package.}
 
 \item{initial}{Is this an initial release?}
 
-\item{travis_session_info}{Travis session info, search for\cr
-"$ Rscript -e 'sessionInfo()'" \cr 
+\item{travis_session_info}{Travis session info, search for\cr 
+"$ Rscript -e 'sessionInfo()'" \cr
 in the raw log of the travis build and copy the
-following three lines. This could read\cr 
-travis_session_info <- c("\cr 
-                    R version 3.4.0 (2017-04-21)\cr 
-                    Platform: x86_64-pc-linux-gnu (64-bit)\cr 
-                    Running under: Ubuntu precise (12.04.5 LTS) \cr 
-                    ")\cr 
-Set to `travis-cli` to retrieve Session info automatically if your system is 
+following three lines. This could read\cr
+travis_session_info <- c("\cr
+                    R version 3.4.0 (2017-04-21)\cr
+                    Platform: x86_64-pc-linux-gnu (64-bit)\cr
+                    Running under: Ubuntu precise (12.04.5 LTS) \cr
+                    ")\cr
+Set to `travis-cli` to retrieve Session info automatically if your system is
 set up to use \url{https://github.com/travis-ci/travis.rb}.}
 
 \item{name}{The name to sign with.}

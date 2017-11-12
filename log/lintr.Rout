@@ -1,63 +1,15 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/main.R:5:45: style: Trailing whitespace is superfluous.
-    packager::create(path = d, make = FALSE) 
-                                            ^
-inst/runit_tests/main.R:10:75: style: Trailing whitespace is superfluous.
-    contents <- sapply(contents, function(x) grep("date", x, value = TRUE, 
-                                                                          ^
 inst/runit_tests/main.R:13:7: style: Commented code should be removed.
     # digest::sha1()-values.
       ^~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:15:44: style: Trailing whitespace is superfluous.
-    expected <- c("DESCRIPTION", "devel.R", 
-                                           ^
-inst/runit_tests/main.R:16:75: style: Trailing whitespace is superfluous.
-                  "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", 
-                                                                          ^
-inst/runit_tests/main.R:17:71: style: Trailing whitespace is superfluous.
-                  "man/prutp-package.Rd", "man/throw.Rd", "NAMESPACE", 
-                                                                      ^
-inst/runit_tests/main.R:19:55: style: Trailing whitespace is superfluous.
-                  "tests/runit.R", "tests/testthat.R", 
-                                                      ^
-inst/runit_tests/main.R:23:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings but skipping file contents on ", 
-                                                                        ^
 inst/runit_tests/main.R:32:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings cardinality but skipping file ",  
-                                                                        ^~
-inst/runit_tests/main.R:45:44: style: Trailing whitespace is superfluous.
-    packager::create(path = d, make = TRUE) 
-                                           ^
-inst/runit_tests/main.R:51:44: style: Trailing whitespace is superfluous.
-    expected <- c("DESCRIPTION", "devel.R", 
-                                           ^
-inst/runit_tests/main.R:52:75: style: Trailing whitespace is superfluous.
-                  "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile", 
-                                                                          ^
-inst/runit_tests/main.R:53:71: style: Trailing whitespace is superfluous.
-                  "man/prutp-package.Rd", "man/throw.Rd", "NAMESPACE", 
-                                                                      ^
-inst/runit_tests/main.R:55:55: style: Trailing whitespace is superfluous.
-                  "tests/runit.R", "tests/testthat.R", 
-                                                      ^
-inst/runit_tests/main.R:59:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings but skipping file contents on ", 
+        message("Checking file listings cardinality but skipping file ", 
                                                                         ^
 inst/runit_tests/main.R:68:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings cardinality but skipping file ",  
-                                                                        ^~
-inst/templates/runit.R:11:76: style: Trailing whitespace is superfluous.
-    devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
-                                                                           ^
-inst/templates/runit.R:15:73: style: Trailing whitespace is superfluous.
-    require("{{{ package }}}", quietly = TRUE, character.only = TRUE) || 
+        message("Checking file listings cardinality but skipping file ", 
                                                                         ^
-inst/templates/runit.R:25:57: style: Trailing whitespace is superfluous.
-    stop("Can not find RUnit test directory ", unit_dir, 
-                                                        ^
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
@@ -79,33 +31,33 @@ inst/templates/runit-throw.R:2:39: style: Closing curly-braces should always be 
 inst/templates/runit-throw.R:2:40: error: unexpected ':::'
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                                        ^
-inst/templates/test-throw.R:4:1: style: lines should not be more than 80 characters.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/templates/test-throw.R:4:1: style: lines should not be more than 80 characters.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/templates/test-throw.R:4:48: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:48: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                ^
-inst/templates/test-throw.R:4:49: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:49: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                 ^
-inst/templates/test-throw.R:4:50: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:50: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                  ^
-inst/templates/test-throw.R:4:58: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:58: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                          ^
-inst/templates/test-throw.R:4:59: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:59: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                           ^
-inst/templates/test-throw.R:4:60: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:60: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                            ^
-inst/templates/test-throw.R:4:61: error: unexpected ':::'
-                        testthat::expect_error({{{package}}}:::throw("hello, testthat"),
+inst/templates/test-throw.R:5:61: error: unexpected ':::'
+                        testthat::expect_error({{{package}}}:::throw(string), 
                                                             ^
+inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
+                        testthat::expect_error({{{package}}}:::throw(string), 
+                                                                             ^
+inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
+                        testthat::expect_error({{{package}}}:::throw(string), 
+                                                                             ^
 R/devtools_internals.R:7:15: warning: Do not use absolute paths.
     x <- sub("/*$", "", x)
               ^~~
@@ -208,297 +160,30 @@ R/devtools_internals.R:295:1: style: lines should not be more than 80 characters
 R/devtools_internals.R:307:1: style: Trailing blank lines are superfluous.
 
 ^
-R/devtools.R:38:70: style: Trailing whitespace is superfluous.
-use_template <- function(template, save_as = template, data = list(), 
-                                                                     ^
-R/devtools.R:39:52: style: Trailing whitespace is superfluous.
-                         ignore = FALSE, pkg = ".", 
-                                                   ^
-R/devtools.R:40:54: style: Trailing whitespace is superfluous.
-                         source_package = "packager", 
-                                                     ^
-R/devtools.R:46:60: style: Trailing whitespace is superfluous.
-        template_path <- system.file("templates", template, 
-                                                           ^
-R/devtools.R:48:74: style: Trailing whitespace is superfluous.
-        template_out <- whisker::whisker.render(readLines(template_path), 
-                                                                         ^
-R/devtools.R:58:65: style: Trailing whitespace is superfluous.
-       warning("`", save_as, "` already exists.", call. = FALSE) 
-                                                                ^
-R/devtools.R:71:68: style: Trailing whitespace is superfluous.
-    use_template("omni-README", save_as = "README.Rmd", data = pkg, 
-                                                                   ^
-R/devtools.R:74:71: style: Trailing whitespace is superfluous.
-    if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git", 
-                                                                      ^
-R/devtools.R:77:1: style: lines should not be more than 80 characters.
-        devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:77:90: style: Trailing whitespace is superfluous.
-        devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
-                                                                                         ^
-R/devtools.R:95:51: style: Trailing whitespace is superfluous.
-    vignette_name <- paste0("An_Introduction_to_", 
-                                                  ^
-R/devtools.R:98:6: style: Commented code should be removed.
+R/devtools.R:99:6: style: Commented code should be removed.
     #devtools::use_vignette(vignette_name, pkg = path)
      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:105:61: style: Trailing whitespace is superfluous.
-    use_template("vignette.Rmd", save_as = path, data = pkg, 
-                                                            ^
-R/devtools.R:112:61: style: Trailing whitespace is superfluous.
-    use_template("travis.yml", ".travis.yml", ignore = TRUE, 
-                                                            ^
-R/devtools.R:123:41: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-    if (pkg[["package"]] == "packager") { 
-                                        ^
-R/devtools.R:123:42: style: Trailing whitespace is superfluous.
-    if (pkg[["package"]] == "packager") { 
-                                         ^
-R/devtools.R:171:1: style: Trailing blank lines are superfluous.
-
-^
 R/devtools.R:172:1: style: Trailing blank lines are superfluous.
 
 ^
 R/devtools.R:173:1: style: Trailing blank lines are superfluous.
 
 ^
-R/main.R:59:79: style: Trailing whitespace is superfluous.
-    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]], 
-                                                                              ^
-R/main.R:73:67: style: Trailing whitespace is superfluous.
-    use_git_ignore(paste0(devtools::as.package(path)[["package"]], 
-                                                                  ^
-R/main.R:80:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                            system("make")})
-                                          ^
-R/main.R:82:12: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-    } else { # run at least roxygen
-           ^
-R/main.R:121:55: style: Trailing whitespace is superfluous.
-set_package_info <- function(path, author_at_r = NULL, 
-                                                      ^
-R/main.R:122:76: style: Trailing whitespace is superfluous.
-                             title = "What it Does (One Line, Title Case)", 
-                                                                           ^
-R/main.R:124:77: style: Trailing whitespace is superfluous.
-    r1 <- update_description(path = path, title = tools::toTitleCase(title), 
-                                                                            ^
-R/main.R:125:56: style: Trailing whitespace is superfluous.
-                             description = description, 
-                                                       ^
-R/main.R:127:78: style: Trailing whitespace is superfluous.
-    r2 <- create_package_help(path = path, title = tools::toTitleCase(title), 
-                                                                             ^
-R/main.R:143:54: style: Trailing whitespace is superfluous.
-    author_at_r <- paste0("person(given = \"", given, 
-                                                     ^
-R/main.R:144:53: style: Trailing whitespace is superfluous.
-                          "\", family = \"", family, 
-                                                    ^
-R/main.R:145:51: style: Trailing whitespace is superfluous.
-                          "\", email = \"", email, 
-                                                  ^
-R/main.R:149:1: style: Trailing blank lines are superfluous.
+R/devtools.R:174:1: style: Trailing blank lines are superfluous.
 
 ^
-R/tools.R:16:71: style: Trailing whitespace is superfluous.
-    devel_versions <- grep("[0-9]+\\.[0-9]+\\.[0-9]+\\.9000", news.md, 
-                                                                      ^
-R/tools.R:19:48: style: Trailing whitespace is superfluous.
-        devel_numbers <- sapply(devel_versions, 
-                                               ^
-R/tools.R:23:75: style: Trailing whitespace is superfluous.
-            stop(paste("\nFound unmatched devel version: ", extra_devels)) 
-                                                                          ^
-R/tools.R:25:1: style: Trailing whitespace is superfluous.
-        
-^~~~~~~~
-R/tools.R:27:1: style: lines should not be more than 80 characters.
-    is_covered <- any(grepl(paste("^#", package_name, version_number), news.md)) 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/tools.R:27:81: style: Trailing whitespace is superfluous.
-    is_covered <- any(grepl(paste("^#", package_name, version_number), news.md)) 
-                                                                                ^
-R/tools.R:48:67: style: Trailing whitespace is superfluous.
-check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$", 
-                                                                  ^
-R/tools.R:83:19: style: Use <-, not =, for assignment.
-    comments_file = file.path(pkg[["path"]], "cran-comments.md")
-                  ^
-R/tools.R:96:74: style: Trailing whitespace is superfluous.
-        check_output <- utils::capture.output(print.check_results(check), 
-                                                                         ^
-R/tools.R:103:75: style: Trailing whitespace is superfluous.
-        comments <- c(comments, "this is the initial commit of package '", 
-                                                                          ^
-R/tools.R:108:71: style: Trailing whitespace is superfluous.
-        comments <- c(comments, "this is a resubmission of package '", 
-                                                                      ^
-R/tools.R:109:79: style: Trailing whitespace is superfluous.
-                      pkg$package, "'. I have added the following changes:\n", 
-                                                                              ^
-R/tools.R:113:75: style: Commas should always have a space after.
-    comments <- c(comments, "Best, ", name, "\n\n# Package ", pkg$package," ", 
-                                                                          ^
-R/tools.R:113:79: style: Trailing whitespace is superfluous.
-    comments <- c(comments, "Best, ", name, "\n\n# Package ", pkg$package," ", 
-                                                                              ^
-R/tools.R:115:68: style: Trailing whitespace is superfluous.
-                  "- ", paste(here[here != ""], collapse = "\n  "), 
-                                                                   ^
-R/tools.R:118:48: style: Trailing whitespace is superfluous.
-        if (length(travis_session_info) == 1 && 
-                                               ^
-R/tools.R:121:58: style: Trailing whitespace is superfluous.
-            travis_repo <- sub("https://github.com/", "", 
-                                                         ^
-R/tools.R:122:1: style: lines should not be more than 80 characters.
-                               grep("github", value = TRUE, git2r::remote_url(r)))
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/tools.R:123:1: style: lines should not be more than 80 characters.
-            travis_log <- system2("sudo", paste("travis logs --repo", travis_repo), 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/tools.R:123:84: style: Trailing whitespace is superfluous.
-            travis_log <- system2("sudo", paste("travis logs --repo", travis_repo), 
-                                                                                   ^
-R/tools.R:129:38: style: Trailing whitespace is superfluous.
-        comments <- c(comments, "- ", 
-                                     ^
-R/tools.R:130:76: style: Trailing whitespace is superfluous.
-                      paste(travis_session_info[travis_session_info != ""], 
-                                                                           ^
-R/tools.R:133:59: style: Trailing whitespace is superfluous.
-    comments <- c(comments, "- win-builder (devel)", "\n", 
-                                                          ^
-R/tools.R:142:13: style: Use <-, not =, for assignment.
-    license = list(License = "BSD_2_clause + file LICENSE")
-            ^
-R/tools.R:143:5: warning: local variable ‘res’ assigned but may not be used
-    res <- document::alter_description_file(path = path, substitution = license)
-    ^~~
-R/tools.R:146:50: style: Trailing whitespace is superfluous.
-    cat("YEAR: ", format(Sys.Date(), "%Y"), "\n", 
-                                                 ^
-R/tools.R:147:48: style: Trailing whitespace is superfluous.
-        "COPYRIGHT HOLDER: ", copyright_holder, 
-                                               ^
-R/tools.R:154:67: style: Trailing whitespace is superfluous.
-    root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package, 
-                                                                  ^
-R/tools.R:158:7: style: Place a space before left parenthesis, except in a function call.
-    if(root == FALSE) stop("Can't find the R package")
-      ^
-R/tools.R:160:1: style: lines should not be more than 80 characters.
-    news <- unlist(strsplit(paste(readLines("NEWS.md"), collapse = "\n"), split = "# "))
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/tools.R:161:67: style: Trailing whitespace is superfluous.
-    package_pattern <- paste0("^", description[1, "Package"], " ", 
-                                                                  ^
-R/tools.R:163:54: style: Trailing whitespace is superfluous.
-    news <- grep(package_pattern, news, value = TRUE) 
-                                                     ^
-R/tools.R:168:44: style: Trailing whitespace is superfluous.
-create_package_help <- function(path = ".", 
-                                           ^
-R/tools.R:177:30: style: Trailing whitespace is superfluous.
-        if (is.null(details)) 
-                             ^
-R/tools.R:182:24: style: Trailing whitespace is superfluous.
-    if (is.na(details)) 
-                       ^
-R/tools.R:189:77: style: Trailing whitespace is superfluous.
-    package_roxygen_end <- c(paste0("@name ", pkg[["package"]], "-package"), 
-                                                                            ^
-R/tools.R:190:80: style: Trailing whitespace is superfluous.
-                             paste0("@aliases ", pkg[["package"]], "-package"), 
-                                                                               ^
-R/tools.R:191:49: style: Trailing whitespace is superfluous.
-                             "@docType package", 
-                                                ^
-R/tools.R:207:77: style: Trailing whitespace is superfluous.
-    if (is.null(author_at_r)) message("Argument 'author_at_r' is missing. ", 
-                                                                            ^
-R/tools.R:208:44: style: Trailing whitespace is superfluous.
-                                 "Use\n\t", 
-                                           ^
-R/tools.R:209:1: style: lines should not be more than 80 characters.
-                                 'sub("(email)", "\n\t\\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))',
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/tools.R:211:56: style: Trailing whitespace is superfluous.
-    s <- list(Title = title, Description = description, 
-                                                       ^
-R/tools.R:235:55: style: Trailing whitespace is superfluous.
-                         file_name <- list.files(path, 
-                                                      ^
-R/tools.R:236:74: style: Trailing whitespace is superfluous.
-                                                 pattern = ".*\\.Rproj$", 
-                                                                         ^
-R/tools.R:255:2: style: Trailing whitespace is superfluous.
-} 
- ^
-R/tools.R:257:56: style: Trailing whitespace is superfluous.
-git_tag <- function(path = ".", tag_uncommited = FALSE, 
-                                                       ^
-R/tools.R:280:38: style: Trailing whitespace is superfluous.
-provide_throw <- function(path = ".", 
-                                     ^
-R/tools.R:288:56: style: Trailing whitespace is superfluous.
-    use_template(file, save_as = file_path, data = pkg, 
-                                                       ^
-R/tools.R:291:71: style: Trailing whitespace is superfluous.
-    suppressMessages(devtools::use_package("RUnit", type = "Suggests", 
-                                                                      ^
-R/tools.R:293:74: style: Trailing whitespace is superfluous.
-    suppressMessages(devtools::use_package("devtools", type = "Suggests", 
-                                                                         ^
-R/tools.R:295:75: style: Trailing whitespace is superfluous.
-    suppressMessages(devtools::use_package("rprojroot", type = "Suggests", 
-                                                                          ^
-R/tools.R:299:56: style: Trailing whitespace is superfluous.
-    use_template(file, save_as = file_path, data = pkg, 
-                                                       ^
-R/tools.R:304:56: style: Trailing whitespace is superfluous.
-    use_template(file, save_as = file_path, data = pkg, 
-                                                       ^
-R/tools.R:308:56: style: Trailing whitespace is superfluous.
-    dir.create(file.path(pkg[["path"]], relative_path), 
-                                                       ^
-R/tools.R:312:56: style: Trailing whitespace is superfluous.
-    use_template(file, save_as = file_path, data = pkg, 
-                                                       ^
-R/tools.R:320:34: style: Trailing whitespace is superfluous.
-use_devel <- function(path = ".", 
-                                 ^
-R/tools.R:323:66: style: Trailing whitespace is superfluous.
-    use_template("devel.R", data = pkg, pkg = pkg, force = force, 
-                                                                 ^
-R/tools.R:328:37: style: Trailing whitespace is superfluous.
-use_makefile <- function(path = ".", 
-                                    ^
-R/tools.R:332:1: style: lines should not be more than 80 characters.
+R/internal.R:158:1: style: lines should not be more than 80 characters.
     use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tests/runit.R:11:76: style: Trailing whitespace is superfluous.
-    devtools::load_all(pkg = ".") # needed to use devtools' shim version of 
-                                                                           ^
-tests/runit.R:19:36: style: Put spaces around all infix operators.
-        require("packager", quietly=TRUE, character.only=TRUE) || 
-                                  ~^~
-tests/runit.R:19:57: style: Put spaces around all infix operators.
-        require("packager", quietly=TRUE, character.only=TRUE) || 
-                                                       ~^~
-tests/runit.R:19:66: style: Trailing whitespace is superfluous.
-        require("packager", quietly=TRUE, character.only=TRUE) || 
-                                                                 ^
-tests/runit.R:25:57: style: Trailing whitespace is superfluous.
-    stop("Can not find RUnit test directory ", unit_dir, 
-                                                        ^
-tests/testthat/test-throw.R:4:73: style: Trailing whitespace is superfluous.
-                        testthat::expect_error(throw("hello, testthat"), 
-                                                                        ^
-tests/testthat/test-throw.R:8:1: style: Trailing blank lines are superfluous.
+R/main.R:76:30: style: Trailing whitespace is superfluous.
+        withr::with_dir(path, 
+                             ^
+R/main.R:77:25: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+                        {
+                        ^
+R/main.R:153:1: style: Trailing blank lines are superfluous.
 
 ^
+R/tools.R:25:1: style: Trailing whitespace is superfluous.
+      
+^~~~~~

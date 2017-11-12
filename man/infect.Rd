@@ -12,7 +12,7 @@ infect(path, make = FALSE, git_add_and_commit = TRUE, ...)
 \item{make}{Try to use make on the infected package?
 Option to be disabled for testing.}
 
-\item{git_add_and_commit}{Add and commit changes in git? 
+\item{git_add_and_commit}{Add and commit changes in git?
 Option to be disabled for testing.}
 
 \item{...}{Arguments to be passed to \code{\link{set_package_info}}.}

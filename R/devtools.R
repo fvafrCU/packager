@@ -1,6 +1,6 @@
 # exported functions that are used by intermal functions.
 # So I can either change the  _verbatim_ copies of the internal functions or get
-# verbatim copies of the exported ones. Needing new internal ones... 
+# verbatim copies of the exported ones. Needing new internal ones...
 package_file <- function (..., path = ".") {
     if (!is.character(path) || length(path) != 1) {
         stop("`path` must be a string.", call. = FALSE)
@@ -35,17 +35,17 @@ load_pkg_description <- function (path, create) {
 # extending devtools' version to not hard code the source package of the
 # template. And get rid of call to devtools:::open_in_rstudio().
 # Remove dialog.
-use_template <- function(template, save_as = template, data = list(), 
-                         ignore = FALSE, pkg = ".", 
-                         source_package = "packager", 
+use_template <- function(template, save_as = template, data = list(),
+                         ignore = FALSE, pkg = ".",
+                         source_package = "packager",
                          force = isTRUE(getOption("packager")[["force"]])) {
     status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)
     if (! file.exists(path) || isTRUE(force)) {
-        template_path <- system.file("templates", template, 
+        template_path <- system.file("templates", template,
                                      package = source_package, mustWork = TRUE)
-        template_out <- whisker::whisker.render(readLines(template_path), 
+        template_out <- whisker::whisker.render(readLines(template_path),
                                                 data)
         message("* Creating `", save_as, "` from template.")
         writeLines(template_out, path)
@@ -55,7 +55,7 @@ use_template <- function(template, save_as = template, data = list(),
         }
         status <- TRUE
     } else {
-       warning("`", save_as, "` already exists.", call. = FALSE) 
+       warning("`", save_as, "` already exists.", call. = FALSE)
     }
     return(invisible(status))
 }
@@ -68,13 +68,14 @@ use_readme_rmd <- function (path = ".", ...) {
         pkg$github <- github_info(pkg$path)
     }
     pkg$Rmd <- TRUE
-    use_template("omni-README", save_as = "README.Rmd", data = pkg, 
+    use_template("omni-README", save_as = "README.Rmd", data = pkg,
                  ignore = TRUE, pkg = pkg, ...)
     devtools::use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
-    if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git", 
+    if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git",
                                                      "hooks", "pre-commit"))) {
         message("* Adding pre-commit hook")
-        devtools::use_git_hook("pre-commit", render_template("readme-rmd-pre-commit.sh"), 
+        devtools::use_git_hook("pre-commit",
+                               render_template("readme-rmd-pre-commit.sh"),
                                pkg = pkg)
     }
     return(invisible(NULL))
@@ -92,24 +93,22 @@ use_intro <- function (path = ".", ...) {
         pkg$github <- github_info(pkg$path)
     }
     pkg$date <- format(Sys.time(), "%Y-%m-%d, %H:%M:%S")
-    vignette_name <- paste0("An_Introduction_to_", 
+    vignette_name <- paste0("An_Introduction_to_",
                             pkg[["package"]], ".Rmd")
-    # use the original to make checks and create the directory
-    #devtools::use_vignette(vignette_name, pkg = path)
     check_suggested("rmarkdown")
     add_desc_package(pkg, "Suggests", "knitr")
     add_desc_package(pkg, "Suggests", "rmarkdown")
     add_desc_package(pkg, "VignetteBuilder", "knitr")
     use_directory("vignettes", pkg = pkg)
     path <- file.path("vignettes", vignette_name)
-    use_template("vignette.Rmd", save_as = path, data = pkg, 
+    use_template("vignette.Rmd", save_as = path, data = pkg,
                  ignore = FALSE, pkg = pkg, ...)
     return(invisible(NULL))
 }
 
 use_travis <- function (path = ".", ...) {
     pkg <- as.package(path)
-    use_template("travis.yml", ".travis.yml", ignore = TRUE, 
+    use_template("travis.yml", ".travis.yml", ignore = TRUE,
         pkg = pkg, ...)
     return(invisible(NULL))
 }
@@ -120,7 +119,7 @@ use_devtools <- function(path = ".") {
     result <- c(result, use_news_md(pkg = path))
     result <- c(result, use_readme_rmd(path = path))
     # add imports to description
-    if (pkg[["package"]] == "packager") { 
+    if (pkg[["package"]] == "packager") {
         result <- c(result, devtools::use_package("devtools"), pkg = path)
         result <- c(result, devtools::use_package("git2r"), pkg = path)
         result <- c(result, devtools::use_package("withr"), pkg = path)
@@ -128,8 +127,8 @@ use_devtools <- function(path = ".") {
     return(result)
 }
 
-# devtools' version does not pass ceiling to git2r::discover_repository, 
-# thus failing, if any .git found in the parents of the package path. 
+# devtools' version does not pass ceiling to git2r::discover_repository,
+# thus failing, if any .git found in the parents of the package path.
 use_git <- function (message = "Initial commit", path = ".") {
     pkg <- devtools::as.package(path)
     if (!is.null(git2r::discover_repository(pkg[["path"]], ceiling = 0))) {

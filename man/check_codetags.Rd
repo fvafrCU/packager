@@ -23,6 +23,6 @@ You hopefully use code tags
 This functions searches for files under a directory containing such tags.
 }
 \examples{
-codes <- system.file("R", package = "packager")
-check_codetags(codes)
+dir <- system.file("templates", package = "packager")
+check_codetags(dir)
 }
