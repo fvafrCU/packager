@@ -43,8 +43,8 @@ check_news <- function(path = ".") {
 #' @return A character vector of hits.
 #' @export
 #' @examples
-#' codes <- system.file("R", package = "packager")
-#' check_codetags(codes)
+#' dir <- system.file("templates", package = "packager")
+#' check_codetags(dir)
 check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$", 
                            pattern =  "XXX:|FIXME:|TODO:") {
     return(grep_directory(path = path, exclude = exclude, pattern =  pattern))
@@ -137,6 +137,24 @@ provide_cran_comments <- function(check_log = NULL,
     return(invisible(comments))
 }
 
+#' Use the BSD-2-Clause License
+#' 
+#' It's my favourite and \pgk{devtools} provides 
+#' \code{\link[devtools:use_mit_license]{use_mit_license}} only.
+#' @param path Path to the package.
+#' @return Invisibly \code{\link{NULL}}.
+#' withr::with_dir(tempdir(), 
+#'                 {
+#'                     unlink("fakepack", recursive = TRUE)
+#'                     devtools::create("fakepack")
+#'                     use_bsd2clause_license("fakepack")
+#'                     list.files("fakepack")
+#'                     grep("^License", readLines(file.path("fakepack", 
+#'                                                          "DESCRIPTION")))
+#'                     readLines(file.path("fakepack", "LICENSE"))
+#'                 }
+#' )
+#' @export
 use_bsd2clause_license <- function (path = ".") {
     pkg <- devtools::as.package(path)
     license = list(License = "BSD_2_clause + file LICENSE")
@@ -149,13 +167,23 @@ use_bsd2clause_license <- function (path = ".") {
     return(invisible(NULL))
 }
 
+#' Create a Git Tag Based on the Current Version Number
+#' 
+#' This is basically the same as \command{git tag -a T -m M} where T is the
+#' version read from the package's DESCRIPTION file and M is given by
+#' \code{message} (see below).
+#' @param path Path to the package.
+#' @param path Tag if there are uncommitted changes?
+#' @param message The tag message to be used.
+#' @return \code{\link{FALSE}} or the value of
+#' \code{\link[git2r:tag]{git2r::tag}}.
+#' @export
 git_tag <- function(path = ".", tag_uncommited = FALSE, 
                     message = "CRAN release") {
     status <- FALSE
     root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
                      error = function(e) return(path))
-    d <- readLines(file.path(root, "DESCRIPTION"))
-    version <- sub("^Version: ", "", grep("^Version: ", d, value = TRUE))
+    version <- devtools::as.package(".")[["version"]]
     if (! is_git_clone(root))
         warn_and_stop("Not a git repository.")
     if (is_git_uncommitted(root) && ! isTRUE(tag_uncommited))
