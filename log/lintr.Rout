@@ -160,21 +160,15 @@ R/devtools_internals.R:295:1: style: lines should not be more than 80 characters
 R/devtools_internals.R:307:1: style: Trailing blank lines are superfluous.
 
 ^
-R/devtools.R:99:6: style: Commented code should be removed.
-    #devtools::use_vignette(vignette_name, pkg = path)
-     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools.R:170:1: style: Trailing blank lines are superfluous.
+
+^
+R/devtools.R:171:1: style: Trailing blank lines are superfluous.
+
+^
 R/devtools.R:172:1: style: Trailing blank lines are superfluous.
 
 ^
-R/devtools.R:173:1: style: Trailing blank lines are superfluous.
-
-^
-R/devtools.R:174:1: style: Trailing blank lines are superfluous.
-
-^
-R/internal.R:158:1: style: lines should not be more than 80 characters.
-    use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force, ignore = ignore)
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 R/main.R:76:30: style: Trailing whitespace is superfluous.
         withr::with_dir(path, 
                              ^

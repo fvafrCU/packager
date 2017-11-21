@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpyvsJGT'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpCVRhZH'
 No DESCRIPTION found. Creating with values:
 
 
@@ -25,10 +25,7 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Argument 'author_at_r' is missing. Use
-	sub("(email)", "
-	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
-for example
+Argument 'author_at_r' is missing.
 * Adding testthat to Suggests
 * Creating `tests/testthat`.
 * Creating `tests/testthat.R` from template.
@@ -38,9 +35,9 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpyvsJGT/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpyvsJGT/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpyvsJGT/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/RtmpCVRhZH/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpCVRhZH/prutp/.gitignore
+Updating roxygen version in /tmp/RtmpCVRhZH/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
@@ -49,7 +46,7 @@ Checking file listings cardinality but skipping file contents on h6!
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpyvsJGT'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpCVRhZH'
 No DESCRIPTION found. Creating with values:
 
 
@@ -74,10 +71,7 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Argument 'author_at_r' is missing. Use
-	sub("(email)", "
-	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
-for example
+Argument 'author_at_r' is missing.
 * Adding testthat to Suggests
 * Creating `tests/testthat`.
 * Creating `tests/testthat.R` from template.
@@ -87,14 +81,14 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpyvsJGT/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpyvsJGT/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpyvsJGT/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/RtmpCVRhZH/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpCVRhZH/prutp/.gitignore
+Updating roxygen version in /tmp/RtmpCVRhZH/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/RtmpyvsJGT/prutp'
+make[1]: Entering directory '/tmp/RtmpCVRhZH/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -136,7 +130,7 @@ Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
 Makefile:130: recipe for target 'log/runit.Rout' failed
 make[1]: *** [log/runit.Rout] Error 1
-make[1]: Leaving directory '/tmp/RtmpyvsJGT/prutp'
+make[1]: Leaving directory '/tmp/RtmpCVRhZH/prutp'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
@@ -145,6 +139,6 @@ Checking file listings cardinality but skipping file contents on h6!
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
 In addition: Warning message:
 In FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/RtmpyvsJGT/prutp/LICENSE'
+  incomplete final line found on '/tmp/RtmpCVRhZH/prutp/LICENSE'
  done successfully.
 
