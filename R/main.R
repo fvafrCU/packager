@@ -144,7 +144,7 @@ set_package_info <- function(path, author_at_r = NULL,
 #' @examples
 #' author_at_r("Your", "Name", "some@whe.re")
 author_at_r <- function(given, family, email) {
-    author_at_r <- paste0("utils::person(given = \"", given,
+    author_at_r <- paste0("person(given = \"", given,
                           "\", family = \"", family,
                           "\", email = \"", email,
                           "\", role = c(\"aut\", \"cre\"))")
