@@ -4,8 +4,4 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 New submission
 
 Version contains large components (0.0.0.9000)
-displaying logs for fvafrCU/packager#99.1
-undefined method `receive' for nil:NilClass
-Warning message:
-In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
+displaying logs for fvafrCU/packager#103.1

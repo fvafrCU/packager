@@ -58,115 +58,70 @@ inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
 inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
                         testthat::expect_error({{{package}}}:::throw(string), 
                                                                              ^
-R/devtools_internals.R:7:15: warning: Do not use absolute paths.
-    x <- sub("/*$", "", x)
-              ^~~
-R/devtools_internals.R:20:23: style: Trailing whitespace is superfluous.
-    if (is.package(x)) 
-                      ^
-R/devtools_internals.R:29:43: warning: Do not use absolute paths.
-        files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
-                                          ^~~~~
-R/devtools_internals.R:41:64: style: Trailing whitespace is superfluous.
-            stop("`", path, "` exists but is not a directory.", 
-                                                               ^
-R/devtools_internals.R:66:72: style: Trailing whitespace is superfluous.
-        if (!compare(as.numeric_version(getNamespaceVersion(dep_name)), 
-                                                                       ^
-R/devtools_internals.R:68:62: style: Trailing whitespace is superfluous.
-            warning("Need ", dep_name, " ", dep_compare, " ", 
-                                                             ^
-R/devtools_internals.R:69:1: style: lines should not be more than 80 characters.
-                dep_ver, " but loaded version is ", getNamespaceVersion(dep_name))
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:76:62: style: Trailing whitespace is superfluous.
-    installed_version <- tryCatch(utils::packageVersion(pkg), 
-                                                             ^
-R/devtools_internals.R:82:25: style: Trailing whitespace is superfluous.
-    if (is.null(string)) 
-                        ^
-R/devtools_internals.R:85:33: style: Trailing whitespace is superfluous.
-    if (grepl("^\\s*$", string)) 
-                                ^
-R/devtools_internals.R:96:63: style: Trailing whitespace is superfluous.
-    compare_valid <- compare_nna %in% c(">", ">=", "==", "<=", 
-                                                              ^
-R/devtools_internals.R:99:1: style: lines should not be more than 80 characters.
-        stop("Invalid comparison operator in dependency: ", paste(compare_nna[!compare_valid], 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:99:95: style: Trailing whitespace is superfluous.
-        stop("Invalid comparison operator in dependency: ", paste(compare_nna[!compare_valid], 
-                                                                                              ^
-R/devtools_internals.R:102:76: style: Trailing whitespace is superfluous.
-    deps <- data.frame(name = names, compare = compare, version = versions, 
-                                                                           ^
-R/devtools_internals.R:108:1: style: lines should not be more than 80 characters.
-    suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
+R/devtools_internals.R:4:31: style: Only use double-quotes.
+  file.exists(file.path(path, 'DESCRIPTION'))
+                              ^~~~~~~~~~~~~
+R/devtools_internals.R:8:13: warning: Do not use absolute paths.
+  x <- sub("/*$", "", x)
+            ^~~
+R/devtools_internals.R:63:39: warning: Do not use absolute paths.
+    files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
+                                      ^~~~~
+R/devtools_internals.R:107:12: style: Place a space before left parenthesis, except in a function call.
+  } else if(!is.na(dep_ver) && !is.na(dep_compare)) {
+           ^
+R/devtools_internals.R:123:1: style: lines should not be more than 80 characters.
+  installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:112:64: style: Trailing whitespace is superfluous.
-        stop(sQuote(pkg), " is not in Suggests: for devtools!", 
-                                                               ^
-R/devtools_internals.R:121:70: style: Trailing whitespace is superfluous.
-            stop("Cannot set ", sQuote(compare), " without setting ", 
-                                                                     ^
-R/devtools_internals.R:128:63: style: Trailing whitespace is superfluous.
-    if (!is_installed(pkg) || !check_dep_version(pkg, version, 
-                                                              ^
-R/devtools_internals.R:130:55: style: Trailing whitespace is superfluous.
-        msg <- paste0(sQuote(pkg), if (is.na(version)) 
-                                                      ^
-R/devtools_internals.R:132:1: style: lines should not be more than 80 characters.
-        else paste0(" >= ", version), " must be installed for this functionality.")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:149:63: style: Trailing whitespace is superfluous.
-    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", 
-                                                              ^
-R/devtools_internals.R:177:1: style: lines should not be more than 80 characters.
+R/devtools_internals.R:156:5: style: Place a space before left parenthesis, except in a function call.
+  if(!all(compare_valid)) {
+    ^
+R/devtools_internals.R:170:1: style: lines should not be more than 80 characters.
+  suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_internals.R:227:23: style: Only use double-quotes.
+    if (!grepl(paste0('\\b', name, '\\b'), old)) {
+                      ^~~~~
+R/devtools_internals.R:227:36: style: Only use double-quotes.
+    if (!grepl(paste0('\\b', name, '\\b'), old)) {
+                                   ^~~~~
+R/devtools_internals.R:248:7: style: Commented code should be removed.
+    # git@github.com:hadley/devtools.git
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_internals.R:267:1: style: lines should not be more than 80 characters.
 github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:180:28: style: Trailing whitespace is superfluous.
-    if (!uses_github(path)) 
-                           ^
-R/devtools_internals.R:184:73: style: Trailing whitespace is superfluous.
-    if (!is.null(remote_name) && !remote_name %in% names(r_remote_urls)) 
-                                                                        ^
-R/devtools_internals.R:185:61: style: Trailing whitespace is superfluous.
-        stop("no github-related remote named ", remote_name, 
-                                                            ^
-R/devtools_internals.R:218:24: style: Trailing whitespace is superfluous.
-    if (length(x) == 0) 
-                       ^
-R/devtools_internals.R:220:29: style: Trailing whitespace is superfluous.
-    if (!grepl("github", x)) 
-                            ^
-R/devtools_internals.R:230:75: style: Trailing whitespace is superfluous.
-    list(username = match[2], repo = match[3], fullname = paste0(match[2], 
-                                                                          ^
-R/devtools_internals.R:244:25: style: Trailing whitespace is superfluous.
-    if (!uses_git(path)) 
-                        ^
-R/devtools_internals.R:277:62: style: Trailing whitespace is superfluous.
-    structure(list(errors = pieces[grepl("... ERROR", pieces, 
-                                                             ^
-R/devtools_internals.R:278:68: style: Trailing whitespace is superfluous.
-        fixed = TRUE)], warnings = pieces[grepl("... WARN", pieces, 
-                                                                   ^
-R/devtools_internals.R:279:65: style: Trailing whitespace is superfluous.
-        fixed = TRUE)], notes = pieces[grepl("... NOTE", pieces, 
-                                                                ^
-R/devtools_internals.R:295:1: style: lines should not be more than 80 characters.
+R/devtools_internals.R:344:1: style: lines should not be more than 80 characters.
     show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:307:1: style: Trailing blank lines are superfluous.
-
-^
-R/devtools.R:170:1: style: Trailing blank lines are superfluous.
-
-^
-R/devtools.R:171:1: style: Trailing blank lines are superfluous.
-
-^
-R/devtools.R:172:1: style: Trailing blank lines are superfluous.
+R/devtools.R:3:2: style: Commented code should be removed.
+## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools.R:4:2: style: Commented code should be removed.
+## #' @rdname devtools-deprecated
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools.R:9:3: style: Commented code should be removed.
+# # devtools_1.13.3.tar.gz	2017-08-02 09:05
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools.R:11:3: style: Commented code should be removed.
+# # usethis_1.0.0.tar.gz	2017-10-22 19:36
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools.R:174:70: style: Trailing whitespace is superfluous.
+            stop("Cannot set ", sQuote(compare), " without setting ", 
+                                                                     ^
+R/devtools.R:181:63: style: Trailing whitespace is superfluous.
+    if (!is_installed(pkg) || !check_dep_version(pkg, version, 
+                                                              ^
+R/devtools.R:183:55: style: Trailing whitespace is superfluous.
+        msg <- paste0(sQuote(pkg), if (is.na(version)) 
+                                                      ^
+R/devtools.R:185:38: style: Trailing whitespace is superfluous.
+        else paste0(" >= ", version), 
+                                     ^
+R/devtools.R:204:63: style: Trailing whitespace is superfluous.
+    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", 
+                                                              ^
+R/devtools.R:212:1: style: Trailing blank lines are superfluous.
 
 ^
 R/main.R:76:30: style: Trailing whitespace is superfluous.

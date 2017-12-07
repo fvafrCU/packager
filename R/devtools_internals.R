@@ -15,24 +15,9 @@ is_root <- function(path) {
 
 is_dir <- function(x) file.info(x)$isdir
 
-#' Is the object a package?
-#'
-#' @keywords internal
 is.package <- function(x) inherits(x, "package")
 
 
-#' Coerce input to a package.
-#'
-#' Possible specifications of package:
-#' \itemize{
-#'   \item path
-#'   \item package object
-#' }
-#' @param x object to coerce to a package
-#' @param create only relevant if a package structure does not exist yet: if
-#'   \code{TRUE}, create a package structure; if \code{NA}, ask the user
-#'   (in interactive mode only)
-#' @keywords internal
 as.package <- function(x = NULL, create = NA) {
   if (is.package(x)) return(x)
 
@@ -40,22 +25,6 @@ as.package <- function(x = NULL, create = NA) {
   load_pkg_description(x, create = create)
 }
 
-#' Add a file to \code{.Rbuildignore}
-#'
-#' \code{.Rbuildignore} has a regular expression on each line, but it's
-#' usually easier to work with specific file names. By default, will (crudely)
-#' turn a filename into a regular expression that will only match that
-#' path. Repeated entries will be silently removed.
-#'
-#' @param pkg package description, can be path or package name.  See
-#'   \code{\link{as.package}} for more information
-#' @param files Name of file.
-#' @param escape If \code{TRUE}, the default, will escape \code{.} to
-#'   \code{\\.} and surround with \code{^} and \code{$}.
-#' @return Nothing, called for its side effect.
-#' @aliases add_build_ignore
-#' @family infrastructure
-#' @keywords internal
 use_build_ignore <- function(files, escape = TRUE, pkg = ".") {
   pkg <- as.package(pkg)
 
@@ -90,12 +59,6 @@ use_directory <- function(path, ignore = FALSE, pkg = ".") {
   invisible(TRUE)
 }
 
-#' Check that the version of an imported package satisfies the requirements
-#'
-#' @param dep_name The name of the package with objects to import
-#' @param dep_ver The version of the package
-#' @param dep_compare The comparison operator to use to check the version
-#' @keywords internal
 check_dep_version <- function(dep_name, dep_ver = NA, dep_compare = NA) {
   if (!requireNamespace(dep_name, quietly = TRUE)) {
     stop("Dependency package ", dep_name, " not available.")
@@ -124,13 +87,6 @@ is_installed <- function(pkg, version = 0) {
   !is.na(installed_version) && installed_version >= version
 }
 
-#' Parse package dependency strings.
-#'
-#' @param string to parse. Should look like \code{"R (>= 3.0), ggplot2"} etc.
-#' @return list of two character vectors: \code{name} package names,
-#'   and \code{version} package versions. If version is not specified,
-#'   it will be stored as NA.
-#' @keywords internal
 parse_deps <- function(string) {
   if (is.null(string)) return()
   stopifnot(is.character(string), length(string) == 1)

@@ -48,5 +48,21 @@ The following objects are masked from ‘package:devtools’:
     with_collate, with_envvar, with_libpaths, with_locale,
     with_makevars, with_options, with_par, with_path
 
+Writing is.package.Rd
+Writing as.package.Rd
+Writing use_build_ignore.Rd
+Writing check_dep_version.Rd
+Writing parse_deps.Rd
+Writing create.Rd
+Writing infect.Rd
+Writing set_package_info.Rd
+Writing author_at_r.Rd
+Writing packager-package.Rd
+Writing throw.Rd
+Writing check_news.Rd
+Writing check_codetags.Rd
+Writing provide_cran_comments.Rd
+Writing use_bsd2clause_license.Rd
+Writing git_tag.Rd
 > 
 > 

@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpCVRhZH'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp1bNGvN'
 No DESCRIPTION found. Creating with values:
 
 
@@ -35,9 +35,9 @@ Argument 'author_at_r' is missing.
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpCVRhZH/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpCVRhZH/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpCVRhZH/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmp1bNGvN/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp1bNGvN/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmp1bNGvN/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
@@ -46,7 +46,7 @@ Checking file listings cardinality but skipping file contents on h6!
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpCVRhZH'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmp1bNGvN'
 No DESCRIPTION found. Creating with values:
 
 
@@ -81,14 +81,14 @@ Argument 'author_at_r' is missing.
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpCVRhZH/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpCVRhZH/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpCVRhZH/prutp/DESCRIPTION
+* Adding `*.tar.gz` to /tmp/Rtmp1bNGvN/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp1bNGvN/prutp/.gitignore
+Updating roxygen version in /tmp/Rtmp1bNGvN/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/RtmpCVRhZH/prutp'
+make[1]: Entering directory '/tmp/Rtmp1bNGvN/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -98,20 +98,20 @@ processing file: README.Rmd
   ordinary text without R code
 
   |                                                                         |......................                                           |  33%
-label: unnamed-chunk-1 (with options) 
+label: setup (with options) 
 List of 1
- $ echo: logi FALSE
+ $ include: logi FALSE
 
   |                                                                         |................................                                 |  50%
   ordinary text without R code
 
   |                                                                         |...........................................                      |  67%
-label: unnamed-chunk-2 (with options) 
+label: unnamed-chunk-1 (with options) 
 List of 1
  $ eval: logi FALSE
 
   |                                                                         |......................................................           |  83%
-label: unnamed-chunk-3 (with options) 
+label: unnamed-chunk-2 (with options) 
 List of 1
  $ echo: logi FALSE
 
@@ -130,7 +130,7 @@ Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
 Makefile:130: recipe for target 'log/runit.Rout' failed
 make[1]: *** [log/runit.Rout] Error 1
-make[1]: Leaving directory '/tmp/RtmpCVRhZH/prutp'
+make[1]: Leaving directory '/tmp/Rtmp1bNGvN/prutp'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
@@ -139,6 +139,6 @@ Checking file listings cardinality but skipping file contents on h6!
 Executing test function test_exception  ... Error in eval(expr, envir = parent.frame()) : Hello, error!
 In addition: Warning message:
 In FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/RtmpCVRhZH/prutp/LICENSE'
+  incomplete final line found on '/tmp/Rtmp1bNGvN/prutp/LICENSE'
  done successfully.
 
