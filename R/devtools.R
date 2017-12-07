@@ -1,26 +1,30 @@
-# exported functions that are used by intermal functions.
+# exported functions that are used by internal functions.
 # So I can either change the  _verbatim_ copies of the internal functions or get
 # verbatim copies of the exported ones. Needing new internal ones...
-package_file <- function (..., path = ".") {
-    if (!is.character(path) || length(path) != 1) {
-        stop("`path` must be a string.", call. = FALSE)
-    }
-    path <- strip_slashes(normalizePath(path, mustWork = FALSE))
-    if (!file.exists(path)) {
-        stop("Can't find '", path, "'.", call. = FALSE)
-    }
-    if (!file.info(path)$isdir) {
-        stop("'", path, "' is not a directory.", call. = FALSE)
-    }
-    while (!has_description(path)) {
-        path <- dirname(path)
-        if (is_root(path)) {
-            stop("Could not find package root.", call. = FALSE)
-        }
-    }
-    return(file.path(path, ...))
-}
+package_file <- function(..., path = ".") {
+  if (!is.character(path) || length(path) != 1) {
+    stop("`path` must be a string.", call. = FALSE)
+  }
+  path <- strip_slashes(normalizePath(path, mustWork = FALSE))
 
+  if (!file.exists(path)) {
+    stop("Can't find '", path, "'.", call. = FALSE)
+  }
+  if (!file.info(path)$isdir) {
+    stop("'", path, "' is not a directory.", call. = FALSE)
+  }
+
+  # Walk up to root directory
+  while (!has_description(path)) {
+    path <- dirname(path)
+
+    if (is_root(path)) {
+      stop("Could not find package root.", call. = FALSE)
+    }
+  }
+
+  file.path(path, ...)
+}
 load_pkg_description <- function (path, create) {
     path_desc <- file.path(path, "DESCRIPTION")
     if (!file.exists(path_desc)) {
@@ -82,7 +86,7 @@ use_readme_rmd <- function (path = ".", ...) {
 }
 
 use_news_md <- function (pkg = ".", ...) {
-    pkg <- as.package(pkg)
+    pkg <- devtools::as.package(pkg)
     use_template("NEWS.md", data = pkg, pkg = pkg, ...)
     invisible(NULL)
 }

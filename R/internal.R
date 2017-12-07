@@ -107,7 +107,7 @@ provide_throw <- function(path = ".",
                           force = is_force(),
                           ...) {
     devtools::use_testthat(pkg = path)
-    pkg <- as.package(path)
+    pkg <- devtools::as.package(path)
 
     file <- "throw.R"
     file_path <- file.path("R", file)
@@ -145,7 +145,7 @@ provide_throw <- function(path = ".",
 
 use_devel <- function(path = ".",
                       ignore = TRUE, ...) {
-    pkg <- as.package(path)
+    pkg <- devtools::as.package(path)
     use_template("devel.R", data = pkg, pkg = pkg, force = force,
                  ignore = ignore)
     invisible(NULL)
@@ -154,7 +154,7 @@ use_devel <- function(path = ".",
 use_makefile <- function(path = ".",
                          force = is_force(),
                          ignore = TRUE) {
-    pkg <- as.package(path)
+    pkg <- devtools::as.package(path)
     use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force,
                  ignore = ignore)
     invisible(NULL)
