@@ -29,8 +29,8 @@ use_devtools <- function(path = ".") {
 }
 
 
-# get rid of the interactive() part using yesno() to create the package. Blow if
-# there is none!
+# get rid of the interactive() part using yesno() to create the package. 
+# Blow if there is none!
 load_pkg_description <- function(path, create) {
     path_desc <- file.path(path, "DESCRIPTION")
     if (!file.exists(path_desc)) {
@@ -167,4 +167,46 @@ use_git_ignore <- function (ignores, path = ".") {
 }
 
 
+# call utils::
+check_suggested <- function(pkg, version = NULL, compare = NA) {
+    if (is.null(version)) {
+        if (!is.na(compare)) {
+            stop("Cannot set ", sQuote(compare), " without setting ", 
+                sQuote(version), call. = FALSE)
+        }
+        dep <- suggests_dep(pkg)
+        version <- dep$version
+        compare <- dep$compare
+    }
+    if (!is_installed(pkg) || !check_dep_version(pkg, version, 
+        compare)) {
+        msg <- paste0(sQuote(pkg), if (is.na(version)) 
+            ""
+        else paste0(" >= ", version), 
+        " must be installed for this functionality.")
+        if (interactive()) {
+            message(msg, "\nWould you like to install it?")
+            if (utils::menu(c("Yes", "No")) == 1) {
+                utils::install.packages(pkg)
+            }
+            else {
+                stop(msg, call. = FALSE)
+            }
+        }
+        else {
+            stop(msg, call. = FALSE)
+        }
+    }
+}
+
+# call utils::
+yesno <- function(...) {
+    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", 
+        "I agree", "Absolutely")
+    nos <- c("No way", "Not yet", "I forget", "No", "Nope", "Uhhhh... Maybe?")
+    cat(paste0(..., collapse = ""))
+    qs <- c(sample(yeses, 1), sample(nos, 2))
+    rand <- sample(length(qs))
+    utils::menu(qs[rand]) != which(rand == 1)
+}
 

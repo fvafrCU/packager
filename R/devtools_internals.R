@@ -1,4 +1,5 @@
-# verbatim copies of internals from devtools 1.13.3
+# verbatim copies of internals and dependencies of internals from devtools
+# 1.13.3 but with "#' @export" tags removed.
 has_description <- function(path) {
   file.exists(file.path(path, 'DESCRIPTION'))
 }
@@ -17,7 +18,6 @@ is_dir <- function(x) file.info(x)$isdir
 #' Is the object a package?
 #'
 #' @keywords internal
-#' @export
 is.package <- function(x) inherits(x, "package")
 
 
@@ -32,7 +32,6 @@ is.package <- function(x) inherits(x, "package")
 #' @param create only relevant if a package structure does not exist yet: if
 #'   \code{TRUE}, create a package structure; if \code{NA}, ask the user
 #'   (in interactive mode only)
-#' @export
 #' @keywords internal
 as.package <- function(x = NULL, create = NA) {
   if (is.package(x)) return(x)
@@ -54,7 +53,6 @@ as.package <- function(x = NULL, create = NA) {
 #' @param escape If \code{TRUE}, the default, will escape \code{.} to
 #'   \code{\\.} and surround with \code{^} and \code{$}.
 #' @return Nothing, called for its side effect.
-#' @export
 #' @aliases add_build_ignore
 #' @family infrastructure
 #' @keywords internal
@@ -133,11 +131,6 @@ is_installed <- function(pkg, version = 0) {
 #'   and \code{version} package versions. If version is not specified,
 #'   it will be stored as NA.
 #' @keywords internal
-#' @export
-#' @examples
-#' parse_deps("httr (< 2.1),\nRCurl (>= 3)")
-#' # only package dependencies are returned
-#' parse_deps("utils (== 2.12.1),\ntools,\nR (>= 2.10),\nmemoise")
 parse_deps <- function(string) {
   if (is.null(string)) return()
   stopifnot(is.character(string), length(string) == 1)
@@ -185,48 +178,6 @@ suggests_dep <- function(pkg) {
   deps[found, ]
 }
 
-check_suggested <- function(pkg, version = NULL, compare = NA) {
-
-  if (is.null(version)) {
-    if (!is.na(compare)) {
-      stop("Cannot set ", sQuote(compare), " without setting ",
-           sQuote(version), call. = FALSE)
-    }
-
-    dep <- suggests_dep(pkg)
-
-    version <- dep$version
-    compare <- dep$compare
-  }
-
-  if (!is_installed(pkg) || !check_dep_version(pkg, version, compare)) {
-    msg <- paste0(sQuote(pkg),
-      if (is.na(version)) "" else paste0(" >= ", version),
-      " must be installed for this functionality.")
-
-    if (interactive()) {
-      message(msg, "\nWould you like to install it?")
-      if (menu(c("Yes", "No")) == 1) {
-        install.packages(pkg)
-      } else {
-        stop(msg, call. = FALSE)
-      }
-    } else {
-      stop(msg, call. = FALSE)
-    }
-  }
-}
-
-yesno <- function(...) {
-  yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", "I agree", "Absolutely")
-  nos <- c("No way", "Not yet", "I forget", "No", "Nope", "Uhhhh... Maybe?")
-
-  cat(paste0(..., collapse = ""))
-  qs <- c(sample(yeses, 1), sample(nos, 2))
-  rand <- sample(length(qs))
-
-  menu(qs[rand]) != which(rand == 1)
-}
 
 can_overwrite <- function(path) {
   name <- basename(path)
@@ -378,7 +329,6 @@ parse_check_results <- function(path) {
   )
 }
 
-#' @export
 print.check_results <- function(x, ...) {
   message("R CMD check results")
   message(summarise_check_results(x))
