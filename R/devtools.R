@@ -1,31 +1,37 @@
-# exported functions that are used by internal functions.
-# So I can either change the  _verbatim_ copies of the internal functions or get
-# verbatim copies of the exported ones. Needing new internal ones...
-package_file <- function(..., path = ".") {
-  if (!is.character(path) || length(path) != 1) {
-    stop("`path` must be a string.", call. = FALSE)
-  }
-  path <- strip_slashes(normalizePath(path, mustWork = FALSE))
+# infrastructure.R in devtools 1.13.3 states:
+## #' @details
+## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
+## #' @rdname devtools-deprecated
+# and then heavily uses 
+## #'@importsFrom usethis 
 
-  if (!file.exists(path)) {
-    stop("Can't find '", path, "'.", call. = FALSE)
-  }
-  if (!file.info(path)$isdir) {
-    stop("'", path, "' is not a directory.", call. = FALSE)
-  }
+# Now devtools 1.13.3 was released on CRAN:
+# # devtools_1.13.3.tar.gz	2017-08-02 09:05
+# But the first release of usethis appeared on CRAN:
+# # usethis_1.0.0.tar.gz	2017-10-22 19:36
+# I do not know how they imported from a package not yet released, but that is 
+# what they did.
+# So I just got copies of the imported functions from usethis by calling the
+# functions via devtools at the time. And then I modified most of them.
 
-  # Walk up to root directory
-  while (!has_description(path)) {
-    path <- dirname(path)
-
-    if (is_root(path)) {
-      stop("Could not find package root.", call. = FALSE)
+use_devtools <- function(path = ".") {
+    pkg <- devtools::as.package(path)
+    result <- NULL
+    result <- c(result, use_news_md(pkg = path))
+    result <- c(result, use_readme_rmd(path = path))
+    # add imports to description
+    if (pkg[["package"]] == "packager") {
+        result <- c(result, devtools::use_package("devtools"), pkg = path)
+        result <- c(result, devtools::use_package("git2r"), pkg = path)
+        result <- c(result, devtools::use_package("withr"), pkg = path)
     }
-  }
-
-  file.path(path, ...)
+    return(result)
 }
-load_pkg_description <- function (path, create) {
+
+
+# get rid of the interactive() part using yesno() to create the package. Blow if
+# there is none!
+load_pkg_description <- function(path, create) {
     path_desc <- file.path(path, "DESCRIPTION")
     if (!file.exists(path_desc)) {
         stop("No description at ", path_desc, call. = FALSE)
@@ -35,6 +41,8 @@ load_pkg_description <- function (path, create) {
     desc$path <- path
     structure(desc, class = "package")
 }
+
+
 
 # extending devtools' version to not hard code the source package of the
 # template. And get rid of call to devtools:::open_in_rstudio().
@@ -115,20 +123,6 @@ use_travis <- function (path = ".", ...) {
     use_template("travis.yml", ".travis.yml", ignore = TRUE,
         pkg = pkg, ...)
     return(invisible(NULL))
-}
-
-use_devtools <- function(path = ".") {
-    pkg <- devtools::as.package(path)
-    result <- NULL
-    result <- c(result, use_news_md(pkg = path))
-    result <- c(result, use_readme_rmd(path = path))
-    # add imports to description
-    if (pkg[["package"]] == "packager") {
-        result <- c(result, devtools::use_package("devtools"), pkg = path)
-        result <- c(result, devtools::use_package("git2r"), pkg = path)
-        result <- c(result, devtools::use_package("withr"), pkg = path)
-    }
-    return(result)
 }
 
 # devtools' version does not pass ceiling to git2r::discover_repository,
