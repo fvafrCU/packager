@@ -22,7 +22,6 @@ check_news <- function(path = ".") {
         if (length(extra_devels) > 0) {
             stop(paste("\nFound unmatched devel version: ", extra_devels))
         }
-      
     }
     is_covered <- any(grepl(paste("^#", package_name, version_number), news.md))
     if (! is_covered) {
@@ -58,7 +57,7 @@ check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
 #' @param initial Is this an initial release?
 #' @param check_log Path to the check log relative to \code{path}. Typically
 #' file.path("log", "dev_check.Rout").
-#' @param travis_session_info Travis session info, search for\cr 
+#' @param travis_session_info Travis session info, search for\cr
 #' "$ Rscript -e 'sessionInfo()'" \cr
 #' in the raw log of the travis build and copy the
 #' following three lines. This could read\cr
@@ -115,17 +114,8 @@ provide_cran_comments <- function(check_log = NULL,
                   "- ", paste(here[here != ""], collapse = "\n  "),
                   "\n")
     if (! is.null(travis_session_info)) {
-        if (length(travis_session_info) == 1 &&
-            travis_session_info == "travis-cli") {
-            r <- git2r::repository(path, discover = TRUE)
-            travis_repo <- sub("https://github.com/", "",
-                               grep("github",
-                                    value = TRUE, git2r::remote_url(r)))
-            travis_log <- system2("sudo", paste("travis logs --repo",
-                                                travis_repo),
-                                  stdout = TRUE)
-            k <- grep("sessionInfo()", travis_log)
-            travis_session_info <- travis_log[(k + 1): (k + 3)]
+        if (identical(travis_session_info == "travis-cli")) {
+            travis_session_info <- travis_cli(path)
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
         comments <- c(comments, "- ",
@@ -137,6 +127,18 @@ provide_cran_comments <- function(check_log = NULL,
     if (! as.logical(file.access(".", mode = 2))) # see ?file.acces return/note
         writeLines(comments, con = comments_file, sep = "")
     return(invisible(comments))
+}
+travis_cli <- function(path) {
+    r <- git2r::repository(path, discover = TRUE)
+    travis_repo <- sub("https://github.com/", "",
+                       grep("github",
+                            value = TRUE, git2r::remote_url(r)))
+    travis_log <- system2("sudo", paste("travis logs --repo",
+                                        travis_repo),
+                          stdout = TRUE)
+    k <- grep("sessionInfo()", travis_log)
+    travis_session_info <- travis_log[(k + 1): (k + 3)]
+    return(travis_session_info)
 }
 
 #' Use the BSD-2-Clause License

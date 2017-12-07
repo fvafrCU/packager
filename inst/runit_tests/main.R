@@ -9,8 +9,8 @@ test_create <- function() {
     names(contents) <- files
     contents <- sapply(contents, function(x) grep("date", x, value = TRUE,
                                                   invert = TRUE))
-    # checking on file contents does not work as covr and RUnit give different
-    # digest::sha1()-values.
+    # checking on file contents does not work as covr and RUnit give 
+    # different digest::sha1()-values.
     result <- files
     expected <- c("DESCRIPTION", "devel.R",
                   "inst/runit_tests/runit-throw.R", "LICENSE", "Makefile",
@@ -29,7 +29,7 @@ test_create <- function() {
         # intersection.
         result <- length(intersect(expected, result))
         expected <- length(expected)
-        message("Checking file listings cardinality but skipping file ", 
+        message("Checking file listings cardinality but skipping file ",
                 "contents on ", Sys.info()["nodename"], "!")
         runit_messsage <- "Cardinality of file listings intersection died!"
     }
@@ -65,7 +65,7 @@ test_create_make <- function() {
         # intersection.
         result <- length(intersect(expected, result))
         expected <- length(expected)
-        message("Checking file listings cardinality but skipping file ", 
+        message("Checking file listings cardinality but skipping file ",
                 "contents on ", Sys.info()["nodename"], "!")
         runit_messsage <- "Cardinality of file listings intersection died!"
     }

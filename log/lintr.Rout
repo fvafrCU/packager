@@ -1,15 +1,9 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/main.R:13:7: style: Commented code should be removed.
-    # digest::sha1()-values.
-      ^~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/main.R:32:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings cardinality but skipping file ", 
-                                                                        ^
-inst/runit_tests/main.R:68:73: style: Trailing whitespace is superfluous.
-        message("Checking file listings cardinality but skipping file ", 
-                                                                        ^
+inst/runit_tests/main.R:12:69: style: Trailing whitespace is superfluous.
+    # checking on file contents does not work as covr and RUnit give 
+                                                                    ^
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
@@ -58,81 +52,54 @@ inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
 inst/templates/test-throw.R:5:78: style: Trailing whitespace is superfluous.
                         testthat::expect_error({{{package}}}:::throw(string), 
                                                                              ^
-R/devtools_internals.R:4:31: style: Only use double-quotes.
-  file.exists(file.path(path, 'DESCRIPTION'))
-                              ^~~~~~~~~~~~~
-R/devtools_internals.R:8:13: warning: Do not use absolute paths.
-  x <- sub("/*$", "", x)
-            ^~~
-R/devtools_internals.R:63:39: warning: Do not use absolute paths.
-    files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
-                                      ^~~~~
-R/devtools_internals.R:107:12: style: Place a space before left parenthesis, except in a function call.
-  } else if(!is.na(dep_ver) && !is.na(dep_compare)) {
-           ^
-R/devtools_internals.R:123:1: style: lines should not be more than 80 characters.
-  installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:156:5: style: Place a space before left parenthesis, except in a function call.
-  if(!all(compare_valid)) {
-    ^
-R/devtools_internals.R:170:1: style: lines should not be more than 80 characters.
-  suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:227:23: style: Only use double-quotes.
-    if (!grepl(paste0('\\b', name, '\\b'), old)) {
-                      ^~~~~
-R/devtools_internals.R:227:36: style: Only use double-quotes.
-    if (!grepl(paste0('\\b', name, '\\b'), old)) {
-                                   ^~~~~
-R/devtools_internals.R:248:7: style: Commented code should be removed.
-    # git@github.com:hadley/devtools.git
-      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:267:1: style: lines should not be more than 80 characters.
-github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_internals.R:344:1: style: lines should not be more than 80 characters.
-    show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:3:2: style: Commented code should be removed.
+R/devtools_modified.R:3:2: style: Commented code should be removed.
 ## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:4:2: style: Commented code should be removed.
+R/devtools_modified.R:4:2: style: Commented code should be removed.
 ## #' @rdname devtools-deprecated
  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:9:3: style: Commented code should be removed.
+R/devtools_modified.R:9:3: style: Commented code should be removed.
 # # devtools_1.13.3.tar.gz	2017-08-02 09:05
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:11:3: style: Commented code should be removed.
+R/devtools_modified.R:11:3: style: Commented code should be removed.
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools.R:174:70: style: Trailing whitespace is superfluous.
-            stop("Cannot set ", sQuote(compare), " without setting ", 
-                                                                     ^
-R/devtools.R:181:63: style: Trailing whitespace is superfluous.
-    if (!is_installed(pkg) || !check_dep_version(pkg, version, 
-                                                              ^
-R/devtools.R:183:55: style: Trailing whitespace is superfluous.
-        msg <- paste0(sQuote(pkg), if (is.na(version)) 
-                                                      ^
-R/devtools.R:185:38: style: Trailing whitespace is superfluous.
-        else paste0(" >= ", version), 
-                                     ^
-R/devtools.R:204:63: style: Trailing whitespace is superfluous.
-    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", 
-                                                              ^
-R/devtools.R:212:1: style: Trailing blank lines are superfluous.
-
-^
-R/main.R:76:30: style: Trailing whitespace is superfluous.
-        withr::with_dir(path, 
-                             ^
-R/main.R:77:25: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-                        {
-                        ^
-R/main.R:153:1: style: Trailing blank lines are superfluous.
-
-^
-R/tools.R:25:1: style: Trailing whitespace is superfluous.
-      
-^~~~~~
+R/devtools_verbatim.R:4:31: style: Only use double-quotes.
+  file.exists(file.path(path, 'DESCRIPTION'))
+                              ^~~~~~~~~~~~~
+R/devtools_verbatim.R:8:13: warning: Do not use absolute paths.
+  x <- sub("/*$", "", x)
+            ^~~
+R/devtools_verbatim.R:32:39: warning: Do not use absolute paths.
+    files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
+                                      ^~~~~
+R/devtools_verbatim.R:70:12: style: Place a space before left parenthesis, except in a function call.
+  } else if(!is.na(dep_ver) && !is.na(dep_compare)) {
+           ^
+R/devtools_verbatim.R:86:1: style: lines should not be more than 80 characters.
+  installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_verbatim.R:112:5: style: Place a space before left parenthesis, except in a function call.
+  if(!all(compare_valid)) {
+    ^
+R/devtools_verbatim.R:126:1: style: lines should not be more than 80 characters.
+  suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_verbatim.R:183:23: style: Only use double-quotes.
+    if (!grepl(paste0('\\b', name, '\\b'), old)) {
+                      ^~~~~
+R/devtools_verbatim.R:183:36: style: Only use double-quotes.
+    if (!grepl(paste0('\\b', name, '\\b'), old)) {
+                                   ^~~~~
+R/devtools_verbatim.R:204:7: style: Commented code should be removed.
+    # git@github.com:hadley/devtools.git
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_verbatim.R:223:1: style: lines should not be more than 80 characters.
+github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_verbatim.R:300:1: style: lines should not be more than 80 characters.
+    show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/main.R:80:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+                            system("make")})
+                                          ^

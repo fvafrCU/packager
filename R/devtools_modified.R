@@ -2,21 +2,21 @@
 ## #' @details
 ## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
 ## #' @rdname devtools-deprecated
-# and then heavily uses 
-## #'@importsFrom usethis 
+# and then heavily uses
+## #'@importsFrom usethis
 
 # Now devtools 1.13.3 was released on CRAN:
 # # devtools_1.13.3.tar.gz	2017-08-02 09:05
 # But the first release of usethis appeared on CRAN:
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
-# I do not know how they imported from a package not yet released, but that is 
+# I do not know how they imported from a package not yet released, but that is
 # what they did.
 # So I just got copies of the imported functions from usethis by calling the
 # functions via devtools at the time. And then I modified most of them.
 
 
 
-# get rid of the interactive() part using yesno() to create the package. 
+# get rid of the interactive() part using yesno() to create the package.
 # Blow if there is none!
 load_pkg_description <- function(path, create) {
     path_desc <- file.path(path, "DESCRIPTION")
@@ -158,18 +158,18 @@ use_git_ignore <- function (ignores, path = ".") {
 check_suggested <- function(pkg, version = NULL, compare = NA) {
     if (is.null(version)) {
         if (!is.na(compare)) {
-            stop("Cannot set ", sQuote(compare), " without setting ", 
+            stop("Cannot set ", sQuote(compare), " without setting ",
                 sQuote(version), call. = FALSE)
         }
         dep <- suggests_dep(pkg)
         version <- dep$version
         compare <- dep$compare
     }
-    if (!is_installed(pkg) || !check_dep_version(pkg, version, 
+    if (!is_installed(pkg) || !check_dep_version(pkg, version,
         compare)) {
-        msg <- paste0(sQuote(pkg), if (is.na(version)) 
+        msg <- paste0(sQuote(pkg), if (is.na(version))
             ""
-        else paste0(" >= ", version), 
+        else paste0(" >= ", version),
         " must be installed for this functionality.")
         if (interactive()) {
             message(msg, "\nWould you like to install it?")
@@ -188,7 +188,7 @@ check_suggested <- function(pkg, version = NULL, compare = NA) {
 
 # call utils::
 yesno <- function(...) {
-    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", 
+    yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah",
         "I agree", "Absolutely")
     nos <- c("No way", "Not yet", "I forget", "No", "Nope", "Uhhhh... Maybe?")
     cat(paste0(..., collapse = ""))
@@ -196,4 +196,3 @@ yesno <- function(...) {
     rand <- sample(length(qs))
     utils::menu(qs[rand]) != which(rand == 1)
 }
-

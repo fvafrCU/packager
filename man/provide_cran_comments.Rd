@@ -15,7 +15,7 @@ file.path("log", "dev_check.Rout").}
 
 \item{initial}{Is this an initial release?}
 
-\item{travis_session_info}{Travis session info, search for\cr 
+\item{travis_session_info}{Travis session info, search for\cr
 "$ Rscript -e 'sessionInfo()'" \cr
 in the raw log of the travis build and copy the
 following three lines. This could read\cr

@@ -73,14 +73,11 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
     if (length(Sys.which("make")) != 0 && isTRUE(make)) {
-        withr::with_dir(path, 
-                        {
+        withr::with_dir(path, {
                             roxygen2::roxygenize(package.dir = ".")
                             devtools::load_all(".")
                             Sys.setenv("R_HOME" = Sys.which("R-devel"))
-                            system("make")
-                        }
-        )
+                            system("make")})
 
     } else {
         # run at least roxygen
@@ -150,4 +147,3 @@ author_at_r <- function(given, family, email) {
                           "\", role = c(\"aut\", \"cre\"))")
     return(author_at_r)
 }
-
