@@ -142,7 +142,6 @@ provide_throw <- function(path = ".",
     return(NULL)
 }
 
-
 use_devel <- function(path = ".",
                       ignore = TRUE, ...) {
     pkg <- devtools::as.package(path)
@@ -158,4 +157,18 @@ use_makefile <- function(path = ".",
     use_template("nomakefile", "Makefile", data = pkg, pkg = pkg, force = force,
                  ignore = ignore)
     invisible(NULL)
+}
+
+use_devtools <- function(path = ".") {
+    pkg <- devtools::as.package(path)
+    result <- NULL
+    result <- c(result, use_news_md(pkg = path))
+    result <- c(result, use_readme_rmd(path = path))
+    # add imports to description
+    if (pkg[["package"]] == "packager") {
+        result <- c(result, devtools::use_package("devtools"), pkg = path)
+        result <- c(result, devtools::use_package("git2r"), pkg = path)
+        result <- c(result, devtools::use_package("withr"), pkg = path)
+    }
+    return(result)
 }

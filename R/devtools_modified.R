@@ -14,19 +14,6 @@
 # So I just got copies of the imported functions from usethis by calling the
 # functions via devtools at the time. And then I modified most of them.
 
-use_devtools <- function(path = ".") {
-    pkg <- devtools::as.package(path)
-    result <- NULL
-    result <- c(result, use_news_md(pkg = path))
-    result <- c(result, use_readme_rmd(path = path))
-    # add imports to description
-    if (pkg[["package"]] == "packager") {
-        result <- c(result, devtools::use_package("devtools"), pkg = path)
-        result <- c(result, devtools::use_package("git2r"), pkg = path)
-        result <- c(result, devtools::use_package("withr"), pkg = path)
-    }
-    return(result)
-}
 
 
 # get rid of the interactive() part using yesno() to create the package. 
