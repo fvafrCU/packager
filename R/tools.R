@@ -164,7 +164,9 @@ travis_cli <- function(path) {
 use_bsd2clause_license <- function (path = ".") {
     pkg <- devtools::as.package(path)
     license  <- list(License = "BSD_2_clause + file LICENSE")
-    document::alter_description_file(path = path, substitution = license)
+    d <- desc::desc(path)
+    d$set(License = license)
+    d$write()
     author <- unlist(eval(parse(text = pkg["authors@r"])))
     copyright_holder <- paste(author[["given"]], author[["family"]])
     cat("YEAR: ", format(Sys.Date(), "%Y"), "\n",

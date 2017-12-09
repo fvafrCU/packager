@@ -57,10 +57,10 @@ update_description <- function(path = ".",
                                author_at_r = NULL
                                ) {
     if (is.null(author_at_r)) message("Argument 'author_at_r' is missing.")
-    s <- list(Title = title, Description = description,
-              "Authors@R" = author_at_r)
-    res <- document::alter_description_file(path = path, substitution = s)
-    return(invisible(res))
+    d <- desc::desc(path)
+    d$set(Description = description, "Authors@R" = author_at_r, Title = title)
+    d$write()
+    return(invisible(NULL))
 }
 
 grep_directory <- function(path, pattern, exclude = NULL) {
