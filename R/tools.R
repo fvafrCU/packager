@@ -114,7 +114,7 @@ provide_cran_comments <- function(check_log = NULL,
                   "- ", paste(here[here != ""], collapse = "\n  "),
                   "\n")
     if (! is.null(travis_session_info)) {
-        if (identical(travis_session_info == "travis-cli")) {
+        if (identical(travis_session_info, "travis-cli")) {
             travis_session_info <- travis_cli(path)
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
@@ -128,6 +128,7 @@ provide_cran_comments <- function(check_log = NULL,
         writeLines(comments, con = comments_file, sep = "")
     return(invisible(comments))
 }
+
 travis_cli <- function(path) {
     r <- git2r::repository(path, discover = TRUE)
     travis_repo <- sub("https://github.com/", "",

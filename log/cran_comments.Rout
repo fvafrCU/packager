@@ -4,7 +4,4 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 New submission
 
 Version contains large components (0.0.0.9000)
-Error in identical(travis_session_info == "travis-cli") : 
-  argument "y" is missing, with no default
-Calls: <Anonymous> -> identical
-Execution halted
+displaying logs for fvafrCU/packager#105.1
