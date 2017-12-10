@@ -167,8 +167,7 @@ use_bsd2clause_license <- function (path = ".") {
     d <- desc::desc(path)
     d$set(License = license)
     d$write()
-    author <- unlist(eval(parse(text = pkg["authors@r"])))
-    copyright_holder <- paste(author[["given"]], author[["family"]])
+    copyright_holder <- sub(" <.*$", "", d$get_author())
     cat("YEAR: ", format(Sys.Date(), "%Y"), "\n",
         "COPYRIGHT HOLDER: ", copyright_holder,
         sep = "", file = file.path(pkg[["path"]], "LICENSE"))

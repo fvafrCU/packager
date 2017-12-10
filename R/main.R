@@ -97,7 +97,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' keeping the info given in both places identical.
 #'
 #' @param path Path to the package.
-#' @param author_at_r A string giving the author. See \code{\link{author_at_r}}.
+#' @param author_at_r A \code{\link[utils:person]{person}} object.
 #' @param title A string giving the title.
 #' @param description A string giving the description.
 #' @param details A string giving the details. Defaults to NA in which case a
@@ -108,8 +108,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' @examples
 #' path <- file.path(tempdir(), "myPackage")
 #' devtools::create(path = path)
-#' a  <- sub("(email)", "\n\t\\1",
-#'           packager::author_at_r("Your", "Name", "some@whe.re"))
+#' a  <- utils::person("Your", "Name", "some@whe.re", role = c("aut", "cre"))
 #' set_package_info(path = path, author_at_r = a, title = "What Now?",
 #'                  description = "This package does nothing.",
 #'                  details = "Details do not show up in DESCRIPTION.")
@@ -128,22 +127,4 @@ set_package_info <- function(path, author_at_r = NULL,
     r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
                               description = description, details = details)
     return(invisible(list(r1, r2)))
-}
-
-#' Construct a Package Creator String
-#'
-#' @param family \code{\link[utils:person]{person}}.
-#' @param given \code{\link[utils:person]{person}}.
-#' @param email \code{\link[utils:person]{person}}.
-#' @return \code{\link[base:invisible]{Invisibly}}
-#' a list of results of setting the xxx-package.R and the DESCRIPTION.
-#' @export
-#' @examples
-#' author_at_r("Your", "Name", "some@whe.re")
-author_at_r <- function(given, family, email) {
-    author_at_r <- paste0("person(given = \"", given,
-                          "\", family = \"", family,
-                          "\", email = \"", email,
-                          "\", role = c(\"aut\", \"cre\"))")
-    return(author_at_r)
 }

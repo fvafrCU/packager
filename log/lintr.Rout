@@ -1,9 +1,6 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/main.R:12:69: style: Trailing whitespace is superfluous.
-    # checking on file contents does not work as covr and RUnit give 
-                                                                    ^
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^

@@ -25,3 +25,28 @@ packager::infect(path = ".",
                  details = "I find devtools very helpful, but not helpful enough.\nSo this is my highly personalised extension." ,
                  make = FALSE, git_add_and_commit = FALSE)
 }
+
+
+
+# author_at_r
+path <- file.path(tempdir(), "prutp")
+force = TRUE
+if (isTRUE(force)) unlink(path, recursive = TRUE)
+    devtools::create(path = path, rstudio = FALSE, check = FALSE)
+    r <- git2r::init(path = path)
+    paths <- unlist(git2r::status(r))
+    git2r::add(r, paths)
+    git2r::commit(r, "Initial Commit")
+
+    r <- git2r::init(path = path)
+    devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
+    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]],
+                                      ".Rcheck"), pkg = path)
+    use_makefile(path = path)
+    use_intro(path = path, force = TRUE)
+    use_devel(path = path)
+    remove_Rproj(path = path)
+    use_devtools(path = path)
+    use_travis(path = path)
+    set_package_info(path = path)
+    use_bsd2clause_license(path = path)

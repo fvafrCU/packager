@@ -1,4 +1,6 @@
 test_create <- function() {
+    old_opts <- options(warn = 1)
+    on.exit(old_opts)
     if (interactive()) devtools::load_all(".")
     d <- file.path(tempdir(), "prutp")
     on.exit(unlink(d, recursive = TRUE))
@@ -9,7 +11,7 @@ test_create <- function() {
     names(contents) <- files
     contents <- sapply(contents, function(x) grep("date", x, value = TRUE,
                                                   invert = TRUE))
-    # checking on file contents does not work as covr and RUnit give 
+    # checking on file contents does not work as covr and RUnit give
     # different digest::sha1()-values.
     result <- files
     expected <- c("DESCRIPTION", "devel.R",

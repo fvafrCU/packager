@@ -52,13 +52,23 @@ create_package_help <- function(path = ".",
 }
 
 update_description <- function(path = ".",
-                               title = NULL,
-                               description = NULL,
+                               title = "A Fake Title",
+                               description = "This is a fake package.",
                                author_at_r = NULL
                                ) {
-    if (is.null(author_at_r)) message("Argument 'author_at_r' is missing.")
+    if (is.null(author_at_r)) {
+        warning("Argument 'author_at_r' is missing, using default.")
+        name <- whoami::fullname(fallback = "Foo Bar")
+        name <- unlist(strsplit(name, split = " "))
+        family <- name[length(name)]
+        given <- setdiff(name, family)
+        email <- whoami::email_address(fallback = "foobar@nowhere.com")
+        author_at_r <- utils::person(family = family, given = given,
+                                     email = email, role = c("aut", "cre"))
+    }
     d <- desc::desc(path)
-    d$set(Description = description, "Authors@R" = author_at_r, Title = title)
+    d$set(Title = title, Description = description)
+    d$set_authors(author_at_r)
     d$write()
     return(invisible(NULL))
 }

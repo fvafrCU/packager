@@ -11,7 +11,7 @@ set_package_info(path, author_at_r = NULL,
 \arguments{
 \item{path}{Path to the package.}
 
-\item{author_at_r}{A string giving the author. See \code{\link{author_at_r}}.}
+\item{author_at_r}{A \code{\link[utils:person]{person}} object.}
 
 \item{title}{A string giving the title.}
 
@@ -31,8 +31,7 @@ keeping the info given in both places identical.
 \examples{
 path <- file.path(tempdir(), "myPackage")
 devtools::create(path = path)
-a  <- sub("(email)", "\\n\\t\\\\1",
-          packager::author_at_r("Your", "Name", "some@whe.re"))
+a  <- utils::person("Your", "Name", "some@whe.re", role = c("aut", "cre"))
 set_package_info(path = path, author_at_r = a, title = "What Now?",
                  description = "This package does nothing.",
                  details = "Details do not show up in DESCRIPTION.")
