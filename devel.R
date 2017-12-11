@@ -47,7 +47,8 @@ get_remote_url <- function(path) {
 }
 
 get_github_url <- function(x,
-                       force = is_force()) {
+                       force = is_force(),
+                       return_only_one = FALSE) {
     if (length(x) == 0) {
         res <- NULL
     } else {
@@ -55,13 +56,16 @@ get_github_url <- function(x,
         if (length(index_github) == 0) {
             res <- NULL
         } else {
-            res <- x[index_github[1]]
-            if (length(index_github) > 1) {
-                if(isTRUE(force))
+            if (isTRUE(return_only_one) && length(index_github) > 1) {
+                if (isTRUE(force)) {
                     warning("Found multiple github URL, ",
                             "using the first.")
-                else 
+                res <- x[index_github[1]]
+                } else { 
                     throw("Found multiple github URL.")
+                }
+            } else {
+                res <- x[index_github]
             }
         }
     }
@@ -78,8 +82,6 @@ path = "."
 path = "~/document"
 force = is_force()
 
-gh_url <- get_github_url(get_remote_url(path))
-desc_url <- get_github_url(desc::desc_get_urls(path))
 gh_failed <- "failed"
 gh_username <- tryCatch(whoami::gh_username(fallback = gh_failed),
                         error = function(e) return(gh_failed))
@@ -92,6 +94,9 @@ if (identical(gh_username, gh_failed)) {
                         basename(devtools::as.package(path)[["path"]]), 
                         sep = "/")
 }
+
+gh_url <- get_github_url(get_remote_url(path))
+desc_url <- get_github_url(desc::desc_get_urls(path))
 # desc_url NULL?
 # desc_url NULL?
 
