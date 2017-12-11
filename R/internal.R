@@ -153,6 +153,7 @@ provide_throw <- function(path = ".",
 }
 
 use_devel <- function(path = ".",
+                      force = is_force(),
                       ignore = TRUE, ...) {
     pkg <- devtools::as.package(path)
     use_template("devel.R", data = pkg, pkg = pkg, force = force,

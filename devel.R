@@ -28,25 +28,70 @@ packager::infect(path = ".",
 
 
 
-# author_at_r
-path <- file.path(tempdir(), "prutp")
-force = TRUE
-if (isTRUE(force)) unlink(path, recursive = TRUE)
-    devtools::create(path = path, rstudio = FALSE, check = FALSE)
-    r <- git2r::init(path = path)
-    paths <- unlist(git2r::status(r))
-    git2r::add(r, paths)
-    git2r::commit(r, "Initial Commit")
 
-    r <- git2r::init(path = path)
-    devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
-    devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]],
-                                      ".Rcheck"), pkg = path)
-    use_makefile(path = path)
-    use_intro(path = path, force = TRUE)
-    use_devel(path = path)
-    remove_Rproj(path = path)
-    use_devtools(path = path)
-    use_travis(path = path)
-    set_package_info(path = path)
-    use_bsd2clause_license(path = path)
+
+# get github url
+devtools::load_all(".")
+
+get_remote_url <- function(path) {
+    repo_failed <- "fail"
+    repo <- tryCatch(git2r::repository(path),
+                     error = function(e) return(repo_failed)
+                     )
+    if (identical(repo, repo_failed)) {
+        res <- NULL
+    } else {
+        res <- git2r::remote_url(repo)
+    } 
+    return(res)
+}
+
+get_github_url <- function(x,
+                       force = is_force()) {
+    if (length(x) == 0) {
+        res <- NULL
+    } else {
+        index_github <- grep("^https://github.com", x)
+        if (length(index_github) == 0) {
+            res <- NULL
+        } else {
+            res <- x[index_github[1]]
+            if (length(index_github) > 1) {
+                if(isTRUE(force))
+                    warning("Found multiple github URL, ",
+                            "using the first.")
+                else 
+                    throw("Found multiple github URL.")
+            }
+        }
+    }
+    return(res)
+}
+
+get_github_url(get_remote_url("~/tmp/bar"))
+get_github_url(get_remote_url("~/document"))
+get_github_url(get_remote_url("~/tmp/foo"))
+
+# set github url
+devtools::load_all(".")
+path = "."
+path = "~/document"
+force = is_force()
+
+gh_url <- get_github_url(get_remote_url(path))
+desc_url <- get_github_url(desc::desc_get_urls(path))
+gh_failed <- "failed"
+gh_username <- tryCatch(whoami::gh_username(fallback = gh_failed),
+                        error = function(e) return(gh_failed))
+if (identical(gh_username, gh_failed)) {
+    warning("Could not retrive github user name. ", 
+            "Set the URL in DESCRIPTION manually!")
+    manual_url <- NULL
+} else {
+    manual_url <- paste("https::github.com", gh_username, 
+                        basename(devtools::as.package(path)[["path"]]), 
+                        sep = "/")
+}
+# desc_url NULL?
+# desc_url NULL?
+
