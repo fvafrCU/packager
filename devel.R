@@ -80,23 +80,25 @@ get_github_url(get_remote_url("~/tmp/foo"))
 devtools::load_all(".")
 path = "."
 path = "~/document"
-force = is_force()
 
-gh_failed <- "failed"
 gh_username <- tryCatch(whoami::gh_username(fallback = gh_failed),
-                        error = function(e) return(gh_failed))
-if (identical(gh_username, gh_failed)) {
+                        error = function(e) return(NULL))
+package_dir <- basename(devtools::as.package(path)[["path"]])
+package_name <- devtools::as.package(path)[["package"]]
+gh_url <- get_github_url(get_remote_url(path))
+desc_url <- get_github_url(desc::desc_get_urls(path))
+
+
+if (is.null(gh_username)) {
     warning("Could not retrive github user name. ", 
             "Set the URL in DESCRIPTION manually!")
     manual_url <- NULL
 } else {
     manual_url <- paste("https::github.com", gh_username, 
-                        basename(devtools::as.package(path)[["path"]]), 
+                        package_dir, 
                         sep = "/")
 }
 
-gh_url <- get_github_url(get_remote_url(path))
-desc_url <- get_github_url(desc::desc_get_urls(path))
 # desc_url NULL?
 # desc_url NULL?
 
