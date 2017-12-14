@@ -97,9 +97,6 @@ github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USER
 R/devtools_verbatim.R:300:1: style: lines should not be more than 80 characters.
     show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/main.R:78:31: style: Opening curly braces should never go on their own line and should always be followed by a new line.
-        withr::with_dir(path, {roxygen2::roxygenize(package.dir = ".")
-                              ^
-R/main.R:81:39: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                        system("make")})
-                                      ^
+R/main.R:82:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+                            system("make")})
+                                          ^

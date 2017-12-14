@@ -12,11 +12,11 @@ check_cyclometric_complexity(path = ".", max_complexity = 10)
 \item{max_complexity}{The maximum complexity (which should not be exceeded).}
 }
 \value{
-\code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if 
+\code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
 maximum cyclomatic complexity is not exceeded, throws an error otherwise.
 }
 \description{
-Run 
+Run
 \code{\link[cyclocomp:cyclocomp_package_dir]{cyclocomp_package_dir}} on the
 package throwing an error when the maximum complexity is exceeded.
 }

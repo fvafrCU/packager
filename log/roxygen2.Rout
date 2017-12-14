@@ -44,5 +44,8 @@ The following objects are masked from ‘package:devtools’:
 Loading required package: whoami
 Loading required package: cyclocomp
 Warning: tools.R:17: @example spans multiple lines. Do you want @examples?
+Writing check_cyclometric_complexity.Rd
+Writing check_news.Rd
+Writing add_github_url_to_desc.Rd
 > 
 > 

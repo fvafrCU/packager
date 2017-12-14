@@ -22,7 +22,7 @@ adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
 \description{
 The URL is constructed by the package's name as read from it's file
 DESCRIPTION, and the username returned by
-\code{\link[whoami:gh_username]{whoami::gh_username}}. 
+\code{\link[whoami:gh_username]{whoami::gh_username}}.
 \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
 this is given by default_gh_user. You can specify \code{default_gh_user =
 NA}, to try to retrieve the username by searching remotes on github if the

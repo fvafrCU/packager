@@ -10,7 +10,7 @@ check_news(path = ".")
 \item{path}{The directory to search.}
 }
 \value{
-\code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if 
+\code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
 NEWS.md matches DESCRIPTION, throws an error otherwise.
 }
 \description{
