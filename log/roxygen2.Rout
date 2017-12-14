@@ -42,7 +42,6 @@ The following objects are masked from ‘package:devtools’:
     with_makevars, with_options, with_par, with_path
 
 Loading required package: whoami
-Warning: @return [tools.R#217]: mismatched braces or quotes
 Writing add_github_url_to_desc.Rd
 Warning message:
 In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :

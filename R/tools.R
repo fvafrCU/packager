@@ -214,7 +214,7 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
 #' @param normalize Passed to
 #' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
 #' @return \code{\link[invisible]{Invsibly} \link[logical]{TRUE}} if adding a
-#' github URL, \link[logical]{FALSE}} otherwise.
+#' github URL, \code{\link[logical]{FALSE}} otherwise.
 add_github_url_to_desc <- function(path = ".", default_gh_user = NULL, 
                                    normalize = TRUE) {
     status <- FALSE
