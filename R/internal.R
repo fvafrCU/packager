@@ -183,3 +183,55 @@ use_devtools <- function(path = ".") {
     }
     return(result)
 }
+
+get_remote_url <- function(path) {
+    repo_failed <- "fail"
+    repo <- tryCatch(git2r::repository(path),
+                     error = function(e) return(repo_failed)
+                     )
+    if (identical(repo, repo_failed)) {
+        res <- NULL
+    } else {
+        res <- git2r::remote_url(repo)
+    } 
+    return(res)
+}
+
+get_github_url <- function(x,
+                           force = is_force(),
+                           return_only_one = FALSE) {
+    if (length(x) == 0) {
+        res <- NULL
+    } else {
+        index_github <- grep("^https://github.com", x)
+        if (length(index_github) == 0) {
+            res <- NULL
+        } else {
+            if (isTRUE(return_only_one) && length(index_github) > 1) {
+                if (isTRUE(force)) {
+                    warning("Found multiple github URL, ",
+                            "using the first.")
+                    res <- x[index_github[1]]
+                } else { 
+                    throw("Found multiple github URL.")
+                }
+            } else {
+                res <- x[index_github]
+            }
+        }
+    }
+    return(res)
+}
+
+travis_cli <- function(path) {
+    r <- git2r::repository(path, discover = TRUE)
+    travis_repo <- sub("https://github.com/", "",
+                       grep("github",
+                            value = TRUE, git2r::remote_url(r)))
+    travis_log <- system2("sudo", paste("travis logs --repo",
+                                        travis_repo),
+                          stdout = TRUE)
+    k <- grep("sessionInfo()", travis_log)
+    travis_session_info <- travis_log[(k + 1): (k + 3)]
+    return(travis_session_info)
+}
