@@ -1,16 +1,38 @@
 Package: packager
 Title: Helps Me Build Packages
 Version: 0.1.0
-Authors@R: person(given = "Andreas Dominik", family = "Cullmann", email
-        = "fvafrcu@arcor.de", role = c("aut", "cre"))
+Authors@R: 
+    person(given = "Andreas Dominik",
+           family = "Cullmann",
+           role = c("aut", "cre"),
+           email = "fvafrcu@arcor.de")
 Description: This is a set of wrappers around `devtools` and
-        `MakefileR` and some sanity checks for developing packages.
-Depends: R (>= 3.3.0)
+    `MakefileR` and some sanity checks for developing packages.
 License: BSD_2_clause + file LICENSE
+URL: https://github.com/fvafrCU/packager
+Depends: 
+    R (>= 3.3.0)
+Imports: 
+    methods,
+    utils,
+    rprojroot,
+    devtools,
+    crayon,
+    git2r,
+    tools,
+    whisker,
+    desc,
+    withr,
+    whoami
+Suggests: 
+    knitr,
+    rmarkdown,
+    roxygen2,
+    testthat,
+    covr,
+    RUnit,
+    digest
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr, rmarkdown, roxygen2, testthat, covr, RUnit, digest
-VignetteBuilder: knitr
-Imports: methods, utils, rprojroot, devtools, crayon, git2r, tools,
-        whisker, desc, withr, whoami
 RoxygenNote: 6.0.1
