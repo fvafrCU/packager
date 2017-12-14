@@ -1,6 +1,10 @@
-# packager 0.0.0.9000
+# packager 0.2.0
+
+* Added check_cyclometric_complexity() to check for cyclometric complexity.
+* Added add\_github\_url\_to\_desc() to add the package's github URL to the package's
+  DESCRIPTION file.
+
+# packager 0.1.0
 
 * Added a `NEWS.md` file to track changes to the package.
-
-
 

@@ -193,7 +193,7 @@ get_remote_url <- function(path) {
         res <- NULL
     } else {
         res <- git2r::remote_url(repo)
-    } 
+    }
     return(res)
 }
 
@@ -212,7 +212,7 @@ get_github_url <- function(x,
                     warning("Found multiple github URL, ",
                             "using the first.")
                     res <- x[index_github[1]]
-                } else { 
+                } else {
                     throw("Found multiple github URL.")
                 }
             } else {

@@ -1,13 +1,14 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-* Added a `NEWS.md` file to track changes to the package.
-
+* Added check_cyclometric_complexity() to check for cyclometric complexity.
+* Added add\_github\_url\_to\_desc() to add the package's github URL to the package's
+  DESCRIPTION file.
 
 Please upload to CRAN.
 Best, Dominik
 
-# Package packager 0.0.0.9000
+# Package packager 0.2.0
 ## Test  environments 
 - R Under development (unstable) (2017-11-07 r73685)
   Platform: x86_64-pc-linux-gnu (64-bit)

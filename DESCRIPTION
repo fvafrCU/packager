@@ -23,7 +23,8 @@ Imports:
     whisker,
     desc,
     withr,
-    whoami
+    whoami,
+    cyclocomp
 Suggests: 
     knitr,
     rmarkdown,

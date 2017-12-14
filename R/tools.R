@@ -1,9 +1,37 @@
+#' Check Cyclomatic Complexity
+#'
+#' Run
+#' \code{\link[cyclocomp:cyclocomp_package_dir]{cyclocomp_package_dir}} on the
+#' package throwing an error when the maximum complexity is exceeded.
+#' @param path The package's root directory.
+#' @param max_complexity The maximum complexity (which should not be exceeded).
+#' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
+#' maximum cyclomatic complexity is not exceeded, throws an error otherwise.
+#' @export
+#' @example
+#' \dontrun{
+#' res <- tryCatch(check_cyclometric_complexity(max_complexity = 8),
+#'                 error = identity)
+#' print(res)
+#' }
+check_cyclometric_complexity <- function(path = ".", max_complexity = 10) {
+    cyclocomp <- cyclocomp::cyclocomp_package_dir(path)
+    too_complex <- cyclocomp[["cyclocomp"]] > max_complexity
+    if (any(too_complex)) {
+        hits <- paste(cyclocomp[too_complex, "name"], collapse = ", ")
+        msg <- paste0("Exceeding maximum cyclomatic complexity of ",
+                     max_complexity, " for ", hits, ".")
+        throw(msg)
+    }
+    return(invisible(TRUE))
+}
+
 #' Check for NEWS.md Being Up to Date
 #'
 #' Compare your NEWS.md file to the 'Version' entry in DESCRIPTION.
 #' @param path The directory to search.
-#' @return \code{TRUE} if NEWS.md matches DESCRIPTION, throws an error
-#' otherwise.
+#' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
+#' NEWS.md matches DESCRIPTION, throws an error otherwise.
 #' @export
 check_news <- function(path = ".") {
     root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
@@ -196,12 +224,12 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
 
 
 #' Add a github URL to File DESCRIPTION
-#' 
+#'
 #" When writing packages, I often forget to add the appropriate github URL.
 #'
 #' The URL is constructed by the package's name as read from it's file
 #' DESCRIPTION, and the username returned by
-#' \code{\link[whoami:gh_username]{whoami::gh_username}}. 
+#' \code{\link[whoami:gh_username]{whoami::gh_username}}.
 #' \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
 #' this is given by default_gh_user. You can specify \code{default_gh_user =
 #' NA}, to try to retrieve the username by searching remotes on github if the
@@ -213,9 +241,10 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
 #' @param default_gh_user See details.
 #' @param normalize Passed to
 #' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
-#' @return \code{\link[invisible]{Invsibly} \link[logical]{TRUE}} if adding a
-#' github URL, \code{\link[logical]{FALSE}} otherwise.
-add_github_url_to_desc <- function(path = ".", default_gh_user = NULL, 
+#' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
+#' adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
+#' @export
+add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
                                    normalize = TRUE) {
     status <- FALSE
     gh_username <- tryCatch(whoami::gh_username(fallback = default_gh_user),
@@ -224,27 +253,27 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
 
     package_dir <- basename(devtools::as.package(path)[["path"]])
     package_name <- devtools::as.package(path)[["package"]]
-    if (package_name != package_dir) 
+    if (package_name != package_dir)
         warning("The package's name and root directory differ.")
     if (is.na(gh_username)) {
         git_url <- get_github_url(get_remote_url(path))
         num_of_remotes <- length(grep(paste0(package_name, "$"), git_url))
         if (num_of_remotes == 1) {
-            gh_username <- sub(paste0("^https://github.com/(.*)/", package_name, 
+            gh_username <- sub(paste0("^https://github.com/(.*)/", package_name,
                                       "$"),
                                "\\1", git_url)
         } else {
-            warning("Found ", num_of_remotes, 
+            warning("Found ", num_of_remotes,
                     " different git remotes refering to `", package_name, "`.")
         }
     }
 
     if (is.null(gh_username) || is.na(gh_username)) {
-        warning("Could not retrieve github user name. ", 
+        warning("Could not retrieve github user name. ",
                 "Set the URL in DESCRIPTION manually!")
         manual_url <- NULL
     } else {
-        manual_url <- paste("https://github.com", gh_username, package_name, 
+        manual_url <- paste("https://github.com", gh_username, package_name,
                             sep = "/")
     }
     if (! is.null(manual_url) && ! any(grepl(manual_url, desc_url))) {

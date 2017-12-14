@@ -16,8 +16,8 @@ add_github_url_to_desc(path = ".", default_gh_user = NULL,
 \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.}
 }
 \value{
-\code{\link[invisible]{Invsibly} \link[logical]{TRUE}} if adding a
-github URL, \code{\link[logical]{FALSE}} otherwise.
+\code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
+adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
 }
 \description{
 The URL is constructed by the package's name as read from it's file

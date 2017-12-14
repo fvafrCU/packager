@@ -58,6 +58,9 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     devtools::use_build_ignore("^.*\\.tar\\.gz$", pkg = path, escape = FALSE)
     devtools::use_build_ignore(paste0(devtools::as.package(path)[["package"]],
                                       ".Rcheck"), pkg = path)
+    devtools::use_build_ignore("cran-comments.md", pkg = path)
+    devtools::use_build_ignore(".Rprofile", pkg = path)
+    use_git_ignore(".Rprofile", path = path)
     use_makefile(path = path)
     use_intro(path = path, force = TRUE)
     use_devel(path = path)
@@ -68,7 +71,6 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_bsd2clause_license(path = path)
     provide_throw(path = path)
     use_directory("log", pkg = path, ignore = TRUE)
-    use_build_ignore("cran-comments.md", pkg = path)
     use_git_ignore("*.tar.gz", path = path)
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
