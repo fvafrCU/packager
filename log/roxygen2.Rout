@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2017-11-07 r73685) -- "Unsuffered Consequences"
+R Under development (unstable) (2017-08-15 r73096) -- "Unsuffered Consequences"
 Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -42,6 +42,12 @@ The following objects are masked from ‘package:devtools’:
     with_makevars, with_options, with_par, with_path
 
 Loading required package: whoami
-Writing set_package_info.Rd
+Warning: @description [tools.R#1]: mismatched braces or quotes
+Warning: @param [tools.R#215]: mismatched braces or quotes
+Warning: @return [tools.R#217]: mismatched braces or quotes
+Writing add_github_url_to_desc.Rd
+Warning message:
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called ‘whoami’
 > 
 > 
