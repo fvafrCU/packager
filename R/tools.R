@@ -201,18 +201,18 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
 #'
 #' The URL is constructed by the package's name as read from it's file
 #' DESCRIPTION, and the username returned by
-#' \code{\link[whoami:gh_username]{whoami::gh_username}. 
-#' \code{\link[whoami:gh_username]{whoami::gh_username} allows for a fallback,
+#' \code{\link[whoami:gh_username]{whoami::gh_username}}. 
+#' \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
 #' this is given by default_gh_user. You can specify \code{default_gh_user =
 #' NA}, to try to retrieve the username by searching remotes on github if the
 #' package is a git repository. We do not use
-#' \code{\link[git2r:config]{git2r::config} since there's no way to make sure
+#' \code{\link[git2r:config]{git2r::config}} since there's no way to make sure
 #' the configured git user name, locally or globally, is a github username.
 #'
 #' @param path The path to the package.
-#' @param path default_gh_user See details.
+#' @param default_gh_user See details.
 #' @param normalize Passed to
-#' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}.
+#' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
 #' @return \code{\link[invisible]{Invsibly} \link[logical]{TRUE}} if adding a
 #' github URL, \link[logical]{FALSE}} otherwise.
 add_github_url_to_desc <- function(path = ".", default_gh_user = NULL, 

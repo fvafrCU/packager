@@ -42,8 +42,6 @@ The following objects are masked from ‘package:devtools’:
     with_makevars, with_options, with_par, with_path
 
 Loading required package: whoami
-Warning: @description [tools.R#1]: mismatched braces or quotes
-Warning: @param [tools.R#215]: mismatched braces or quotes
 Warning: @return [tools.R#217]: mismatched braces or quotes
 Writing add_github_url_to_desc.Rd
 Warning message:

@@ -10,5 +10,19 @@ add_github_url_to_desc(path = ".", default_gh_user = NULL,
 \arguments{
 \item{path}{The path to the package.}
 
-\item{path}{default_gh_user See details.}
+\item{default_gh_user}{See details.}
+
+\item{normalize}{Passed to
+\code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.}
+}
+\description{
+The URL is constructed by the package's name as read from it's file
+DESCRIPTION, and the username returned by
+\code{\link[whoami:gh_username]{whoami::gh_username}}. 
+\code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
+this is given by default_gh_user. You can specify \code{default_gh_user =
+NA}, to try to retrieve the username by searching remotes on github if the
+package is a git repository. We do not use
+\code{\link[git2r:config]{git2r::config}} since there's no way to make sure
+the configured git user name, locally or globally, is a github username.
 }
