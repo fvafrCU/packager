@@ -1,4 +1,3 @@
-- add check_cyclometric_complexity to standard make file and makelist
 - add add_github_url_to_desc to infect()
 - add tests for check_cyclometric_complexity
 - add tests for add_github_url_to_desc

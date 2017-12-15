@@ -10,11 +10,11 @@
 #' @export
 #' @example
 #' \dontrun{
-#' res <- tryCatch(check_cyclometric_complexity(max_complexity = 8),
+#' res <- tryCatch(check_cyclomatic_complexity(max_complexity = 8),
 #'                 error = identity)
 #' print(res)
 #' }
-check_cyclometric_complexity <- function(path = ".", max_complexity = 10) {
+check_cyclomatic_complexity <- function(path = ".", max_complexity = 10) {
     cyclocomp <- cyclocomp::cyclocomp_package_dir(path)
     too_complex <- cyclocomp[["cyclocomp"]] > max_complexity
     if (any(too_complex)) {

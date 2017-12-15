@@ -70,7 +70,7 @@ $(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
 	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
 	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
 	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
-	$(LOG_DIR)/lintr.Rout
+	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout 
 	$(R) --vanilla CMD build $(PKGSRC)
 
 README.md: README.Rmd R/$(PKGNAME)-package.R
@@ -144,3 +144,7 @@ spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: $(LOG_DIR) DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES) $(LOG_DIR)/dependencies.Rout
 	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
+.PHONY: cyclocomp
+news: $(LOG_DIR)/cyclocomp.Rout
+$(LOG_DIR)/cyclocomp.Rout: $(LOG_DIR) $(LOG_DIR)/dependencies.Rout $(R_FILES)
+	$(Rscript) --vanilla -e 'tryCatch(print(packager::check_cyclomatic_complexity()), error = identity)' > $(LOG_DIR)/cyclocomp.Rout 2>&1 
