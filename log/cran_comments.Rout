@@ -2,4 +2,9 @@ checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
-displaying logs for fvafrCU/packager#122.1
+
+checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+        user system elapsed
+create 2.836  0.096   5.394
+displaying logs for fvafrCU/packager#124.1

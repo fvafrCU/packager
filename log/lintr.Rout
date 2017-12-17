@@ -61,9 +61,6 @@ R/devtools_modified.R:9:3: style: Commented code should be removed.
 R/devtools_modified.R:11:3: style: Commented code should be removed.
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_modified.R:214:15: warning: no visible global function definition for ‘cran_comments’
-  comments <- cran_comments(pkg)
-              ^~~~~~~~~~~~~
 R/devtools_modified.R:229:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
