@@ -334,3 +334,88 @@ package_file <- function(..., path = ".") {
 
   file.path(path, ...)
 }
+
+git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
+  r <- git2r::repository(path, discover = TRUE)
+
+  r_head <- git2r::head(r)
+  if (!methods::is(r_head, "git_branch")) {
+    stop("HEAD is not a branch", call. = FALSE)
+  }
+
+  upstream <- git2r::branch_get_upstream(r_head)
+  if (is.null(upstream)) {
+    stop("No upstream branch", call. = FALSE)
+  }
+
+  git2r::fetch(r, git2r::branch_remote_name(upstream))
+
+  c1 <- git2r::lookup(r, git2r::branch_target(r_head))
+  c2 <- git2r::lookup(r, git2r::branch_target(upstream))
+  ab <- git2r::ahead_behind(c1, c2)
+
+#   if (ab[1] > 0)
+#     message(ab[1], " ahead of remote")
+#   if (ab[2] > 0)
+#     message(ab[2], " behind remote")
+
+  is_ahead <- ab[[1]] != 0
+  is_behind <- ab[[2]] != 0
+  check <- (check_ahead && is_ahead) || (check_behind && is_behind)
+  check
+}
+
+cran_comments <- function(pkg = ".") {
+  pkg <- as.package(pkg)
+
+  path <- file.path(pkg$path, "cran-comments.md")
+  if (!file.exists(path)) {
+    warning("Can't find cran-comments.md.\n",
+      "This file gives CRAN volunteers comments about the submission,\n",
+      "and it must exist. Create it with use_cran_comments().\n",
+      call. = FALSE)
+    return(character())
+  }
+
+  paste0(readLines(path, warn = FALSE), collapse = "\n")
+}
+
+
+yesno <- function(...) {
+  yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", "I agree", "Absolutely")
+  nos <- c("No way", "Not yet", "I forget", "No", "Nope", "Uhhhh... Maybe?")
+
+  cat(paste0(..., collapse = ""))
+  qs <- c(sample(yeses, 1), sample(nos, 2))
+  rand <- sample(length(qs))
+
+  menu(qs[rand]) != which(rand == 1)
+}
+
+as.object_size <- function(x) structure(x, class = "object_size")
+
+maintainer <- function(pkg = ".") {
+  pkg <- as.package(pkg)
+
+  authors <- pkg$`authors@r`
+  if (!is.null(authors)) {
+    people <- eval(parse(text = authors))
+    if (is.character(people)) {
+      maintainer <- utils::as.person(people)
+    } else {
+      maintainer <- Find(function(x) "cre" %in% x$role, people)
+    }
+  } else {
+    maintainer <- pkg$maintainer
+    if (is.null(maintainer)) {
+      stop("No maintainer defined in package.", call. = FALSE)
+    }
+    maintainer <- utils::as.person(maintainer)
+  }
+
+  list(
+    name = paste(maintainer$given, maintainer$family),
+    email = maintainer$email
+  )
+}
+

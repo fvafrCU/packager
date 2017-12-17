@@ -15,6 +15,16 @@
 # functions via devtools at the time. And then I modified most of them.
 
 
+# add devtools:: to the call for build():
+build_cran <- function(pkg, args = NULL) {
+  message("Building")
+  built_path <- devtools::build(pkg, tempdir(), manual = TRUE, args = args)
+  message("Submitting file: ", built_path)
+  message("File size: ",
+          format(as.object_size(file.info(built_path)$size), units = "auto"))
+  built_path
+}
+
 
 # get rid of the interactive() part using yesno() to create the package.
 # Blow if there is none!
@@ -196,3 +206,47 @@ yesno <- function(...) {
     rand <- sample(length(qs))
     utils::menu(qs[rand]) != which(rand == 1)
 }
+
+# add cran_submission_url as argument
+upload_cran <- function(pkg, built_path, cran_submission_url = NULL) {
+  pkg <- as.package(pkg)
+  maint <- maintainer(pkg)
+  comments <- cran_comments(pkg)
+
+  # Initial upload ---------
+  message("Uploading package & comments")
+  body <- list(
+    pkg_id = "",
+    name = maint$name,
+    email = maint$email,
+    uploaded_file = httr::upload_file(built_path, "application/x-gzip"),
+    comment = comments,
+    upload = "Upload package"
+  )
+  r <- httr::POST(cran_submission_url, body = body)
+  httr::stop_for_status(r)
+  new_url <- httr::parse_url(r$url)
+  new_url$query$strErr
+
+  # Confirmation -----------
+  message("Confirming submission")
+  body <- list(
+    pkg_id = new_url$query$pkg_id,
+    name = maint$name,
+    email = maint$email,
+    policy_check = "1/",
+    submit = "Submit package"
+  )
+  r <- httr::POST(cran_submission_url, body = body)
+  httr::stop_for_status(r)
+  new_url <- httr::parse_url(r$url)
+  if (new_url$query$submit == "1") {
+    message("Package submission successful.\n",
+      "Check your email for confirmation link.")
+  } else {
+    stop("Package failed to upload.", call. = FALSE)
+  }
+
+  invisible(TRUE)
+}
+
