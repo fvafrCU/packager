@@ -24,7 +24,8 @@ Imports:
     desc,
     withr,
     whoami,
-    cyclocomp
+    cyclocomp,
+    httr
 Suggests: 
     knitr,
     rmarkdown,
