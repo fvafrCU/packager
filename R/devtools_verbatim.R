@@ -380,18 +380,6 @@ cran_comments <- function(pkg = ".") {
   paste0(readLines(path, warn = FALSE), collapse = "\n")
 }
 
-
-yesno <- function(...) {
-  yeses <- c("Yes", "Definitely", "For sure", "Yup", "Yeah", "I agree", "Absolutely")
-  nos <- c("No way", "Not yet", "I forget", "No", "Nope", "Uhhhh... Maybe?")
-
-  cat(paste0(..., collapse = ""))
-  qs <- c(sample(yeses, 1), sample(nos, 2))
-  rand <- sample(length(qs))
-
-  menu(qs[rand]) != which(rand == 1)
-}
-
 as.object_size <- function(x) structure(x, class = "object_size")
 
 maintainer <- function(pkg = ".") {

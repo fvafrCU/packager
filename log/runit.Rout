@@ -1,6 +1,6 @@
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp0ZH2UZ'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmphlZQUz'
 No DESCRIPTION found. Creating with values:
 
 
@@ -13,9 +13,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
-* Adding `*.tar.gz` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
+* Adding `.Rprofile` to /tmp/RtmphlZQUz/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmphlZQUz/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmphlZQUz/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -40,18 +40,18 @@ Warning: 'Description' must contain one or more complete sentences
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/Rtmp0ZH2UZ/prutp/DESCRIPTION
+Updating roxygen version in /tmp/RtmphlZQUz/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Warning in FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/Rtmp0ZH2UZ/prutp/LICENSE'
+  incomplete final line found on '/tmp/RtmphlZQUz/prutp/LICENSE'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmp0ZH2UZ'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmphlZQUz'
 No DESCRIPTION found. Creating with values:
 
 
@@ -64,9 +64,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
-* Adding `*.tar.gz` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/Rtmp0ZH2UZ/prutp/.gitignore
+* Adding `.Rprofile` to /tmp/RtmphlZQUz/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmphlZQUz/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmphlZQUz/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -91,12 +91,12 @@ Warning: 'Description' must contain one or more complete sentences
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/Rtmp0ZH2UZ/prutp/DESCRIPTION
+Updating roxygen version in /tmp/RtmphlZQUz/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/Rtmp0ZH2UZ/prutp'
+make[1]: Entering directory '/tmp/RtmphlZQUz/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -138,7 +138,7 @@ Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
 Makefile:130: recipe for target 'log/runit.Rout' failed
 make[1]: *** [log/runit.Rout] Error 1
-make[1]: Leaving directory '/tmp/Rtmp0ZH2UZ/prutp'
+make[1]: Leaving directory '/tmp/RtmphlZQUz/prutp'
 Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
