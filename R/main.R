@@ -76,6 +76,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     provide_throw(path = path)
     use_directory("log", pkg = path, ignore = TRUE)
     if (length(Sys.which("make")) != 0 && isTRUE(make)) {
+        warning("!!! Run make")
         withr::with_dir(path, {
                             roxygen2::roxygenize(package.dir = ".")
                             devtools::load_all(".")
