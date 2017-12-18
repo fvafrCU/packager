@@ -20,3 +20,20 @@ Run
 \code{\link[cyclocomp:cyclocomp_package_dir]{cyclocomp_package_dir}} on the
 package throwing an error when the maximum complexity is exceeded.
 }
+\examples{
+\dontrun{
+# download and untar sources of some archived package
+package  <- "document"
+root <- paste0("http://cran.r-project.org/src/contrib/Archive/", package)
+version <- "1.0.0"
+tarball <- paste0(paste(package, version, sep = "_"), ".tar.gz")
+remote_tarball <- paste(root, tarball, sep = "/")
+local_tarball <- file.path(tempdir(), tarball)
+utils::download.file(remote_tarball, local_tarball)
+utils::untar(local_tarball, exdir = tempdir())
+res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(), 
+                                                             package)),
+                error = identity)
+print(res)
+}
+}

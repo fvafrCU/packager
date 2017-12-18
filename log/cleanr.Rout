@@ -8,4 +8,5 @@ R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 86 coun
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: 409 lines in file.
  /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  is_installed  line 1: found width 83 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  suggests_dep  line 2: found width 81 max_line_width was 80
-/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80>
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 304 lines in file.>
