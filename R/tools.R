@@ -8,9 +8,19 @@
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
 #' maximum cyclomatic complexity is not exceeded, throws an error otherwise.
 #' @export
-#' @example
+#' @examples
 #' \dontrun{
-#' res <- tryCatch(check_cyclomatic_complexity(max_complexity = 8),
+#' # download and untar sources of some archived package
+#' package  <- "document"
+#' root <- paste0("http://cran.r-project.org/src/contrib/Archive/", package)
+#' version <- "1.0.0"
+#' tarball <- paste0(paste(package, version, sep = "_"), ".tar.gz")
+#' remote_tarball <- paste(root, tarball, sep = "/")
+#' local_tarball <- file.path(tempdir(), tarball)
+#' utils::download.file(remote_tarball, local_tarball)
+#' utils::untar(local_tarball, exdir = tempdir())
+#' res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(), 
+#'                                                              package)),
 #'                 error = identity)
 #' print(res)
 #' }
@@ -18,10 +28,11 @@ check_cyclomatic_complexity <- function(path = ".", max_complexity = 10) {
     cyclocomp <- cyclocomp::cyclocomp_package_dir(path)
     too_complex <- cyclocomp[["cyclocomp"]] > max_complexity
     if (any(too_complex)) {
-        hits <- paste(cyclocomp[too_complex, "name"], collapse = ", ")
+        hits <- cyclocomp[too_complex, "name"]
+        diff <- cyclocomp[too_complex, "cyclocomp"] - max_complexity
         msg <- paste0("Exceeding maximum cyclomatic complexity of ",
-                     max_complexity, " for ", hits, ".")
-        throw(msg)
+                     max_complexity, " for ", hits, " by ", diff, ".")
+        throw(paste(msg, collapse = "\n"))
     }
     return(invisible(TRUE))
 }
