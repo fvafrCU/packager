@@ -30,3 +30,11 @@ package is a git repository. We do not use
 \code{\link[git2r:config]{git2r::config}} since there's no way to make sure
 the configured git user name, locally or globally, is a github username.
 }
+\examples{
+tmp <- tempfile()
+dir.create(tmp)
+path <- file.path(tmp, "fakePackage")
+devtools::create(path)
+add_github_url_to_desc(path)
+grep("^URL:", readLines(file.path(path, "DESCRIPTION")), value = TRUE)
+}

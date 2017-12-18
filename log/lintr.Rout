@@ -115,6 +115,9 @@ R/devtools_verbatim.R:360:7: style: Commented code should be removed.
 R/devtools_verbatim.R:409:1: style: Trailing blank lines are superfluous.
 
 ^
-R/main.R:83:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+R/main.R:84:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
                             system("make")})
                                           ^
+R/tools.R:293:1: style: Trailing blank lines are superfluous.
+
+^

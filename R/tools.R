@@ -244,6 +244,13 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
 #' adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
 #' @export
+#' @examples
+#' tmp <- tempfile()
+#' dir.create(tmp)
+#' path <- file.path(tmp, "fakePackage")
+#' devtools::create(path)
+#' add_github_url_to_desc(path)
+#' grep("^URL:", readLines(file.path(path, "DESCRIPTION")), value = TRUE)
 add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
                                    normalize = TRUE) {
     status <- FALSE
@@ -255,7 +262,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
     package_name <- devtools::as.package(path)[["package"]]
     if (package_name != package_dir)
         warning("The package's name and root directory differ.")
-    if (is.na(gh_username)) {
+    if (! is.null(gh_username) && is.na(gh_username)) {
         git_url <- get_github_url(get_remote_url(path))
         num_of_remotes <- length(grep(paste0(package_name, "$"), git_url))
         if (num_of_remotes == 1) {
@@ -283,3 +290,4 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
     }
     return(invisible(status))
 }
+

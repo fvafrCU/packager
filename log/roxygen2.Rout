@@ -52,5 +52,6 @@ The following objects are masked from ‘package:git2r’:
     config, content
 
 Warning: tools.R:17: @example spans multiple lines. Do you want @examples?
+Writing add_github_url_to_desc.Rd
 > 
 > 
