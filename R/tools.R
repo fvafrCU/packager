@@ -59,12 +59,12 @@ check_news <- function(path = ".") {
                                 function(x) strsplit(x, split = " ")[[1]][3])
         extra_devels <- setdiff(devel_numbers, version_number)
         if (length(extra_devels) > 0) {
-            stop(paste("\nFound unmatched devel version: ", extra_devels))
+            throw(paste("\nFound unmatched devel version: ", extra_devels))
         }
     }
     is_covered <- any(grepl(paste("^#", package_name, version_number), news.md))
     if (! is_covered) {
-        stop("Version ", version_number, " not covered!")
+        throw("Version ", version_number, " not covered!")
     } else {
         return(TRUE)
     }

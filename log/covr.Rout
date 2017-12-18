@@ -221,8 +221,6 @@
 771 R/devtools_verbatim.R                  maintainer  405     0
 772 R/devtools_verbatim.R                  maintainer  406     0
 773 R/devtools_verbatim.R                  maintainer  407     0
-1            R/internal.R             is_null_or_true    1     0
-2            R/internal.R                    is_force    2     0
 4            R/internal.R                    get_news    5     0
 5            R/internal.R                    get_news    6     0
 6            R/internal.R                    get_news    7     0
@@ -367,13 +365,15 @@
 675             R/tools.R      add_github_url_to_desc  282     0
 678             R/tools.R      add_github_url_to_desc  284     0
 680             R/tools.R      add_github_url_to_desc  285     0
-684             R/tools.R      add_github_url_to_desc  290     0
-686             R/tools.R      add_github_url_to_desc  291     0
-687             R/tools.R      add_github_url_to_desc  292     0
+690             R/tools.R      add_github_url_to_desc  294     0
+691             R/tools.R      add_github_url_to_desc  295     0
+694             R/tools.R      add_github_url_to_desc  298     0
+696             R/tools.R      add_github_url_to_desc  299     0
+698             R/tools.R      add_github_url_to_desc  300     0
 packager Coverage: 52.01%
-R/tools.R: 35.48%
+R/tools.R: 33.87%
 R/devtools_verbatim.R: 44.88%
 R/devtools_modified.R: 51.48%
-R/internal.R: 58.93%
+R/internal.R: 60.12%
 R/main.R: 100.00%
 R/throw.R: 100.00%

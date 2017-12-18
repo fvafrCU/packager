@@ -6,7 +6,7 @@ get_news <- function(path = ".") {
                                           path = path),
                      error = function(e) return(FALSE)
                      )
-    if (root == FALSE) stop("Can't find the R package")
+    if (root == FALSE) throw("Can't find the R package")
     description <- read.dcf(file.path(root, "DESCRIPTION"))
     news <- unlist(strsplit(paste(readLines("NEWS.md"), collapse = "\n"),
                             split = "# "))
@@ -110,7 +110,7 @@ is_git_clone <- function(path = ".") {
 
 warn_and_stop <- function(...) {
     cat(...)
-    stop(...)
+    throw(...)
 }
 
 provide_throw <- function(path = ".",
