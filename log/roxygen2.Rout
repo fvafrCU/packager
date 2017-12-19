@@ -51,6 +51,5 @@ The following objects are masked from ‘package:git2r’:
 
     config, content
 
-Writing check_cyclomatic_complexity.Rd
 > 
 > 

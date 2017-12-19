@@ -1,5 +1,17 @@
 
 
+Executing test function test_get_news  ... * Creating `fakePackage.Rproj` from template.
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
+* Creating `NEWS.md` from template.
+* Modify `NEWS.md`.
+ done successfully.
+
+
+
+Executing test function test_grep_directory  ...  done successfully.
+
+
+
 Executing test function test_is_force  ...  done successfully.
 
 
@@ -8,7 +20,7 @@ Executing test function test_is_null_or_true  ...  done successfully.
 
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpGwlCjz'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/Rtmp9LTvUL'
 No DESCRIPTION found. Creating with values:
 
 
@@ -21,6 +33,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+* Adding `.Rprofile` to /tmp/Rtmp9LTvUL/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/Rtmp9LTvUL/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp9LTvUL/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -33,10 +48,9 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Argument 'author_at_r' is missing. Use
-	sub("(email)", "
-	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
-for example
+Warning in update_description(path = path, title = tools::toTitleCase(title),  :
+  Argument 'author_at_r' is missing, using default.
+Warning: 'Description' must contain one or more complete sentences
 * Adding testthat to Suggests
 * Creating `tests/testthat`.
 * Creating `tests/testthat.R` from template.
@@ -46,20 +60,18 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpGwlCjz/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpGwlCjz/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpGwlCjz/prutp/DESCRIPTION
+Updating roxygen version in /tmp/Rtmp9LTvUL/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Warning in FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/RtmpGwlCjz/prutp/LICENSE'
-Checking file listings cardinality but skipping file contents on h5!
+  incomplete final line found on '/tmp/Rtmp9LTvUL/prutp/LICENSE'
+Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpGwlCjz'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/Rtmp9LTvUL'
 No DESCRIPTION found. Creating with values:
 
 
@@ -72,6 +84,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+* Adding `.Rprofile` to /tmp/Rtmp9LTvUL/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/Rtmp9LTvUL/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/Rtmp9LTvUL/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -84,10 +99,9 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Argument 'author_at_r' is missing. Use
-	sub("(email)", "
-	\1", packager::author_at_r("Andreas Dominik", "Cullmann", "fvafrcu@arcor.de"))
-for example
+Warning in update_description(path = path, title = tools::toTitleCase(title),  :
+  Argument 'author_at_r' is missing, using default.
+Warning: 'Description' must contain one or more complete sentences
 * Adding testthat to Suggests
 * Creating `tests/testthat`.
 * Creating `tests/testthat.R` from template.
@@ -97,14 +111,12 @@ for example
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-* Adding `*.tar.gz` to /tmp/RtmpGwlCjz/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmpGwlCjz/prutp/.gitignore
-Updating roxygen version in /tmp/RtmpGwlCjz/prutp/DESCRIPTION
+Updating roxygen version in /tmp/Rtmp9LTvUL/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/RtmpGwlCjz/prutp'
+make[1]: Entering directory '/tmp/Rtmp9LTvUL/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -114,20 +126,20 @@ processing file: README.Rmd
   ordinary text without R code
 
   |                                                                         |......................                                           |  33%
-label: unnamed-chunk-1 (with options) 
+label: setup (with options) 
 List of 1
- $ echo: logi FALSE
+ $ include: logi FALSE
 
   |                                                                         |................................                                 |  50%
   ordinary text without R code
 
   |                                                                         |...........................................                      |  67%
-label: unnamed-chunk-2 (with options) 
+label: unnamed-chunk-1 (with options) 
 List of 1
  $ eval: logi FALSE
 
   |                                                                         |......................................................           |  83%
-label: unnamed-chunk-3 (with options) 
+label: unnamed-chunk-2 (with options) 
 List of 1
  $ echo: logi FALSE
 
@@ -146,8 +158,8 @@ Rscript-devel --vanilla -e 'packager::check_news()' > log/news.Rout 2>&1
 Rscript-devel --vanilla tests/runit.R > log/runit.Rout 2>&1 
 Makefile:130: recipe for target 'log/runit.Rout' failed
 make[1]: *** [log/runit.Rout] Error 1
-make[1]: Leaving directory '/tmp/RtmpGwlCjz/prutp'
-Checking file listings cardinality but skipping file contents on h5!
+make[1]: Leaving directory '/tmp/Rtmp9LTvUL/prutp'
+Checking file listings cardinality but skipping file contents on h6!
  done successfully.
 
 
