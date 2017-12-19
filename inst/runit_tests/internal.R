@@ -1,8 +1,7 @@
 provide_fake_package <- function() {
     tmp <- tempdir()
-    dir.create(tmp)
     path <- file.path(tmp, "fakePackage")
-    tyrCatch(devtools::create(path, quiet = TRUE), error = identity)
+    tryCatch(devtools::create(path, quiet = TRUE), error = identity)
     return(path)
 }
 
@@ -20,6 +19,10 @@ test_is_force <- function() {
     RUnit::checkTrue(result)
 }
 
-
-
-test_
+test_get_news <- function() {
+    path <- provide_fake_package()
+    devtools::use_news_md(path)
+    result <- packager:::get_news(path)
+    expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
+    RUnit::checkIdentical(result, expectation)
+}
