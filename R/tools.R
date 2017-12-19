@@ -301,4 +301,3 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
     }
     return(invisible(status))
 }
-
