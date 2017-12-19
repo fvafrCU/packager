@@ -135,37 +135,10 @@
 555 R/devtools_verbatim.R         github_remote_parse  213     0
 558 R/devtools_verbatim.R         github_remote_parse  214     0
 561 R/devtools_verbatim.R         github_remote_parse  215     0
-563 R/devtools_verbatim.R         github_remote_parse  216     0
+564 R/devtools_verbatim.R         github_remote_parse  216     0
 592 R/devtools_verbatim.R                 remote_urls  226     0
 595 R/devtools_verbatim.R                 remote_urls  227     0
-655 R/devtools_verbatim.R         parse_check_results  269     0
-658 R/devtools_verbatim.R         parse_check_results  272     0
-660 R/devtools_verbatim.R         parse_check_results  273     0
-663 R/devtools_verbatim.R         parse_check_results  275     0
-666 R/devtools_verbatim.R         parse_check_results  277     0
-668 R/devtools_verbatim.R         parse_check_results  278     0
-670 R/devtools_verbatim.R         parse_check_results  279     0
-672 R/devtools_verbatim.R         parse_check_results  280     0
-674 R/devtools_verbatim.R         parse_check_results  281     0
-676 R/devtools_verbatim.R         parse_check_results  282     0
-677 R/devtools_verbatim.R         parse_check_results  283     0
-679 R/devtools_verbatim.R         parse_check_results  284     0
-681 R/devtools_verbatim.R         parse_check_results  285     0
-683 R/devtools_verbatim.R         print.check_results  289     0
-685 R/devtools_verbatim.R         print.check_results  290     0
-688 R/devtools_verbatim.R         print.check_results  292     0
-689 R/devtools_verbatim.R         print.check_results  293     0
-693 R/devtools_verbatim.R     summarise_check_results  297     0
-695 R/devtools_verbatim.R     summarise_check_results  298     0
-697 R/devtools_verbatim.R     summarise_check_results  299     0
-699 R/devtools_verbatim.R     summarise_check_results  300     0
-700 R/devtools_verbatim.R     summarise_check_results  301     0
-702 R/devtools_verbatim.R     summarise_check_results  302     0
-703 R/devtools_verbatim.R                  show_count  306     0
-704 R/devtools_verbatim.R                  show_count  307     0
 705 R/devtools_verbatim.R                  show_count  308     0
-706 R/devtools_verbatim.R                  show_count  309     0
-707 R/devtools_verbatim.R                  show_count  310     0
 709 R/devtools_verbatim.R                package_file  315     0
 713 R/devtools_verbatim.R                package_file  320     0
 716 R/devtools_verbatim.R                package_file  323     0
@@ -221,19 +194,6 @@
 771 R/devtools_verbatim.R                  maintainer  405     0
 772 R/devtools_verbatim.R                  maintainer  406     0
 773 R/devtools_verbatim.R                  maintainer  407     0
-4            R/internal.R                    get_news    5     0
-5            R/internal.R                    get_news    6     0
-6            R/internal.R                    get_news    7     0
-7            R/internal.R                    get_news    8     0
-9            R/internal.R                    get_news    9     0
-11           R/internal.R                    get_news   10     0
-12           R/internal.R                    get_news   11     0
-13           R/internal.R                    get_news   12     0
-14           R/internal.R                    get_news   13     0
-16           R/internal.R                    get_news   14     0
-17           R/internal.R                    get_news   15     0
-18           R/internal.R                    get_news   16     0
-20           R/internal.R                    get_news   17     0
 226          R/internal.R              grep_directory   84     0
 229          R/internal.R              grep_directory   85     0
 232          R/internal.R              grep_directory   86     0
@@ -288,58 +248,25 @@
 615          R/internal.R                  travis_cli  234     0
 618          R/internal.R                  travis_cli  235     0
 621          R/internal.R                  travis_cli  236     0
-46              R/tools.R check_cyclomatic_complexity   28     0
-49              R/tools.R check_cyclomatic_complexity   29     0
-53              R/tools.R check_cyclomatic_complexity   30     0
 55              R/tools.R check_cyclomatic_complexity   31     0
 58              R/tools.R check_cyclomatic_complexity   32     0
 62              R/tools.R check_cyclomatic_complexity   33     0
 66              R/tools.R check_cyclomatic_complexity   34     0
 69              R/tools.R check_cyclomatic_complexity   35     0
-76              R/tools.R check_cyclomatic_complexity   37     0
 144             R/tools.R                  check_news   62     0
 166             R/tools.R                  check_news   67     0
-304             R/tools.R       provide_cran_comments  120     0
-308             R/tools.R       provide_cran_comments  121     0
-310             R/tools.R       provide_cran_comments  122     0
-313             R/tools.R       provide_cran_comments  123     0
-315             R/tools.R       provide_cran_comments  124     0
-317             R/tools.R       provide_cran_comments  125     0
-319             R/tools.R       provide_cran_comments  126     0
-321             R/tools.R       provide_cran_comments  127     0
-325             R/tools.R       provide_cran_comments  128     0
 333             R/tools.R       provide_cran_comments  130     0
-341             R/tools.R       provide_cran_comments  132     0
-346             R/tools.R       provide_cran_comments  133     0
-350             R/tools.R       provide_cran_comments  134     0
-354             R/tools.R       provide_cran_comments  135     0
 359             R/tools.R       provide_cran_comments  137     0
-364             R/tools.R       provide_cran_comments  139     0
-367             R/tools.R       provide_cran_comments  140     0
 371             R/tools.R       provide_cran_comments  141     0
 374             R/tools.R       provide_cran_comments  142     0
 376             R/tools.R       provide_cran_comments  143     0
-384             R/tools.R       provide_cran_comments  146     0
-388             R/tools.R       provide_cran_comments  147     0
-391             R/tools.R       provide_cran_comments  148     0
-394             R/tools.R       provide_cran_comments  149     0
-398             R/tools.R       provide_cran_comments  151     0
-401             R/tools.R       provide_cran_comments  152     0
-405             R/tools.R       provide_cran_comments  153     0
-407             R/tools.R       provide_cran_comments  154     0
-408             R/tools.R       provide_cran_comments  155     0
 409             R/tools.R       provide_cran_comments  156     0
 411             R/tools.R       provide_cran_comments  157     0
 416             R/tools.R       provide_cran_comments  159     0
 420             R/tools.R       provide_cran_comments  160     0
 424             R/tools.R       provide_cran_comments  161     0
 427             R/tools.R       provide_cran_comments  162     0
-432             R/tools.R       provide_cran_comments  164     0
-433             R/tools.R       provide_cran_comments  165     0
-435             R/tools.R       provide_cran_comments  166     0
-437             R/tools.R       provide_cran_comments  167     0
-440             R/tools.R       provide_cran_comments  168     0
-564             R/tools.R                     git_tag  216     0
+563             R/tools.R                     git_tag  216     0
 566             R/tools.R                     git_tag  217     0
 569             R/tools.R                     git_tag  218     0
 572             R/tools.R                     git_tag  219     0
@@ -370,10 +297,10 @@
 694             R/tools.R      add_github_url_to_desc  298     0
 696             R/tools.R      add_github_url_to_desc  299     0
 698             R/tools.R      add_github_url_to_desc  300     0
-packager Coverage: 52.01%
-R/tools.R: 33.87%
-R/devtools_verbatim.R: 44.88%
+packager Coverage: 61.45%
 R/devtools_modified.R: 51.48%
-R/internal.R: 60.12%
+R/devtools_verbatim.R: 55.51%
+R/tools.R: 60.48%
+R/internal.R: 67.86%
 R/main.R: 100.00%
 R/throw.R: 100.00%

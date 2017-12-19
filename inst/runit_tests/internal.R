@@ -26,3 +26,12 @@ test_get_news <- function() {
     expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
     RUnit::checkIdentical(result, expectation)
 }
+
+test_grep_directory <- function() {
+    path <- system.file("runit_tests", package = "packager")
+    result <- unlist(strsplit(grep_directory(path = path, 
+                                             pattern = "runit_tests.*packager"), 
+                              split = ":"))[2]
+    expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
+    RUnit::checkIdentical(result, expectation)
+}
