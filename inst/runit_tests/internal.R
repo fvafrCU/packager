@@ -29,7 +29,7 @@ test_get_news <- function() {
 
 test_grep_directory <- function() {
     path <- system.file("runit_tests", package = "packager")
-    result <- unlist(strsplit(grep_directory(path = path, 
+    result <- unlist(strsplit(packager:::grep_directory(path = path, 
                                              pattern = "runit_tests.*packager"), 
                               split = ":"))[2]
     expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
