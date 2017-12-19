@@ -1,3 +1,7 @@
+# packager 0.2.1
+
+* bug fix internal function get\_news() to now read NEWS.md from `path`.
+
 # packager 0.2.0
 
 * Added check\_cyclomatic\_complexity() to check for cyclometric complexity.
