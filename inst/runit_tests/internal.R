@@ -1,7 +1,12 @@
+if (interactive()) devtools::load_all()
+
 provide_fake_package <- function() {
-    tmp <- tempdir()
+    tmp <- tempfile()
+    dir.create(tmp)
     path <- file.path(tmp, "fakePackage")
-    tryCatch(devtools::create(path, quiet = TRUE), error = identity)
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+                              error = identity
+    )
     return(path)
 }
 
@@ -21,6 +26,7 @@ test_is_force <- function() {
 
 test_get_news <- function() {
     path <- provide_fake_package()
+    on.exit(unlink(path, recursive = TRUE))
     devtools::use_news_md(path)
     result <- packager:::get_news(path)
     expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
@@ -35,3 +41,23 @@ test_grep_directory <- function() {
     expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
     RUnit::checkIdentical(result, expectation)
 }
+
+test_git <- function() {
+    path <- provide_fake_package()
+    on.exit(unlink(path, recursive = TRUE))
+    RUnit::checkTrue(! packager:::is_git_clone(path),
+                          msg = "Not a git repo.")
+    RUnit::checkException(packager:::is_git_uncommitted(path),
+                          msg = "Not a git repo, no commits.")
+    packager:::use_git(path = path)
+    RUnit::checkTrue(packager:::is_git_clone(path))
+    RUnit::checkTrue(! packager:::is_git_uncommitted(path),
+                     msg = "All should be commited.")
+    cat("foo", file = file.path(path, "DESCRIPTION"), append = TRUE)
+    RUnit::checkTrue(packager:::is_git_uncommitted(path),
+                     msg = "Uncommited changes.")
+}
+
+test_warn_and_stop <- function() 
+    RUnit::checkException(packager:::warn_and_stop("foo"))
+
