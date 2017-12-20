@@ -70,7 +70,6 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     remove_Rproj(path = path)
     use_devtools(path = path)
     use_travis(path = path)
-    set_package_info(path = path, ...)
     add_github_url_to_desc(path = path)
     use_bsd2clause_license(path = path)
     provide_throw(path = path)
@@ -129,5 +128,6 @@ set_package_info <- function(path, author_at_r = NULL,
                              author_at_r = author_at_r)
     r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
                               description = description, details = details)
-    return(invisible(list(r1, r2)))
+    r3 <- use_intro(path = path, details = details, ...)
+    return(invisible(list(r1, r2, r3)))
 }

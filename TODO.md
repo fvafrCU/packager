@@ -1,4 +1,5 @@
 - enhance coverage
+- add package info (description, details) to vignette template?
 - document the options (force)
 - use fakemake::make in infect with a makelist that's an extension of fakemake's
   "package" list

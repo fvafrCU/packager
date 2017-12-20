@@ -47,7 +47,7 @@ load_pkg_description <- function(path, create) {
 use_template <- function(template, save_as = template, data = list(),
                          ignore = FALSE, pkg = ".",
                          source_package = "packager",
-                         force = isTRUE(getOption("packager")[["force"]])) {
+                         force = is_force()) {
     status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)
@@ -96,8 +96,9 @@ use_news_md <- function (pkg = ".", ...) {
     invisible(NULL)
 }
 
-use_intro <- function (path = ".", ...) {
+use_intro <- function (path = ".", ..., details = NULL) {
     pkg <- devtools::as.package(path)
+    pkg$details <- details
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }
