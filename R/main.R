@@ -65,7 +65,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
     use_makefile(path = path)
-    use_intro(path = path, force = TRUE)
+    set_package_info(path = path, ...)
     use_devel(path = path)
     remove_Rproj(path = path)
     use_devtools(path = path)
@@ -128,6 +128,7 @@ set_package_info <- function(path, author_at_r = NULL,
                              author_at_r = author_at_r)
     r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
                               description = description, details = details)
-    r3 <- use_intro(path = path, details = details, ...)
+    r3 <- use_intro(path = path, 
+                    details = if (is.na(details)) NULL else details, ...)
     return(invisible(list(r1, r2, r3)))
 }

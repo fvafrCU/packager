@@ -47,7 +47,7 @@ load_pkg_description <- function(path, create) {
 use_template <- function(template, save_as = template, data = list(),
                          ignore = FALSE, pkg = ".",
                          source_package = "packager",
-                         force = is_force()) {
+                         force = isTRUE(getOption("packager")[["force"]])) {
     status <- FALSE
     pkg <- devtools::as.package(pkg)
     path <- file.path(pkg$path, save_as)

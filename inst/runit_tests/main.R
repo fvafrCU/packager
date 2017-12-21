@@ -27,7 +27,7 @@ test_create <- function() {
         runit_messsage <- "File listings differ!"
     } else {
         # with changing R versions, the output of dir() (and sort()?)
-        # appears change. So I just check the cardinality of the
+        # appears to change. So I just check the cardinality of the
         # intersection.
         result <- length(intersect(expected, result))
         expected <- length(expected)
