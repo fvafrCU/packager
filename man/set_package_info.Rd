@@ -6,7 +6,7 @@
 \usage{
 set_package_info(path, author_at_r = NULL,
   title = "What it Does (One Line, Title Case)", description = NULL,
-  details = NA)
+  details = NA, ...)
 }
 \arguments{
 \item{path}{Path to the package.}
@@ -19,6 +19,9 @@ set_package_info(path, author_at_r = NULL,
 
 \item{details}{A string giving the details. Defaults to NA in which case a
 default details are inserted. Set to NULL to have no details at all.}
+
+\item{...}{Arguments to be passed to internal function
+\code{packager:::use_intro}.}
 }
 \value{
 \code{\link[base:invisible]{Invisibly}}

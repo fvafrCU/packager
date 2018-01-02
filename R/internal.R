@@ -67,7 +67,8 @@ update_description <- function(path = ".",
                                      email = email, role = c("aut", "cre"))
     }
     d <- desc::desc(path)
-    d$set(Title = title, Description = description)
+    if (! is.null(description))
+        d$set(Title = title, Description = description)
     d$set_authors(author_at_r)
     d$write()
     return(invisible(NULL))

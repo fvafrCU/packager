@@ -46,3 +46,8 @@ if (yesno("Ready to submit?")) {
     upload_cran(pkg = path, built_path = built_path, cran_submission_url = csu)
 }
 
+# intro
+devtools::load_all(".")
+d <- "/tmp/foo"
+packager::create(path = d, title = "The Fake Package", description = "Make my fake.", details = "There are no details.") 
+

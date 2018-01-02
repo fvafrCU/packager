@@ -1,18 +1,12 @@
-RUNIT TEST PROTOCOL -- Thu Dec 21 08:51:02 2017 
+RUNIT TEST PROTOCOL -- Tue Jan  2 15:09:17 2018 
 *********************************************** 
 Number of test functions: 9 
 Number of errors: 0 
-Number of failures: 2 
+Number of failures: 0 
 
  
 1 Test Suite : 
-packager_unit_test - 9 test functions, 0 errors, 2 failures
-FAILURE in test_create: Error in RUnit::checkIdentical(result, expected, msg = runit_messsage) : 
-  FALSE 
- Cardinality of file listings intersection died!
-FAILURE in test_create_make: Error in RUnit::checkIdentical(result, expected, msg = runit_messsage) : 
-  FALSE 
- Cardinality of file listings intersection died!
+packager_unit_test - 9 test functions, 0 errors, 0 failures
 
 
 
@@ -22,25 +16,19 @@ Test Suite: packager_unit_test
 Test function regexp: ^test_+ 
 Test file regexp: ^.*\.[rR] 
 Involved directory: 
-inst/runit_tests 
+/home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests 
 --------------------------- 
-Test file: inst/runit_tests/internal.R 
-test_get_news: (1 checks) ... OK (0.52 seconds)
-test_git: (5 checks) ... OK (0.15 seconds)
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/internal.R 
+test_get_news: (1 checks) ... OK (0.35 seconds)
+test_git: (5 checks) ... OK (0.11 seconds)
 test_grep_directory: (1 checks) ... OK (0 seconds)
 test_is_force: (1 checks) ... OK (0 seconds)
 test_is_null_or_true: (3 checks) ... OK (0 seconds)
 test_warn_and_stop: (1 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: inst/runit_tests/main.R 
-test_create: FAILURE !! (check number 1)
-Error in RUnit::checkIdentical(result, expected, msg = runit_messsage) : 
-  FALSE 
- Cardinality of file listings intersection died!
-test_create_make: FAILURE !! (check number 1)
-Error in RUnit::checkIdentical(result, expected, msg = runit_messsage) : 
-  FALSE 
- Cardinality of file listings intersection died!
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/main.R 
+test_create: (1 checks) ... OK (1.01 seconds)
+test_create_make: (1 checks) ... OK (0.7 seconds)
 --------------------------- 
-Test file: inst/runit_tests/runit-throw.R 
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/runit-throw.R 
 test_exception: (1 checks) ... OK (0 seconds)

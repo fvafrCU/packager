@@ -65,6 +65,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
     use_makefile(path = path)
+    message("foo")
     set_package_info(path = path, ...)
     use_devel(path = path)
     remove_Rproj(path = path)
@@ -104,6 +105,8 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' @param description A string giving the description.
 #' @param details A string giving the details. Defaults to NA in which case a
 #' default details are inserted. Set to NULL to have no details at all.
+#' @param ... Arguments to be passed to internal function
+#' \code{packager:::use_intro}.
 #' @return \code{\link[base:invisible]{Invisibly}}
 #' a list of results of setting the xxx-package.R and the DESCRIPTION.
 #' @export
@@ -122,13 +125,12 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' unlink(path, recursive = TRUE)
 set_package_info <- function(path, author_at_r = NULL,
                              title = "What it Does (One Line, Title Case)",
-                             description = NULL, details = NA) {
+                             description = NULL, details = NA, ...) {
     r1 <- update_description(path = path, title = tools::toTitleCase(title),
                              description = description,
                              author_at_r = author_at_r)
     r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
                               description = description, details = details)
-    r3 <- use_intro(path = path, 
-                    details = if (is.na(details)) NULL else details, ...)
+    r3 <- use_intro(path = path, details = details, ...)
     return(invisible(list(r1, r2, r3)))
 }

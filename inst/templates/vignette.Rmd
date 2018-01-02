@@ -10,8 +10,9 @@ vignette: >
 ---
 
 # Teaser
-This is just a template.
 {{{ description }}} 
+
 # Features
-There are not features.
 {{{ details }}} 
+
+# A Minimal Example

@@ -97,6 +97,7 @@ use_news_md <- function (pkg = ".", ...) {
 }
 
 use_intro <- function (path = ".", ..., details = NULL) {
+    if (is.na(details)) details <- NULL # NA would get printed into vignette.
     pkg <- devtools::as.package(path)
     pkg$details <- details
     if (uses_github(pkg$path)) {
