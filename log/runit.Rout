@@ -8,7 +8,7 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 
 Executing test function test_git  ... Error in .local(path, ...) : The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmphM5mse/file615a10c73d1c/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpMNsEMo/file714442a5e9ef/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -26,12 +26,20 @@ Executing test function test_is_null_or_true  ...  done successfully.
 
 
 
+Executing test function test_url  ... SSL error: could not verify peer
+Error in (k + 1):(k + 3) : argument of length 0
+In addition: Warning message:
+running command ''sudo' travis logs --repo fvafrCU/packager' had status 1 
+ done successfully.
+
+
+
 Executing test function test_warn_and_stop  ... fooError in packager:::warn_and_stop("foo") : foo
  done successfully.
 
 
 
-Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmphM5mse'
+Executing test function test_create  ... Creating package 'prutp' in '/tmp/RtmpMNsEMo'
 No DESCRIPTION found. Creating with values:
 
 
@@ -44,11 +52,14 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmphM5mse/prutp/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmphM5mse/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmphM5mse/prutp/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpMNsEMo/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpMNsEMo/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpMNsEMo/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
+foo
+Warning in update_description(path = path, title = tools::toTitleCase(title),  :
+  Argument 'author_at_r' is missing, using default.
 * Creating `vignettes`.
 * Creating `vignettes/An_Introduction_to_prutp.Rmd` from template.
 * Creating `devel.R` from template.
@@ -59,9 +70,6 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Warning in update_description(path = path, title = tools::toTitleCase(title),  :
-  Argument 'author_at_r' is missing, using default.
-Warning: 'Description' must contain one or more complete sentences
 Warning in add_github_url_to_desc(path = path) :
   Could not retrieve github user name. Set the URL in DESCRIPTION manually!
 * Adding testthat to Suggests
@@ -73,18 +81,18 @@ Warning in add_github_url_to_desc(path = path) :
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmphM5mse/prutp/DESCRIPTION
+Updating roxygen version in /tmp/RtmpMNsEMo/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Warning in FUN(X[[i]], ...) :
-  incomplete final line found on '/tmp/RtmphM5mse/prutp/LICENSE'
+  incomplete final line found on '/tmp/RtmpMNsEMo/prutp/LICENSE'
 Checking file listings but skipping file contents on fvafrdebianCU!
  done successfully.
 
 
 
-Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmphM5mse'
+Executing test function test_create_make  ... Creating package 'prutp' in '/tmp/RtmpMNsEMo'
 No DESCRIPTION found. Creating with values:
 
 
@@ -97,11 +105,14 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmphM5mse/prutp/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmphM5mse/prutp/.gitignore
-* Adding `prutp.Rcheck` to /tmp/RtmphM5mse/prutp/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpMNsEMo/prutp/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpMNsEMo/prutp/.gitignore
+* Adding `prutp.Rcheck` to /tmp/RtmpMNsEMo/prutp/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
+foo
+Warning in update_description(path = path, title = tools::toTitleCase(title),  :
+  Argument 'author_at_r' is missing, using default.
 * Creating `vignettes`.
 * Creating `vignettes/An_Introduction_to_prutp.Rmd` from template.
 * Creating `devel.R` from template.
@@ -112,9 +123,6 @@ LazyData: true
 * Adding pre-commit hook
 * Creating `.travis.yml` from template.
 * Adding `.travis.yml` to `.Rbuildignore`.
-Warning in update_description(path = path, title = tools::toTitleCase(title),  :
-  Argument 'author_at_r' is missing, using default.
-Warning: 'Description' must contain one or more complete sentences
 Warning in add_github_url_to_desc(path = path) :
   Could not retrieve github user name. Set the URL in DESCRIPTION manually!
 * Adding testthat to Suggests
@@ -126,12 +134,12 @@ Warning in add_github_url_to_desc(path = path) :
 * Creating `inst/runit_tests/runit-throw.R` from template.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmphM5mse/prutp/DESCRIPTION
+Updating roxygen version in /tmp/RtmpMNsEMo/prutp/DESCRIPTION
 Writing NAMESPACE
 Writing prutp-package.Rd
 Writing throw.Rd
 Loading prutp
-make[1]: Entering directory '/tmp/RtmphM5mse/prutp'
+make[1]: Entering directory '/tmp/RtmpMNsEMo/prutp'
 Rscript-devel --vanilla -e 'knitr::knit("README.Rmd")'
 WARNING: ignoring environment value of R_HOME
 
@@ -176,9 +184,9 @@ Rscript-devel --vanilla -e 'co <- covr::package_coverage(path = ".", function_ex
 Rscript-devel --vanilla -e 'tryCatch(cleanr::check_directory("R/", check_return = FALSE), cleanr = function(e) print(e))' > log/cleanr.Rout 2>&1 
 Rscript-devel --vanilla -e 'lintr::lint_package(path = ".")' > log/lintr.Rout 2>&1 
 Rscript-devel --vanilla -e 'print(packager::check_cyclomatic_complexity())' > log/cyclocomp.Rout 2>&1 
-R-devel --vanilla CMD build /tmp/RtmphM5mse/prutp
+R-devel --vanilla CMD build /tmp/RtmpMNsEMo/prutp
 WARNING: ignoring environment value of R_HOME
-* checking for file ‘/tmp/RtmphM5mse/prutp/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpMNsEMo/prutp/DESCRIPTION’ ... OK
 * preparing ‘prutp’:
 * checking DESCRIPTION meta-information ... OK
 * installing the package to build vignettes
@@ -191,7 +199,7 @@ export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
 	R-devel --vanilla CMD check --as-cran --run-donttest prutp_0.0.0.9000.tar.gz; \
 	cp prutp.Rcheck/00check.log log/check.Rout
 WARNING: ignoring environment value of R_HOME
-* using log directory ‘/tmp/RtmphM5mse/prutp/prutp.Rcheck’
+* using log directory ‘/tmp/RtmpMNsEMo/prutp/prutp.Rcheck’
 * using R Under development (unstable) (2017-10-01 r73423)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -221,6 +229,10 @@ Found the following (possibly) invalid URLs:
     Status: Error
     Message: libcurl error code 35:
       	gnutls_handshake() failed: An unexpected TLS packet was received.
+
+The Title field should be in title case, current version then in title case:
+‘What the Package Does (one line, title case)’
+‘What the Package Does (One Line, Title Case)’
 * checking package namespace information ... OK
 * checking package dependencies ...Warning: unable to access index for repository https://CRAN.R-project.org/src/contrib:
   cannot open URL 'https://CRAN.R-project.org/src/contrib/PACKAGES'
@@ -241,8 +253,7 @@ Warning: unable to access index for repository https://bioconductor.org/packages
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
-* checking DESCRIPTION meta-information ... NOTE
-Malformed Description field: should contain one or more complete sentences.
+* checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
@@ -283,15 +294,15 @@ Malformed Description field: should contain one or more complete sentences.
 * checking PDF version of manual ... OK
 * DONE
 
-Status: 2 NOTEs
+Status: 1 NOTE
 See
-  ‘/tmp/RtmphM5mse/prutp/prutp.Rcheck/00check.log’
+  ‘/tmp/RtmpMNsEMo/prutp/prutp.Rcheck/00check.log’
 for details.
 
 
 Rscript-devel --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout")' > log/cran_comments.Rout 2>&1 
 R-devel --vanilla CMD INSTALL  prutp_0.0.0.9000.tar.gz > log/install.Rout 2>&1 
-make[1]: Leaving directory '/tmp/RtmphM5mse/prutp'
+make[1]: Leaving directory '/tmp/RtmpMNsEMo/prutp'
 Checking file listings cardinality but skipping file contents on fvafrdebianCU!
  done successfully.
 

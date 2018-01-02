@@ -28,7 +28,25 @@ inst/runit_tests/internal.R:46:13: warning: no visible global function definitio
 inst/runit_tests/internal.R:61:33: style: Trailing whitespace is superfluous.
 test_warn_and_stop <- function() 
                                 ^
-inst/runit_tests/internal.R:63:1: style: Trailing blank lines are superfluous.
+inst/runit_tests/internal.R:75:30: style: Trailing whitespace is superfluous.
+    repo <- git2r::init(path)  
+                             ^~
+inst/runit_tests/internal.R:77:39: warning: Do not use absolute paths.
+    git2r::remote_add(repo, "local", "~/git/fakePackage")
+                                      ^~~~~~~~~~~~~~~~~
+inst/runit_tests/internal.R:107:63: style: Trailing whitespace is superfluous.
+    expectation <- c("https://github.com/fvafrCU/fakePackage", 
+                                                              ^
+inst/runit_tests/internal.R:120:1: style: lines should not be more than 80 characters.
+    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/internal.R:120:81: style: Trailing whitespace is superfluous.
+    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
+                                                                                ^
+inst/runit_tests/internal.R:129:30: style: Trailing whitespace is superfluous.
+    repo <- git2r::init(path)  
+                             ^~
+inst/runit_tests/internal.R:133:1: style: Trailing blank lines are superfluous.
 
 ^
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
@@ -139,6 +157,9 @@ R/devtools_verbatim.R:409:1: style: Trailing blank lines are superfluous.
 R/internal.R:11:73: style: Trailing whitespace is superfluous.
     news <- unlist(strsplit(paste(readLines(file.path(root, "NEWS.md")), 
                                                                         ^
+R/internal.R:175:5: warning: local variable ‘pkg’ assigned but may not be used
+    pkg <- devtools::as.package(path)
+    ^~~
 R/main.R:83:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
                             system("make")})
                                           ^

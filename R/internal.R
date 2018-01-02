@@ -176,18 +176,12 @@ use_devtools <- function(path = ".") {
     result <- NULL
     result <- c(result, use_news_md(pkg = path))
     result <- c(result, use_readme_rmd(path = path))
-    # add imports to description
-    if (pkg[["package"]] == "packager") {
-        result <- c(result, devtools::use_package("devtools"), pkg = path)
-        result <- c(result, devtools::use_package("git2r"), pkg = path)
-        result <- c(result, devtools::use_package("withr"), pkg = path)
-    }
     return(result)
 }
 
-get_remote_url <- function(path) {
+get_remote_url <- function(path, discover = TRUE) {
     repo_failed <- "fail"
-    repo <- tryCatch(git2r::repository(path),
+    repo <- tryCatch(git2r::repository(path, discover = discover),
                      error = function(e) return(repo_failed)
                      )
     if (identical(repo, repo_failed)) {
