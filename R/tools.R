@@ -107,7 +107,8 @@ check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
 #'                     ")\cr
 #' Set to `travis-cli` to retrieve Session info automatically if your system is
 #' set up to use \url{https://github.com/travis-ci/travis.rb}.
-#' @param name The name to sign with.
+#' @param name The name to sign with, if NA, the given name of the package
+#' creator as stated in file DESCRIPTION is used.
 #' @note This function writes to disk as side effect.
 #' @return Character vector containing the cran comments, which are written to
 #' cran-comments.md (see Note).
@@ -116,7 +117,11 @@ provide_cran_comments <- function(check_log = NULL,
                                   path = ".",
                                   initial = FALSE,
                                   travis_session_info = NULL,
-                                  name = "Dominik") {
+                                  name = NA) {
+    if (is.na(name)) {
+        name <- tryCatch(unlist(desc::desc_get_author()[[1]])["given"],
+                         error = function(e) return(NA))
+    }
     pkg <- devtools::as.package(path)
     comments_file <- file.path(pkg[["path"]], "cran-comments.md")
     session <- utils::sessionInfo()
