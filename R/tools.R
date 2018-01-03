@@ -64,7 +64,7 @@ check_news <- function(path = ".") {
     }
     is_covered <- any(grepl(paste("^#", package_name, version_number), news.md))
     if (! is_covered) {
-        throw("Version ", version_number, " not covered!")
+        throw(paste0("Version ", version_number, " not covered!"))
     } else {
         return(TRUE)
     }
