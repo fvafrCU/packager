@@ -29,6 +29,7 @@ build_cran <- function(pkg, args = NULL) {
 # get rid of the interactive() part using yesno() to create the package.
 # Blow if there is none!
 load_pkg_description <- function(path, create) {
+    never_used <- create # this was part of the interaction.
     path_desc <- file.path(path, "DESCRIPTION")
     if (!file.exists(path_desc)) {
         stop("No description at ", path_desc, call. = FALSE)
