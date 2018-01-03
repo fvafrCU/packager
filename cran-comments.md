@@ -1,20 +1,14 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
-
-* bug fix internal function get\_news() to now read NEWS.md from `path`.
-
 Please upload to CRAN.
 Best, Dominik
 
-# Package packager 0.2.1
+# Package packager 0.3.0
 ## Test  environments 
-- R Under development (unstable) (2017-11-07 r73685)
+- R version 3.3.3 (2017-03-06)
   Platform: x86_64-pc-linux-gnu (64-bit)
-  Running under: Devuan GNU/Linux 1 (jessie)
-- R version 3.4.2 (2017-01-27)
-  Platform: x86_64-pc-linux-gnu (64-bit)
-  Running under: Ubuntu 14.04.5 LTS
+  Running under: Debian GNU/Linux 9 (stretch)
 - win-builder (devel)
 
 ## R CMD check results
-0 errors | 0 warnings | 1 note 
+ERROR: No check log given!

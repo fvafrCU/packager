@@ -46,12 +46,12 @@ test_use_git <- function() {
     path <- file.path(tempdir(), "fakePackge")
     dir.create(path)
     on.exit(unlink(path, recursive = TRUE))
-    result <- packager:::use_git(path)
+    result <- packager:::use_git(path = path)
     RUnit::checkIdentical(result, expectation)
 
     # rerun on intialised git repo
     expectation <- NULL
-    result <- packager:::use_git(path)
+    result <- packager:::use_git(path = path)
     RUnit::checkIdentical(result, expectation)
 }
 
