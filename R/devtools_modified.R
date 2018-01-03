@@ -128,7 +128,7 @@ use_travis <- function(path = ".", ...) {
 # devtools' version does not pass ceiling to git2r::discover_repository,
 # thus failing, if any .git found in the parents of the package path.
 # It also works only for R packages, which does not make much sense to me.
-use_git <- function(message = "Initial commit", path = ".") {
+use_git <- function(path = ".", message = "Initial commit") {
     if (! is.null(git2r::discover_repository(path, ceiling = 0))) {
         message("* Git is already initialized")
         return(invisible())
