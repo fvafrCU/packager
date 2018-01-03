@@ -27,7 +27,7 @@ if (! dir.exists(unit_dir)) {
 }
 package_suite <- RUnit::defineTestSuite("packager_unit_test",
                                         dirs = unit_dir,
-                                        testFileRegexp = "^.*\\.[rR]",
+                                        testFileRegexp = "^test.*\\.[rR]",
                                         testFuncRegexp = "^test_+")
 test_result <- RUnit::runTestSuite(package_suite)
 
