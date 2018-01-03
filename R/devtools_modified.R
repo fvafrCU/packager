@@ -71,7 +71,7 @@ use_template <- function(template, save_as = template, data = list(),
 
 # adjust use_readme_rmd to not pass the argument \code{open} with use_template()
 # and fix the test on file.exists()
-use_readme_rmd <- function (path = ".", ...) {
+use_readme_rmd <- function(path = ".", ...) {
     pkg <- devtools::as.package(path)
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
@@ -90,13 +90,13 @@ use_readme_rmd <- function (path = ".", ...) {
     return(invisible(NULL))
 }
 
-use_news_md <- function (pkg = ".", ...) {
+use_news_md <- function(pkg = ".", ...) {
     pkg <- devtools::as.package(pkg)
     use_template("NEWS.md", data = pkg, pkg = pkg, ...)
     invisible(NULL)
 }
 
-use_intro <- function (path = ".", ..., details = NULL) {
+use_intro <- function(path = ".", ..., details = NULL) {
     if (is.na(details)) details <- NULL # NA would get printed into vignette.
     pkg <- devtools::as.package(path)
     pkg$details <- details
@@ -117,7 +117,7 @@ use_intro <- function (path = ".", ..., details = NULL) {
     return(invisible(NULL))
 }
 
-use_travis <- function (path = ".", ...) {
+use_travis <- function(path = ".", ...) {
     pkg <- as.package(path)
     use_template("travis.yml", ".travis.yml", ignore = TRUE,
         pkg = pkg, ...)
@@ -126,7 +126,7 @@ use_travis <- function (path = ".", ...) {
 
 # devtools' version does not pass ceiling to git2r::discover_repository,
 # thus failing, if any .git found in the parents of the package path.
-use_git <- function (message = "Initial commit", path = ".") {
+use_git <- function(message = "Initial commit", path = ".") {
     pkg <- devtools::as.package(path)
     if (!is.null(git2r::discover_repository(pkg[["path"]], ceiling = 0))) {
         message("* Git is already initialized")
@@ -143,7 +143,7 @@ use_git <- function (message = "Initial commit", path = ".") {
 }
 
 # Modified copy of devtools' unexported version
-union_write <- function (path, new_lines) {
+union_write <- function(path, new_lines) {
     if (file.exists(path)) {
         lines <- readLines(path, warn = FALSE)
     }
@@ -155,7 +155,7 @@ union_write <- function (path, new_lines) {
 }
 
 # Modified copy of devtools' unexported version
-use_git_ignore <- function (ignores, path = ".") {
+use_git_ignore <- function(ignores, path = ".") {
     pkg <- devtools::as.package(path)
     paths <- paste0("`", ignores, "`", collapse = ", ")
     message("* Adding ", paths, " to ", file.path(pkg[["path"]],
