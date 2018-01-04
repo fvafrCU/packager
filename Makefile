@@ -88,7 +88,7 @@ $(LOG_DIR)/dependencies.Rout: Makefile $(LOG_DIR)
 	$(Rscript) --vanilla -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies.Rout 2>&1 
 
 # utils
-utils: clean remove viz
+utils: clean remove viz dev_install
 .PHONY: clean
 clean:
 	rm -rf $(PKGNAME).Rcheck
@@ -97,6 +97,9 @@ clean:
 remove:
 	 $(R) --vanilla CMD REMOVE  $(PKGNAME)
 
+.PHONY: dev_install
+dev_install:
+	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")'
 .PHONY: viz
 viz: $(LOG_DIR)/make.png 
 $(LOG_DIR)/make.png: $(LOG_DIR) Makefile $(R_FILES) $(MAN_FILES) \

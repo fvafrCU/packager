@@ -79,3 +79,36 @@ test_cran_comments <- function() {
     message(result)
     RUnit::checkIdentical(expectation, result)
 }
+
+
+test_git_tag <- function() {
+    path <- file.path(tempdir(), "fake")
+    on.exit(unlink(path, recursive = TRUE))
+    devtools::create(path)
+
+    # no repo
+    RUnit::checkException(packager::git_tag(path = path))
+
+    # initial repo
+    packager:::use_git(path)
+    result <- packager::git_tag(path = path)
+    RUnit::checkIdentical("0.0.0.9000", methods::slot(result, "name"))
+    RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
+    desc::desc_bump_version("minor", file = path)
+    
+    # uncommitted changes
+    RUnit::checkException(packager::git_tag(path = path))
+
+    # commited changes
+    r <- git2r::repository(path = path)
+    packager:::git_add_commit(r)
+    result <- packager::git_tag(path = path)
+    RUnit::checkIdentical("0.1.0", methods::slot(result, "name"))
+    RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
+
+    # version number lower than in tags
+    desc::desc_set(Version = "0.0.3", file = path)
+    packager:::git_add_commit(r)
+    RUnit::checkException(packager::git_tag(path = path))
+
+}

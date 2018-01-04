@@ -1,6 +1,6 @@
 Package: packager
 Title: Helps Me Build Packages
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: 
     person(given = "Andreas Dominik",
            family = "Cullmann",
