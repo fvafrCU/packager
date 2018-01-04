@@ -1,54 +1,126 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/internal.R:7:69: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_devtools_modified.R:7:69: style: Trailing whitespace is superfluous.
     tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
                                                                     ^
-inst/runit_tests/internal.R:28:13: warning: no visible global function definition for ‘provide_fake_package’
-    path <- provide_fake_package()
-            ^~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:32:1: style: lines should not be more than 80 characters.
-    expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:38:69: style: Trailing whitespace is superfluous.
-    result <- unlist(strsplit(packager:::grep_directory(path = path, 
-                                                                    ^
-inst/runit_tests/internal.R:39:1: style: lines should not be more than 80 characters.
-                                             pattern = "runit_tests.*packager"), 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:39:81: style: Trailing whitespace is superfluous.
-                                             pattern = "runit_tests.*packager"), 
-                                                                                ^
-inst/runit_tests/internal.R:41:1: style: lines should not be more than 80 characters.
-    expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:46:13: warning: no visible global function definition for ‘provide_fake_package’
-    path <- provide_fake_package()
-            ^~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:61:33: style: Trailing whitespace is superfluous.
-test_warn_and_stop <- function() 
-                                ^
-inst/runit_tests/internal.R:75:30: style: Trailing whitespace is superfluous.
-    repo <- git2r::init(path)  
-                             ^~
-inst/runit_tests/internal.R:77:39: warning: Do not use absolute paths.
-    git2r::remote_add(repo, "local", "~/git/fakePackage")
-                                      ^~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:107:63: style: Trailing whitespace is superfluous.
-    expectation <- c("https://github.com/fvafrCU/fakePackage", 
-                                                              ^
-inst/runit_tests/internal.R:120:1: style: lines should not be more than 80 characters.
-    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/internal.R:120:81: style: Trailing whitespace is superfluous.
-    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
-                                                                                ^
-inst/runit_tests/internal.R:129:30: style: Trailing whitespace is superfluous.
-    repo <- git2r::init(path)  
-                             ^~
-inst/runit_tests/internal.R:133:1: style: Trailing blank lines are superfluous.
+inst/runit_tests/test_devtools_modified.R:57:1: style: Trailing blank lines are superfluous.
 
 ^
+inst/runit_tests/test_devtools_modified.R:58:1: style: Trailing blank lines are superfluous.
+
+^
+inst/runit_tests/test_internal.R:7:69: style: Trailing whitespace is superfluous.
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+                                                                    ^
+inst/runit_tests/test_internal.R:28:13: warning: no visible global function definition for ‘provide_fake_package’
+    path <- provide_fake_package()
+            ^~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:32:1: style: lines should not be more than 80 characters.
+    expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:38:69: style: Trailing whitespace is superfluous.
+    result <- unlist(strsplit(packager:::grep_directory(path = path, 
+                                                                    ^
+inst/runit_tests/test_internal.R:39:1: style: lines should not be more than 80 characters.
+                                             pattern = "runit_tests.*packager"), 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:39:81: style: Trailing whitespace is superfluous.
+                                             pattern = "runit_tests.*packager"), 
+                                                                                ^
+inst/runit_tests/test_internal.R:41:1: style: lines should not be more than 80 characters.
+    expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:46:13: warning: no visible global function definition for ‘provide_fake_package’
+    path <- provide_fake_package()
+            ^~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:61:33: style: Trailing whitespace is superfluous.
+test_warn_and_stop <- function() 
+                                ^
+inst/runit_tests/test_internal.R:75:30: style: Trailing whitespace is superfluous.
+    repo <- git2r::init(path)  
+                             ^~
+inst/runit_tests/test_internal.R:77:39: warning: Do not use absolute paths.
+    git2r::remote_add(repo, "local", "~/git/fakePackage")
+                                      ^~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:107:63: style: Trailing whitespace is superfluous.
+    expectation <- c("https://github.com/fvafrCU/fakePackage", 
+                                                              ^
+inst/runit_tests/test_internal.R:120:1: style: lines should not be more than 80 characters.
+    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:120:81: style: Trailing whitespace is superfluous.
+    RUnit::checkException(packager:::get_github_url(url, return_only_one = TRUE, 
+                                                                                ^
+inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluous.
+    repo <- git2r::init(path)  
+                             ^~
+inst/runit_tests/test_internal.R:131:53: style: Trailing whitespace is superfluous.
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) 
+                                                    ^
+inst/runit_tests/test_internal.R:134:1: style: Trailing blank lines are superfluous.
+
+^
+inst/runit_tests/test_tools.R:7:69: style: Trailing whitespace is superfluous.
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+                                                                    ^
+inst/runit_tests/test_tools.R:14:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+notest_cyclocomp <- function() { # somehow fails on install...
+                               ^
+inst/runit_tests/test_tools.R:20:40: warning: no visible binding for global variable ‘new’, Did you mean 'news'?
+    writeLines(c("# fakePackge 0.1.1", new), news_file)
+                                       ^~~
+inst/runit_tests/test_tools.R:20:46: warning: no visible binding for global variable ‘news_file’
+    writeLines(c("# fakePackge 0.1.1", new), news_file)
+                                             ^~~~~~~~~
+inst/runit_tests/test_tools.R:60:13: warning: no visible global function definition for ‘provide_fake_package’
+    path <- provide_fake_package()
+            ^~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_tools.R:62:19: style: Trailing whitespace is superfluous.
+    expectation <- 
+                  ^
+inst/runit_tests/test_tools.R:64:79: style: Trailing whitespace is superfluous.
+                    "fakePackage", "'. I have added the following changes:\n", 
+                                                                              ^
+inst/runit_tests/test_tools.R:65:1: style: lines should not be more than 80 characters.
+                    "\nXXX: State your changes and consider using a NEWS.md\n\n",
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_tools.R:66:77: style: Trailing whitespace is superfluous.
+                    "Please upload to CRAN.\n", "Best, ", "Andreas Dominik", 
+                                                                            ^
+inst/runit_tests/test_tools.R:68:54: style: Trailing whitespace is superfluous.
+                    "fakePackage", " ", "0.0.0.9000", 
+                                                     ^
+inst/runit_tests/test_tools.R:70:32: style: Trailing whitespace is superfluous.
+                    "\n", "- ", 
+                               ^
+inst/runit_tests/test_tools.R:71:1: style: lines should not be more than 80 characters.
+                    "R version 3.3.3 (2017-03-06)\n  Platform: x86_64-pc-linux-gnu (64-bit)\n  Running under: Debian GNU/Linux 9 (stretch)",
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_tools.R:72:1: style: lines should not be more than 80 characters.
+                    "\n", "- win-builder (devel)", "\n", "\n## R CMD check results\n",
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_tools.R:73:1: style: lines should not be more than 80 characters.
+                    "ERROR: No check log given!", "\n"), .Names = c("", "", "", "",
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_tools.R:98:1: style: Trailing whitespace is superfluous.
+    
+^~~~
+inst/runit_tests/test_tools.R:132:1: style: Trailing whitespace is superfluous.
+    
+^~~~
+inst/runit_tests/test_tools.R:135:50: style: Trailing whitespace is superfluous.
+    result <- add_github_url_to_desc(path = path, 
+                                                 ^
+inst/runit_tests/test_tools.R:140:30: style: Trailing whitespace is superfluous.
+    repo <- git2r::init(path)  
+                             ^~
+inst/runit_tests/test_tools.R:141:49: warning: Do not use absolute paths.
+    url <- paste0("https://github.com/", user, "/fake")
+                                                ^~~~~
+inst/runit_tests/test_tools.R:148:57: warning: Do not use absolute paths.
+    expectation <- paste0("https://github.com/", user, "/fake")
+                                                        ^~~~~
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
@@ -103,6 +175,9 @@ R/devtools_modified.R:9:3: style: Commented code should be removed.
 R/devtools_modified.R:11:3: style: Commented code should be removed.
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_modified.R:32:5: warning: local variable ‘never_used’ assigned but may not be used
+    never_used <- create # this was part of the interaction.
+    ^~~~~~~~~~
 R/devtools_modified.R:231:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
@@ -163,3 +238,33 @@ R/internal.R:175:5: warning: local variable ‘pkg’ assigned but may not be us
 R/main.R:83:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
                             system("make")})
                                           ^
+R/tools.R:233:38: style: Trailing whitespace is superfluous.
+        old_tag_names <- sapply(tags, 
+                                     ^
+R/tools.R:234:72: style: Trailing whitespace is superfluous.
+                                function(tag) return(methods::slot(tag, 
+                                                                       ^
+R/tools.R:237:40: style: Trailing whitespace is superfluous.
+        description_version_is_newer <- 
+                                       ^
+R/tools.R:238:47: style: Trailing whitespace is superfluous.
+            vapply(as.character(old_versions), 
+                                              ^
+R/tools.R:239:31: style: Trailing whitespace is superfluous.
+                   function(x) 
+                              ^
+R/tools.R:240:76: style: Trailing whitespace is superfluous.
+                       utils::compareVersion(x, as.character(version)) < 0, 
+                                                                           ^
+R/tools.R:248:71: style: Trailing whitespace is superfluous.
+        warn_and_stop(paste0("File DESCRIPTION has version ", version, 
+                                                                      ^
+R/tools.R:249:47: style: Trailing whitespace is superfluous.
+                             ", but I found ", 
+                                              ^
+R/tools.R:250:60: style: Trailing whitespace is superfluous.
+                             as.character(future_versions), 
+                                                           ^
+R/tools.R:294:62: style: Trailing whitespace is superfluous.
+    package_dir <- basename(rprojroot::find_root(path = path, 
+                                                             ^

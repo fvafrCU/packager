@@ -128,6 +128,7 @@ test_travis <- function() {
     on.exit(unlink(path, recursive = TRUE))
     repo <- git2r::init(path)  
     git2r::remote_add(repo, "github", "https://github.com/fvafrCU/packager")
-    RUnit::checkException(packager:::travis_cli(path))
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) 
+        RUnit::checkException(packager:::travis_cli(path))
 }
 
