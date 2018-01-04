@@ -1,4 +1,4 @@
-# packager 0.3.1
+# packager 0.4.1
 
 This is just fake news, I'm far away from releasing anything.
 

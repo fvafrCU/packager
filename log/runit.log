@@ -1,12 +1,25 @@
-RUNIT TEST PROTOCOL -- Thu Jan  4 16:36:51 2018 
+RUNIT TEST PROTOCOL -- Thu Jan  4 23:28:30 2018 
 *********************************************** 
 Number of test functions: 16 
-Number of errors: 0 
-Number of failures: 0 
+Number of errors: 6 
+Number of failures: 2 
 
  
 1 Test Suite : 
-packager_unit_test - 16 test functions, 0 errors, 0 failures
+packager_unit_test - 16 test functions, 6 errors, 2 failures
+ERROR in test_use_git: Error : Could not find package root.
+ERROR in test_use_git_ignore: Error : Could not find package root.
+FAILURE in test_get_news: Error in RUnit::checkIdentical(result, expectation) : FALSE 
+ 
+ERROR in test_grep_directory: Error in strsplit(packager:::grep_directory(path = path, pattern = "runit_tests.*packager"),  : 
+  non-character argument
+ERROR in test_url: Error in get(name, envir = asNamespace(pkg), inherits = FALSE) : 
+  object 'get_remote_url' not found
+FAILURE in test_cran_comments: Error in RUnit::checkIdentical(expectation, result) : FALSE 
+ 
+ERROR in test_githuburl: Error in add_github_url_to_desc(path = path, default_gh_user = NA) : 
+  could not find function "add_github_url_to_desc"
+ERROR in test_git_tag: Error : 'git_tag' is not an exported object from 'namespace:packager'
 
 
 
@@ -19,25 +32,38 @@ Involved directory:
 inst/runit_tests 
 --------------------------- 
 Test file: inst/runit_tests/test_devtools_modified.R 
-test_union_write: (2 checks) ... OK (0 seconds)
-test_use_git: (2 checks) ... OK (0.09 seconds)
-test_use_git_ignore: (2 checks) ... OK (0 seconds)
+test_union_write: (2 checks) ... OK (0.01 seconds)
+test_use_git: ERROR !! 
+Error : Could not find package root.
+test_use_git_ignore: ERROR !! 
+Error : Could not find package root.
 --------------------------- 
 Test file: inst/runit_tests/test_internal.R 
-test_get_news: (1 checks) ... OK (0.35 seconds)
-test_git: (5 checks) ... OK (0.05 seconds)
-test_grep_directory: (1 checks) ... OK (0 seconds)
+test_get_news: FAILURE !! (check number 1)
+Error in RUnit::checkIdentical(result, expectation) : FALSE 
+ 
+test_git: (5 checks) ... OK (0.58 seconds)
+test_grep_directory: ERROR !! 
+Error in strsplit(packager:::grep_directory(path = path, pattern = "runit_tests.*packager"),  : 
+  non-character argument
 test_is_force: (1 checks) ... OK (0 seconds)
 test_is_null_or_true: (3 checks) ... OK (0 seconds)
-test_travis: (1 checks) ... OK (0.34 seconds)
-test_url: (8 checks) ... OK (0.01 seconds)
+test_travis: (1 checks) ... OK (0.02 seconds)
+test_url: ERROR !! 
+Error in get(name, envir = asNamespace(pkg), inherits = FALSE) : 
+  object 'get_remote_url' not found
 test_warn_and_stop: (1 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: inst/runit_tests/test_throw.R 
 test_exception: (1 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: inst/runit_tests/test_tools.R 
-test_cran_comments: (1 checks) ... OK (0.07 seconds)
-test_git_tag: (7 checks) ... OK (0.14 seconds)
-test_githuburl: (5 checks) ... OK (0.44 seconds)
-test_news: (5 checks) ... OK (0.68 seconds)
+test_cran_comments: FAILURE !! (check number 1)
+Error in RUnit::checkIdentical(expectation, result) : FALSE 
+ 
+test_githuburl: ERROR !! 
+Error in add_github_url_to_desc(path = path, default_gh_user = NA) : 
+  could not find function "add_github_url_to_desc"
+test_git_tag: ERROR !! 
+Error : 'git_tag' is not an exported object from 'namespace:packager'
+test_news: (5 checks) ... OK (6.45 seconds)

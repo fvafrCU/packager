@@ -12,7 +12,7 @@ git_add_commit(repo, message = "Uncommented Changes: Backing Up")
 \item{message}{The commit message to use.}
 }
 \value{
-The return value of \code{\link{gitr::commit}}.
+The return value of \code{\link{git2r::commit}}.
 }
 \description{
 The same as git commit -am"M", where M is the \code{message}.
