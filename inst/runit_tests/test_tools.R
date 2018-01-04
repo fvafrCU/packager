@@ -112,3 +112,42 @@ test_git_tag <- function() {
     RUnit::checkException(packager::git_tag(path = path))
 
 }
+
+test_githuburl <- function() {
+    path <- file.path(tempdir(), "fake")
+    on.exit(unlink(path, recursive = TRUE))
+    devtools::create(path)
+    user <- "foobar"
+
+
+    #% gh_username defaults NULL, curl not working
+    if (Sys.info()[["nodename"]] ==  "fvafrdebianCU") {
+        # curl not working
+        expectation <- FALSE
+        result <- add_github_url_to_desc(path = path)
+        RUnit::checkIdentical(expectation, result)
+    } else {
+        # FIXME: on travis??
+    }
+    
+    #% No git remote set
+    expectation <- FALSE
+    result <- add_github_url_to_desc(path = path, 
+                                     default_gh_user = NA)
+    RUnit::checkIdentical(expectation, result)
+
+    #% remote set
+    repo <- git2r::init(path)  
+    url <- paste0("https://github.com/", user, "/fake")
+    git2r::remote_add(repo, "github", url)
+    result <- add_github_url_to_desc(path = path, default_gh_user = NA)
+    RUnit::checkTrue(result)
+    RUnit::checkIdentical(url, desc::desc_get_urls(path))
+
+    #% user given
+    expectation <- paste0("https://github.com/", user, "/fake")
+    add_github_url_to_desc(path = path, default_gh_user = user)
+    result <- desc::desc_get_urls(file = path)
+    RUnit::checkIdentical(expectation, result)
+    readLines(file.path(path, "DESCRIPTION"))
+}

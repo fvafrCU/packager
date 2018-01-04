@@ -288,13 +288,15 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
                                    normalize = TRUE) {
     status <- FALSE
     gh_username <- tryCatch(whoami::gh_username(fallback = default_gh_user),
-                            error = function(e) return(NULL))
+                            error = function(e) return(default_gh_user))
     desc_url <- desc::desc_get_urls(path)
 
-    package_dir <- basename(devtools::as.package(path)[["path"]])
-    package_name <- devtools::as.package(path)[["package"]]
+    package_dir <- basename(rprojroot::find_root(path = path, 
+                                                 rprojroot::is_r_package))
+    package_name <- as.character(desc::desc_get("Package", file = path))
     if (package_name != package_dir)
-        warning("The package's name and root directory differ.")
+        warning("The package's name and root directory differ, ",
+                "sticking with the name as retrieved from file DESCRIPTION.")
     if (! is.null(gh_username) && is.na(gh_username)) {
         git_url <- get_github_url(get_remote_url(path))
         num_of_remotes <- length(grep(paste0(package_name, "$"), git_url))
@@ -304,10 +306,9 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
                                "\\1", git_url)
         } else {
             warning("Found ", num_of_remotes,
-                    " different git remotes refering to `", package_name, "`.")
+                    " git remotes refering to `", package_name, "`.")
         }
     }
-
     if (is.null(gh_username) || is.na(gh_username)) {
         warning("Could not retrieve github user name. ",
                 "Set the URL in DESCRIPTION manually!")
