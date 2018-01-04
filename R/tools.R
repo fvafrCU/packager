@@ -219,22 +219,39 @@ use_bsd2clause_license <- function (path = ".") {
 git_tag <- function(path = ".", tag_uncommited = FALSE,
                     message = "CRAN release") {
     status <- FALSE
-    root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package),
+    root <- tryCatch(rprojroot::find_root(rprojroot::is_r_package, path = path),
                      error = function(e) return(path))
-    version <- devtools::as.package(".")[["version"]]
+    version <- desc::desc_get_version(path)
     if (! is_git_clone(root))
         warn_and_stop("Not a git repository.")
     if (is_git_uncommitted(root) && ! isTRUE(tag_uncommited))
-        warn_and_stop("Uncommited changes. Aborting")
+        warn_and_stop("Uncommited changes, aborting.")
     repo <- git2r::repository(root)
     tags <- git2r::tags(repo)
     is_first_tag <- length(tags) == 0
     if (! is_first_tag) {
-        last_tag_number <- methods::slot(tags[[length(tags)]], "name")
-        last_version_number <- sub("^v", "", last_tag_number)
+        old_tag_names <- sapply(tags, 
+                                function(tag) return(methods::slot(tag, 
+                                                                   "name")))
+        old_versions <- sub("^v", "", old_tag_names)
+        description_version_is_newer <- 
+            vapply(as.character(old_versions), 
+                   function(x) 
+                       utils::compareVersion(x, as.character(version)) < 0, 
+                   logical(1)
+                   )
     }
-    if (is_first_tag || version != last_version_number)
-        status <- git2r::tag(repo, version, message)
+    if (is_first_tag || all(description_version_is_newer)) {
+        status <- git2r::tag(repo, as.character(version), message)
+    } else {
+        future_versions <- old_versions[! description_version_is_newer]
+        warn_and_stop(paste0("File DESCRIPTION has version ", version, 
+                             ", but I found ", 
+                             as.character(future_versions), 
+                             " in the git repository's tags."
+                             ))
+
+    }
     return(status)
 }
 
