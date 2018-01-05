@@ -119,7 +119,8 @@ provide_cran_comments <- function(check_log = NULL,
                                   travis_session_info = NULL,
                                   name = NA) {
     if (is.na(name)) {
-        name <- tryCatch(unlist(desc::desc_get_author()[[1]])["given"],
+        name <- tryCatch(unlist(desc::desc_get_author(role = "cre", 
+                                                      file = path))[["given"]],
                          error = function(e) return(NA))
     }
     pkg <- devtools::as.package(path)
@@ -235,9 +236,10 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
                                                                    "name")))
         old_versions <- sub("^v", "", old_tag_names)
         description_version_is_newer <- 
-            vapply(as.character(old_versions), 
+            vapply(strip_off_attributes(old_versions), 
                    function(x) 
-                       utils::compareVersion(x, as.character(version)) < 0, 
+                       utils::compareVersion(x, 
+                                             as.character(version)) < 0, 
                    logical(1)
                    )
     }
@@ -247,7 +249,7 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
         future_versions <- old_versions[! description_version_is_newer]
         warn_and_stop(paste0("File DESCRIPTION has version ", version, 
                              ", but I found ", 
-                             as.character(future_versions), 
+                             strip_off_attributes(future_versions), 
                              " in the git repository's tags."
                              ))
 
@@ -293,7 +295,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
 
     package_dir <- basename(rprojroot::find_root(path = path, 
                                                  rprojroot::is_r_package))
-    package_name <- as.character(desc::desc_get("Package", file = path))
+    package_name <- strip_off_attributes(desc::desc_get("Package", file = path))
     if (package_name != package_dir)
         warning("The package's name and root directory differ, ",
                 "sticking with the name as retrieved from file DESCRIPTION.")

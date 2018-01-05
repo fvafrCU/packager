@@ -63,20 +63,17 @@ test_cran_comments <- function() {
         structure(c("Dear CRAN Team,\n", "this is a resubmission of package '",
                     "fakePackage", "'. I have added the following changes:\n", 
                     "\nXXX: State your changes and consider using a NEWS.md\n\n",
-                    "Please upload to CRAN.\n", "Best, ", "Andreas Dominik", 
+                    "Please upload to CRAN.\n", "Best, ", "First", 
                     "\n\n# Package ",
                     "fakePackage", " ", "0.0.0.9000", 
                     "\n## Test  environments ",
                     "\n", "- ", 
                     "R version 3.3.3 (2017-03-06)\n  Platform: x86_64-pc-linux-gnu (64-bit)\n  Running under: Debian GNU/Linux 9 (stretch)",
                     "\n", "- win-builder (devel)", "\n", "\n## R CMD check results\n",
-                    "ERROR: No check log given!", "\n"), .Names = c("", "", "", "",
-                    "", "", "", "given", "", "", "", "", "", "", "", "", "", "",
-                    "", "", "", ""))
+                    "ERROR: No check log given!", "\n"))
     expectation <- grep("^R ", expectation, value = TRUE, invert = TRUE)
     result <- packager::provide_cran_comments(path = path)
     result <- grep("^R ", result, value = TRUE, invert = TRUE)
-    message(result)
     RUnit::checkIdentical(expectation, result)
 }
 
