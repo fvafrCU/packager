@@ -1,5 +1,5 @@
-* using log directory ‘/home/nik/git/cyclops/fvafrcu/packager/packager.Rcheck’
-* using R Under development (unstable) (2017-08-15 r73096)
+* using log directory ‘/home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck’
+* using R Under development (unstable) (2017-11-07 r73685)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
@@ -43,12 +43,7 @@ New submission
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
-* checking Rd cross-references ... WARNING
-Missing link or links in documentation object 'git_add_commit.Rd':
-  ‘git2r::commit’
-
-See section 'Cross-references' in the 'Writing R Extensions' manual.
-
+* checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
@@ -56,17 +51,14 @@ See section 'Cross-references' in the 'Writing R Extensions' manual.
 * checking for unstated dependencies in examples ... OK
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
-* checking examples ... NOTE
-Examples with CPU or elapsed time > 5s
-        user system elapsed
-create 9.848   0.34  11.851
+* checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... OK
-  Running ‘runit.R’ [20s/24s]
+  Running ‘runit.R’ [5s/10s]
   Running ‘testthat.R’
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 WARNING, 2 NOTEs
+Status: 1 NOTE

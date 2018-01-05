@@ -208,7 +208,6 @@
 790 R/devtools_verbatim.R                  maintainer  405     0
 791 R/devtools_verbatim.R                  maintainer  406     0
 792 R/devtools_verbatim.R                  maintainer  407     0
-607          R/internal.R                  travis_cli  231     0
 209              R/main.R                      infect   79     0
 213              R/main.R                      infect   80     0
 217              R/main.R                      infect   81     0
@@ -239,10 +238,21 @@
 439             R/tools.R       provide_cran_comments  167     0
 695             R/tools.R      add_github_url_to_desc  298     0
 697             R/tools.R      add_github_url_to_desc  299     0
-packager Coverage: 69.70%
+701             R/tools.R      add_github_url_to_desc  301     0
+703             R/tools.R      add_github_url_to_desc  302     0
+705             R/tools.R      add_github_url_to_desc  303     0
+706             R/tools.R      add_github_url_to_desc  304     0
+707             R/tools.R      add_github_url_to_desc  305     0
+708             R/tools.R      add_github_url_to_desc  306     0
+711             R/tools.R      add_github_url_to_desc  308     0
+713             R/tools.R      add_github_url_to_desc  309     0
+717             R/tools.R      add_github_url_to_desc  313     0
+718             R/tools.R      add_github_url_to_desc  314     0
+720             R/tools.R      add_github_url_to_desc  315     0
+packager Coverage: 68.43%
 R/devtools_verbatim.R: 44.88%
 R/devtools_modified.R: 59.41%
-R/tools.R: 82.52%
+R/tools.R: 74.83%
 R/main.R: 90.57%
-R/internal.R: 99.40%
+R/internal.R: 100.00%
 R/throw.R: 100.00%

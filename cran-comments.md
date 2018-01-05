@@ -1,14 +1,21 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
-Please upload to CRAN.
-Best, Dominik
 
-# Package packager 0.3.0
+This is just fake news, I'm far away from releasing anything.
+
+
+Please upload to CRAN.
+Best, Andreas Dominik
+
+# Package packager 0.4.1
 ## Test  environments 
-- R version 3.3.3 (2017-03-06)
+- R Under development (unstable) (2017-11-07 r73685)
   Platform: x86_64-pc-linux-gnu (64-bit)
-  Running under: Debian GNU/Linux 9 (stretch)
+  Running under: Devuan GNU/Linux 1 (jessie)
+- R version 3.4.2 (2017-01-27)
+  Platform: x86_64-pc-linux-gnu (64-bit)
+  Running under: Ubuntu 14.04.5 LTS
 - win-builder (devel)
 
 ## R CMD check results
-ERROR: No check log given!
+0 errors | 0 warnings | 1 note 

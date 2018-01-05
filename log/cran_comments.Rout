@@ -1,22 +1,7 @@
-checking Rd cross-references ... WARNING
-Missing link or links in documentation object 'git_add_commit.Rd':
-  ‘git2r::commit’
-
-See section 'Cross-references' in the 'Writing R Extensions' manual.
-
-
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
-
-checking examples ... NOTE
-Examples with CPU or elapsed time > 5s
-        user system elapsed
-create 9.848   0.34  11.851
-displaying logs for fvafrCU/packager#141.1
-Error in (k + 1):(k + 3) : argument of length 0
-Calls: <Anonymous> -> travis_cli
-In addition: Warning message:
+displaying logs for fvafrCU/packager#142.1
+Warning message:
 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not possible 
-Execution halted

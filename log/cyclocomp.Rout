@@ -1,104 +1,9 @@
-Installing 3 packages: curl, openssl, remotes
-trying URL 'http://cloud.r-project.org/src/contrib/curl_3.1.tar.gz'
-Content type 'application/x-gzip' length 366086 bytes (357 KB)
-==================================================
-downloaded 357 KB
-
-trying URL 'http://cloud.r-project.org/src/contrib/openssl_0.9.9.tar.gz'
-Content type 'application/x-gzip' length 1112927 bytes (1.1 MB)
-==================================================
-downloaded 1.1 MB
-
+Installing 1 packages: remotes
 trying URL 'http://cloud.r-project.org/src/contrib/remotes_1.1.1.tar.gz'
 Content type 'application/x-gzip' length 41629 bytes (40 KB)
 ==================================================
 downloaded 40 KB
 
-* installing *source* package ‘curl’ ...
-** package ‘curl’ successfully unpacked and MD5 sums checked
-Found pkg-config cflags and libs!
-Using PKG_CFLAGS=-I/usr/include/x86_64-linux-gnu
-Using PKG_LIBS=-lcurl
-** libs
-make[1]: Entering directory '/tmp/RtmpmzSlOh/R.INSTALLe67df0fb19/curl/src'
-rm -f curl.so callbacks.o curl.o download.o escape.o fetch.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o reflist.o split.o ssl.o utils.o version.o winidn.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c callbacks.c -o callbacks.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c curl.c -o curl.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c download.c -o download.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c escape.c -o escape.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c fetch.c -o fetch.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c form.c -o form.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c getdate.c -o getdate.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c handle.c -o handle.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c ieproxy.c -o ieproxy.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c interrupt.c -o interrupt.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c multi.c -o multi.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c nslookup.c -o nslookup.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c reflist.c -o reflist.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c split.c -o split.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c ssl.c -o ssl.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c utils.c -o utils.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c version.c -o version.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I/usr/include/x86_64-linux-gnu  -I/usr/local/include   -fpic  -g -O2  -c winidn.c -o winidn.o
-gcc -std=gnu99 -shared -L/usr/local/lib -o curl.so callbacks.o curl.o download.o escape.o fetch.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o reflist.o split.o ssl.o utils.o version.o winidn.o -lcurl
-make[1]: Leaving directory '/tmp/RtmpmzSlOh/R.INSTALLe67df0fb19/curl/src'
-installing to /tmp/Rtmp9e970z/filed93f5f604c/curl/libs
-** R
-** data
-*** moving datasets to lazyload DB
-** inst
-** preparing package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded
-* DONE (curl)
-* installing *source* package ‘openssl’ ...
-** package ‘openssl’ successfully unpacked and MD5 sums checked
-Found pkg-config cflags and libs!
-Using PKG_CFLAGS=
-Using PKG_LIBS=-l:libssl.so.1.1 -l:libcrypto.so.1.1
-** libs
-make[1]: Entering directory '/tmp/Rtmpq7GAVt/R.INSTALLf2113c1694b/openssl/src'
-rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o openssl.so
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c bignum.c -o bignum.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c cert.c -o cert.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c compatibility.c -o compatibility.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c diffie.c -o diffie.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c envelope.c -o envelope.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c error.c -o error.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c hash.c -o hash.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c info.c -o info.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keygen.c -o keygen.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keys.c -o keys.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c onload.c -o onload.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c openssh.c -o openssh.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c password.c -o password.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pem.c -o pem.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs12.c -o pkcs12.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs7.c -o pkcs7.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rand.c -o rand.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rsa.c -o rsa.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c signing.c -o signing.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c ssl.c -o ssl.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
-gcc -std=gnu99 -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
-gcc -std=gnu99 -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.1 -l:libcrypto.so.1.1
-make[1]: Leaving directory '/tmp/Rtmpq7GAVt/R.INSTALLf2113c1694b/openssl/src'
-installing to /tmp/Rtmp9e970z/filed93f5f604c/openssl/libs
-** R
-** inst
-** preparing package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded
-* DONE (openssl)
 * installing *source* package ‘remotes’ ...
 ** package ‘remotes’ successfully unpacked and MD5 sums checked
 ** R
@@ -111,7 +16,7 @@ installing to /tmp/Rtmp9e970z/filed93f5f604c/openssl/libs
 * DONE (remotes)
 
 The downloaded source packages are in
-	‘/tmp/Rtmp9e970z/downloaded_packages’
+	‘/tmp/RtmpaEejxd/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst

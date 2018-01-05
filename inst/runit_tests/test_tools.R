@@ -131,21 +131,37 @@ test_githuburl <- function() {
     }
     
     #% No git remote set
-    expectation <- FALSE
-    result <- add_github_url_to_desc(path = path, 
-                                     default_gh_user = NA)
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
+        expectation <- TRUE
+    } else {
+        expectation <- FALSE
+    }
+    result <- add_github_url_to_desc(path = path, default_gh_user = NA)
     RUnit::checkIdentical(expectation, result)
 
-    #% remote set
+    #% remote set 
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
+        # whoami is better than remote url
+        url <- paste0("https://github.com/fvafrCU/fake")
+    } else {
+        url <- paste0("https://github.com/", user, "/fake")
+    }
+
+    unlink(path, recursive = TRUE)
+    devtools::create(path)
     repo <- git2r::init(path)  
-    url <- paste0("https://github.com/", user, "/fake")
     git2r::remote_add(repo, "github", url)
     result <- add_github_url_to_desc(path = path, default_gh_user = NA)
     RUnit::checkTrue(result)
     RUnit::checkIdentical(url, desc::desc_get_urls(path))
 
     #% user given
-    expectation <- paste0("https://github.com/", user, "/fake")
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
+        # whoami is better than remote url
+        expectation <- paste0("https://github.com/fvafrCU/fake")
+    } else {
+        expectation <- paste0("https://github.com/", user, "/fake")
+    }
     add_github_url_to_desc(path = path, default_gh_user = user)
     result <- desc::desc_get_urls(file = path)
     RUnit::checkIdentical(expectation, result)

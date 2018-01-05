@@ -67,7 +67,7 @@ test_url <- function() {
     ##% no such url
     expectation <- NULL
     result <- packager:::get_remote_url()
-    RUnit::checkIdentical(result, expectation)
+    RUnit::checkTrue(identical(result, expectation))
 
     path <- file.path(tempdir(), "fakePackge")
     dir.create(path)
@@ -128,7 +128,10 @@ test_travis <- function() {
     on.exit(unlink(path, recursive = TRUE))
     repo <- git2r::init(path)  
     git2r::remote_add(repo, "github", "https://github.com/fvafrCU/packager")
-    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) 
+    if (! Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         RUnit::checkException(packager:::travis_cli(path))
+    } else {
+        RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
+    }
 }
 

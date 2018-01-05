@@ -55,10 +55,7 @@ inst/runit_tests/test_internal.R:120:81: style: Trailing whitespace is superfluo
 inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-inst/runit_tests/test_internal.R:131:53: style: Trailing whitespace is superfluous.
-    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) 
-                                                    ^
-inst/runit_tests/test_internal.R:134:1: style: Trailing blank lines are superfluous.
+inst/runit_tests/test_internal.R:137:1: style: Trailing blank lines are superfluous.
 
 ^
 inst/runit_tests/test_tools.R:7:69: style: Trailing whitespace is superfluous.
@@ -109,18 +106,18 @@ inst/runit_tests/test_tools.R:98:1: style: Trailing whitespace is superfluous.
 inst/runit_tests/test_tools.R:132:1: style: Trailing whitespace is superfluous.
     
 ^~~~
-inst/runit_tests/test_tools.R:135:50: style: Trailing whitespace is superfluous.
-    result <- add_github_url_to_desc(path = path, 
-                                                 ^
-inst/runit_tests/test_tools.R:140:30: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:142:18: style: Trailing whitespace is superfluous.
+    #% remote set 
+                 ^
+inst/runit_tests/test_tools.R:147:53: warning: Do not use absolute paths.
+        url <- paste0("https://github.com/", user, "/fake")
+                                                    ^~~~~
+inst/runit_tests/test_tools.R:152:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-inst/runit_tests/test_tools.R:141:49: warning: Do not use absolute paths.
-    url <- paste0("https://github.com/", user, "/fake")
-                                                ^~~~~
-inst/runit_tests/test_tools.R:148:57: warning: Do not use absolute paths.
-    expectation <- paste0("https://github.com/", user, "/fake")
-                                                        ^~~~~
+inst/runit_tests/test_tools.R:163:61: warning: Do not use absolute paths.
+        expectation <- paste0("https://github.com/", user, "/fake")
+                                                            ^~~~~
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
