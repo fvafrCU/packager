@@ -99,6 +99,7 @@ remove:
 
 .PHONY: dev_install
 dev_install: $(LOG_DIR)/dev_install.log
+.PHONY: $(LOG_DIR)/dev_install.log
 $(LOG_DIR)/dev_install.log:
 	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")' > $(LOG_DIR)/dev_install.log
 
