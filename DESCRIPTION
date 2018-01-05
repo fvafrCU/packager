@@ -1,13 +1,12 @@
 Package: packager
 Title: Helps Me Build Packages
-Version: 0.4.1
+Version: 0.5.0
 Authors@R: 
-    person(given = "Andreas Dominik",
+    person(given = c("Andreas", "Dominik"),
            family = "Cullmann",
            role = c("aut", "cre"),
            email = "fvafrcu@arcor.de")
-Description: This is a set of wrappers around `devtools` and
-    `MakefileR` and some sanity checks for developing packages.
+Description: Helper functions for a build system, heavily borrowing from and extending package `devtools 1.13.3`.
 License: BSD_2_clause + file LICENSE
 URL: https://github.com/fvafrCU/packager
 Depends: 

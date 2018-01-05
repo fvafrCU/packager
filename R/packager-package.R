@@ -1,10 +1,11 @@
 #' Helps Me Build Packages
 #'
-#' This is a set of wrappers around `devtools` and `MakefileR` and some
-#' sanity checks for developing packages.
+#' Helper functions for a build system, heavily borrowing from and
+#' extending package `devtools 1.13.3`.
 #'
-#' I find devtools very helpful, but not helpful enough. So this is my
-#' highly personalised extension.
+#' I find devtools very helpful but it lacks some functionality I would want
+#' while creating and building a package.  Maybe \pkg{packager} should be two
+#' packages.
 #'
 #' @name packager-package
 #' @aliases packager-package

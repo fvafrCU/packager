@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to *packager*"
-author: "Andreas Dominik Cullmann"
-date: 2017-09-17, 17:21:17
+author: 
+date: 2018-01-05, 13:43:12
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{An Introduction to packager }
@@ -10,7 +10,10 @@ vignette: >
 ---
 
 # Teaser
-This is just a template.
+Helper functions for a build system, heavily borrowing from and extending package `devtools 1.13.3`. 
 
 # Features
-There are not features.
+I find devtools very helpful but it lacks some functionality I would want while creating and building a package.
+ Maybe \pkg{packager} should be two packages. 
+
+# A Minimal Example

@@ -1,3 +1,16 @@
+devtools::load_all(".")
+if (FALSE) {
+    set_package_info(path = ".", title = "Helps Me Build Packages", 
+                     description = paste("Helper functions for a build system,",
+                                         "heavily borrowing from and extending", 
+                                         "package `devtools 1.13.3`."),
+                     details = paste("I find devtools very helpful but it lacks",
+                                     "some functionality I would want while", 
+                                     "creating and building a package.\n", 
+                                     "Maybe \\pkg{packager} should be two packages."),
+                     force = is_force()
+                     )
+}
 package <- "fvafrcu1"
 root <- file.path("", "tmp")
 path <- file.path(root, package)
@@ -45,9 +58,3 @@ if (yesno("Ready to submit?")) {
 } else {
     upload_cran(pkg = path, built_path = built_path, cran_submission_url = csu)
 }
-
-# intro
-devtools::load_all(".")
-d <- "/tmp/foo"
-packager::create(path = d, title = "The Fake Package", description = "Make my fake.", details = "There are no details.") 
-

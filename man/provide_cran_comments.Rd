@@ -28,7 +28,7 @@ Set to `travis-cli` to retrieve Session info automatically if your system is
 set up to use \url{https://github.com/travis-ci/travis.rb}.}
 
 \item{name}{The name to sign with, if NA, the given name of the package
-creator as stated in file DESCRIPTION is used.}
+maintainer as stated in file DESCRIPTION is used.}
 }
 \value{
 Character vector containing the cran comments, which are written to

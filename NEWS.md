@@ -1,7 +1,10 @@
-# packager 0.4.2
+# packager 0.5.0
 
 - Fixed testing.
+- Added internal function strip\_off\_attributes(), mainly to get rid of object 
+names.
 - Updated package's info.
+
 
 # packager 0.4.1
 
