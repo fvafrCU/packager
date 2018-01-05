@@ -51,6 +51,5 @@ The following objects are masked from ‘package:git2r’:
 
     config, content
 
-Deleting git_add_commit.Rd
 > 
 > 

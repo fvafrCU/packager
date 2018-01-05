@@ -2,6 +2,4 @@ checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
-displaying logs for fvafrCU/packager#142.1
-Warning message:
-'DESCRIPTION' file has an 'Encoding' field and re-encoding is not possible 
+displaying logs for fvafrCU/packager#144.1

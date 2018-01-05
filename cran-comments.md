@@ -1,13 +1,17 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-This is just fake news, I'm far away from releasing anything.
+- Fixed testing.
+- Added internal function strip\_off\_attributes(), mainly to get rid of object 
+names.
+- Fixed querying the package's maintainer's name.
+- Updated package's info.
 
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.4.1
+# Package packager 0.5.0
 ## Test  environments 
 - R Under development (unstable) (2017-11-07 r73685)
   Platform: x86_64-pc-linux-gnu (64-bit)

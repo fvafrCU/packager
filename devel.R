@@ -1,4 +1,5 @@
 devtools::load_all(".")
+provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")
 if (FALSE) {
     set_package_info(path = ".", title = "Helps Me Build Packages", 
                      description = paste("Helper functions for a build system,",

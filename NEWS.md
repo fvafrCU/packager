@@ -3,6 +3,7 @@
 - Fixed testing.
 - Added internal function strip\_off\_attributes(), mainly to get rid of object 
 names.
+- Fixed querying the package's maintainer's name.
 - Updated package's info.
 
 

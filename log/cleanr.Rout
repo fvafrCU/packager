@@ -10,5 +10,5 @@ R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 86 coun
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  suggests_dep  line 2: found width 81 max_line_width was 80
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
 R/   /home/qwer/git/cyclops/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
-R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 326 lines in file.
- /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 53 lines of code, max_lines_of_code was 50>
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 332 lines in file.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 56 lines of code, max_lines_of_code was 50>
