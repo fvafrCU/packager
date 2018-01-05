@@ -98,8 +98,10 @@ remove:
 	 $(R) --vanilla CMD REMOVE  $(PKGNAME)
 
 .PHONY: dev_install
-dev_install:
-	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")'
+dev_install: $(LOG_DIR)/dev_install.log
+$(LOG_DIR)/dev_install.log:
+	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")' > $(LOG_DIR)/dev_install.log
+
 .PHONY: viz
 viz: $(LOG_DIR)/make.png 
 $(LOG_DIR)/make.png: $(LOG_DIR) Makefile $(R_FILES) $(MAN_FILES) \
@@ -129,7 +131,7 @@ $(LOG_DIR)/testthat.Rout: $(LOG_DIR) $(R_FILES) $(TESTTHAT_FILES) $(INST_FILES) 
 
 .PHONY: runit
 runit: $(LOG_DIR)/runit.Rout
-$(LOG_DIR)/runit.Rout: $(LOG_DIR) $(R_FILES) $(RUNIT_FILES) $(INST_FILES) $(LOG_DIR)/dependencies.Rout
+$(LOG_DIR)/runit.Rout: $(LOG_DIR) $(R_FILES) $(RUNIT_FILES) $(INST_FILES) $(LOG_DIR)/dependencies.Rout $(LOG_DIR)/dev_install.log
 	$(Rscript) --vanilla tests/runit.R > $(LOG_DIR)/runit.Rout 2>&1 
 	
 .PHONY: news
