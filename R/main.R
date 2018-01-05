@@ -65,7 +65,6 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],
                                     ".Rcheck"), path = path)
     use_makefile(path = path)
-    message("foo")
     set_package_info(path = path, ...)
     use_devel(path = path)
     remove_Rproj(path = path)
