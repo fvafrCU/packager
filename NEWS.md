@@ -1,7 +1,33 @@
 # packager 0.4.1
 
-This is just fake news, I'm far away from releasing anything.
+Fixed adding github url to DESCRIPTION.
 
+# packager 0.4.0
+
+- Hotfixed git\_tag()
+- Added internal function git\_add\_commit() to mimic `git commit -am"MESSAGE"`.
+
+# packager 0.3.1
+
+provide\_cran\_comments(name = ) now defaults to NA, using the DESCRIPTION's
+creator's given name.
+
+# packager 0.3.0
+
+Resetting RUnit tests.
+
+# packager 0.2.2
+
+Vignette defaults are now set from details and description passed to 
+set\_package\_info.
+
+# packager 0.2.1
+
+Added bugfix for get\_news().
+
+# packager 0.2.0
+
+Added function to add github url to DESCRIPTION.
 
 # packager 0.1.0
 
