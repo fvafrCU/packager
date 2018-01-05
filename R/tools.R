@@ -108,7 +108,7 @@ check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
 #' Set to `travis-cli` to retrieve Session info automatically if your system is
 #' set up to use \url{https://github.com/travis-ci/travis.rb}.
 #' @param name The name to sign with, if NA, the given name of the package
-#' creator as stated in file DESCRIPTION is used.
+#' maintainer as stated in file DESCRIPTION is used.
 #' @note This function writes to disk as side effect.
 #' @return Character vector containing the cran comments, which are written to
 #' cran-comments.md (see Note).
