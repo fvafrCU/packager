@@ -119,9 +119,13 @@ provide_cran_comments <- function(check_log = NULL,
                                   travis_session_info = NULL,
                                   name = NA) {
     if (is.na(name)) {
-        name <- tryCatch(unlist(desc::desc_get_author(role = "cre", 
-                                                      file = path))[["given"]],
-                         error = function(e) return(NA))
+        name <- tryCatch({
+            maintainer <- desc::desc_get_author(role = "cre", file = path)
+            # NOTE: a person object is a strange thing, we seem to need `$`
+            # here.
+            paste(maintainer$given, collapse = " ")},
+            error = function(e) return(name)
+            )
     }
     pkg <- devtools::as.package(path)
     comments_file <- file.path(pkg[["path"]], "cran-comments.md")
