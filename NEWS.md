@@ -1,3 +1,8 @@
+# packager 0.4.2
+
+- Fixed testing.
+- Updated package's info.
+
 # packager 0.4.1
 
 Fixed adding github url to DESCRIPTION.
@@ -10,7 +15,7 @@ Fixed adding github url to DESCRIPTION.
 # packager 0.3.1
 
 provide\_cran\_comments(name = ) now defaults to NA, using the DESCRIPTION's
-creator's given name.
+maintainer's given name.
 
 # packager 0.3.0
 
