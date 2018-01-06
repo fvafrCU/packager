@@ -164,7 +164,8 @@ provide_cran_comments <- function(check_log = NULL,
                   "\n")
     if (! is.null(travis_session_info)) {
         if (identical(travis_session_info, "travis-cli")) {
-            travis_session_info <- travis_cli(path)
+            travis_session_info <- tryCatch(travis_cli(path), 
+                                            error = function(e) return(NULL))
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
         comments <- c(comments, "- ",
