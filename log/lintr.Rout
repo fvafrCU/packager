@@ -235,36 +235,39 @@ R/main.R:82:43: style: Closing curly-braces should always be on their own line, 
 R/tools.R:126:52: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
             paste(maintainer$given, collapse = " ")},
                                                    ^
-R/tools.R:238:38: style: Trailing whitespace is superfluous.
+R/tools.R:167:62: style: Trailing whitespace is superfluous.
+            travis_session_info <- tryCatch(travis_cli(path), 
+                                                             ^
+R/tools.R:239:38: style: Trailing whitespace is superfluous.
         old_tag_names <- sapply(tags, 
                                      ^
-R/tools.R:239:72: style: Trailing whitespace is superfluous.
+R/tools.R:240:72: style: Trailing whitespace is superfluous.
                                 function(tag) return(methods::slot(tag, 
                                                                        ^
-R/tools.R:242:40: style: Trailing whitespace is superfluous.
+R/tools.R:243:40: style: Trailing whitespace is superfluous.
         description_version_is_newer <- 
                                        ^
-R/tools.R:243:55: style: Trailing whitespace is superfluous.
+R/tools.R:244:55: style: Trailing whitespace is superfluous.
             vapply(strip_off_attributes(old_versions), 
                                                       ^
-R/tools.R:244:31: style: Trailing whitespace is superfluous.
+R/tools.R:245:31: style: Trailing whitespace is superfluous.
                    function(x) 
                               ^
-R/tools.R:245:48: style: Trailing whitespace is superfluous.
+R/tools.R:246:48: style: Trailing whitespace is superfluous.
                        utils::compareVersion(x, 
                                                ^
-R/tools.R:246:73: style: Trailing whitespace is superfluous.
+R/tools.R:247:73: style: Trailing whitespace is superfluous.
                                              as.character(version)) < 0, 
                                                                         ^
-R/tools.R:254:71: style: Trailing whitespace is superfluous.
+R/tools.R:255:71: style: Trailing whitespace is superfluous.
         warn_and_stop(paste0("File DESCRIPTION has version ", version, 
                                                                       ^
-R/tools.R:255:47: style: Trailing whitespace is superfluous.
+R/tools.R:256:47: style: Trailing whitespace is superfluous.
                              ", but I found ", 
                                               ^
-R/tools.R:256:68: style: Trailing whitespace is superfluous.
+R/tools.R:257:68: style: Trailing whitespace is superfluous.
                              strip_off_attributes(future_versions), 
                                                                    ^
-R/tools.R:300:62: style: Trailing whitespace is superfluous.
+R/tools.R:301:62: style: Trailing whitespace is superfluous.
     package_dir <- basename(rprojroot::find_root(path = path, 
                                                              ^

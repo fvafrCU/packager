@@ -1,12 +1,8 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-- Fixed testing.
-- Added internal function strip\_off\_attributes(), mainly to get rid of object 
-names.
-- Fixed querying the package's maintainer's name.
-- Updated package's info.
-
+Wrapped the travis-cli interface into tryCatch to be able to use my Makefile as
+template on systems where travis-cli will fail.
 
 Please upload to CRAN.
 Best, Andreas Dominik

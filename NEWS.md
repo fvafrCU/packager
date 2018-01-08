@@ -1,3 +1,6 @@
+Wrapped the travis-cli interface into tryCatch to be able to use my Makefile as
+template on systems where travis-cli will fail.
+
 # packager 0.5.0
 
 - Fixed testing.
