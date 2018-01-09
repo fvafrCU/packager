@@ -1,8 +1,8 @@
 ---
 output: github_document
 ---
-[![Build Status](https://travis-ci.org/fvafrCU/packager.svg?branch=maintenance)](https://travis-ci.org/fvafrCU/packager)
-[![Coverage Status](https://codecov.io/github/fvafrCU/packager/coverage.svg?branch=maintenance)](https://codecov.io/github/fvafrCU/packager?branch=maintenance)
+[![Build Status](https://travis-ci.org/fvafrCU/packager.svg?branch=devel)](https://travis-ci.org/fvafrCU/packager)
+[![Coverage Status](https://codecov.io/github/fvafrCU/packager/coverage.svg?branch=devel)](https://codecov.io/github/fvafrCU/packager?branch=devel)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/packager)](https://cran.r-project.org/package=packager)
 [![RStudio_downloads_monthly](https://cranlogs.r-pkg.org/badges/packager)](https://cran.r-project.org/package=packager)
 [![RStudio_downloads_total](https://cranlogs.r-pkg.org/badges/grand-total/packager)](https://cran.r-project.org/package=packager)
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 # packager
 ## Introduction
 Please read the
-[vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/maintenance/inst/doc/An_Introduction_to_packager.html).
+[vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/devel/inst/doc/An_Introduction_to_packager.html).
 
 Or, after installation, the help page:
 ```{r, eval = FALSE}
