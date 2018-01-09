@@ -6,6 +6,7 @@
 ^TODO.md$
 ^codecov\.yml$
 ^Makefile$
+^git_maintenance$
 ^log$
 ^.*\.tar\.gz$
 ^packager\.Rcheck$
