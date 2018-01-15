@@ -1,5 +1,6 @@
   WORD          FOUND IN
 cli           provide_cran_comments.Rd:27
+commiting     git_add_commit.Rd:15
 cran          provide_cran_comments.Rd:34,35,38
 cyclomatic    check_cyclomatic_complexity.Rd:16
 Cyclomatic    check_cyclomatic_complexity.Rd:5

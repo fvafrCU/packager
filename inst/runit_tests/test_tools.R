@@ -1,4 +1,32 @@
 if (interactive()) devtools::load_all()
+test_add_commit <- function() {
+    path <- tempfile()
+    dir.create(path)
+    r <- git2r::init(path)
+    writeLines("hello, world!", file.path(path, "f"))
+    expectation <- structure(list(staged = structure(list(), 
+                                                     .Names = character(0)),
+                                  unstaged = structure(list(), 
+                                                       .Names = character(0)), 
+                                  untracked = structure(list(untracked = "f"), 
+                                                        .Names = "untracked")), 
+                             .Names = c("staged", "unstaged", "untracked"), 
+                             class = "git_status")
+    result <- git2r::status(r)
+    RUnit::checkIdentical(expectation, result)
+    RUnit::checkException(git_add_commit(path = path))
+    git_add_commit(path = path, untracked = TRUE)
+    expectation <- structure(list(staged = structure(list(), 
+                                                    .Names = character(0)),
+                                 unstaged = structure(list(), 
+                                                      .Names = character(0)), 
+                                 untracked = structure(list(), 
+                                                       .Names = character(0))), 
+                            .Names = c("staged", "unstaged", "untracked"), 
+                            class = "git_status")
+    result <- git2r::status(r)
+    RUnit::checkIdentical(expectation, result)
+}
 
 provide_fake_package <- function() {
     tmp <- tempfile()
@@ -97,14 +125,14 @@ test_git_tag <- function() {
     RUnit::checkException(packager::git_tag(path = path))
 
     # commited changes
-    packager:::git_add_commit(path = path)
+    git_add_commit(path = path)
     result <- packager::git_tag(path = path)
     RUnit::checkIdentical("0.1.0", methods::slot(result, "name"))
     RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
 
     # version number lower than in tags
     desc::desc_set(Version = "0.0.3", file = path)
-    packager:::git_add_commit(path = path)
+    git_add_commit(path = path)
     RUnit::checkException(packager::git_tag(path = path))
 
 }

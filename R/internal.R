@@ -12,7 +12,7 @@ get_news <- function(path = ".") {
                      )
     if (root == FALSE) throw("Can't find the R package")
     description <- read.dcf(file.path(root, "DESCRIPTION"))
-    news <- unlist(strsplit(paste(readLines(file.path(root, "NEWS.md")), 
+    news <- unlist(strsplit(paste(readLines(file.path(root, "NEWS.md")),
                                   collapse = "\n"), split = "# "))
     package_pattern <- paste0("^", description[1, "Package"], " ",
                             description[1, "Version"])
@@ -235,15 +235,3 @@ travis_cli <- function(path) {
     return(travis_session_info)
 }
 
-# Git Add All Changes and Commit
-#
-# The same as git commit -am"M", where M is the \code{message}.
-# @param path The path to the repository.
-# @param message The commit message to use.
-# @return The return value of \code{\link[git2r:commit]{git2r::commit}}.
-git_add_commit <- function(path, message = "Uncommented Changes: Backing Up") {
-    repository <- git2r::init(path = path)
-    git2r::add(repository, unlist(git2r::status(repository)))
-    return(git2r::commit(repository, message = message))
-
-}

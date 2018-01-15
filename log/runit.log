@@ -1,12 +1,13 @@
-RUNIT TEST PROTOCOL -- Mon Jan 15 11:09:47 2018 
+RUNIT TEST PROTOCOL -- Mon Jan 15 12:15:39 2018 
 *********************************************** 
-Number of test functions: 16 
-Number of errors: 0 
+Number of test functions: 17 
+Number of errors: 1 
 Number of failures: 0 
 
  
 1 Test Suite : 
-packager_unit_test - 16 test functions, 0 errors, 0 failures
+packager_unit_test - 17 test functions, 1 error, 0 failures
+ERROR in test_git_tag: Error in value[[3L]](cond) : Nothing to commit.
 
 
 
@@ -16,28 +17,30 @@ Test Suite: packager_unit_test
 Test function regexp: ^test_+ 
 Test file regexp: ^test.*\.[rR] 
 Involved directory: 
-/home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests 
+inst/runit_tests 
 --------------------------- 
-Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_devtools_modified.R 
+Test file: inst/runit_tests/test_devtools_modified.R 
 test_union_write: (2 checks) ... OK (0 seconds)
 test_use_git: (2 checks) ... OK (0.09 seconds)
 test_use_git_ignore: (2 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_internal.R 
+Test file: inst/runit_tests/test_internal.R 
 test_get_news: (1 checks) ... OK (0.34 seconds)
-test_git: (5 checks) ... OK (0.05 seconds)
+test_git: (5 checks) ... OK (0.06 seconds)
 test_grep_directory: (1 checks) ... OK (0 seconds)
 test_is_force: (1 checks) ... OK (0 seconds)
 test_is_null_or_true: (3 checks) ... OK (0 seconds)
-test_travis: (1 checks) ... OK (0.34 seconds)
+test_travis: (1 checks) ... OK (0.37 seconds)
 test_url: (8 checks) ... OK (0.01 seconds)
 test_warn_and_stop: (1 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_throw.R 
+Test file: inst/runit_tests/test_throw.R 
 test_exception: (1 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_tools.R 
-test_cran_comments: (1 checks) ... OK (0.07 seconds)
-test_git_tag: (7 checks) ... OK (0.15 seconds)
-test_githuburl: (5 checks) ... OK (0.48 seconds)
+Test file: inst/runit_tests/test_tools.R 
+test_add_commit: (3 checks) ... OK (0.01 seconds)
+test_cran_comments: (1 checks) ... OK (0.06 seconds)
+test_git_tag: ERROR !! 
+Error in value[[3L]](cond) : Nothing to commit.
+test_githuburl: (5 checks) ... OK (0.47 seconds)
 test_news: (5 checks) ... OK (0.67 seconds)
