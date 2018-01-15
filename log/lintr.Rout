@@ -58,63 +58,102 @@ inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluo
 inst/runit_tests/test_internal.R:137:1: style: Trailing blank lines are superfluous.
 
 ^
-inst/runit_tests/test_tools.R:7:69: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:7:61: style: Trailing whitespace is superfluous.
+    expectation <- structure(list(staged = structure(list(), 
+                                                            ^
+inst/runit_tests/test_tools.R:9:63: style: Trailing whitespace is superfluous.
+                                  unstaged = structure(list(), 
+                                                              ^
+inst/runit_tests/test_tools.R:10:79: style: Trailing whitespace is superfluous.
+                                                       .Names = character(0)), 
+                                                                              ^
+inst/runit_tests/test_tools.R:11:79: style: Trailing whitespace is superfluous.
+                                  untracked = structure(list(untracked = "f"), 
+                                                                              ^
+inst/runit_tests/test_tools.R:12:80: style: Trailing whitespace is superfluous.
+                                                        .Names = "untracked")), 
+                                                                               ^
+inst/runit_tests/test_tools.R:13:76: style: Trailing whitespace is superfluous.
+                             .Names = c("staged", "unstaged", "untracked"), 
+                                                                           ^
+inst/runit_tests/test_tools.R:19:61: style: Trailing whitespace is superfluous.
+    expectation <- structure(list(staged = structure(list(), 
+                                                            ^
+inst/runit_tests/test_tools.R:21:62: style: Trailing whitespace is superfluous.
+                                 unstaged = structure(list(), 
+                                                             ^
+inst/runit_tests/test_tools.R:22:78: style: Trailing whitespace is superfluous.
+                                                      .Names = character(0)), 
+                                                                             ^
+inst/runit_tests/test_tools.R:23:63: style: Trailing whitespace is superfluous.
+                                 untracked = structure(list(), 
+                                                              ^
+inst/runit_tests/test_tools.R:24:80: style: Trailing whitespace is superfluous.
+                                                       .Names = character(0))), 
+                                                                               ^
+inst/runit_tests/test_tools.R:25:75: style: Trailing whitespace is superfluous.
+                            .Names = c("staged", "unstaged", "untracked"), 
+                                                                          ^
+inst/runit_tests/test_tools.R:35:69: style: Trailing whitespace is superfluous.
     tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
                                                                     ^
-inst/runit_tests/test_tools.R:14:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+inst/runit_tests/test_tools.R:42:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
 notest_cyclocomp <- function() { # somehow fails on install...
                                ^
-inst/runit_tests/test_tools.R:20:40: warning: no visible binding for global variable ‘new’, Did you mean 'news'?
+inst/runit_tests/test_tools.R:48:40: warning: no visible binding for global variable ‘new’, Did you mean 'news'?
     writeLines(c("# fakePackge 0.1.1", new), news_file)
                                        ^~~
-inst/runit_tests/test_tools.R:20:46: warning: no visible binding for global variable ‘news_file’
+inst/runit_tests/test_tools.R:48:46: warning: no visible binding for global variable ‘news_file’
     writeLines(c("# fakePackge 0.1.1", new), news_file)
                                              ^~~~~~~~~
-inst/runit_tests/test_tools.R:60:13: warning: no visible global function definition for ‘provide_fake_package’
+inst/runit_tests/test_tools.R:88:13: warning: no visible global function definition for ‘provide_fake_package’
     path <- provide_fake_package()
             ^~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/test_tools.R:62:19: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:90:19: style: Trailing whitespace is superfluous.
     expectation <- 
                   ^
-inst/runit_tests/test_tools.R:64:79: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:92:79: style: Trailing whitespace is superfluous.
                     "fakePackage", "'. I have added the following changes:\n", 
                                                                               ^
-inst/runit_tests/test_tools.R:65:1: style: lines should not be more than 80 characters.
+inst/runit_tests/test_tools.R:93:1: style: lines should not be more than 80 characters.
                     "\nXXX: State your changes and consider using a NEWS.md\n\n",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/test_tools.R:66:67: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:94:67: style: Trailing whitespace is superfluous.
                     "Please upload to CRAN.\n", "Best, ", "First", 
                                                                   ^
-inst/runit_tests/test_tools.R:68:54: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:96:54: style: Trailing whitespace is superfluous.
                     "fakePackage", " ", "0.0.0.9000", 
                                                      ^
-inst/runit_tests/test_tools.R:70:32: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:98:32: style: Trailing whitespace is superfluous.
                     "\n", "- ", 
                                ^
-inst/runit_tests/test_tools.R:71:1: style: lines should not be more than 80 characters.
+inst/runit_tests/test_tools.R:99:1: style: lines should not be more than 80 characters.
                     "R version 3.3.3 (2017-03-06)\n  Platform: x86_64-pc-linux-gnu (64-bit)\n  Running under: Debian GNU/Linux 9 (stretch)",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/test_tools.R:72:1: style: lines should not be more than 80 characters.
+inst/runit_tests/test_tools.R:100:1: style: lines should not be more than 80 characters.
                     "\n", "- win-builder (devel)", "\n", "\n## R CMD check results\n",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inst/runit_tests/test_tools.R:95:1: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:123:1: style: Trailing whitespace is superfluous.
     
 ^~~~
-inst/runit_tests/test_tools.R:129:1: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:156:1: style: Trailing whitespace is superfluous.
     
 ^~~~
-inst/runit_tests/test_tools.R:139:18: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:166:18: style: Trailing whitespace is superfluous.
     #% remote set 
                  ^
-inst/runit_tests/test_tools.R:144:53: warning: Do not use absolute paths.
+inst/runit_tests/test_tools.R:171:53: warning: Do not use absolute paths.
         url <- paste0("https://github.com/", user, "/fake")
                                                     ^~~~~
-inst/runit_tests/test_tools.R:149:30: style: Trailing whitespace is superfluous.
+inst/runit_tests/test_tools.R:176:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-inst/runit_tests/test_tools.R:160:61: warning: Do not use absolute paths.
+inst/runit_tests/test_tools.R:187:61: warning: Do not use absolute paths.
         expectation <- paste0("https://github.com/", user, "/fake")
                                                             ^~~~~
+inst/runit_tests/test_tools.R:192:63: warning: Do not use absolute paths.
+                         paste0("https://github.com/", user, "/fake"))
+                                                              ^~~~~
 inst/templates/runit-throw.R:2:27: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     RUnit::checkException({{{package}}}:::throw("Hello, error!"))
                           ^
@@ -223,12 +262,12 @@ R/devtools_verbatim.R:360:7: style: Commented code should be removed.
 R/devtools_verbatim.R:409:1: style: Trailing blank lines are superfluous.
 
 ^
-R/internal.R:15:73: style: Trailing whitespace is superfluous.
-    news <- unlist(strsplit(paste(readLines(file.path(root, "NEWS.md")), 
-                                                                        ^
 R/internal.R:179:5: warning: local variable ‘pkg’ assigned but may not be used
     pkg <- devtools::as.package(path)
     ^~~
+R/internal.R:237:1: style: Trailing blank lines are superfluous.
+
+^
 R/main.R:82:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
                             system("make")})
                                           ^
@@ -271,3 +310,9 @@ R/tools.R:257:68: style: Trailing whitespace is superfluous.
 R/tools.R:301:62: style: Trailing whitespace is superfluous.
     package_dir <- basename(rprojroot::find_root(path = path, 
                                                              ^
+R/tools.R:350:44: style: Trailing whitespace is superfluous.
+    git_status <- git2r::status(repository) 
+                                           ^
+R/tools.R:353:44: style: Trailing whitespace is superfluous.
+    tryCatch(git2r::add(repository, files), 
+                                           ^

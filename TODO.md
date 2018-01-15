@@ -5,3 +5,4 @@
 - add a make.R (using cmdline args) as template
 - devel the release() function
 - add release() conditionally to makelist.
+- fix todo in git\_add\_commit() (git2r::status)
