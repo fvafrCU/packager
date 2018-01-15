@@ -129,7 +129,7 @@ set_package_info <- function(path, author_at_r = NULL,
                              description = description,
                              author_at_r = author_at_r)
     r2 <- create_package_help(path = path, title = tools::toTitleCase(title),
-                              description = description, details = details)
+                              description = description, details = NA)
     r3 <- use_intro(path = path, details = details, ...)
     return(invisible(list(r1, r2, r3)))
 }

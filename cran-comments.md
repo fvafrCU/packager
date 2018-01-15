@@ -7,7 +7,7 @@ template on systems where travis-cli will fail.
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.5.0
+# Package packager 0.6.0
 ## Test  environments 
 - R Under development (unstable) (2017-11-07 r73685)
   Platform: x86_64-pc-linux-gnu (64-bit)
