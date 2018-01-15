@@ -6,16 +6,20 @@ Cyclomatic    check_cyclomatic_complexity.Rd:5
 dev           check_codetags.Rd:22, provide_cran_comments.Rd:12
 devtools      packager-package.Rd:9,12, description:1
 Devtools      provide_cran_comments.Rd:38
+fallback      add_github_url_to_desc.Rd:26
 gh            add_github_url_to_desc.Rd:27
 github        add_github_url_to_desc.Rd:5,20,28,31
 https         check_codetags.Rd:22
 linux         provide_cran_comments.Rd:24
 LTS           provide_cran_comments.Rd:25
 md            check_news.Rd:5,14,17, provide_cran_comments.Rd:35,38
+org           check_codetags.Rd:22
 pc            provide_cran_comments.Rd:24
 Rscript       provide_cran_comments.Rd:19
 sessionInfo   provide_cran_comments.Rd:19
 travis        provide_cran_comments.Rd:20,22,27
+Ubuntu        provide_cran_comments.Rd:25
 www           check_codetags.Rd:22
+xxx           set_package_info.Rd:28,31
 Warning message:
 spell check failed 

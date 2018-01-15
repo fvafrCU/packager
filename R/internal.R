@@ -238,11 +238,12 @@ travis_cli <- function(path) {
 # Git Add All Changes and Commit
 #
 # The same as git commit -am"M", where M is the \code{message}.
-# @param repo The repository to commit.
+# @param path The path to the repository.
 # @param message The commit message to use.
 # @return The return value of \code{\link[git2r:commit]{git2r::commit}}.
-git_add_commit <- function(repo, message = "Uncommented Changes: Backing Up") {
-    git2r::add(repo, unlist(git2r::status(repo)))
-    return(git2r::commit(repo, message = message))
+git_add_commit <- function(path, message = "Uncommented Changes: Backing Up") {
+    repository <- git2r::init(path = path)
+    git2r::add(repository, unlist(git2r::status(repository)))
+    return(git2r::commit(repository, message = message))
 
 }

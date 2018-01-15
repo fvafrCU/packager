@@ -100,6 +100,9 @@ inst/runit_tests/test_tools.R:72:1: style: lines should not be more than 80 char
 inst/runit_tests/test_tools.R:95:1: style: Trailing whitespace is superfluous.
     
 ^~~~
+inst/runit_tests/test_tools.R:100:5: warning: local variable ‘r’ assigned but may not be used
+    r <- git2r::repository(path = path)
+    ^
 inst/runit_tests/test_tools.R:129:1: style: Trailing whitespace is superfluous.
     
 ^~~~

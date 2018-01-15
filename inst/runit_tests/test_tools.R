@@ -97,15 +97,14 @@ test_git_tag <- function() {
     RUnit::checkException(packager::git_tag(path = path))
 
     # commited changes
-    r <- git2r::repository(path = path)
-    packager:::git_add_commit(r)
+    packager:::git_add_commit(path = path)
     result <- packager::git_tag(path = path)
     RUnit::checkIdentical("0.1.0", methods::slot(result, "name"))
     RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
 
     # version number lower than in tags
     desc::desc_set(Version = "0.0.3", file = path)
-    packager:::git_add_commit(r)
+    packager:::git_add_commit(path = path)
     RUnit::checkException(packager::git_tag(path = path))
 
 }

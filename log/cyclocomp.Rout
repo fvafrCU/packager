@@ -1,9 +1,41 @@
-Installing 1 packages: remotes
+Installing 2 packages: digest, remotes
+trying URL 'http://cloud.r-project.org/src/contrib/digest_0.6.14.tar.gz'
+Content type 'application/x-gzip' length 121494 bytes (118 KB)
+==================================================
+downloaded 118 KB
+
 trying URL 'http://cloud.r-project.org/src/contrib/remotes_1.1.1.tar.gz'
 Content type 'application/x-gzip' length 41629 bytes (40 KB)
 ==================================================
 downloaded 40 KB
 
+* installing *source* package ‘digest’ ...
+** package ‘digest’ successfully unpacked and MD5 sums checked
+** libs
+make[1]: Entering directory '/tmp/Rtmp3He2KS/R.INSTALL354b7d27af45/digest/src'
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c crc32.c -o crc32.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c digest.c -o digest.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c md5.c -o md5.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pmurhash.c -o pmurhash.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c raes.c -o raes.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha1.c -o sha1.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha2.c -o sha2.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha256.c -o sha256.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c xxhash.c -o xxhash.o
+gcc -shared -L/usr/local/lib -o digest.so aes.o crc32.o digest.o init.o md5.o pmurhash.o raes.o sha1.o sha2.o sha256.o xxhash.o
+make[1]: Leaving directory '/tmp/Rtmp3He2KS/R.INSTALL354b7d27af45/digest/src'
+installing to /tmp/Rtmpo7mumJ/file350f26b5bf78/digest/libs
+** R
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (digest)
 * installing *source* package ‘remotes’ ...
 ** package ‘remotes’ successfully unpacked and MD5 sums checked
 ** R
@@ -16,7 +48,7 @@ downloaded 40 KB
 * DONE (remotes)
 
 The downloaded source packages are in
-	‘/tmp/Rtmp2czVbw/downloaded_packages’
+	‘/tmp/Rtmpo7mumJ/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
