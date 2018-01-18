@@ -2,11 +2,6 @@ checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
-
-checking examples ... NOTE
-Examples with CPU or elapsed time > 5s
-       user system elapsed
-create 9.94   0.26  11.807
-displaying logs for fvafrCU/packager#155.1
+displaying logs for fvafrCU/packager#157.1
 Warning message:
 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not possible 

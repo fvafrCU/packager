@@ -239,10 +239,21 @@
 452             R/tools.R       provide_cran_comments  173     0
 706             R/tools.R      add_github_url_to_desc  305     0
 707             R/tools.R      add_github_url_to_desc  306     0
-packager Coverage: 70.19%
+711             R/tools.R      add_github_url_to_desc  308     0
+713             R/tools.R      add_github_url_to_desc  309     0
+715             R/tools.R      add_github_url_to_desc  310     0
+717             R/tools.R      add_github_url_to_desc  311     0
+718             R/tools.R      add_github_url_to_desc  312     0
+719             R/tools.R      add_github_url_to_desc  313     0
+721             R/tools.R      add_github_url_to_desc  315     0
+723             R/tools.R      add_github_url_to_desc  316     0
+728             R/tools.R      add_github_url_to_desc  320     0
+730             R/tools.R      add_github_url_to_desc  321     0
+732             R/tools.R      add_github_url_to_desc  322     0
+packager Coverage: 68.82%
 R/devtools_verbatim.R: 44.88%
 R/devtools_modified.R: 59.41%
-R/tools.R: 83.44%
+R/tools.R: 76.43%
 R/main.R: 90.38%
 R/internal.R: 100.00%
 R/throw.R: 100.00%
