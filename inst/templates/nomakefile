@@ -80,7 +80,7 @@ $(LOG_DIR)/roxygen2.Rout: $(LOG_DIR) $(R_FILES)
 	$(R) --vanilla -e 'roxygen2::roxygenize(".")' > $(LOG_DIR)/roxygen2.Rout 2>&1 
 
 $(LOG_DIR): 
-	$(Rscript) --vanilla -e 'packager::use_directory("log", ignore = TRUE)'
+	$(Rscript) --vanilla -e 'packager:::use_directory("log", ignore = TRUE)'
 
 .PHONY: dependencies
 dependencies: $(LOG_DIR)/dependencies.Rout
