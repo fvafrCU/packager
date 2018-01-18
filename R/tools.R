@@ -344,12 +344,14 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
 git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
                            untracked = FALSE, ...) {
     repository <- git2r::repository(path = path)
-    tryCatch(git2r::add(repository, 
-                        unlist(git2r::status(repository, 
-                                             untracked = isTRUE(untracked),
-                                             ...
-                                             ))),
-             error = function(e) throw("Nothing to commit."))
+    # TODO: I get strange results for repositories created with devtools,
+    # unstaged files disappear when passing 'untracked' = TRUE to
+    # git2r::status().
+    git_status <- git2r::status(repository) 
+    files <- unlist(git_status[["unstaged"]])
+    if (isTRUE(untracked)) files <- c(files, unlist(git_status[["untracked"]]))
+    tryCatch(git2r::add(repository, files), 
+             error = function(e) warning("Nothing added."))
     return(git2r::commit(repository, message = message))
 
 }

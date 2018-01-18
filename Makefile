@@ -3,6 +3,8 @@
 
 R = R-devel
 Rscript = Rscript-devel
+Rscript_release = Rscript-release
+R_release = R-release
 
 PKGNAME = $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGVERS = $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
@@ -36,12 +38,12 @@ use_dev_version:
 release: 
 	echo "library('utils'); devtools::release(check = FALSE)" > /tmp/rel.R
 	echo "source('/tmp/rel.R')" > ./.Rprofile
-	$(R)
+	$(R_release)
 	rm /tmp/rel.R ./.Rprofile
 
 .PHONY: build_win
 build_win:
-	$(Rscript) --vanilla -e 'devtools::build_win()'
+	$(Rscript_release) --vanilla -e 'devtools::build_win()'
 
 .PHONY: vignettes
 vignettes: $(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
@@ -71,7 +73,7 @@ $(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
 	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
 	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
 	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout 
-	$(R) --vanilla CMD build $(PKGSRC)
+	$(R_release) --vanilla CMD build $(PKGSRC)
 
 README.md: README.Rmd R/$(PKGNAME)-package.R
 	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
@@ -80,7 +82,7 @@ $(LOG_DIR)/roxygen2.Rout: $(LOG_DIR) $(R_FILES)
 	$(R) --vanilla -e 'roxygen2::roxygenize(".")' > $(LOG_DIR)/roxygen2.Rout 2>&1 
 
 $(LOG_DIR): 
-	$(Rscript) --vanilla -e 'packager::use_directory("log", ignore = TRUE)'
+	$(Rscript) --vanilla -e 'packager:::use_directory("log", ignore = TRUE)'
 
 .PHONY: dependencies
 dependencies: $(LOG_DIR)/dependencies.Rout
@@ -151,6 +153,6 @@ $(LOG_DIR)/spell.Rout: $(LOG_DIR) DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FIL
 	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
 .PHONY: cyclocomp
-news: $(LOG_DIR)/cyclocomp.Rout
+cyclocomp: $(LOG_DIR)/cyclocomp.Rout
 $(LOG_DIR)/cyclocomp.Rout: $(LOG_DIR) $(LOG_DIR)/dependencies.Rout $(R_FILES)
 	$(Rscript) --vanilla -e 'tryCatch(print(packager::check_cyclomatic_complexity()), error = identity)' > $(LOG_DIR)/cyclocomp.Rout 2>&1 

@@ -1,0 +1,4 @@
+current=$(git branch| grep "^\*" | cut -f2 -d' ')
+tempfile=/tmp/README.Rmd.$$
+sed -e "s/\(branch=\)\<[^)]*\>)/\1$current)/g" -e "s#\(blob/\)\<.*\>\(/inst/doc\)#\1$current\2#" < README.Rmd > $tempfile && mv $tempfile README.Rmd 
+git add README.Rmd && git commit -am"Reset url in README according to current branch"
