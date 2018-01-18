@@ -164,7 +164,8 @@ provide_cran_comments <- function(check_log = NULL,
                   "\n")
     if (! is.null(travis_session_info)) {
         if (identical(travis_session_info, "travis-cli")) {
-            travis_session_info <- travis_cli(path)
+            travis_session_info <- tryCatch(travis_cli(path), 
+                                            error = function(e) return(NULL))
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
         comments <- c(comments, "- ",
@@ -329,4 +330,26 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
         status <- TRUE
     }
     return(invisible(status))
+}
+
+#' Git Add All Changes and Commit
+#'
+#' The same as git commit -am"M", where M is the \code{message}.
+#' @param path The path to the repository.
+#' @param message The commit message to use.
+#' @param untracked Add untracked files before commiting?
+#' @param ... Arguments passed to \code{\link[git2r:status]{git2r::status}}.
+#' @return The return value of \code{\link[git2r:commit]{git2r::commit}}.
+#' @export
+git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
+                           untracked = FALSE, ...) {
+    repository <- git2r::repository(path = path)
+    tryCatch(git2r::add(repository, 
+                        unlist(git2r::status(repository, 
+                                             untracked = isTRUE(untracked),
+                                             ...
+                                             ))),
+             error = function(e) throw("Nothing to commit."))
+    return(git2r::commit(repository, message = message))
+
 }
