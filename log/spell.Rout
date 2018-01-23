@@ -1,5 +1,6 @@
   WORD          FOUND IN
 cli           provide_cran_comments.Rd:27
+CMD           provide_cran_comments.Rd:39
 commiting     git_add_commit.Rd:15
 cran          provide_cran_comments.Rd:34,35,38
 cyclomatic    check_cyclomatic_complexity.Rd:16
@@ -12,7 +13,7 @@ github        add_github_url_to_desc.Rd:5,20,28,31
 https         check_codetags.Rd:22
 linux         provide_cran_comments.Rd:24
 LTS           provide_cran_comments.Rd:25
-md            check_news.Rd:5,14,17, provide_cran_comments.Rd:35,38
+md            check_news.Rd:5,14,17, provide_cran_comments.Rd:35,38,40
 pc            provide_cran_comments.Rd:24
 Rscript       provide_cran_comments.Rd:19
 sessionInfo   provide_cran_comments.Rd:19

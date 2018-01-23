@@ -38,3 +38,4 @@ if (FALSE) {
 # make
 fml <- fakemake::provide_make_list("package")
 fakemake::make("check", fml, verbose = FALSE)
+# lintr and testthat did not work as expected!

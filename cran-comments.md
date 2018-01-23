@@ -1,13 +1,12 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-Wrapped the travis-cli interface into tryCatch to be able to use my Makefile as
-template on systems where travis-cli will fail.
+* Enhance docs for provide\_cran\_comments().
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.6.0
+# Package packager 0.6.0.9000
 ## Test  environments 
 - R Under development (unstable) (2018-01-12 r74112)
   Platform: x86_64-pc-linux-gnu (64-bit)
