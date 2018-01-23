@@ -1,3 +1,7 @@
+# packager 0.6.0.9000
+
+* Enhance docs for provide\_cran\_comments().
+
 # packager 0.6.0
 
 Wrapped the travis-cli interface into tryCatch to be able to use my Makefile as
