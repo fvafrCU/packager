@@ -91,7 +91,8 @@ check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
 #' Provide a Template for Your Comments To CRAN
 #'
 #' Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
-#' function provides a template based on your R version and your check log.
+#' function provides a template based on your R version your R CMD check log and
+#' the package's NEWS.md.
 #' @param path The path to the package.
 #' @param initial Is this an initial release?
 #' @param check_log Path to the check log relative to \code{path}. Typically
