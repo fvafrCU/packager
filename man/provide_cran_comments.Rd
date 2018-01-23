@@ -36,7 +36,8 @@ cran-comments.md (see Note).
 }
 \description{
 Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
-function provides a template based on your R version and your check log.
+function provides a template based on your R version your R CMD check log and
+the package's NEWS.md.
 }
 \note{
 This function writes to disk as side effect.
