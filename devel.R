@@ -37,5 +37,5 @@ if (FALSE) {
 
 # make
 fml <- fakemake::provide_make_list("package")
-fakemake::make("check", fml, verbose = FALSE, force = TRUE)
-# lintr and testthat did not work as expected!
+run <- fakemake::make("check", fml, verbose = FALSE, force = TRUE)
+# roxygen2, lintr and testthat did not work as expected!
