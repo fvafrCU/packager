@@ -1,3 +1,4 @@
+- fix verbose = FALSE in fakemake::make
 - use fakemake::make in infect with a makelist that's an extension of fakemake's
   "package" list
 - add a make.R (using cmdline args) as template
