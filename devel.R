@@ -38,4 +38,9 @@ if (FALSE) {
 # make
 fml <- fakemake::provide_make_list("package")
 run <- fakemake::make("check", fml, verbose = FALSE, force = TRUE)
+run <- fakemake::make("roxygen2", fml, verbose = FALSE, force = TRUE)
+run <- fakemake::make("testthat", fml, verbose = FALSE, force = TRUE)
 # roxygen2, lintr and testthat did not work as expected!
+# roxygen2? seems to work
+# lint fixed
+# lint testthat fixed
