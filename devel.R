@@ -31,16 +31,11 @@ if (FALSE) {
     if (yesno("Ready to submit?")) {
         throw("User request.")
     } else {
-        upload_cran(pkg = path, built_path = built_path, cran_submission_url = csu)
+        upload_cran(pkg = path, built_path = built_path, 
+                    cran_submission_url = csu)
     }
 }
 
 # make
 fml <- fakemake::provide_make_list("package")
 run <- fakemake::make("check", fml, verbose = FALSE, force = TRUE)
-run <- fakemake::make("roxygen2", fml, verbose = FALSE, force = TRUE)
-run <- fakemake::make("testthat", fml, verbose = FALSE, force = TRUE)
-# roxygen2, lintr and testthat did not work as expected!
-# roxygen2? seems to work
-# lint fixed
-# lint testthat fixed
