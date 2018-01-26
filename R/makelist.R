@@ -6,16 +6,18 @@
 provide_make_list <- function() {
     fml <- fakemake::provide_make_list("package")
     dir_r <- "list.files(\"R\", full.names = TRUE, recursive = TRUE)"
+    cyclo_code <- paste("tryCatch(print(",
+                        "packager::check_cyclomatic_complexity()),",
+                        "error = identity))")
+    code_tags_code <- paste("tryCatch(print(packager::check_codetags(),",
+                            "error = identity))")
     a <- list(
-              list(alias = "cyclocomp", 
-                   target = "log/cyclocomp.Rout", 
-                   code = "tryCatch(print(packager::check_cyclomatic_complexity()), error = identity))", 
+              list(alias = "cyclocomp", target = "log/cyclocomp.Rout",
+                   code = cyclo_code,
                    prerequisites = dir_r),
-              list(alias = "code_tags", 
-                   target = "log/code_tags.Rout", 
-                   code = "tryCatch(print(packager::check_codetags(), error = identity))", 
+              list(alias = "codetags", target = "log/codetags.Rout",
+                   code = code_tags_code,
                    prerequisites = dir_r)
               )
     return(c(fml, a))
 }
-

@@ -53,6 +53,6 @@ The following objects are masked from ‘package:git2r’:
 
 Loading required package: fakemake
 Warning: @return [makelist.R#4]: mismatched braces or quotes
-Writing release.Rd
+Writing check_cyclomatic_complexity.Rd
 > 
 > 

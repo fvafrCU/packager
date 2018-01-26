@@ -78,13 +78,13 @@ update_description <- function(path = ".",
     return(invisible(NULL))
 }
 
-grep_directory <- function(path, pattern, include_pattern = NULL, 
+grep_directory <- function(path, pattern, include_pattern = NULL,
                            exclude_pattern = NULL) {
     hits <- NULL
     if (is.null(include_pattern)) {
         files <- list.files(path, full.names = TRUE, recursive = TRUE)
     } else {
-        files <- list.files(path, full.names = TRUE, recursive = TRUE, 
+        files <- list.files(path, full.names = TRUE, recursive = TRUE,
                             pattern = include_pattern)
     }
     if (! is.null(exclude_pattern))
@@ -182,7 +182,6 @@ use_makefile <- function(path = ".",
 }
 
 use_devtools <- function(path = ".") {
-    pkg <- devtools::as.package(path)
     result <- NULL
     result <- c(result, use_news_md(pkg = path))
     result <- c(result, use_readme_rmd(path = path))
@@ -240,4 +239,3 @@ travis_cli <- function(path) {
     travis_session_info <- travis_log[(k + 1): (k + 3)]
     return(travis_session_info)
 }
-

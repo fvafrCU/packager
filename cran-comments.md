@@ -1,12 +1,14 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-* Enhance docs for provide\_cran\_comments().
+* Linted the codes heavily.
+* Added an inclusion pattern to check\_codetags() and set reasonable defaults
+  for patterns.
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.6.0.9000
+# Package packager 0.7.0.9000
 ## Test  environments 
 - R Under development (unstable) (2018-01-12 r74112)
   Platform: x86_64-pc-linux-gnu (64-bit)

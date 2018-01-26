@@ -19,7 +19,7 @@
 #' local_tarball <- file.path(tempdir(), tarball)
 #' utils::download.file(remote_tarball, local_tarball)
 #' utils::untar(local_tarball, exdir = tempdir())
-#' res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(), 
+#' res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(),
 #'                                                              package)),
 #'                 error = identity)
 #' print(res)
@@ -78,18 +78,18 @@ check_news <- function(path = ".") {
 #' @param path The directory to search.
 #' @param exclude_pattern A pattern for exlusions based on the file names.
 #' Stronger than \code{include_pattern}.
-#' @param include_pattern A pattern for inclusions based on the file names. 
+#' @param include_pattern A pattern for inclusions based on the file names.
 #' @param pattern The pattern to search for.
 #' @return A character vector of hits.
 #' @export
 #' @examples
 #' dir <- system.file("templates", package = "packager")
 #' check_codetags(dir)
-check_codetags <- function(path = ".", exclude_pattern = "\\.Rcheck/", 
+check_codetags <- function(path = ".", exclude_pattern = "\\.Rcheck/",
                            include_pattern = "\\.[Rr]$|\\.[Rr]md$",
                            pattern =  "XXX:|FIXME:|TODO:") {
-    hits <- grep_directory(path = path, exclude_pattern = exclude_pattern, 
-                           include_pattern = include_pattern, 
+    hits <- grep_directory(path = path, exclude_pattern = exclude_pattern,
+                           include_pattern = include_pattern,
                            pattern =  pattern)
     return(hits)
 }
@@ -130,9 +130,10 @@ provide_cran_comments <- function(check_log = NULL,
             maintainer <- desc::desc_get_author(role = "cre", file = path)
             # NOTE: a person object is a strange thing, we seem to need `$`
             # here.
-            paste(maintainer$given, collapse = " ")},
-            error = function(e) return(name)
-            )
+            paste(maintainer$given, collapse = " ")
+        },
+        error = function(e) return(name)
+        )
     }
     pkg <- devtools::as.package(path)
     comments_file <- file.path(pkg[["path"]], "cran-comments.md")
@@ -171,7 +172,7 @@ provide_cran_comments <- function(check_log = NULL,
                   "\n")
     if (! is.null(travis_session_info)) {
         if (identical(travis_session_info, "travis-cli")) {
-            travis_session_info <- tryCatch(travis_cli(path), 
+            travis_session_info <- tryCatch(travis_cli(path),
                                             error = function(e) return(NULL))
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
@@ -243,15 +244,15 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
     tags <- git2r::tags(repo)
     is_first_tag <- length(tags) == 0
     if (! is_first_tag) {
-        old_tag_names <- sapply(tags, 
-                                function(tag) return(methods::slot(tag, 
+        old_tag_names <- sapply(tags,
+                                function(tag) return(methods::slot(tag,
                                                                    "name")))
         old_versions <- sub("^v", "", old_tag_names)
-        description_version_is_newer <- 
-            vapply(strip_off_attributes(old_versions), 
-                   function(x) 
-                       utils::compareVersion(x, 
-                                             as.character(version)) < 0, 
+        description_version_is_newer <-
+            vapply(strip_off_attributes(old_versions),
+                   function(x)
+                       utils::compareVersion(x,
+                                             as.character(version)) < 0,
                    logical(1)
                    )
     }
@@ -259,9 +260,9 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
         status <- git2r::tag(repo, as.character(version), message)
     } else {
         future_versions <- old_versions[! description_version_is_newer]
-        warn_and_stop(paste0("File DESCRIPTION has version ", version, 
-                             ", but I found ", 
-                             strip_off_attributes(future_versions), 
+        warn_and_stop(paste0("File DESCRIPTION has version ", version,
+                             ", but I found ",
+                             strip_off_attributes(future_versions),
                              " in the git repository's tags."
                              ))
 
@@ -305,7 +306,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
                             error = function(e) return(default_gh_user))
     desc_url <- desc::desc_get_urls(path)
 
-    package_dir <- basename(rprojroot::find_root(path = path, 
+    package_dir <- basename(rprojroot::find_root(path = path,
                                                  rprojroot::is_r_package))
     package_name <- strip_off_attributes(desc::desc_get("Package", file = path))
     if (package_name != package_dir)
@@ -354,10 +355,10 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
     # TODO: I get strange results for repositories created with devtools,
     # unstaged files disappear when passing 'untracked' = TRUE to
     # git2r::status().
-    git_status <- git2r::status(repository) 
+    git_status <- git2r::status(repository)
     files <- unlist(git_status[["unstaged"]])
     if (isTRUE(untracked)) files <- c(files, unlist(git_status[["untracked"]]))
-    tryCatch(git2r::add(repository, files), 
+    tryCatch(git2r::add(repository, files),
              error = function(e) warning("Nothing added."))
     return(git2r::commit(repository, message = message))
 

@@ -3,7 +3,7 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
 New submission
 
-Version contains large components (0.6.0.9000)
-displaying logs for fvafrCU/packager#166.1
+Version contains large components (0.7.0.9000)
+displaying logs for fvafrCU/packager#169.1
 Warning message:
 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not possible 

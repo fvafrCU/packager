@@ -31,7 +31,7 @@ remote_tarball <- paste(root, tarball, sep = "/")
 local_tarball <- file.path(tempdir(), tarball)
 utils::download.file(remote_tarball, local_tarball)
 utils::untar(local_tarball, exdir = tempdir())
-res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(), 
+res <- tryCatch(check_cyclomatic_complexity(path = file.path(tempdir(),
                                                              package)),
                 error = identity)
 print(res)

@@ -1,5 +1,6 @@
 # packager 0.7.0.9000
 
+* Linted the codes heavily.
 * Added an inclusion pattern to check\_codetags() and set reasonable defaults
   for patterns.
 

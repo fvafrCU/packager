@@ -79,8 +79,9 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
                             roxygen2::roxygenize(package.dir = ".")
                             devtools::load_all(".")
                             Sys.setenv("R_HOME" = Sys.which("R-devel"))
-                            system("make")})
-
+                            system("make")
+                        }
+        )
     } else {
         # run at least roxygen
         roxygen2::roxygenize(package.dir = path)

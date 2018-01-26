@@ -4,13 +4,17 @@
 \alias{check_codetags}
 \title{Check for Code Tags}
 \usage{
-check_codetags(path = ".", exclude = ".*\\\\.tar\\\\.gz$",
+check_codetags(path = ".", exclude_pattern = "\\\\.Rcheck/",
+  include_pattern = "\\\\.[Rr]$|\\\\.[Rr]md$",
   pattern = "XXX:|FIXME:|TODO:")
 }
 \arguments{
 \item{path}{The directory to search.}
 
-\item{exclude}{Passed to \code{link{grep}}.}
+\item{exclude_pattern}{A pattern for exlusions based on the file names.
+Stronger than \code{include_pattern}.}
+
+\item{include_pattern}{A pattern for inclusions based on the file names.}
 
 \item{pattern}{The pattern to search for.}
 }
@@ -19,7 +23,7 @@ A character vector of hits.
 }
 \description{
 You hopefully use code tags
-(see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/ for example}.
+(see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/} for example).
 This functions searches for files under a directory containing such tags.
 }
 \examples{
