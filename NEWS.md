@@ -1,6 +1,10 @@
-# packager 0.6.0.9000
+# packager 0.7.0
 
-* Enhance docs for provide\_cran\_comments().
+* Added function release() which skips the usual interactive questions done
+  by devtools::release().
+* Added function provide\_make\_list() which is an exentsion to 
+  fakemake::provide\_make\_list().
+* Enhanced docs for provide\_cran\_comments().
 
 # packager 0.6.0
 
