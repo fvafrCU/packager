@@ -24,6 +24,7 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
         upload_cran(pkg = path, built_path = built_path, 
                     cran_submission_url = csu)
         if (uses_git(path)) {
+            r <- git2r::repository(path = path) 
             message("Don't forget to tag commit ", git2r::reflog(r)[[1]]@sha, 
                     " as ", desc::desc_get_version(), 
                     ", once package is on CRAN.")
