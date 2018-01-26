@@ -16,7 +16,6 @@ packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_inf
 
 
 # make
-fml <- fakemake::provide_make_list("package")
-run <- fakemake::make("cleanr", fml, verbose = FALSE, force = TRUE)
-run <- fakemake::make("check", fml, verbose = FALSE, force = TRUE)
-fakemake::visualize(fml)
+ml <- packager::provide_make_list()
+fakemake::visualize(ml)
+
