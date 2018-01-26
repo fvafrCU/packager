@@ -1,7 +1,6 @@
-- fix verbose = FALSE in fakemake::make
 - use fakemake::make in infect with a makelist that's an extension of fakemake's
   "package" list
-- add a make.R (using cmdline args) as template
+- add make.R as template, add function to provide it.
 - document the options (force)
 - enhance coverage
 - devel the release() function
