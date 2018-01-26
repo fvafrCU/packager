@@ -1,6 +1,12 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
+inst/make.R:5:65: style: Trailing whitespace is superfluous.
+if (all(target_arguments %in% arguments)) stop(paste("got both", 
+                                                                ^
+inst/make.R:30:1: style: Trailing blank lines are superfluous.
+
+^
 inst/runit_tests/test_devtools_modified.R:7:69: style: Trailing whitespace is superfluous.
     tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
                                                                     ^
@@ -268,6 +274,51 @@ R/internal.R:237:1: style: Trailing blank lines are superfluous.
 R/main.R:82:43: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
                             system("make")})
                                           ^
+R/makelist.R:10:40: style: Trailing whitespace is superfluous.
+              list(alias = "cyclocomp", 
+                                       ^
+R/makelist.R:11:50: style: Trailing whitespace is superfluous.
+                   target = "log/cyclocomp.Rout", 
+                                                 ^
+R/makelist.R:12:1: style: lines should not be more than 80 characters.
+                   code = "tryCatch(print(packager::check_cyclomatic_complexity()), error = identity))", 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/makelist.R:12:105: style: Trailing whitespace is superfluous.
+                   code = "tryCatch(print(packager::check_cyclomatic_complexity()), error = identity))", 
+                                                                                                        ^
+R/makelist.R:14:40: style: Trailing whitespace is superfluous.
+              list(alias = "code_tags", 
+                                       ^
+R/makelist.R:15:50: style: Trailing whitespace is superfluous.
+                   target = "log/code_tags.Rout", 
+                                                 ^
+R/makelist.R:16:1: style: lines should not be more than 80 characters.
+                   code = "tryCatch(print(packager::check_codetags(), error = identity))", 
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/makelist.R:16:91: style: Trailing whitespace is superfluous.
+                   code = "tryCatch(print(packager::check_codetags(), error = identity))", 
+                                                                                          ^
+R/makelist.R:21:1: style: Trailing blank lines are superfluous.
+
+^
+R/release.R:17:44: style: Trailing whitespace is superfluous.
+        if (! git_sync_status(path = path)) 
+                                           ^
+R/release.R:25:57: style: Trailing whitespace is superfluous.
+        upload_cran(pkg = path, built_path = built_path, 
+                                                        ^
+R/release.R:28:48: style: Trailing whitespace is superfluous.
+            r <- git2r::repository(path = path) 
+                                               ^
+R/release.R:29:78: style: Trailing whitespace is superfluous.
+            message("Don't forget to tag commit ", git2r::reflog(r)[[1]]@sha, 
+                                                                             ^
+R/release.R:30:54: style: Trailing whitespace is superfluous.
+                    " as ", desc::desc_get_version(), 
+                                                     ^
+R/release.R:36:1: style: Trailing blank lines are superfluous.
+
+^
 R/tools.R:127:52: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
             paste(maintainer$given, collapse = " ")},
                                                    ^

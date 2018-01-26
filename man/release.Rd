@@ -17,3 +17,8 @@ the origin?}
 \value{
 \code{\link[base:invisible]{Invisibly} \link{NULL}}
 }
+\description{
+This is a stripped version of \pkg{devtools}'
+\code{\link[devtools:release]{release function}}, it does not do all the
+interactive checks.
+}

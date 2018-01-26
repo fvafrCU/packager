@@ -1,8 +1,9 @@
 #' Release a Package to CRAN
 #'
 #' This is a stripped version of \pkg{devtools}'
-#' \code{\link[devtools:release]{release function}, it does not do all the
+#' \code{\link[devtools:release]{release function}}, it does not do all the
 #' interactive checks. 
+#'
 #' @param path The package's root directory.
 #' @param stop_on_git Stop if git has uncommited changes or is not synced with
 #' the origin?
