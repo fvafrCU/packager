@@ -78,11 +78,17 @@ update_description <- function(path = ".",
     return(invisible(NULL))
 }
 
-grep_directory <- function(path, pattern, exclude = NULL) {
+grep_directory <- function(path, pattern, include_pattern = NULL, 
+                           exclude_pattern = NULL) {
     hits <- NULL
-    files <- list.files(path, full.names = TRUE, recursive = TRUE)
-    if (! is.null(exclude))
-        files <- grep(exclude, files, value = TRUE, invert = TRUE)
+    if (is.null(include_pattern)) {
+        files <- list.files(path, full.names = TRUE, recursive = TRUE)
+    } else {
+        files <- list.files(path, full.names = TRUE, recursive = TRUE, 
+                            pattern = include_pattern)
+    }
+    if (! is.null(exclude_pattern))
+        files <- grep(exclude_pattern, files, value = TRUE, invert = TRUE)
     for (f in files) {
         l <- readLines(f)
         if (any(grepl(l, pattern = pattern, perl = TRUE))) {

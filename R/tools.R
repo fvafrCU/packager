@@ -73,19 +73,25 @@ check_news <- function(path = ".") {
 #' Check for Code Tags
 #'
 #' You hopefully use code tags
-#' (see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/ for example}.
+#' (see \href{PEP 350}{https://www.python.org/dev/peps/pep-0350/} for example).
 #' This functions searches for files under a directory containing such tags.
 #' @param path The directory to search.
-#' @param exclude Passed to \code{link{grep}}.
+#' @param exclude_pattern A pattern for exlusions based on the file names.
+#' Stronger than \code{include_pattern}.
+#' @param include_pattern A pattern for inclusions based on the file names. 
 #' @param pattern The pattern to search for.
 #' @return A character vector of hits.
 #' @export
 #' @examples
 #' dir <- system.file("templates", package = "packager")
 #' check_codetags(dir)
-check_codetags <- function(path = ".", exclude = ".*\\.tar\\.gz$",
+check_codetags <- function(path = ".", exclude_pattern = "\\.Rcheck/", 
+                           include_pattern = "\\.[Rr]$|\\.[Rr]md$",
                            pattern =  "XXX:|FIXME:|TODO:") {
-    return(grep_directory(path = path, exclude = exclude, pattern =  pattern))
+    hits <- grep_directory(path = path, exclude_pattern = exclude_pattern, 
+                           include_pattern = include_pattern, 
+                           pattern =  pattern)
+    return(hits)
 }
 
 #' Provide a Template for Your Comments To CRAN

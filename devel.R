@@ -1,5 +1,5 @@
-devtool::use_dev_version()
 devtools::load_all(".")
+devtools::use_dev_version()
 if (FALSE) {
 packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")
     set_package_info(path = ".", title = "Helps Me Build Packages", 
@@ -15,6 +15,7 @@ packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_inf
 }
 
 
+packager::check_codetags()
 # make
 ml <- packager::provide_make_list()
 fakemake::visualize(ml)
