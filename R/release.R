@@ -30,4 +30,5 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
         }
         return(invisible(NULL))
     }
+}
 
