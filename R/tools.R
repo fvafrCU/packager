@@ -66,7 +66,7 @@ check_news <- function(path = ".") {
     if (! is_covered) {
         throw(paste0("Version ", version_number, " not covered!"))
     } else {
-        return(TRUE)
+        return(invisible(TRUE))
     }
 }
 
