@@ -1,7 +1,7 @@
 #' Provide a Makelist Suitable for Packages with \pkg{packager}.
 #'
 #' @return An extension of \pkg{fakemake}'s \code{makelist} provided by
-#' \code{\link[fakemake:provide_make_list]{provide_make_list}.
+#' \code{\link[fakemake:provide_make_list]{provide_make_list}}.
 #' @export
 provide_make_list <- function() {
     fml <- fakemake::provide_make_list("package")

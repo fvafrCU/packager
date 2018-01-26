@@ -1,6 +1,7 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
+* Sanitized the return value of git\_sync\_status().
 * Linted the codes heavily.
 * Added an inclusion pattern to check\_codetags() and set reasonable defaults
   for patterns.

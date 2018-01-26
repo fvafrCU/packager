@@ -6,6 +6,10 @@
 \usage{
 provide_make_list()
 }
+\value{
+An extension of \pkg{fakemake}'s \code{makelist} provided by
+\code{\link[fakemake:provide_make_list]{provide_make_list}}.
+}
 \description{
 Provide a Makelist Suitable for Packages with \pkg{packager}.
 }

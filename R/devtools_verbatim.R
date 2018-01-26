@@ -335,35 +335,6 @@ package_file <- function(..., path = ".") {
   file.path(path, ...)
 }
 
-git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
-  r <- git2r::repository(path, discover = TRUE)
-
-  r_head <- git2r::head(r)
-  if (!methods::is(r_head, "git_branch")) {
-    stop("HEAD is not a branch", call. = FALSE)
-  }
-
-  upstream <- git2r::branch_get_upstream(r_head)
-  if (is.null(upstream)) {
-    stop("No upstream branch", call. = FALSE)
-  }
-
-  git2r::fetch(r, git2r::branch_remote_name(upstream))
-
-  c1 <- git2r::lookup(r, git2r::branch_target(r_head))
-  c2 <- git2r::lookup(r, git2r::branch_target(upstream))
-  ab <- git2r::ahead_behind(c1, c2)
-
-#   if (ab[1] > 0)
-#     message(ab[1], " ahead of remote")
-#   if (ab[2] > 0)
-#     message(ab[2], " behind remote")
-
-  is_ahead <- ab[[1]] != 0
-  is_behind <- ab[[2]] != 0
-  check <- (check_ahead && is_ahead) || (check_behind && is_behind)
-  check
-}
 
 cran_comments <- function(pkg = ".") {
   pkg <- as.package(pkg)

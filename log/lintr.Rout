@@ -217,6 +217,15 @@ R/devtools_modified.R:32:5: warning: local variable ‘never_used’ assigned bu
 R/devtools_modified.R:231:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
+R/devtools_modified.R:257:1: style: lines should not be more than 80 characters.
+git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_modified.R:277:7: style: Commented code should be removed.
+#     message(ab[1], " ahead of remote")
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/devtools_modified.R:279:7: style: Commented code should be removed.
+#     message(ab[2], " behind remote")
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 R/devtools_verbatim.R:4:31: style: Only use double-quotes.
   file.exists(file.path(path, 'DESCRIPTION'))
                               ^~~~~~~~~~~~~
@@ -253,15 +262,6 @@ github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USER
 R/devtools_verbatim.R:300:1: style: lines should not be more than 80 characters.
     show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_verbatim.R:338:1: style: lines should not be more than 80 characters.
-git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_verbatim.R:358:7: style: Commented code should be removed.
-#     message(ab[1], " ahead of remote")
-      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_verbatim.R:360:7: style: Commented code should be removed.
-#     message(ab[2], " behind remote")
-      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-R/devtools_verbatim.R:409:1: style: Trailing blank lines are superfluous.
+R/devtools_verbatim.R:380:1: style: Trailing blank lines are superfluous.
 
 ^
