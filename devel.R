@@ -1,4 +1,4 @@
-devtools::use_dev_version()
+devtool::use_dev_version()
 devtools::load_all(".")
 packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")
 if (FALSE) {
@@ -15,27 +15,32 @@ if (FALSE) {
 }
 
 if (FALSE) {
-    # release
     devtools::load_all(".")
-    path = "."
-    stop_on_git = TRUE
-
+    release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
     if (uses_git(path) && isTRUE(stop_on_git)) {
         if (is_git_uncommitted(path = path) )
             throw("You have uncommitted changes.")
         if (! git_sync_status(path = path)) 
             throw("Your repository is not synced with it's upstream.")
     }
-    csu <- "http://xmpalantir.wu.ac.at/cransubmit/index2.php"
-    built_path <- build_cran(path, args = NULL)
-    if (yesno("Ready to submit?")) {
-        throw("User request.")
+    if (yesno("Ready to submit?")) { ## FIXME force
+        throw("Aborting on user request.")
     } else {
+        csu <- "http://xmpalantir.wu.ac.at/cransubmit/index2.php"
+        built_path <- build_cran(path, args = NULL)
         upload_cran(pkg = path, built_path = built_path, 
                     cran_submission_url = csu)
+        if (uses_git(path)) {
+            message("Don't forget to tag commit ", git2r::reflog(r)[[1]]@sha, 
+                    " as ", desc::desc_get_version(), 
+                    ", once package is on CRAN.")
+        }
+        return(invisible(NULL))
     }
 }
 
 # make
 fml <- fakemake::provide_make_list("package")
+run <- fakemake::make("cleanr", fml, verbose = FALSE, force = TRUE)
 run <- fakemake::make("check", fml, verbose = FALSE, force = TRUE)
+fakemake::visualize(fml)
