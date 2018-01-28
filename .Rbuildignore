@@ -10,3 +10,4 @@
 ^log$
 ^.*\.tar\.gz$
 ^packager\.Rcheck$
+^\.log\.Rout$

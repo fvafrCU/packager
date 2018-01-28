@@ -1,4 +1,22 @@
-Skipping 1 packages ahead of CRAN: fakemake
+Installing 1 packages: remotes
+trying URL 'http://cloud.r-project.org/src/contrib/remotes_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 41629 bytes (40 KB)
+==================================================
+downloaded 40 KB
+
+* installing *source* package ‘remotes’ ...
+** package ‘remotes’ successfully unpacked and MD5 sums checked
+** R
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (remotes)
+
+The downloaded source packages are in
+	‘/tmp/RtmplWOWiH/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst

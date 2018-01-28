@@ -106,6 +106,9 @@ inst/runit_tests/test_tools.R:35:69: style: Trailing whitespace is superfluous.
 inst/runit_tests/test_tools.R:42:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
 notest_cyclocomp <- function() { # somehow fails on install...
                                ^
+inst/runit_tests/test_tools.R:48:40: warning: no visible binding for global variable ‘new’, Did you mean 'news'?
+    writeLines(c("# fakePackge 0.1.1", new), news_file)
+                                       ^~~
 inst/runit_tests/test_tools.R:48:46: warning: no visible binding for global variable ‘news_file’
     writeLines(c("# fakePackge 0.1.1", new), news_file)
                                              ^~~~~~~~~

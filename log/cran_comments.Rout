@@ -4,6 +4,11 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 New submission
 
 Version contains large components (0.7.0.9000)
-displaying logs for fvafrCU/packager#171.1
+
+checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+         user system elapsed
+create 10.012  0.332  10.584
+displaying logs for fvafrCU/packager#172.1
 Warning message:
 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not possible 
