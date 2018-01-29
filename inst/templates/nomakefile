@@ -20,7 +20,7 @@ TEMP_FILE = $(shell tempfile)
 LOG_DIR = log
 
 .PHONY: all
-all: $(LOG_DIR)/install.Rout
+all: cran-comments.md
 
 # devel stuff
 .PHONY: devel
@@ -50,13 +50,13 @@ vignettes: $(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
 	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))'
 
 # install
+cran-comments.md:  $(LOG_DIR)/install.Rout
+	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
+
 .PHONY: install
 install: $(LOG_DIR)/install.Rout
-$(LOG_DIR)/install.Rout: cran-comments.md
+$(LOG_DIR)/install.Rout: $(LOG_DIR)/check.Rout
 	$(R) --vanilla CMD INSTALL  $(PKGNAME)_$(PKGVERS).tar.gz > $(LOG_DIR)/install.Rout 2>&1 
-
-cran-comments.md: $(LOG_DIR)/check.Rout
-	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
 
 .PHONY: check
 check: $(LOG_DIR)/check.Rout
