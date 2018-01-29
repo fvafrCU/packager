@@ -4,13 +4,15 @@
 \alias{create}
 \title{Create a Package Template}
 \usage{
-create(path, force = TRUE, ...)
+create(path, force = TRUE, verbose = FALSE, ...)
 }
 \arguments{
 \item{path}{See \code{\link[devtools:create]{devtools::create}}.}
 
 \item{force}{Recursively \code{\link{unlink}} the path before calling
 \code{\link[devtools:create]{devtools::create}(path)}?}
+
+\item{verbose}{Be verbose?}
 
 \item{...}{Arguments to be passed to \code{\link{infect}}.}
 }

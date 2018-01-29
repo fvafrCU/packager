@@ -363,3 +363,20 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
     return(git2r::commit(repository, message = message))
 
 }
+
+#' Provide File \command{make.R}
+#'
+#'
+#'
+#' @param path Where to create the file.
+#' @param Rbuildignore Add the file to .Rbuildignore under the given
+#' \code{path}?
+#' @return \code{\link[base:invisible]{Invisibly}}
+#' \code{\link[base:logical]{TRUE}} on success, 
+#' \code{\link[base:invisible]{Invisibly}}
+#' \code{\link[base:logical]{FALSE}} otherwise.
+#' @export
+provide_make <- function(path, Rbuildignore = TRUE) {
+    status <- use_template("make.R", pkg = path, ignore = Rbuildignore)
+    return(status)
+}

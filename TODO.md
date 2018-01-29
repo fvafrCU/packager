@@ -1,6 +1,6 @@
 - use fakemake::make in infect with a makelist that's an extension of fakemake's
   "package" list
-- add make.R as template, add function to provide it.
+- run on windows with git unavailable: test for git, win_builder
 - document the options (force)
 - enhance coverage
 - devel the release() function

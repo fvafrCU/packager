@@ -61,7 +61,7 @@ use_template <- function(template, save_as = template, data = list(),
         writeLines(template_out, path)
         if (ignore) {
             message("* Adding `", save_as, "` to `.Rbuildignore`.")
-            devtools::use_build_ignore(save_as, pkg = pkg)
+            use_build_ignore(save_as, pkg = pkg)
         }
         status <- TRUE
     } else {
@@ -80,7 +80,7 @@ use_readme_rmd <- function(path = ".", ...) {
     pkg$Rmd <- TRUE
     use_template("omni-README", save_as = "README.Rmd", data = pkg,
                  ignore = TRUE, pkg = pkg, ...)
-    devtools::use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
+    use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
     if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git",
                                                      "hooks", "pre-commit"))) {
         message("* Adding pre-commit hook")
