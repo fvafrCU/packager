@@ -210,6 +210,7 @@
 851 R/devtools_verbatim.R                  maintainer  378     0
 270          R/internal.R              grep_directory   87     0
 274          R/internal.R              grep_directory   88     0
+667          R/internal.R                  travis_cli  240     0
 242              R/main.R                      infect   78     0
 246              R/main.R                      infect   79     0
 249              R/main.R                      infect   80     0
@@ -283,12 +284,12 @@
 516             R/tools.R       provide_cran_comments  181     0
 774             R/tools.R      add_github_url_to_desc  313     0
 775             R/tools.R      add_github_url_to_desc  314     0
-packager Coverage: 66.63%
+packager Coverage: 66.51%
 R/makelist.R: 0.00%
 R/release.R: 0.00%
 R/devtools_verbatim.R: 48.10%
 R/devtools_modified.R: 54.01%
 R/tools.R: 81.99%
 R/main.R: 86.79%
-R/internal.R: 98.82%
+R/internal.R: 98.24%
 R/throw.R: 100.00%
