@@ -67,7 +67,7 @@ downloaded 212 KB
 * installing *source* package ‘digest’ ...
 ** package ‘digest’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/Rtmpz3VTzr/R.INSTALL1fc475c9b77e/digest/src'
+make[1]: Entering directory '/tmp/RtmpM7KnrP/R.INSTALL2daf20506ea2/digest/src'
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c crc32.c -o crc32.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c digest.c -o digest.o
@@ -80,8 +80,8 @@ gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -f
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha256.c -o sha256.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c xxhash.c -o xxhash.o
 gcc -shared -L/usr/local/lib -o digest.so aes.o crc32.o digest.o init.o md5.o pmurhash.o raes.o sha1.o sha2.o sha256.o xxhash.o
-make[1]: Leaving directory '/tmp/Rtmpz3VTzr/R.INSTALL1fc475c9b77e/digest/src'
-installing to /tmp/RtmpDmEEIt/file1f734a25349/digest/libs
+make[1]: Leaving directory '/tmp/RtmpM7KnrP/R.INSTALL2daf20506ea2/digest/src'
+installing to /tmp/Rtmpp3hzGb/file2d5ee73ac9e/digest/libs
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -94,12 +94,12 @@ installing to /tmp/RtmpDmEEIt/file1f734a25349/digest/libs
 * installing *source* package ‘irlba’ ...
 ** package ‘irlba’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/Rtmp4csBpC/R.INSTALL1ff6dd4894b/irlba/src'
+make[1]: Entering directory '/tmp/RtmpBOzdF4/R.INSTALL2de1593d293/irlba/src'
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c irlb.c -o irlb.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c utility.c -o utility.o
 gcc -shared -L/usr/local/lib -o irlba.so irlb.o utility.o -L/home/nik/svn/R/r-devel/build/lib -lRlapack -L/home/nik/svn/R/r-devel/build/lib -lRblas -lgfortran -lm -lquadmath
-make[1]: Leaving directory '/tmp/Rtmp4csBpC/R.INSTALL1ff6dd4894b/irlba/src'
-installing to /tmp/RtmpDmEEIt/file1f734a25349/irlba/libs
+make[1]: Leaving directory '/tmp/RtmpBOzdF4/R.INSTALL2de1593d293/irlba/src'
+installing to /tmp/Rtmpp3hzGb/file2d5ee73ac9e/irlba/libs
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -122,7 +122,7 @@ installing to /tmp/RtmpDmEEIt/file1f734a25349/irlba/libs
 * installing *source* package ‘rlang’ ...
 ** package ‘rlang’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/RtmpL7aeU8/R.INSTALL20181f6cfb4/rlang/src'
+make[1]: Entering directory '/tmp/Rtmp49jZut/R.INSTALL2e04448b77a8/rlang/src'
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c attrs.c -o attrs.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c capture.c -o capture.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c env.c -o env.o
@@ -139,8 +139,8 @@ gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -f
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unquote.c -o unquote.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c utils.c -o utils.o
 gcc -shared -L/usr/local/lib -o rlang.so attrs.o capture.o env.o eval.o export.o formula.o init.o lang.o pairlist.o replace-na.o sexp.o splice.o symbol.o unquote.o utils.o
-make[1]: Leaving directory '/tmp/RtmpL7aeU8/R.INSTALL20181f6cfb4/rlang/src'
-installing to /tmp/RtmpDmEEIt/file1f734a25349/rlang/libs
+make[1]: Leaving directory '/tmp/Rtmp49jZut/R.INSTALL2e04448b77a8/rlang/src'
+installing to /tmp/Rtmpp3hzGb/file2d5ee73ac9e/rlang/libs
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -153,15 +153,15 @@ installing to /tmp/RtmpDmEEIt/file1f734a25349/rlang/libs
 * installing *source* package ‘testthat’ ...
 ** package ‘testthat’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/Rtmpp6BG4o/R.INSTALL205727a7f347/testthat/src'
+make[1]: Entering directory '/tmp/RtmpnanhAK/R.INSTALL2e427af0aec6/testthat/src'
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I../inst/include -DCOMPILING_TESTTHAT  -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
 gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I../inst/include -DCOMPILING_TESTTHAT  -I/usr/local/include   -fpic  -g -O2  -c reassign.c -o reassign.o
 g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I../inst/include -DCOMPILING_TESTTHAT  -I/usr/local/include   -fpic  -g -O2  -c test-catch.cpp -o test-catch.o
 g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I../inst/include -DCOMPILING_TESTTHAT  -I/usr/local/include   -fpic  -g -O2  -c test-example.cpp -o test-example.o
 g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG -I../inst/include -DCOMPILING_TESTTHAT  -I/usr/local/include   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
 g++ -shared -L/usr/local/lib -o testthat.so init.o reassign.o test-catch.o test-example.o test-runner.o
-make[1]: Leaving directory '/tmp/Rtmpp6BG4o/R.INSTALL205727a7f347/testthat/src'
-installing to /tmp/RtmpDmEEIt/file1f734a25349/testthat/libs
+make[1]: Leaving directory '/tmp/RtmpnanhAK/R.INSTALL2e427af0aec6/testthat/src'
+installing to /tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/libs
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -175,24 +175,24 @@ installing to /tmp/RtmpDmEEIt/file1f734a25349/testthat/libs
 * installing *source* package ‘callr’ ...
 ** package ‘callr’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/RtmpK3BlVq/R.INSTALL207721baeb3f/callr/src'
+make[1]: Entering directory '/tmp/Rtmp5JS0WB/R.INSTALL2e6573cc64fd/callr/src'
 gcc -g -O2  -Wall tools/px.c -o tools/px
 gcc -g -O2  supervisor/supervisor.c supervisor/utils.c -o supervisor/supervisor
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c poll.c -o poll.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-connection.c -o callr-connection.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-vector.c -o callr-vector.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/childlist.c -o unix/childlist.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/connection.c -o unix/connection.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/callr.c -o unix/callr.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/utils.c -o unix/utils.o
-gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
-g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-connections.cpp -o test-connections.o
-g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/RtmpDmEEIt/file1f734a25349/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c poll.c -o poll.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-connection.c -o callr-connection.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-vector.c -o callr-vector.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/childlist.c -o unix/childlist.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/connection.c -o unix/connection.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/callr.c -o unix/callr.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/utils.c -o unix/utils.o
+gcc -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
+g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-connections.cpp -o test-connections.o
+g++  -I/home/nik/svn/R/r-devel/build/include -DNDEBUG  -I"/tmp/Rtmpp3hzGb/file2d5ee73ac9e/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
 g++ -shared -L/usr/local/lib -o callr.so init.o poll.o callr-connection.o callr-vector.o unix/childlist.o unix/connection.o unix/callr.o unix/sigchld.o unix/utils.o unix/named_pipe.o test-connections.o test-runner.o
-make[1]: Leaving directory '/tmp/RtmpK3BlVq/R.INSTALL207721baeb3f/callr/src'
-installing via 'install.libs.R' to /tmp/RtmpDmEEIt/file1f734a25349/callr
+make[1]: Leaving directory '/tmp/Rtmp5JS0WB/R.INSTALL2e6573cc64fd/callr/src'
+installing via 'install.libs.R' to /tmp/Rtmpp3hzGb/file2d5ee73ac9e/callr
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -214,7 +214,7 @@ installing via 'install.libs.R' to /tmp/RtmpDmEEIt/file1f734a25349/callr
 * DONE (fakemake)
 
 The downloaded source packages are in
-	‘/tmp/RtmpDmEEIt/downloaded_packages’
+	‘/tmp/Rtmpp3hzGb/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst

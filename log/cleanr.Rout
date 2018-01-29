@@ -10,5 +10,5 @@ R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 86 counts 83 
 /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R  suggests_dep  line 2: found width 81 max_line_width was 80
 /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
 R/   /home/nik/git/cs/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
-R/   /home/nik/git/cs/fvafrcu/packager/R/tools.R: 365 lines in file.
+R/   /home/nik/git/cs/fvafrcu/packager/R/tools.R: 382 lines in file.
  /home/nik/git/cs/fvafrcu/packager/R/tools.R  provide_cran_comments  found 58 lines of code, max_lines_of_code was 50>
