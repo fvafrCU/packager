@@ -29,7 +29,7 @@ create <- function(path, force = TRUE, verbose = FALSE, ...) {
     if (inherits(repo_config, "error")) {
         user_name <- "foobar"
         user_email <- "foobar@nowhe.re"
-        if(isTRUE(verbose)) message("Could not find user and email for git. ",
+        if (isTRUE(verbose)) message("Could not find user and email for git. ",
                                     "Setting local git config user.name to ",
                                     user_name, " and user.email to ",
                                     user_email, ". Change as apropriate.")
