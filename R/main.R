@@ -6,6 +6,7 @@
 #'
 #'
 #' @param path See \code{\link[devtools:create]{devtools::create}}.
+#' @param verbose Be verbose?
 #' @param force Recursively \code{\link{unlink}} the path before calling
 #' \code{\link[devtools:create]{devtools::create}(path)}?
 #' @param ... Arguments to be passed to \code{\link{infect}}.
@@ -18,12 +19,22 @@
 #' packager::create(path = path)
 #' list.files(path)
 #' unlink(path, recursive = TRUE)
-create <- function(path, force = TRUE, ...) {
+create <- function(path, force = TRUE, verbose = FALSE, ...) {
     if (isTRUE(force)) unlink(path, recursive = TRUE)
     devtools::create(path = path, rstudio = FALSE, check = FALSE)
     r <- git2r::init(path = path)
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
+    repo_config <- tryCatch(git2r::default_signature(r), error = identity)
+    if (inherits(repo_config, "error")) {
+        user_name <- "foobar"
+        user_email <- "foobar@nowhe.re"
+        if(isTRUE(verbose)) message("Could not find user and email for git. ",
+                                    "Setting local git config user.name to ",
+                                    user_name, " and user.email to ",
+                                    user_email, ". Change as apropriate.")
+        git2r::config(r, user.name = user_name, user.email = user_email)
+    }
     git2r::commit(r, "Initial Commit")
     infect(path = path, ...)
     return(invisible(NULL))

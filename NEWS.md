@@ -1,5 +1,8 @@
 # packager 0.7.0.9000
 
+* Added exception handling if reading the git config throws an error by
+  conditionally setting a local git config.
+* Added option `verbose` to create().
 * Sanitized the return value of git\_sync\_status().
 * Linted the codes heavily.
 * Added an inclusion pattern to check\_codetags() and set reasonable defaults

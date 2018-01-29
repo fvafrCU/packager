@@ -52,6 +52,6 @@ The following objects are masked from ‘package:git2r’:
     config, content
 
 Loading required package: fakemake
-Writing provide_make.Rd
+Writing create.Rd
 > 
 > 
