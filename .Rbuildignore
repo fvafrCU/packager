@@ -11,3 +11,5 @@
 ^.*\.tar\.gz$
 ^packager\.Rcheck$
 ^\.log\.Rout$
+^make.R$
+
