@@ -4,7 +4,8 @@
 \alias{create}
 \title{Create a Package Template}
 \usage{
-create(path, force = TRUE, verbose = FALSE, ...)
+create(path, force = TRUE,
+  verbose = isTRUE(getOption("packager")[["verbose"]]), ...)
 }
 \arguments{
 \item{path}{See \code{\link[devtools:create]{devtools::create}}.}

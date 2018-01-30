@@ -1,5 +1,6 @@
-# packager 0.7.0.9000
+# packager 0.8.0
 
+* Add a failsafe version of git2r::commit called git\_commit().
 * Added exception handling if reading the git config throws an error by
   conditionally setting a local git config.
 * Added option `verbose` to create().
