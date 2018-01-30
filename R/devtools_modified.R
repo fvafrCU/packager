@@ -139,7 +139,7 @@ use_git <- function(path = ".", message = "Initial commit") {
     message("* Adding files and committing")
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
-    git2r::commit(r, message)
+    git_commit(r, message)
     invisible(TRUE)
 }
 

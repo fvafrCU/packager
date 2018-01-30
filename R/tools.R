@@ -355,12 +355,13 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
     # TODO: I get strange results for repositories created with devtools,
     # unstaged files disappear when passing 'untracked' = TRUE to
     # git2r::status().
-    git_status <- git2r::status(repository)
+    git_status <- git2r::status(repository, ...)
     files <- unlist(git_status[["unstaged"]])
     if (isTRUE(untracked)) files <- c(files, unlist(git_status[["untracked"]]))
     tryCatch(git2r::add(repository, files),
              error = function(e) warning("Nothing added."))
-    return(git2r::commit(repository, message = message))
+    res <- git_commit(repository = repository, commit_message = message)
+    return(res)
 
 }
 

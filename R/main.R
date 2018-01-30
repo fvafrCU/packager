@@ -19,23 +19,14 @@
 #' packager::create(path = path)
 #' list.files(path)
 #' unlink(path, recursive = TRUE)
-create <- function(path, force = TRUE, verbose = FALSE, ...) {
+create <- function(path, force = TRUE, 
+                   verbose = isTRUE(getOption("packager")[["verbose"]]), ...) {
     if (isTRUE(force)) unlink(path, recursive = TRUE)
     devtools::create(path = path, rstudio = FALSE, check = FALSE)
     r <- git2r::init(path = path)
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
-    repo_config <- tryCatch(git2r::default_signature(r), error = identity)
-    if (inherits(repo_config, "error")) {
-        user_name <- "foobar"
-        user_email <- "foobar@nowhe.re"
-        if (isTRUE(verbose)) message("Could not find user and email for git. ",
-                                    "Setting local git config user.name to ",
-                                    user_name, " and user.email to ",
-                                    user_email, ". Change as apropriate.")
-        git2r::config(r, user.name = user_name, user.email = user_email)
-    }
-    git2r::commit(r, "Initial Commit")
+    git_commit(r, "Initial Commit")
     infect(path = path, ...)
     return(invisible(NULL))
 }
@@ -101,7 +92,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     paths <- unlist(git2r::status(r))
     if (isTRUE(git_add_and_commit)) {
             git2r::add(r, paths)
-            git2r::commit(r, "Packager Changes")
+            git_commit(r, "Packager Changes")
     }
     return(invisible(NULL))
 }

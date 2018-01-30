@@ -268,3 +268,15 @@ R/devtools_verbatim.R:300:1: style: lines should not be more than 80 characters.
 R/devtools_verbatim.R:380:1: style: Trailing blank lines are superfluous.
 
 ^
+R/git.R:3:66: style: Trailing whitespace is superfluous.
+    repo_config <- tryCatch(git2r::default_signature(repository), 
+                                                                 ^
+R/git.R:12:35: style: Trailing whitespace is superfluous.
+        git2r::config(repo_config, 
+                                  ^
+R/git.R:18:1: style: Trailing blank lines are superfluous.
+
+^
+R/main.R:22:39: style: Trailing whitespace is superfluous.
+create <- function(path, force = TRUE, 
+                                      ^
