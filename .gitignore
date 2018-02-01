@@ -5,3 +5,4 @@
 log/*.png
 *.tar.gz
 packager.Rcheck
+.Rprofile
