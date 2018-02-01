@@ -51,7 +51,7 @@ vignettes: $(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
 
 .PHONY: release
 release: 
-	echo "packager::release(force = FALSE)" > /tmp/rel.R
+	echo "try(packager::release(force = FALSE)); quit(save = \"no\")" > /tmp/rel.R
 	echo "source('/tmp/rel.R')" > ./.Rprofile
 	$(R_release)
 	rm /tmp/rel.R ./.Rprofile
