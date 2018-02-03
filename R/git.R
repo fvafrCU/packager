@@ -9,7 +9,7 @@ git_commit <- function(repository, commit_message,
                                      "Setting local git config user.name to ",
                                      user_name, " and user.email to ",
                                      user_email, ". Change as apropriate.")
-        git2r::config(repo_config, 
+        git2r::config(repository, 
                       user.name = user_name, user.email = user_email)
     }
     res <- git2r::commit(repository, commit_message)
