@@ -126,7 +126,8 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' readLines(package_desc)
 #' readLines(package_info_file)
 #' unlink(path, recursive = TRUE)
-set_package_info <- function(path, author_at_r = NULL,
+set_package_info <- function(path, 
+                             author_at_r = getOption("packager")[["whoami"]],
                              title = "What it Does (One Line, Title Case)",
                              description = NULL, details = NA, ...) {
     r1 <- update_description(path = path, title = tools::toTitleCase(title),
