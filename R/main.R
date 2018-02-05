@@ -30,7 +30,7 @@ create <- function(path, force = TRUE,
     unpatch_r_version(path = path)
     desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
                            normalize = FALSE)
-    git_commit(r, "Clean DESCRIPTION")
+    git_add_commit(path, "Clean DESCRIPTION")
     infect(path = path, ...)
     return(invisible(NULL))
 }
