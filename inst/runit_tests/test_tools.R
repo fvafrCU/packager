@@ -61,26 +61,27 @@ test_news <- function() {
     result <- packager::check_news(path)
     RUnit::checkTrue(result)
 
+    # unmachted devel version
+    devtools::use_dev_version(path)
+    RUnit::checkException(packager::check_news(path))
+
     # Bump version
     desc::desc_bump_version(path, which = "minor")
 
-    # unmachted devel version
-    RUnit::checkException(packager::check_news(path))
 
-    # add machting version, keep devel versoin
+    # add machting version, keep devel version
     news_file <- file.path(path, "NEWS.md")
-
     old <- readLines(news_file)
-    new <- "# fakePackge 0.1.0"
+    new <- "# fakePackge 0.2.0"
     writeLines(c(new, old), news_file)
-    RUnit::checkException(packager::check_news(path))
+    RUnit::checkTrue(packager::check_news(path))
 
     # remove devel version
     writeLines(new, news_file)
     RUnit::checkTrue(packager::check_news(path))
 
     # actual version not covered in NEWS.md
-    writeLines(c("# fakePackge 0.1.1"), news_file)
+    writeLines(c("# fakePackge 0.2.1"), news_file)
     RUnit::checkException(packager::check_news(path))
 }
 

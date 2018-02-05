@@ -27,6 +27,10 @@ create <- function(path, force = TRUE,
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
     git_commit(r, "Initial Commit")
+    unpatch_r_version(path = path)
+    desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
+                           normalize = FALSE)
+    git_add_commit(path, "Clean DESCRIPTION")
     infect(path = path, ...)
     return(invisible(NULL))
 }
@@ -68,7 +72,6 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
                                     ".Rcheck"), path = path)
     use_makefile(path = path)
     set_package_info(path = path, ...)
-    use_devel(path = path)
     remove_Rproj(path = path)
     use_devtools(path = path)
     use_travis(path = path)
@@ -126,7 +129,8 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' readLines(package_desc)
 #' readLines(package_info_file)
 #' unlink(path, recursive = TRUE)
-set_package_info <- function(path, author_at_r = NULL,
+set_package_info <- function(path, 
+                             author_at_r = getOption("packager")[["whoami"]],
                              title = "What it Does (One Line, Title Case)",
                              description = NULL, details = NA, ...) {
     r1 <- update_description(path = path, title = tools::toTitleCase(title),
