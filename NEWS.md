@@ -1,5 +1,7 @@
 # packager 0.8.0
 
+* Set the argument author\_at\_r for function set\_package\_info to default to 
+  option packager/whoami.
 * Add a failsafe version of git2r::commit called git\_commit().
 * Added exception handling if reading the git config throws an error by
   conditionally setting a local git config.
