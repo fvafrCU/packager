@@ -20,3 +20,5 @@ packager::check_codetags()
 ml <- packager::provide_make_list()
 fakemake::visualize(ml)
 
+
+packager::create("../cuwintest")

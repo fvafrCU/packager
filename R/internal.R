@@ -71,10 +71,27 @@ update_description <- function(path = ".",
                                      email = email, role = c("aut", "cre"))
     }
     d <- desc::desc(path)
+    if (! is.null(title))
+        d$set(Title = title)
     if (! is.null(description))
-        d$set(Title = title, Description = description)
+        d$set(Description = description)
     d$set_authors(author_at_r)
     d$write()
+    return(invisible(NULL))
+}
+
+unpatch_r_version <- function(path = ".") {
+    deps <- desc::desc_get_deps(path)
+    Rdep <- deps[deps[["package"]] == "R", "version"]
+    match <- regexpr("[0-9]*\\.[0-9]*\\.[0-9]*", Rdep)
+    start <- as.numeric(match)
+    stop <- start + attr(match, "match.length") - 1 
+    r_version <- as.package_version(substring(Rdep, start, stop))
+    numeric_version <- unlist(r_version[[1]])
+    numeric_version[3] <- 0
+    substr(Rdep, start, stop) <- paste(numeric_version, collapse = ".")
+    deps[deps[["package"]] == "R", "version"] <- Rdep
+    desc::desc_set_deps(deps, file = path, normalize = TRUE)
     return(invisible(NULL))
 }
 

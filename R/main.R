@@ -27,6 +27,10 @@ create <- function(path, force = TRUE,
     paths <- unlist(git2r::status(r))
     git2r::add(r, paths)
     git_commit(r, "Initial Commit")
+    unpatch_r_version(path = path)
+    desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
+                           normalize = FALSE)
+    git_commit(r, "Clean DESCRIPTION")
     infect(path = path, ...)
     return(invisible(NULL))
 }
@@ -68,7 +72,6 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
                                     ".Rcheck"), path = path)
     use_makefile(path = path)
     set_package_info(path = path, ...)
-    use_devel(path = path)
     remove_Rproj(path = path)
     use_devtools(path = path)
     use_travis(path = path)

@@ -1,5 +1,8 @@
 # packager 0.8.0
 
+* Setting inital package version to '0.1.0'.
+* Using the minor R version in DESCRIPTION (not the patched one).
+* Fixed setting a package's title if no description is given.
 * Set the argument author\_at\_r for function set\_package\_info to default to 
   option packager/whoami.
 * Add a failsafe version of git2r::commit called git\_commit().

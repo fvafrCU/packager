@@ -27,7 +27,7 @@ downloaded 40 KB
 * installing *source* package ‘callr’ ...
 ** package ‘callr’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/RtmplBraDs/R.INSTALL191b59e72cc9/callr/src'
+make[1]: Entering directory '/tmp/RtmpLksf27/R.INSTALL284617d701dd/callr/src'
 gcc -g -O2  -Wall tools/px.c -o tools/px
 gcc -g -O2  supervisor/supervisor.c supervisor/utils.c \
       -o supervisor/supervisor
@@ -44,8 +44,8 @@ gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-dev
 g++  -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-connections.cpp -o test-connections.o
 g++  -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
 g++ -shared -L/usr/local/lib -o callr.so init.o poll.o callr-connection.o callr-vector.o unix/childlist.o unix/connection.o unix/callr.o unix/sigchld.o unix/utils.o unix/named_pipe.o test-connections.o test-runner.o
-make[1]: Leaving directory '/tmp/RtmplBraDs/R.INSTALL191b59e72cc9/callr/src'
-installing via 'install.libs.R' to /tmp/RtmpRg9mUg/file18df30243ac6/callr
+make[1]: Leaving directory '/tmp/RtmpLksf27/R.INSTALL284617d701dd/callr/src'
+installing via 'install.libs.R' to /tmp/RtmpJ9Lb2d/file280a6043473c/callr
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
@@ -57,12 +57,12 @@ installing via 'install.libs.R' to /tmp/RtmpRg9mUg/file18df30243ac6/callr
 * installing *source* package ‘irlba’ ...
 ** package ‘irlba’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/RtmpWDKRdi/R.INSTALL195c77d029af/irlba/src'
+make[1]: Entering directory '/tmp/RtmpynyEkj/R.INSTALL28877a18e346/irlba/src'
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c irlb.c -o irlb.o
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c utility.c -o utility.o
 gcc -shared -L/usr/local/lib -o irlba.so irlb.o utility.o -L/home/nik/svn/R/r-devel/build/lib -lRlapack -L/home/nik/svn/R/r-devel/build/lib -lRblas -lgfortran -lm -lquadmath
-make[1]: Leaving directory '/tmp/RtmpWDKRdi/R.INSTALL195c77d029af/irlba/src'
-installing to /tmp/RtmpRg9mUg/file18df30243ac6/irlba/libs
+make[1]: Leaving directory '/tmp/RtmpynyEkj/R.INSTALL28877a18e346/irlba/src'
+installing to /tmp/RtmpJ9Lb2d/file280a6043473c/irlba/libs
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
@@ -78,7 +78,7 @@ Found pkg-config cflags and libs!
 Using PKG_CFLAGS=
 Using PKG_LIBS=-l:libssl.so.1.1 -l:libcrypto.so.1.1
 ** libs
-make[1]: Entering directory '/tmp/RtmpX9omXs/R.INSTALL197312bbf24d/openssl/src'
+make[1]: Entering directory '/tmp/Rtmp84Gr5w/R.INSTALL289f4f05243c/openssl/src'
 rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o openssl.so
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
@@ -105,8 +105,8 @@ gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
 gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
 gcc -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.1 -l:libcrypto.so.1.1
-make[1]: Leaving directory '/tmp/RtmpX9omXs/R.INSTALL197312bbf24d/openssl/src'
-installing to /tmp/RtmpRg9mUg/file18df30243ac6/openssl/libs
+make[1]: Leaving directory '/tmp/Rtmp84Gr5w/R.INSTALL289f4f05243c/openssl/src'
+installing to /tmp/RtmpJ9Lb2d/file280a6043473c/openssl/libs
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
@@ -139,7 +139,7 @@ installing to /tmp/RtmpRg9mUg/file18df30243ac6/openssl/libs
 * DONE (fakemake)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRg9mUg/downloaded_packages’
+	‘/tmp/RtmpJ9Lb2d/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
