@@ -100,9 +100,6 @@ inst/runit_tests/test_tools.R:35:69: style: Trailing whitespace is superfluous.
 inst/runit_tests/test_tools.R:42:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
 notest_cyclocomp <- function() { # somehow fails on install...
                                ^
-inst/runit_tests/test_tools.R:48:40: warning: no visible binding for global variable ‘new’, Did you mean 'news'?
-    writeLines(c("# fakePackge 0.1.1", new), news_file)
-                                       ^~~
 inst/runit_tests/test_tools.R:48:46: warning: no visible binding for global variable ‘news_file’
     writeLines(c("# fakePackge 0.1.1", new), news_file)
                                              ^~~~~~~~~
@@ -271,12 +268,15 @@ R/devtools_verbatim.R:380:1: style: Trailing blank lines are superfluous.
 R/git.R:3:66: style: Trailing whitespace is superfluous.
     repo_config <- tryCatch(git2r::default_signature(repository), 
                                                                  ^
-R/git.R:12:35: style: Trailing whitespace is superfluous.
-        git2r::config(repo_config, 
-                                  ^
+R/git.R:12:34: style: Trailing whitespace is superfluous.
+        git2r::config(repository, 
+                                 ^
 R/git.R:18:1: style: Trailing blank lines are superfluous.
 
 ^
 R/main.R:22:39: style: Trailing whitespace is superfluous.
 create <- function(path, force = TRUE, 
                                       ^
+R/main.R:129:35: style: Trailing whitespace is superfluous.
+set_package_info <- function(path, 
+                                  ^

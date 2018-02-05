@@ -103,8 +103,8 @@
 260 R/devtools_verbatim.R           check_dep_version   80     0
 352 R/devtools_verbatim.R                  parse_deps  113     0
 355 R/devtools_verbatim.R                  parse_deps  114     0
-385 R/devtools_verbatim.R                suggests_dep  132     0
-411 R/devtools_verbatim.R               can_overwrite  139     0
+384 R/devtools_verbatim.R                suggests_dep  132     0
+410 R/devtools_verbatim.R               can_overwrite  139     0
 418 R/devtools_verbatim.R               can_overwrite  141     0
 422 R/devtools_verbatim.R               can_overwrite  142     0
 426 R/devtools_verbatim.R               can_overwrite  143     0

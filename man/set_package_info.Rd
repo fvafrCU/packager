@@ -4,7 +4,7 @@
 \alias{set_package_info}
 \title{Set a Package's Info}
 \usage{
-set_package_info(path, author_at_r = NULL,
+set_package_info(path, author_at_r = getOption("packager")[["whoami"]],
   title = "What it Does (One Line, Title Case)", description = NULL,
   details = NA, ...)
 }

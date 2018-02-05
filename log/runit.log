@@ -1,4 +1,4 @@
-RUNIT TEST PROTOCOL -- Tue Jan 30 13:58:21 2018 
+RUNIT TEST PROTOCOL -- Mon Feb  5 08:22:05 2018 
 *********************************************** 
 Number of test functions: 17 
 Number of errors: 0 
@@ -16,29 +16,29 @@ Test Suite: packager_unit_test
 Test function regexp: ^test_+ 
 Test file regexp: ^test.*\.[rR] 
 Involved directory: 
-/home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests 
+/home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests 
 --------------------------- 
-Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_devtools_modified.R 
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_devtools_modified.R 
 test_union_write: (2 checks) ... OK (0 seconds)
-test_use_git: (2 checks) ... OK (0.12 seconds)
+test_use_git: (2 checks) ... OK (0.09 seconds)
 test_use_git_ignore: (2 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_internal.R 
-test_get_news: (1 checks) ... OK (0.52 seconds)
-test_git: (5 checks) ... OK (0.07 seconds)
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_internal.R 
+test_get_news: (1 checks) ... OK (0.38 seconds)
+test_git: (5 checks) ... OK (0.06 seconds)
 test_grep_directory: (1 checks) ... OK (0 seconds)
 test_is_force: (1 checks) ... OK (0 seconds)
 test_is_null_or_true: (3 checks) ... OK (0 seconds)
-test_travis: (1 checks) ... OK (1.9 seconds)
+test_travis: (1 checks) ... OK (0.34 seconds)
 test_url: (8 checks) ... OK (0.01 seconds)
 test_warn_and_stop: (1 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_throw.R 
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_throw.R 
 test_exception: (1 checks) ... OK (0 seconds)
 --------------------------- 
-Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_tools.R 
+Test file: /home/nik/git/cs/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_tools.R 
 test_add_commit: (3 checks) ... OK (0.01 seconds)
-test_cran_comments: (1 checks) ... OK (0.09 seconds)
-test_git_tag: (7 checks) ... OK (0.21 seconds)
-test_githuburl: (4 checks) ... OK (1.2 seconds)
-test_news: (5 checks) ... OK (1.08 seconds)
+test_cran_comments: (1 checks) ... OK (0.07 seconds)
+test_git_tag: (7 checks) ... OK (0.14 seconds)
+test_githuburl: (5 checks) ... OK (0.44 seconds)
+test_news: (5 checks) ... OK (0.73 seconds)
