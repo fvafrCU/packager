@@ -55,7 +55,10 @@ inst/runit_tests/test_internal.R:120:81: style: Trailing whitespace is superfluo
 inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-inst/runit_tests/test_internal.R:137:1: style: Trailing blank lines are superfluous.
+inst/runit_tests/test_internal.R:135:11: style: Commented code should be removed.
+        # RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/runit_tests/test_internal.R:138:1: style: Trailing blank lines are superfluous.
 
 ^
 inst/runit_tests/test_tools.R:7:61: style: Trailing whitespace is superfluous.

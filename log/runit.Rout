@@ -5,14 +5,14 @@ Executing test function test_union_write  ...  done successfully.
 
 
 Executing test function test_use_git  ... * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpWFTlI0/fakePackge/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpyXsj2K/fakePackge/.gitignore
 * Adding files and committing
 * Git is already initialized
  done successfully.
 
 
 
-Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpWFTlI0/fakePackge/.gitignore
+Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpyXsj2K/fakePackge/.gitignore
  done successfully.
 
 
@@ -25,7 +25,7 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 
 Executing test function test_git  ... Error in .local(path, ...) : The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpWFTlI0/file1f9e7c7557f6/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpyXsj2K/file5e871871aded/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -43,18 +43,20 @@ Executing test function test_is_null_or_true  ...  done successfully.
 
 
 
-Executing test function test_travis  ... displaying logs for fvafrCU/packager#187.1
-undefined method `receive' for nil:NilClass
+Executing test function test_travis  ... displaying logs for fvafrCU/packager#188.1
+undefined method `each_pair' for #<String:0x000000016a9f40>
+Error in (k + 1):(k + 3) : argument of length 0
+In addition: Warning message:
+In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
+  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
  done successfully.
 
 
 
 Executing test function test_url  ... Error in packager:::get_github_url(url, return_only_one = TRUE, force = FALSE) : 
   Found multiple github URL.
-In addition: Warning messages:
-1: In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
-2: In packager:::get_github_url(url, return_only_one = TRUE) :
+In addition: Warning message:
+In packager:::get_github_url(url, return_only_one = TRUE) :
   Found multiple github URL, using the first.
  done successfully.
 
@@ -83,7 +85,7 @@ Executing test function test_cran_comments  ...  done successfully.
 
 
 
-Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpWFTlI0'
+Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpyXsj2K'
 No DESCRIPTION found. Creating with values:
 
 
@@ -98,7 +100,7 @@ Encoding: UTF-8
 LazyData: true
 * Creating `fake.Rproj` from template.
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
-Creating package 'fake' in '/tmp/RtmpWFTlI0'
+Creating package 'fake' in '/tmp/RtmpyXsj2K'
 No DESCRIPTION found. Creating with values:
 
 
@@ -117,7 +119,7 @@ LazyData: true
 
 
 
-Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpWFTlI0'
+Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpyXsj2K'
 No DESCRIPTION found. Creating with values:
 
 
@@ -134,7 +136,7 @@ LazyData: true
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
 Not a git repository.Error in warn_and_stop("Not a git repository.") : Not a git repository.
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpWFTlI0/fake/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpyXsj2K/fake/.gitignore
 * Adding files and committing
 Package version bumped from ‘0.0.0.9000’ to ‘0.1.0’
 Uncommited changes, aborting.Error in warn_and_stop("Uncommited changes, aborting.") : 
@@ -145,7 +147,7 @@ File DESCRIPTION has version 0.0.3, but I found 0.1.0 in the git repository's ta
 
 
 
-Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpWFTlI0'
+Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpyXsj2K'
 No DESCRIPTION found. Creating with values:
 
 
@@ -158,9 +160,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmpWFTlI0/fakePackge/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmpWFTlI0/fakePackge/.gitignore
-* Adding `fakePackge.Rcheck` to /tmp/RtmpWFTlI0/fakePackge/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpyXsj2K/fakePackge/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpyXsj2K/fakePackge/.gitignore
+* Adding `fakePackge.Rcheck` to /tmp/RtmpyXsj2K/fakePackge/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -182,7 +184,7 @@ LazyData: true
 * Adding `make.R` to `.Rbuildignore`.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmpWFTlI0/fakePackge/DESCRIPTION
+Updating roxygen version in /tmp/RtmpyXsj2K/fakePackge/DESCRIPTION
 Writing NAMESPACE
 Writing fakePackge-package.Rd
 Writing throw.Rd

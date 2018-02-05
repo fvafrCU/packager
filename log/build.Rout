@@ -1,4 +1,0 @@
-'/usr/lib/R/bin/R' --no-site-file --no-environ --no-save --no-restore --quiet  \
-  CMD build '/home/nik/git/cs/fvafrcu/packager' --no-resave-data --no-manual 
-
-[1] "./packager_0.6.0.9000.tar.gz"

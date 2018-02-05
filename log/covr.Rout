@@ -222,6 +222,7 @@
 560          R/internal.R                   use_devel  187     0
 563          R/internal.R                   use_devel  188     0
 566          R/internal.R                   use_devel  189     0
+736          R/internal.R                  travis_cli  257     0
 273              R/main.R                      infect   84     0
 276              R/main.R                      infect   85     0
 279              R/main.R                      infect   86     0
@@ -311,7 +312,7 @@
 829             R/tools.R      add_github_url_to_desc  328     0
 831             R/tools.R      add_github_url_to_desc  329     0
 833             R/tools.R      add_github_url_to_desc  330     0
-packager Coverage: 64.79%
+packager Coverage: 64.67%
 R/makelist.R: 0.00%
 R/release.R: 0.00%
 R/git.R: 42.86%
@@ -319,5 +320,5 @@ R/devtools_verbatim.R: 48.10%
 R/devtools_modified.R: 54.01%
 R/tools.R: 72.56%
 R/main.R: 87.72%
-R/internal.R: 96.74%
+R/internal.R: 96.20%
 R/throw.R: 100.00%

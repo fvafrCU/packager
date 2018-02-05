@@ -10,7 +10,7 @@ Found pkg-config cflags and libs!
 Using PKG_CFLAGS=
 Using PKG_LIBS=-l:libssl.so.1.0.0 -l:libcrypto.so.1.0.0 
 ** libs
-make[1]: Entering directory '/tmp/Rtmpxc2pxR/R.INSTALL230667760c68/openssl/src'
+make[1]: Entering directory '/tmp/RtmpnhS1oi/R.INSTALL60c01a1f70d/openssl/src'
 rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o openssl.so
 gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
 gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
@@ -37,8 +37,8 @@ gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/loca
 gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
 gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
 gcc -std=gnu99 -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.0.0 -l:libcrypto.so.1.0.0
-make[1]: Leaving directory '/tmp/Rtmpxc2pxR/R.INSTALL230667760c68/openssl/src'
-installing to /tmp/RtmpdjhA2c/file22a46299c400/openssl/libs
+make[1]: Leaving directory '/tmp/RtmpnhS1oi/R.INSTALL60c01a1f70d/openssl/src'
+installing to /tmp/RtmptRfopf/file606877ae1d2a/openssl/libs
 ** R
 ** inst
 ** preparing package for lazy loading
@@ -50,7 +50,7 @@ installing to /tmp/RtmpdjhA2c/file22a46299c400/openssl/libs
 * DONE (openssl)
 
 The downloaded source packages are in
-	‘/tmp/RtmpdjhA2c/downloaded_packages’
+	‘/tmp/RtmptRfopf/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
