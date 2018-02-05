@@ -1,149 +1,60 @@
-Installing 5 packages: callr, fakemake, irlba, openssl, remotes
-trying URL 'http://cloud.r-project.org/src/contrib/callr_2.0.1.tar.gz'
-Content type 'application/x-gzip' length 94884 bytes (92 KB)
-==================================================
-downloaded 92 KB
-
-trying URL 'http://cloud.r-project.org/src/contrib/fakemake_1.1.0.tar.gz'
-Content type 'application/x-gzip' length 295135 bytes (288 KB)
-==================================================
-downloaded 288 KB
-
-trying URL 'http://cloud.r-project.org/src/contrib/irlba_2.3.2.tar.gz'
-Content type 'application/x-gzip' length 234721 bytes (229 KB)
-==================================================
-downloaded 229 KB
-
+Installing 1 packages: openssl
 trying URL 'http://cloud.r-project.org/src/contrib/openssl_1.0.tar.gz'
 Content type 'application/x-gzip' length 1195363 bytes (1.1 MB)
 ==================================================
 downloaded 1.1 MB
 
-trying URL 'http://cloud.r-project.org/src/contrib/remotes_1.1.1.tar.gz'
-Content type 'application/x-gzip' length 41629 bytes (40 KB)
-==================================================
-downloaded 40 KB
-
-* installing *source* package ‘callr’ ...
-** package ‘callr’ successfully unpacked and MD5 sums checked
-** libs
-make[1]: Entering directory '/tmp/RtmpIZh58p/R.INSTALL49776733be2c/callr/src'
-gcc -g -O2  -Wall tools/px.c -o tools/px
-gcc -g -O2  supervisor/supervisor.c supervisor/utils.c \
-      -o supervisor/supervisor
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c poll.c -o poll.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-connection.c -o callr-connection.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c callr-vector.c -o callr-vector.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/childlist.c -o unix/childlist.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/connection.c -o unix/connection.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/callr.c -o unix/callr.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/utils.c -o unix/utils.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
-g++  -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-connections.cpp -o test-connections.o
-g++  -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/testthat/include" -I/usr/local/include   -fpic  -g -O2  -c test-runner.cpp -o test-runner.o
-g++ -shared -L/usr/local/lib -o callr.so init.o poll.o callr-connection.o callr-vector.o unix/childlist.o unix/connection.o unix/callr.o unix/sigchld.o unix/utils.o unix/named_pipe.o test-connections.o test-runner.o
-make[1]: Leaving directory '/tmp/RtmpIZh58p/R.INSTALL49776733be2c/callr/src'
-installing via 'install.libs.R' to /tmp/RtmphYYxLk/file493b41bdfefe/callr
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded
-* DONE (callr)
-* installing *source* package ‘irlba’ ...
-** package ‘irlba’ successfully unpacked and MD5 sums checked
-** libs
-make[1]: Entering directory '/tmp/RtmpkqZx1i/R.INSTALL49b82bfa54ec/irlba/src'
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c irlb.c -o irlb.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG  -I"/home/nik/svn/R/r-devel/build/library/Matrix/include" -I/usr/local/include   -fpic  -g -O2  -c utility.c -o utility.o
-gcc -shared -L/usr/local/lib -o irlba.so irlb.o utility.o -L/home/nik/svn/R/r-devel/build/lib -lRlapack -L/home/nik/svn/R/r-devel/build/lib -lRblas -lgfortran -lm -lquadmath
-make[1]: Leaving directory '/tmp/RtmpkqZx1i/R.INSTALL49b82bfa54ec/irlba/src'
-installing to /tmp/RtmphYYxLk/file493b41bdfefe/irlba/libs
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded
-* DONE (irlba)
 * installing *source* package ‘openssl’ ...
 ** package ‘openssl’ successfully unpacked and MD5 sums checked
 Found pkg-config cflags and libs!
 Using PKG_CFLAGS=
-Using PKG_LIBS=-l:libssl.so.1.1 -l:libcrypto.so.1.1
+Using PKG_LIBS=-l:libssl.so.1.0.0 -l:libcrypto.so.1.0.0 
 ** libs
-make[1]: Entering directory '/tmp/Rtmpa0zZSa/R.INSTALL49cf50a4963a/openssl/src'
+make[1]: Entering directory '/tmp/Rtmpxc2pxR/R.INSTALL230667760c68/openssl/src'
 rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o openssl.so
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c bignum.c -o bignum.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c cert.c -o cert.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c compatibility.c -o compatibility.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c diffie.c -o diffie.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c envelope.c -o envelope.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c error.c -o error.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c hash.c -o hash.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c info.c -o info.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keygen.c -o keygen.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keys.c -o keys.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c onload.c -o onload.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c openssh.c -o openssh.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c password.c -o password.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pem.c -o pem.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs12.c -o pkcs12.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs7.c -o pkcs7.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rand.c -o rand.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rsa.c -o rsa.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c signing.c -o signing.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c ssl.c -o ssl.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
-gcc -I"/home/nik/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
-gcc -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.1 -l:libcrypto.so.1.1
-make[1]: Leaving directory '/tmp/Rtmpa0zZSa/R.INSTALL49cf50a4963a/openssl/src'
-installing to /tmp/RtmphYYxLk/file493b41bdfefe/openssl/libs
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c bignum.c -o bignum.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c cert.c -o cert.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c compatibility.c -o compatibility.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c diffie.c -o diffie.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c envelope.c -o envelope.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c error.c -o error.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c hash.c -o hash.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c info.c -o info.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keygen.c -o keygen.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keys.c -o keys.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c onload.c -o onload.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c openssh.c -o openssh.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c password.c -o password.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pem.c -o pem.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs12.c -o pkcs12.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs7.c -o pkcs7.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rand.c -o rand.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rsa.c -o rsa.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c signing.c -o signing.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c ssl.c -o ssl.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
+gcc -std=gnu99 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
+gcc -std=gnu99 -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.0.0 -l:libcrypto.so.1.0.0
+make[1]: Leaving directory '/tmp/Rtmpxc2pxR/R.INSTALL230667760c68/openssl/src'
+installing to /tmp/RtmpdjhA2c/file22a46299c400/openssl/libs
 ** R
 ** inst
-** byte-compile and prepare package for lazy loading
+** preparing package for lazy loading
 ** help
 *** installing help indices
 ** building package indices
 ** installing vignettes
 ** testing if installed package can be loaded
 * DONE (openssl)
-* installing *source* package ‘remotes’ ...
-** package ‘remotes’ successfully unpacked and MD5 sums checked
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded
-* DONE (remotes)
-* installing *source* package ‘fakemake’ ...
-** package ‘fakemake’ successfully unpacked and MD5 sums checked
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded
-* DONE (fakemake)
 
 The downloaded source packages are in
-	‘/tmp/RtmphYYxLk/downloaded_packages’
+	‘/tmp/RtmpdjhA2c/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
-** byte-compile and prepare package for lazy loading
+** preparing package for lazy loading
 ** help
 *** installing help indices
 ** building package indices

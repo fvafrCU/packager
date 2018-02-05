@@ -1,6 +1,11 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
+* Setting inital package version to '0.1.0'.
+* Using the minor R version in DESCRIPTION (not the patched one).
+* Fixed setting a package's title if no description is given.
+* Set the argument author\_at\_r for function set\_package\_info to default to 
+  option packager/whoami.
 * Add a failsafe version of git2r::commit called git\_commit().
 * Added exception handling if reading the git config throws an error by
   conditionally setting a local git config.
@@ -24,4 +29,4 @@ Best, Andreas Dominik
 - win-builder (devel)
 
 ## R CMD check results
-0 errors | 0 warnings | 1 note 
+0 errors | 1 warning  | 1 note 

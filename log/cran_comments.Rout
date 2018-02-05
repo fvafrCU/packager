@@ -1,26 +1,10 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
-pandoc: Could not fetch https://travis-ci.org/fvafrCU/packager.svg?branch=master
-InvalidProxyEnvironmentVariable "https_proxy" "https://10.127.255.17:8080"
+pandoc: Failed to retrieve https://www.r-pkg.org/badges/version/packager
+TlsException (HandshakeFailed (Error_Protocol ("expecting server hello, got alert : [(AlertLevel_Fatal,HandshakeFailure)]",True,HandshakeFailure)))
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@arcor.de>’
 
-Found the following (possibly) invalid URLs:
-  URL: https://github.com/fvafrCU/packager
-    From: DESCRIPTION
-    Status: Error
-    Message: libcurl error code 35:
-      	gnutls_handshake() failed: An unexpected TLS packet was received.
-  URL: https://github.com/travis-ci/travis.rb
-    From: man/provide_cran_comments.Rd
-    Status: Error
-    Message: libcurl error code 35:
-      	gnutls_handshake() failed: An unexpected TLS packet was received.
-SSL error: could not verify peer
-Error in strsplit(travis_session_info, "\n") : non-character argument
-Calls: <Anonymous> -> unlist -> strsplit
-In addition: Warning message:
-In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
-Execution halted
+New submission
+displaying logs for fvafrCU/packager#187.1
