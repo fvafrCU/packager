@@ -1,17 +1,10 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Failed to retrieve https://www.r-pkg.org/badges/version/packager
-TlsException (HandshakeFailed (Error_Protocol ("expecting server hello, got alert : [(AlertLevel_Fatal,HandshakeFailure)]",True,HandshakeFailure)))
+FailedConnectionException "www.r-pkg.org" 443
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
 
 New submission
-displaying logs for fvafrCU/packager#188.1
-undefined method `each_pair' for #<String:0x00000001ea0f28>
-Error in strsplit(travis_session_info, "\n") : non-character argument
-Calls: <Anonymous> -> unlist -> strsplit
-In addition: Warning message:
-In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
-Execution halted
+displaying logs for fvafrCU/packager#189.1

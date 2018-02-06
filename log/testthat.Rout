@@ -5,7 +5,7 @@ Testing packager
 ⠏ |  0       | test throw⠋ |  1       | test throw✔ |  1       | test throw [0.2 s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 0.3 s
+Duration: 0.5 s
 
 OK:       1
 Failed:   0
