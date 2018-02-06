@@ -131,8 +131,7 @@ test_travis <- function() {
     if (! Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         RUnit::checkException(packager:::travis_cli(path))
     } else {
-        RUnit::checkException(packager:::travis_cli(path)) #FIXME:
-        # RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
+        RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
     }
 }
 
