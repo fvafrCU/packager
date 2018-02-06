@@ -17,7 +17,9 @@ packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_inf
 
 packager::check_codetags()
 # make
-ml <- packager::provide_make_list()
+ml <- provide_make_list()
+
+fakemake::make(".log.Rout", ml)
 fakemake::visualize(ml)
 
 
