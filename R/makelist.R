@@ -4,20 +4,7 @@
 #' \code{\link[fakemake:provide_make_list]{provide_make_list}}.
 #' @export
 provide_make_list <- function() {
-    fml <- fakemake::provide_make_list("package")
-    # add the log directory as prerequisite to all targets
-    fml <- lapply(fml, function(x) {
-                      x[["prerequisites"]] <- 
-                          c(".log.Rout", x[["prerequisites"]])
-                      return(x)})
-    # add the log directory
-    log_dir_code <- c("packager:::use_directory(\"log\", ignore = TRUE)")
-    a <- list(
-              list(target = ".log.Rout",
-                   code = log_dir_code
-                   )
-              )
-    fml <- c(a, fml)
+    fml <- fakemake::provide_make_list(type = "standard")
     dir_r <- "list.files(\"R\", full.names = TRUE, recursive = TRUE)"
     cyclo_code <- paste("tryCatch(print(",
                         "packager::check_cyclomatic_complexity()),",
