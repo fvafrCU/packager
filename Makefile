@@ -24,7 +24,7 @@ all: cran-comments.md
 
 # devel stuff
 .PHONY: devel
-devel: vignettes build_win release use_dev_version tag_release release force_release rhub
+devel: build_win release use_dev_version tag_release release force_release rhub
 
 .PHONY: tag_release
 tag_release:
@@ -56,10 +56,6 @@ rhub:
 build_win:
 	$(Rscript_release) --vanilla -e 'devtools::build_win()'
 
-.PHONY: vignettes
-vignettes: $(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
-	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))'
-
 .PHONY: use_dev_version
 use_dev_version:
 	$(Rscript) --vanilla -e 'devtools::use_dev_version()'
@@ -87,8 +83,13 @@ $(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
 	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
 	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
 	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
-	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout 
+	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout $(LOG_DIR)/vignettes.Rout
 	$(R_release) --vanilla CMD build $(PKGSRC)
+
+.PHONY: vignettes
+vignettes: $(LOG_DIR)/vignettes.Rout
+$(LOG_DIR)/vignettes.Rout:	$(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
+	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))' > $(LOG_DIR)/vignettes.Rout 2>&1 
 
 README.md: README.Rmd R/$(PKGNAME)-package.R
 	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
