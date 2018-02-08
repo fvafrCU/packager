@@ -1,3 +1,6 @@
+- in inect(): add a TODO.md with content "- improve test coverage" and
+  Rbuildignore it.
+- add vignette into main make chain, here or in fakemake
 - use fakemake::make in infect with a makelist that's an extension of fakemake's
   "package" list
 - run on windows with git unavailable: test for git, win_builder
