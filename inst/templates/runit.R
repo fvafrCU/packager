@@ -46,5 +46,7 @@ if (! is.null(root)) {
     file_name <- ""
 }
 RUnit::printTextProtocol(test_result, showDetails = TRUE, fileName = file_name)
-
-if (is_failure(test_result)) stop("RUnit failed. ", print(test_result))
+if (is_failure(test_result)) {
+    RUnit::printTextProtocol(test_result, showDetails = TRUE)
+    stop("RUnit failed.")
+}
