@@ -17,7 +17,7 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
         if (! git_sync_status(path = path))
             throw("Your repository is not synced with it's upstream.")
     }
-    if (yesno("Ready to submit?") && ! isTRUE(force)) {
+    if (! isTRUE(force) && yesno("Ready to submit?")) {
         throw("Aborting on user request.")
     } else {
         csu <- "http://xmpalantir.wu.ac.at/cransubmit/index2.php"
