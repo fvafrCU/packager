@@ -26,9 +26,12 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
                     cran_submission_url = csu)
         if (uses_git(path)) {
             r <- git2r::repository(path = path)
-            message("Don't forget to tag commit ", git2r::reflog(r)[[1]]@sha,
-                    " as ", desc::desc_get_version(),
-                    ", once package is on CRAN.")
+            m <- paste0("- Tag commit ", git2r::reflog(r)[[1]]@sha,
+                       " as ", desc::desc_get_version(),
+                       ", once package is on CRAN.")
+            message(m)
+            union_write(file.path(path, "TODO.md"), m)
+            git_add_commit("Submitted to CRAN")
         }
         return(invisible(NULL))
     }
