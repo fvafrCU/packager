@@ -55,6 +55,9 @@ inst/runit_tests/test_internal.R:120:81: style: Trailing whitespace is superfluo
 inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
+inst/runit_tests/test_internal.R:134:10: style: Commented code should be removed.
+        #RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 inst/runit_tests/test_internal.R:137:1: style: Trailing blank lines are superfluous.
 
 ^
@@ -286,9 +289,3 @@ R/main.R:31:75: style: Trailing whitespace is superfluous.
 R/main.R:132:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
-R/makelist.R:10:46: style: Trailing whitespace is superfluous.
-                      x[["prerequisites"]] <- 
-                                             ^
-R/makelist.R:12:32: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
-                      return(x)})
-                               ^

@@ -1,10 +1,14 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Failed to retrieve https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsException (HandshakeFailed (Error_Protocol ("expecting server hello, got alert : [(AlertLevel_Fatal,HandshakeFailure)]",True,HandshakeFailure)))
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
 
 New submission
-displaying logs for fvafrCU/packager#189.1
+displaying logs for fvafrCU/packager#197.1
+undefined method `receive' for nil:NilClass
+Warning message:
+In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
+  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1

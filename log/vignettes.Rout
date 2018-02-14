@@ -3,7 +3,7 @@ Moving An_Introduction_to_packager.html, An_Introduction_to_packager.R to inst/d
 Copying An_Introduction_to_packager.Rmd to inst/doc/
 
 
-processing file: /home/nik/git/cs/fvafrcu/packager/vignettes/An_Introduction_to_packager.Rmd
+processing file: /home/qwer/git/cyclops/fvafrcu/packager/vignettes/An_Introduction_to_packager.Rmd
   |                                                                         |                                                                 |   0%  |                                                                         |.................................................................| 100%
 output file: ./inst/doc/An_Introduction_to_packager.R
 

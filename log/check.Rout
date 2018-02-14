@@ -4,7 +4,7 @@
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
 * checking for file ‘packager/DESCRIPTION’ ... OK
-* this is package ‘packager’ version ‘0.8.0’
+* this is package ‘packager’ version ‘0.9.0’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
@@ -27,7 +27,7 @@ New submission
 * checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Failed to retrieve https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsException (HandshakeFailed (Error_Protocol ("expecting server hello, got alert : [(AlertLevel_Fatal,HandshakeFailure)]",True,HandshakeFailure)))
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK

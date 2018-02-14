@@ -5,14 +5,14 @@ Executing test function test_union_write  ...  done successfully.
 
 
 Executing test function test_use_git  ... * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpGNntDN/fakePackge/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpRkId97/fakePackge/.gitignore
 * Adding files and committing
 * Git is already initialized
  done successfully.
 
 
 
-Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpGNntDN/fakePackge/.gitignore
+Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpRkId97/fakePackge/.gitignore
  done successfully.
 
 
@@ -25,7 +25,7 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 
 Executing test function test_git  ... Error in .local(path, ...) : The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpGNntDN/file2171e9f021d/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpRkId97/file45554a59e707/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -43,8 +43,7 @@ Executing test function test_is_null_or_true  ...  done successfully.
 
 
 
-Executing test function test_travis  ... displaying logs for fvafrCU/packager#189.1
- done successfully.
+Executing test function test_travis  ...  done successfully.
 
 
 
@@ -80,7 +79,7 @@ Executing test function test_cran_comments  ...  done successfully.
 
 
 
-Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpGNntDN'
+Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpRkId97'
 No DESCRIPTION found. Creating with values:
 
 
@@ -95,7 +94,7 @@ Encoding: UTF-8
 LazyData: true
 * Creating `fake.Rproj` from template.
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
-Creating package 'fake' in '/tmp/RtmpGNntDN'
+Creating package 'fake' in '/tmp/RtmpRkId97'
 No DESCRIPTION found. Creating with values:
 
 
@@ -114,7 +113,7 @@ LazyData: true
 
 
 
-Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpGNntDN'
+Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpRkId97'
 No DESCRIPTION found. Creating with values:
 
 
@@ -131,7 +130,7 @@ LazyData: true
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
 Not a git repository.Error in warn_and_stop("Not a git repository.") : Not a git repository.
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpGNntDN/fake/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpRkId97/fake/.gitignore
 * Adding files and committing
 Package version bumped from ‘0.0.0.9000’ to ‘0.1.0’
 Uncommited changes, aborting.Error in warn_and_stop("Uncommited changes, aborting.") : 
@@ -142,7 +141,7 @@ File DESCRIPTION has version 0.0.3, but I found 0.1.0 in the git repository's ta
 
 
 
-Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpGNntDN'
+Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpRkId97'
 No DESCRIPTION found. Creating with values:
 
 
@@ -155,9 +154,9 @@ Depends: R (>= 3.5.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmpGNntDN/fakePackge/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmpGNntDN/fakePackge/.gitignore
-* Adding `fakePackge.Rcheck` to /tmp/RtmpGNntDN/fakePackge/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpRkId97/fakePackge/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpRkId97/fakePackge/.gitignore
+* Adding `fakePackge.Rcheck` to /tmp/RtmpRkId97/fakePackge/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -179,7 +178,7 @@ LazyData: true
 * Adding `make.R` to `.Rbuildignore`.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmpGNntDN/fakePackge/DESCRIPTION
+Updating roxygen version in /tmp/RtmpRkId97/fakePackge/DESCRIPTION
 Writing NAMESPACE
 Writing fakePackge-package.Rd
 Writing throw.Rd
