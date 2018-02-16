@@ -7,11 +7,23 @@
 #'
 #' A convenience function for \code{\link{options}}.
 #'
+#' @param package_name The package's name.
 #' @param overwrite [boolean(1)]\cr Overwrite options already set?
 #' @param ... See \code{\link{options}}. 
 #' @return invisible(TRUE)
 #' @export
 #' @examples 
+#' options("cleanr" = NULL)
+#' defaults <- list(max_file_width = 80, max_file_length = 300,
+#'                  max_lines = 65, max_lines_of_code = 50,
+#'                  max_num_arguments = 5, max_nesting_depth = 3,
+#'                  max_line_width = 80, check_return = TRUE)
+#' 
+#' set_options("cleanr", defaults)
+#' getOption("cleanr")
+#' set_options("cleanr", list(max_line_width = 3, max_lines = "This is nonsense!"))
+#' set_options("cleanr", check_return = NULL, max_lines = 4000)
+#' get_options("cleanr")
 set_options <- function(package_name, ..., overwrite = TRUE) {
     checkmate::qassert(overwrite, "B1")
     option_list <- list(...)
@@ -26,7 +38,7 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
         }
     } else {
         if (length(option_list) == 0)
-            option_list <- defaults
+            option_list <- NULL # FIXME: was defaults, hell, wtf?!
         is_option_unset <- !(names(option_list) %in% names(options_set))
         if (any(is_option_unset))
             .options(package_name, 
@@ -34,17 +46,6 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
     }
     return(invisible(TRUE))
 }
-options("cleanr" = NULL)
-defaults <- list(max_file_width = 80, max_file_length = 300,
-                 max_lines = 65, max_lines_of_code = 50,
-                 max_num_arguments = 5, max_nesting_depth = 3,
-                 max_line_width = 80, check_return = TRUE)
-
-set_options("cleanr", defaults)
-getOption("cleanr")
-set_options("cleanr", list(max_line_width = 3, max_lines = "This is nonsense!"))
-set_options("cleanr", check_return = NULL, max_lines = 4000)
-get_options("cleanr")
 
 #' Get options For Packages
 #'

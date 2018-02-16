@@ -3,12 +3,30 @@ Conversion of ‘README.md’ failed:
 pandoc: Failed to retrieve https://www.r-pkg.org/badges/version/packager
 TlsException (HandshakeFailed (Error_Protocol ("expecting server hello, got alert : [(AlertLevel_Fatal,HandshakeFailure)]",True,HandshakeFailure)))
 
+checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'get_options'
+  ‘package_name’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
 
 New submission
-displaying logs for fvafrCU/packager#197.1
-undefined method `receive' for nil:NilClass
-Warning message:
+
+checking R code for possible problems ... NOTE
+set_options: no visible binding for global variable ‘defaults’
+Undefined global functions or variables:
+  defaults
+displaying logs for fvafrCU/packager#200.1
+undefined method `each_pair' for #<String:0x00000002850898>
+Error in strsplit(travis_session_info, "\n") : non-character argument
+Calls: <Anonymous> -> unlist -> strsplit
+In addition: Warning message:
 In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
   running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
+Execution halted

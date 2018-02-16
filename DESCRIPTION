@@ -25,7 +25,8 @@ Imports:
     whoami,
     cyclocomp,
     httr,
-    fakemake
+    fakemake,
+    checkmate
 Suggests:
     knitr,
     rmarkdown,

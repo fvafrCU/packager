@@ -289,3 +289,12 @@ R/main.R:31:75: style: Trailing whitespace is superfluous.
 R/main.R:132:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
+R/options.R:44:35: style: Trailing whitespace is superfluous.
+            .options(package_name, 
+                                  ^
+R/options.R:60:1: style: lines should not be more than 80 characters.
+get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = TRUE) {
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/release.R:32:69: style: Trailing whitespace is superfluous.
+                       "git tag -a ", desc::desc_get_version(), " ", 
+                                                                    ^

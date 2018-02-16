@@ -1,4 +1,4 @@
-RUNIT TEST PROTOCOL -- Sun Feb 11 11:04:53 2018 
+RUNIT TEST PROTOCOL -- Fri Feb 16 20:29:22 2018 
 *********************************************** 
 Number of test functions: 17 
 Number of errors: 0 
@@ -24,13 +24,13 @@ test_use_git: (2 checks) ... OK (0.13 seconds)
 test_use_git_ignore: (2 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_internal.R 
-test_get_news: (1 checks) ... OK (0.57 seconds)
-test_git: (5 checks) ... OK (0.07 seconds)
+test_get_news: (1 checks) ... OK (0.31 seconds)
+test_git: (5 checks) ... OK (0.05 seconds)
 test_grep_directory: (1 checks) ... OK (0 seconds)
 test_is_force: (1 checks) ... OK (0 seconds)
 test_is_null_or_true: (3 checks) ... OK (0 seconds)
 test_travis: (0 checks) ... OK (0 seconds)
-test_url: (8 checks) ... OK (0.03 seconds)
+test_url: (8 checks) ... OK (0.01 seconds)
 test_warn_and_stop: (1 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_throw.R 
@@ -38,7 +38,7 @@ test_exception: (1 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_tools.R 
 test_add_commit: (3 checks) ... OK (0.01 seconds)
-test_cran_comments: (1 checks) ... OK (0.09 seconds)
-test_git_tag: (7 checks) ... OK (0.21 seconds)
-test_githuburl: (4 checks) ... OK (1.26 seconds)
-test_news: (5 checks) ... OK (1.26 seconds)
+test_cran_comments: (1 checks) ... OK (0.06 seconds)
+test_git_tag: (7 checks) ... OK (0.07 seconds)
+test_githuburl: (4 checks) ... OK (1 seconds)
+test_news: (5 checks) ... OK (0.78 seconds)
