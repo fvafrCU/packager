@@ -24,6 +24,9 @@
 #' set_options("cleanr", list(max_line_width = 3, max_lines = "This is nonsense!"))
 #' set_options("cleanr", check_return = NULL, max_lines = 4000)
 #' get_options("cleanr")
+foo <- function(...) {
+    str(list(...))
+}
 set_options <- function(package_name, ..., overwrite = TRUE) {
     checkmate::qassert(overwrite, "B1")
     option_list <- list(...)
@@ -51,12 +54,12 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
 #'
 #' A convenience function for \code{\link{getOption}}.
 #'
+#' @param package_name The package's name.
 #' @param ... See \code{\link{getOption}}.
 #' @param remove_names [boolean(1)]\cr Remove the names?
 #' @param flatten_list [boolean(1)]\cr Return a vector?
 #' @return a (possibly named) list or a vector.
 #' @export
-#' @examples
 get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = TRUE) {
     checkmate::qassert(remove_names, "B1")
     checkmate::qassert(flatten_list, "B1")
