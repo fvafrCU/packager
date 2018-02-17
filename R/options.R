@@ -24,9 +24,6 @@
 #' set_options("cleanr", list(max_line_width = 3, max_lines = "This is nonsense!"))
 #' set_options("cleanr", check_return = NULL, max_lines = 4000)
 #' get_options("cleanr")
-foo <- function(...) {
-    str(list(...))
-}
 set_options <- function(package_name, ..., overwrite = TRUE) {
     checkmate::qassert(overwrite, "B1")
     option_list <- list(...)
@@ -40,9 +37,7 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
             .options(package_name, utils::modifyList(options_set, option_list))
         }
     } else {
-        if (length(option_list) == 0)
-            option_list <- NULL # FIXME: was defaults, hell, wtf?!
-        is_option_unset <- !(names(option_list) %in% names(options_set))
+        is_option_unset <- ! (names(option_list) %in% names(options_set))
         if (any(is_option_unset))
             .options(package_name, 
                      append(options_set, option_list[is_option_unset]))
