@@ -105,7 +105,7 @@ $(LOG_DIR)/roxygen2.Rout: .log.Rout $(R_FILES)
 .PHONY: dependencies
 dependencies: $(LOG_DIR)/dependencies.Rout
 $(LOG_DIR)/dependencies.Rout: Makefile .log.Rout
-	$(Rscript) --vanilla -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies.Rout 5>&1 
+	$(Rscript) --vanilla -e 'deps <- unlist(strsplit("$(DEPS)", split = " ")); for (dep in deps) if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")' > $(LOG_DIR)/dependencies.Rout 2>&1 
 
 # utils
 utils: clean remove viz dev_install
@@ -120,7 +120,9 @@ remove:
 .PHONY: dev_install
 dev_install: $(LOG_DIR)/dev_install.log
 $(LOG_DIR)/dev_install.log: $(R_FILES)
-	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")' > $(LOG_DIR)/dev_install.log
+	$(Rscript) --vanilla -e 'devtools::install(pkg = ".")' > $(LOG_DIR)/dev_install.log 2>&1; \
+		$(Rscript_release) --vanilla -e 'devtools::install(pkg = ".")' > $(LOG_DIR)/dev_install.log 2>&1
+
 
 .PHONY: viz
 viz: $(LOG_DIR)/make.png 
