@@ -367,8 +367,6 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
 
 #' Provide File \command{make.R}
 #'
-#'
-#'
 #' @param path Where to create the file.
 #' @param Rbuildignore Add the file to .Rbuildignore under the given
 #' \code{path}?
@@ -380,4 +378,22 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
 provide_make <- function(path, Rbuildignore = TRUE) {
     status <- use_template("make.R", pkg = path, ignore = Rbuildignore)
     return(status)
+}
+
+#' Lint by File Name Suffix
+#' 
+#' I often use internals from other packages and save them in files ending
+#' packagename_internals.R or packagename_internals_mod.R if I modify the
+#' verbatim copies (for example by adding library specs with `::`. \cr I want
+#' these to be marked in lintr's output.
+#'
+#' @param path Path to the package's root directory.
+#' @param file_name_markers Parts of the file name which mark copied code.
+#' @param sort Sort by file name suffix?
+#' @return The list of lints with names marked.
+#' @export
+print_lints <- function(path, sort = TRUE, 
+                 file_name_markers = c("_internals", "_verbatim", "_modified")
+                 ) {
+    retrun("#FIXME:")
 }
