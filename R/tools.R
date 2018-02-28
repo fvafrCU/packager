@@ -380,20 +380,59 @@ provide_make <- function(path, Rbuildignore = TRUE) {
     return(status)
 }
 
-#' Lint by File Name Suffix
+#' Print Lints by Name Suffix
 #' 
-#' I often use internals from other packages and save them in files ending
-#' packagename_internals.R or packagename_internals_mod.R if I modify the
-#' verbatim copies (for example by adding library specs with `::`. \cr I want
-#' these to be marked in lintr's output.
+#' I often use internals from other packages and save them in files 
+#' named ..._internals..., ..._verbatim... of ..._modified... .
+#' \cr I want these to be marked in lintr's output.
 #'
-#' @param path Path to the package's root directory.
+#' @param x A list of lints.
 #' @param file_name_markers Parts of the file name which mark copied code.
 #' @param sort Sort by file name suffix?
+#' @param invert Invert the sorting?
 #' @return The list of lints with names marked.
 #' @export
-print_lints <- function(path, sort = TRUE, 
+#' @examples
+#' files <- list.files(system.file("files", package = "packager"), 
+#'                     full.names = TRUE)
+#' lints <- lintr:::flatten_lints(lapply(files, function(file) {
+#'                                           if (interactive()) {
+#'                                               message(".", appendLF = FALSE)
+#'                                           }
+#'                                           lintr::lint(file, 
+#'                                                       parse_settings = FALSE)
+#'                                      }))
+#' 
+#' print_lints(lints, invert = FALSE)
+#' print_lints(lints, invert = TRUE)
+print_lints <- function(x, sort = TRUE, invert = FALSE,
                  file_name_markers = c("_internals", "_verbatim", "_modified")
                  ) {
-    retrun("#FIXME:")
+
+    mark <- "COPY:"
+    nomark <- "NO COPY:"
+    pattern <- paste0("(", 
+                      paste0("^.*",file_name_markers , ".*$", 
+                             collapse = "|"),
+                      ")")
+    set_mark <- function(x) {
+        if (grepl(pattern, x$filename)) 
+            x$mark <- mark
+        else
+            x$mark <- nomark
+        return(x)
+    }
+    x <- lapply(x, function(x) {set_mark(x)})
+
+
+    if (isTRUE(sort)) {
+        marked <- sapply(x, function(x) return(x[["mark"]] == mark))
+        if (isTRUE(invert))
+            x <- c(x[marked], x[! marked])
+        else
+            x <- c(x[! marked], x[marked])
+
+    }
+    if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
+    return(invisible(x))
 }

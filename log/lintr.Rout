@@ -1,6 +1,15 @@
 inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
+inst/files/a_verbatim.R:2:1: style: lines should not be more than 80 characters.
+    # this is a lint: this line is way toooooooooooooooooooooooooooooooooooo long!
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+inst/files/a_verbatim.R:10:1: style: Trailing blank lines are superfluous.
+
+^
+inst/files/a.R:2:7: style: Commented code should be removed.
+    # print("this is a lint")
+      ^~~~~~~~~~~~~~~~~~~~~~~
 inst/runit_tests/test_devtools_modified.R:7:69: style: Trailing whitespace is superfluous.
     tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
                                                                     ^
@@ -280,6 +289,12 @@ R/git.R:18:1: style: Trailing blank lines are superfluous.
 R/internal.R:88:52: style: Trailing whitespace is superfluous.
     stop <- start + attr(match, "match.length") - 1 
                                                    ^
+R/internal.R:279:1: style: lines should not be more than 80 characters.
+    cat(sep = "", crayon::bold(x$mark, " ", x$filename, ":", as.character(x$line_number),
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R/internal.R:280:1: style: lines should not be more than 80 characters.
+                               ":", as.character(x$column_number), ": ", sep = ""),
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 R/main.R:22:39: style: Trailing whitespace is superfluous.
 create <- function(path, force = TRUE, 
                                       ^
@@ -289,12 +304,36 @@ R/main.R:31:75: style: Trailing whitespace is superfluous.
 R/main.R:132:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
-R/options.R:44:35: style: Trailing whitespace is superfluous.
+R/options.R:42:35: style: Trailing whitespace is superfluous.
             .options(package_name, 
                                   ^
-R/options.R:60:1: style: lines should not be more than 80 characters.
+R/options.R:58:1: style: lines should not be more than 80 characters.
 get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = TRUE) {
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 R/release.R:32:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^
+R/tools.R:414:27: style: Trailing whitespace is superfluous.
+    pattern <- paste0("(", 
+                          ^
+R/tools.R:415:36: style: Commas should always have a space after.
+                      paste0("^.*",file_name_markers , ".*$", 
+                                   ^
+R/tools.R:415:54: style: Commas should never have a space before.
+                      paste0("^.*",file_name_markers , ".*$", 
+                                                    ~^
+R/tools.R:415:62: style: Trailing whitespace is superfluous.
+                      paste0("^.*",file_name_markers , ".*$", 
+                                                             ^
+R/tools.R:419:40: style: Trailing whitespace is superfluous.
+        if (grepl(pattern, x$filename)) 
+                                       ^
+R/tools.R:425:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+    x <- lapply(x, function(x) {set_mark(x)})
+                               ^
+R/tools.R:425:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+    x <- lapply(x, function(x) {set_mark(x)})
+                                           ^
+R/tools.R:436:9: warning: local variable ‘has_lints’ assigned but may not be used
+    if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
+        ^~~~~~~~~

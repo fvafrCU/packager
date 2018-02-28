@@ -1,4 +1,6 @@
+
 # packager 0.9.0
+* Added function print\_lint().
 
 
 # packager 0.8.0
