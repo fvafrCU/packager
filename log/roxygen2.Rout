@@ -1,6 +1,6 @@
 
-R Under development (unstable) (2018-01-30 r74185) -- "Unsuffered Consequences"
-Copyright (C) 2018 The R Foundation for Statistical Computing
+R Under development (unstable) (2017-08-15 r73096) -- "Unsuffered Consequences"
+Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -53,6 +53,7 @@ The following objects are masked from ‘package:git2r’:
 
 Loading required package: fakemake
 Loading required package: checkmate
-Writing print_lints.Rd
+Writing NAMESPACE
+Writing print.lints.Rd
 > 
 > 

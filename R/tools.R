@@ -390,8 +390,8 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #' @param file_name_markers Parts of the file name which mark copied code.
 #' @param sort Sort by file name suffix?
 #' @param invert Invert the sorting?
+#' @param ... Arguments passed down to print.
 #' @return The list of lints with names marked.
-#' @export
 #' @examples
 #' files <- list.files(system.file("files", package = "packager"), 
 #'                     full.names = TRUE)
@@ -403,10 +403,11 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #'                                                       parse_settings = FALSE)
 #'                                      }))
 #' 
-#' print_lints(lints, invert = FALSE)
-#' print_lints(lints, invert = TRUE)
-print_lints <- function(x, sort = TRUE, invert = FALSE,
-                 file_name_markers = c("_internals", "_verbatim", "_modified")
+#' print(lints, invert = FALSE)
+#' print(lints, invert = TRUE)
+print.lints <- function(x, sort = TRUE, invert = FALSE,
+                 file_name_markers = c("_internals", "_verbatim", "_modified"),
+                 ...
                  ) {
 
     mark <- "COPY:"
@@ -433,6 +434,6 @@ print_lints <- function(x, sort = TRUE, invert = FALSE,
             x <- c(x[! marked], x[marked])
 
     }
-    if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
+    if (has_lints <- length(x) > 0) invisible(lapply(x, print))
     return(invisible(x))
 }

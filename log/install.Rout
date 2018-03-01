@@ -2,7 +2,7 @@
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
-** byte-compile and prepare package for lazy loading
+** preparing package for lazy loading
 ** help
 *** installing help indices
 ** building package indices
