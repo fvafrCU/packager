@@ -392,6 +392,7 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #' @param invert Invert the sorting?
 #' @param ... Arguments passed down to print.
 #' @return The list of lints with names marked.
+#' @export
 #' @examples
 #' files <- list.files(system.file("files", package = "packager"), 
 #'                     full.names = TRUE)
