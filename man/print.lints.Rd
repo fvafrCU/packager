@@ -37,6 +37,6 @@ lints <- lintr:::flatten_lints(lapply(files, function(file) {
                                                       parse_settings = FALSE)
                                      }))
 
-# print(lints, invert = FALSE)
-# print(lints, invert = TRUE)
+print(lints, invert = FALSE)
+print(lints, invert = TRUE)
 }

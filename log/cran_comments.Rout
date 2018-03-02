@@ -1,0 +1,22 @@
+checking top-level files ... WARNING
+Conversion of ‘README.md’ failed:
+pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+
+checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+
+New submission
+
+checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+              user system elapsed
+create      10.524   0.34  11.968
+print.lints  5.736   0.06   6.116
+displaying logs for fvafrCU/packager#208.1
+undefined method `each_pair' for #<String:0x00000002aba9d0>
+Error in strsplit(travis_session_info, "\n") : non-character argument
+Calls: <Anonymous> -> unlist -> strsplit
+In addition: Warning message:
+running command ''sudo' travis logs --repo fvafrCU/packager' had status 1 
+Execution halted

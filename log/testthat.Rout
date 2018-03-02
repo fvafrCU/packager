@@ -2,10 +2,10 @@ Loading packager
 Loading required package: testthat
 Testing packager
 ✔ | OK F W S | Context
-⠏ |  0       | test throw⠋ |  1       | test throw✔ |  1       | test throw [0.4 s]
+⠏ |  0       | test throw⠋ |  1       | test throw✔ |  1       | test throw [0.5 s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 0.9 s
+Duration: 1.2 s
 
 OK:       1
 Failed:   0
