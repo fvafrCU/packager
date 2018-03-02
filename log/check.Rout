@@ -57,11 +57,11 @@ TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
 * checking examples ... NOTE
 Examples with CPU or elapsed time > 5s
               user system elapsed
-create      10.572  0.312  11.833
-print_lints  6.096  0.088   7.111
+create      10.648  0.304  11.173
+print_lints  5.944  0.044   6.032
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ... OK
-  Running ‘runit.R’ [20s/27s]
+  Running ‘runit.R’ [20s/21s]
   Running ‘testthat.R’
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
