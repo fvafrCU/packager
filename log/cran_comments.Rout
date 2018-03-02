@@ -11,10 +11,10 @@ New submission
 checking examples ... NOTE
 Examples with CPU or elapsed time > 5s
               user system elapsed
-create      10.524   0.34  11.968
-print.lints  5.736   0.06   6.116
+create      10.572  0.312  11.833
+print_lints  6.096  0.088   7.111
 displaying logs for fvafrCU/packager#208.1
-undefined method `each_pair' for #<String:0x00000002aba9d0>
+undefined method `each_pair' for #<String:0x00000001ec4798>
 Error in strsplit(travis_session_info, "\n") : non-character argument
 Calls: <Anonymous> -> unlist -> strsplit
 In addition: Warning message:

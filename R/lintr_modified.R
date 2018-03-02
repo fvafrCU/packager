@@ -14,7 +14,7 @@ highlight_string <- function (message, column_number = NULL, ranges = NULL) {
     line
 }
 
-print.lint <- function (x, ...) {
+print_lint <- function (x, ...) {
     color <- switch(x$type, warning = crayon::magenta, error = crayon::red,
                     style = crayon::blue, crayon::bold)
     cat(sep = "", crayon::bold(x$mark, " ", x$filename, ":", as.character(x$line_number),

@@ -11,7 +11,7 @@ R/   /home/nik/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 86 count
 /home/nik/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
 R/   /home/nik/git/cyclops/fvafrcu/packager/R/lintr_modified.R: line 20 counts 89 characters.
 /home/nik/git/cyclops/fvafrcu/packager/R/lintr_modified.R: line 21 counts 83 characters.
- /home/nik/git/cyclops/fvafrcu/packager/R/lintr_modified.R  print.lint  line 3: found width 89 max_line_width was 80
+ /home/nik/git/cyclops/fvafrcu/packager/R/lintr_modified.R  print_lint  line 3: found width 89 max_line_width was 80
 line 4: found width 83 max_line_width was 80
 R/   /home/nik/git/cyclops/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
 R/   /home/nik/git/cyclops/fvafrcu/packager/R/options.R: line 24 counts 83 characters.

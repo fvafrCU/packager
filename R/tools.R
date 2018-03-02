@@ -404,9 +404,9 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #'                                                       parse_settings = FALSE)
 #'                                      }))
 #' 
-#' print(lints, invert = FALSE)
-#' print(lints, invert = TRUE)
-print.lints <- function(x, sort = TRUE, invert = FALSE,
+#' print_lints(lints, invert = FALSE)
+#' print_lints(lints, invert = TRUE)
+print_lints <- function(x, sort = TRUE, invert = FALSE,
                  file_name_markers = c("_internals", "_verbatim", "_modified"),
                  ...
                  ) {
@@ -435,6 +435,6 @@ print.lints <- function(x, sort = TRUE, invert = FALSE,
             x <- c(x[! marked], x[marked])
 
     }
-    if (has_lints <- length(x) > 0) invisible(lapply(x, print))
+    if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
     return(invisible(x))
 }
