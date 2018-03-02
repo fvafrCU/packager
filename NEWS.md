@@ -1,6 +1,6 @@
 
 # packager 0.9.0
-* Added function method for class lint to generic print, sorting by patterns
+* Added function print\_lints() to print lints sorted by patterns
   matching source file names.
 
 
