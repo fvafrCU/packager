@@ -1,4 +1,3 @@
-
 # packager 0.9.0
 * Added function print\_lints() to print lints sorted by patterns
   matching source file names.
