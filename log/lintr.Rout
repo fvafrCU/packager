@@ -229,28 +229,34 @@ get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = 
 NO COPY: R/release.R:32:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^
-NO COPY: R/tools.R:416:27: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:178:10: style: Trailing whitespace is superfluous.
+        } 
+         ^
+NO COPY: R/tools.R:184:74: style: Trailing whitespace is superfluous.
+                check_output <- grep("^Status", travis_log, value = TRUE) 
+                                                                         ^
+NO COPY: R/tools.R:424:27: style: Trailing whitespace is superfluous.
     pattern <- paste0("(", 
                           ^
-NO COPY: R/tools.R:417:36: style: Commas should always have a space after.
+NO COPY: R/tools.R:425:36: style: Commas should always have a space after.
                       paste0("^.*",file_name_markers , ".*$", 
                                    ^
-NO COPY: R/tools.R:417:54: style: Commas should never have a space before.
+NO COPY: R/tools.R:425:54: style: Commas should never have a space before.
                       paste0("^.*",file_name_markers , ".*$", 
                                                     ~^
-NO COPY: R/tools.R:417:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:425:62: style: Trailing whitespace is superfluous.
                       paste0("^.*",file_name_markers , ".*$", 
                                                              ^
-NO COPY: R/tools.R:421:40: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:429:40: style: Trailing whitespace is superfluous.
         if (grepl(pattern, x$filename)) 
                                        ^
-NO COPY: R/tools.R:427:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+NO COPY: R/tools.R:435:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     x <- lapply(x, function(x) {set_mark(x)})
                                ^
-NO COPY: R/tools.R:427:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+NO COPY: R/tools.R:435:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
     x <- lapply(x, function(x) {set_mark(x)})
                                            ^
-NO COPY: R/tools.R:438:9: warning: local variable ‘has_lints’ assigned but may not be used
+NO COPY: R/tools.R:446:9: warning: local variable ‘has_lints’ assigned but may not be used
     if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
         ^~~~~~~~~
 COPY: inst/files/a_verbatim.R:2:1: style: lines should not be more than 80 characters.

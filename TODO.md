@@ -1,3 +1,7 @@
+- get rid of file.path() with relative paths
+  in provide\_cran\_comments:
+        check <- parse_check_results(file.path(path, check_log))
+  and maybe elsewhere
 - in inect(): add a TODO.md with content "- improve test coverage" and
   Rbuildignore it.
 - add vignette into main make chain, here or in fakemake

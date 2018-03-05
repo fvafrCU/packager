@@ -112,6 +112,7 @@ check_codetags <- function(path = ".", exclude_pattern = "\\.Rcheck/",
 #'                     Platform: x86_64-pc-linux-gnu (64-bit)\cr
 #'                     Running under: Ubuntu precise (12.04.5 LTS) \cr
 #'                     ")\cr
+#' Or provide a path to a file containing the current travis log.\cr
 #' Set to `travis-cli` to retrieve Session info automatically if your system is
 #' set up to use \url{https://github.com/travis-ci/travis.rb}.
 #' @param name The name to sign with, if NA, the given name of the package
@@ -174,6 +175,13 @@ provide_cran_comments <- function(check_log = NULL,
         if (identical(travis_session_info, "travis-cli")) {
             travis_session_info <- tryCatch(travis_cli(path),
                                             error = function(e) return(NULL))
+        } 
+        if (file.exists(file.path(path, travis_session_info))) {
+            travis_log <- readLines(file.path(path, travis_session_info))
+            k <- grep("sessionInfo()", travis_log)
+            travis_session_info <- travis_log[(k + 1): (k + 3)]
+            if (length(check[["errors"]]) + length(check[["warnings"]]) > 0)
+                check_output <- grep("^Status", travis_log, value = TRUE) 
         }
         travis_session_info <- unlist(strsplit(travis_session_info, "\n"))
         comments <- c(comments, "- ",

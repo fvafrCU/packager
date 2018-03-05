@@ -24,6 +24,7 @@ travis_session_info <- c("\cr
                     Platform: x86_64-pc-linux-gnu (64-bit)\cr
                     Running under: Ubuntu precise (12.04.5 LTS) \cr
                     ")\cr
+Or provide a path to a file containing the current travis log.\cr
 Set to `travis-cli` to retrieve Session info automatically if your system is
 set up to use \url{https://github.com/travis-ci/travis.rb}.}
 

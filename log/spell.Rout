@@ -1,32 +1,29 @@
   WORD           FOUND IN
-cli            provide_cran_comments.Rd:27
-CMD            provide_cran_comments.Rd:39
+cli            provide_cran_comments.Rd:28
+CMD            provide_cran_comments.Rd:40
 commiting      git_add_commit.Rd:15
-cran           provide_cran_comments.Rd:34,35,38
+cran           provide_cran_comments.Rd:35,36,39
 cyclomatic     check_cyclomatic_complexity.Rd:16
 Cyclomatic     check_cyclomatic_complexity.Rd:5
 dev            check_codetags.Rd:26, provide_cran_comments.Rd:12
 devtools       packager-package.Rd:9,12, description:1
-Devtools       provide_cran_comments.Rd:38
+Devtools       provide_cran_comments.Rd:39
 exlusions      check_codetags.Rd:14
-fallback       add_github_url_to_desc.Rd:26
 gh             add_github_url_to_desc.Rd:27
 github         add_github_url_to_desc.Rd:5,20,28,31
 https          check_codetags.Rd:26
-lintr          print_lints.Rd:27
+lintr's        print_lints.Rd:27
 linux          provide_cran_comments.Rd:24
 LTS            provide_cran_comments.Rd:25
 Makelist       provide_make_list.Rd:5,14
-md             check_news.Rd:5,14,17, provide_cran_comments.Rd:35,38,40
-org            check_codetags.Rd:26
+md             check_news.Rd:5,14,17, provide_cran_comments.Rd:36,39,41
 pc             provide_cran_comments.Rd:24
 Rbuildignore   provide_make.Rd:12
 Rscript        provide_cran_comments.Rd:19
 sessionInfo    provide_cran_comments.Rd:19
-travis         provide_cran_comments.Rd:20,22,27
-Ubuntu         provide_cran_comments.Rd:25
+travis         provide_cran_comments.Rd:20,22,27,28
 uncommited     release.Rd:12
+untracked      git_add_commit.Rd:15
 www            check_codetags.Rd:26
-xxx            set_package_info.Rd:28,31
 Warning message:
 spell check failed 

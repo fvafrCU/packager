@@ -16,5 +16,6 @@ line 4: found width 83 max_line_width was 80
 R/   /home/nik/git/cyclops/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
 R/   /home/nik/git/cyclops/fvafrcu/packager/R/options.R: line 24 counts 83 characters.
 /home/nik/git/cyclops/fvafrcu/packager/R/options.R: line 58 counts 87 characters.
-R/   /home/nik/git/cyclops/fvafrcu/packager/R/tools.R: 440 lines in file.
- /home/nik/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 58 lines of code, max_lines_of_code was 50>
+R/   /home/nik/git/cyclops/fvafrcu/packager/R/tools.R: 448 lines in file.
+ /home/nik/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 67 lines, max_lines was 65
+provide_cran_comments  found 65 lines of code, max_lines_of_code was 50>

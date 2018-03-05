@@ -62,7 +62,7 @@ use_dev_version:
 
 # install
 cran-comments.md:  $(LOG_DIR)/install.Rout
-	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
+	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "log/travis_log.txt")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
 
 .PHONY: install
 install: $(LOG_DIR)/install.Rout

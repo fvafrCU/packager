@@ -1,3 +1,7 @@
+# packager 0.9.0.9000
+
+* provide\_cran\_comments() now optionally reads a travis log from file.
+
 # packager 0.9.0
 * Added function print\_lints() to print lints sorted by patterns
   matching source file names.

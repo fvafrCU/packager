@@ -1,13 +1,12 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
-* Added function print\_lints() to print lints sorted by patterns
-  matching source file names.
 
+* provide\_cran\_comments() now optionally reads a travis log from file.
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.9.0
+# Package packager 0.9.0.9000
 ## Test  environments 
 - R Under development (unstable) (2017-08-15 r73096)
   Platform: x86_64-pc-linux-gnu (64-bit)
@@ -18,4 +17,4 @@ Best, Andreas Dominik
 - win-builder (devel)
 
 ## R CMD check results
-0 errors | 1 warning  | 2 notes
+Status: OK
