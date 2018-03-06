@@ -1,7 +1,7 @@
 Installing packager
-'/home/nik/svn/R/r-devel/build/bin/R' --no-site-file --no-environ --no-save  \
-  --no-restore --quiet CMD INSTALL '/home/nik/git/cyclops/fvafrcu/packager'  \
-  --library='/home/nik/svn/R/r-devel/build/library' --install-tests 
+'/usr/lib/R/bin/R' --no-site-file --no-environ --no-save --no-restore --quiet  \
+  CMD INSTALL '/home/nik/git/cs/fvafrcu/packager'  \
+  --library='/home/nik/R/x86_64-pc-linux-gnu-library/3.3' --install-tests 
 
 * installing *source* package ‘packager’ ...
 ** R

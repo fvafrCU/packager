@@ -205,10 +205,10 @@ NO COPY: R/git.R:12:34: style: Trailing whitespace is superfluous.
 NO COPY: R/git.R:18:1: style: Trailing blank lines are superfluous.
 
 ^
-NO COPY: R/internal.R:88:52: style: Trailing whitespace is superfluous.
+NO COPY: R/internal.R:89:52: style: Trailing whitespace is superfluous.
     stop <- start + attr(match, "match.length") - 1 
                                                    ^
-NO COPY: R/internal.R:259:1: style: Trailing blank lines are superfluous.
+NO COPY: R/internal.R:260:1: style: Trailing blank lines are superfluous.
 
 ^
 NO COPY: R/main.R:22:39: style: Trailing whitespace is superfluous.

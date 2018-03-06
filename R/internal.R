@@ -77,6 +77,7 @@ update_description <- function(path = ".",
         d$set(Description = description)
     d$set_authors(author_at_r)
     d$write()
+    desc::desc_normalize(file = path)
     return(invisible(NULL))
 }
 
