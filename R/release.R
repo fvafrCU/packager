@@ -35,7 +35,7 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
                       )
             message(m)
             union_write(file.path(path, "TODO.md"), m)
-            git_add_commit("Submitted to CRAN")
+            git_add_commit(path, "Submitted to CRAN")
         }
         return(invisible(NULL))
     }
