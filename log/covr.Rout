@@ -222,8 +222,17 @@
 617          R/internal.R                   use_devel  188     0
 621          R/internal.R                   use_devel  189     0
 624          R/internal.R                   use_devel  190     0
+765          R/internal.R                  travis_cli  249     0
+769          R/internal.R                  travis_cli  250     0
+772          R/internal.R                  travis_cli  251     0
+775          R/internal.R                  travis_cli  252     0
+779          R/internal.R                  travis_cli  253     0
+782          R/internal.R                  travis_cli  254     0
+784          R/internal.R                  travis_cli  255     0
+786          R/internal.R                  travis_cli  256     0
+788          R/internal.R                  travis_cli  257     0
 792          R/internal.R                  travis_cli  258     0
-3      R/lintr_modified.R                   fill_with    3     0
+2      R/lintr_modified.R                   fill_with    3     0
 13     R/lintr_modified.R            highlight_string    7     0
 16     R/lintr_modified.R            highlight_string    8     0
 21     R/lintr_modified.R            highlight_string    9     0
@@ -263,7 +272,7 @@
 73           R/makelist.R           provide_make_list   20     0
 79           R/makelist.R           provide_make_list   21     0
 85           R/makelist.R           provide_make_list   22     0
-2             R/options.R                    .options    3     0
+4             R/options.R                    .options    3     0
 108           R/options.R                 set_options   28     0
 113           R/options.R                 set_options   29     0
 119           R/options.R                 set_options   30     0
@@ -362,6 +371,17 @@
 620             R/tools.R       provide_cran_comments  189     0
 873             R/tools.R      add_github_url_to_desc  321     0
 875             R/tools.R      add_github_url_to_desc  322     0
+879             R/tools.R      add_github_url_to_desc  324     0
+881             R/tools.R      add_github_url_to_desc  325     0
+882             R/tools.R      add_github_url_to_desc  326     0
+883             R/tools.R      add_github_url_to_desc  327     0
+885             R/tools.R      add_github_url_to_desc  328     0
+887             R/tools.R      add_github_url_to_desc  329     0
+890             R/tools.R      add_github_url_to_desc  331     0
+892             R/tools.R      add_github_url_to_desc  332     0
+897             R/tools.R      add_github_url_to_desc  336     0
+898             R/tools.R      add_github_url_to_desc  337     0
+899             R/tools.R      add_github_url_to_desc  338     0
 948             R/tools.R                 print_lints  422     0
 949             R/tools.R                 print_lints  423     0
 950             R/tools.R                 print_lints  424     0
@@ -383,7 +403,7 @@
 966             R/tools.R                 print_lints  443     0
 967             R/tools.R                 print_lints  446     0
 968             R/tools.R                 print_lints  447     0
-packager Coverage: 60.33%
+packager Coverage: 58.26%
 R/lintr_modified.R: 0.00%
 R/makelist.R: 0.00%
 R/options.R: 0.00%
@@ -391,7 +411,7 @@ R/release.R: 0.00%
 R/git.R: 42.86%
 R/devtools_verbatim.R: 47.88%
 R/devtools_modified.R: 54.01%
-R/tools.R: 68.06%
+R/tools.R: 62.30%
 R/main.R: 87.72%
-R/internal.R: 96.22%
+R/internal.R: 91.35%
 R/throw.R: 100.00%

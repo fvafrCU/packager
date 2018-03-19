@@ -1,21 +1,21 @@
-<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R: line 3 counts 86 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R: line 257 counts 82 characters.
- /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R  use_template  found 7 arguments, max_num_arguments was 5
-R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 86 counts 83 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 126 counts 81 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 223 counts 94 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 300 counts 84 characters.
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: 380 lines in file.
- /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R  is_installed  line 1: found width 83 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R  suggests_dep  line 2: found width 81 max_line_width was 80
-/home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
-R/   /home/nik/git/cs/fvafrcu/packager/R/lintr_modified.R: line 20 counts 89 characters.
-/home/nik/git/cs/fvafrcu/packager/R/lintr_modified.R: line 21 counts 83 characters.
- /home/nik/git/cs/fvafrcu/packager/R/lintr_modified.R  print_lint  line 3: found width 89 max_line_width was 80
+<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R: line 3 counts 86 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R: line 257 counts 82 characters.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R  use_template  found 7 arguments, max_num_arguments was 5
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 86 counts 83 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 126 counts 81 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 223 counts 94 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 300 counts 84 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: 380 lines in file.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  is_installed  line 1: found width 83 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  suggests_dep  line 2: found width 81 max_line_width was 80
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R  summarise_check_results  line 4: found width 84 max_line_width was 80
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/lintr_modified.R: line 20 counts 89 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/lintr_modified.R: line 21 counts 83 characters.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/lintr_modified.R  print_lint  line 3: found width 89 max_line_width was 80
 line 4: found width 83 max_line_width was 80
-R/   /home/nik/git/cs/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
-R/   /home/nik/git/cs/fvafrcu/packager/R/options.R: line 24 counts 83 characters.
-/home/nik/git/cs/fvafrcu/packager/R/options.R: line 58 counts 87 characters.
-R/   /home/nik/git/cs/fvafrcu/packager/R/tools.R: 448 lines in file.
- /home/nik/git/cs/fvafrcu/packager/R/tools.R  provide_cran_comments  found 67 lines, max_lines was 65
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/main.R  set_package_info  found 6 arguments, max_num_arguments was 5
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/options.R: line 24 counts 83 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/options.R: line 58 counts 87 characters.
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 448 lines in file.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 67 lines, max_lines was 65
 provide_cran_comments  found 65 lines of code, max_lines_of_code was 50>
