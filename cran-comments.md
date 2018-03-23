@@ -9,9 +9,9 @@ Best, Andreas Dominik
 
 # Package packager 0.9.0.9000
 ## Test  environments 
-- R Under development (unstable) (2018-02-09 r74240)
+- R Under development (unstable) (2018-01-30 r74185)
   Platform: x86_64-pc-linux-gnu (64-bit)
-  Running under: Devuan GNU/Linux 1 (jessie)
+  Running under: Debian GNU/Linux 9 (stretch)
 - log/travis_log.txt
 - win-builder (devel)
 

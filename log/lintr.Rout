@@ -217,7 +217,7 @@ create <- function(path, force = TRUE,
 NO COPY: R/main.R:31:75: style: Trailing whitespace is superfluous.
     desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
                                                                           ^
-NO COPY: R/main.R:132:35: style: Trailing whitespace is superfluous.
+NO COPY: R/main.R:133:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
 NO COPY: R/options.R:42:35: style: Trailing whitespace is superfluous.

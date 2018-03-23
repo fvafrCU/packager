@@ -77,6 +77,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_travis(path = path)
     add_github_url_to_desc(path = path)
     use_bsd2clause_license(path = path)
+    withr::with_dir(path, usethis::use_testthat())
     provide_throw(path = path)
     provide_make(path = path)
     use_directory("log", pkg = path, ignore = TRUE)
