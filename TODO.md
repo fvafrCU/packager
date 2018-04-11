@@ -1,3 +1,4 @@
+- implement update_cyclocomp_deps from devel.R
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:
         check <- parse_check_results(file.path(path, check_log))

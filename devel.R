@@ -24,3 +24,18 @@ fakemake::visualize(ml)
 
 
 packager::create("../cuwintest")
+
+
+
+# ============ cyclo deps
+#' log_file = file.path("~", "git", "os", "fva", "bwibw", "log", "cyclocomp.Rout") 
+update_cyclocomp_deps <- function(log) {
+    log <- readLines(log_file)
+    if (any(grepl("packages:", log))) {
+        line <- grep("packages:", log, value = TRUE)
+        packages <- trimws(unlist(strsplit(strsplit(line, split = ":")[[1]][2], 
+                                           split = ",")))
+        update.packages(oldPkgs = packages, ask = FALSE)
+    }
+}
+
