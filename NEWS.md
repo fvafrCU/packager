@@ -1,5 +1,7 @@
-# packager 0.9.0.9000
+# packager 0.10.0
 
+* Added update\_deps() for updating package dependencies like internals from
+  package remotes does.
 * provide\_cran\_comments() now optionally reads a travis log from file.
 * Fixed git commit in release().
 

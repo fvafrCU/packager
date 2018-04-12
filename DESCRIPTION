@@ -1,6 +1,6 @@
 Package: packager
 Title: Helps Me Build Packages
-Version: 0.9.0.9000
+Version: 0.10.0
 Authors@R:
     person(given = c("Andreas", "Dominik"),
            family = "Cullmann",
@@ -27,7 +27,8 @@ Imports:
     cyclocomp,
     httr,
     fakemake,
-    checkmate
+    checkmate,
+    remotes
 Suggests:
     knitr,
     rmarkdown,

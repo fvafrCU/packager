@@ -349,3 +349,33 @@ COPY: R/lintr_modified.R:21:1: style: lines should not be more than 80 character
 COPY: R/lintr_modified.R:27:1: style: Trailing blank lines are superfluous.
 
 ^
+COPY: R/remotes_modified.R:20:77: style: Trailing whitespace is superfluous.
+    withr::with_envvar(c(R_LIBS = lib, R_LIBS_USER = lib, R_LIBS_SITE = lib, 
+                                                                            ^
+COPY: R/remotes_modified.R:24:67: style: Trailing whitespace is superfluous.
+install_packages <- function(packages, repos = getOption("repos"), 
+                                                                  ^
+COPY: R/remotes_modified.R:25:58: style: Trailing whitespace is superfluous.
+                             type = getOption("pkgType"), 
+                                                         ^
+COPY: R/remotes_modified.R:27:33: style: Trailing whitespace is superfluous.
+    if (identical(type, "both")) 
+                                ^
+COPY: R/remotes_modified.R:29:24: style: Trailing whitespace is superfluous.
+    if (is.null(quiet)) 
+                       ^
+COPY: R/remotes_modified.R:31:60: style: Trailing whitespace is superfluous.
+    message("Installing ", length(packages), " packages: ", 
+                                                           ^
+COPY: R/remotes_modified.R:33:64: style: Trailing whitespace is superfluous.
+    safe_install_packages(packages, repos = repos, type = type, 
+                                                               ^
+COPY: R/remotes_modified.R:40:73: style: Trailing whitespace is superfluous.
+        message("Skipping ", length(ahead), " packages not available: ", 
+                                                                        ^
+COPY: R/remotes_modified.R:45:75: style: Trailing whitespace is superfluous.
+        message("Skipping ", length(missing), " packages ahead of CRAN: ", 
+                                                                          ^
+COPY: R/remotes_modified.R:54:64: style: Trailing whitespace is superfluous.
+        install_packages(behind, repos = attr(object, "repos"), 
+                                                               ^

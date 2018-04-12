@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2018-01-30 r74185) -- "Unsuffered Consequences"
+R Under development (unstable) (2018-03-19 r74426) -- "Unsuffered Consequences"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -67,5 +67,16 @@ The following objects are masked from ‘package:git2r’:
 
 Loading required package: fakemake
 Loading required package: checkmate
+Loading required package: remotes
+
+Attaching package: ‘remotes’
+
+The following objects are masked from ‘package:devtools’:
+
+    dev_package_deps, github_pull, github_release, install_bitbucket,
+    install_deps, install_git, install_github, install_local,
+    install_svn, install_url, install_version, package_deps,
+    update_packages
+
 > 
 > 
