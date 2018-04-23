@@ -252,9 +252,7 @@ git_tag <- function(path = ".", tag_uncommited = FALSE,
     tags <- git2r::tags(repo)
     is_first_tag <- length(tags) == 0
     if (! is_first_tag) {
-        old_tag_names <- sapply(tags,
-                                function(tag) return(methods::slot(tag,
-                                                                   "name")))
+        old_tag_names <- names(tags)
         old_versions <- sub("^v", "", old_tag_names)
         description_version_is_newer <-
             vapply(strip_off_attributes(old_versions),

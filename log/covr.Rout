@@ -81,10 +81,10 @@
 883  R/devtools_modified.R             git_sync_status  272     0
 886  R/devtools_modified.R             git_sync_status  273     0
 889  R/devtools_modified.R             git_sync_status  274     0
-900  R/devtools_modified.R             git_sync_status  281     0
-902  R/devtools_modified.R             git_sync_status  282     0
-904  R/devtools_modified.R             git_sync_status  283     0
-906  R/devtools_modified.R             git_sync_status  284     0
+898  R/devtools_modified.R             git_sync_status  281     0
+900  R/devtools_modified.R             git_sync_status  282     0
+902  R/devtools_modified.R             git_sync_status  283     0
+904  R/devtools_modified.R             git_sync_status  284     0
 46   R/devtools_verbatim.R                     is_root   13     0
 63   R/devtools_verbatim.R                      is_dir   16     0
 225  R/devtools_verbatim.R               use_directory   46     0
@@ -146,31 +146,31 @@
 885  R/devtools_verbatim.R         parse_check_results  272     0
 888  R/devtools_verbatim.R         parse_check_results  273     0
 892  R/devtools_verbatim.R         parse_check_results  275     0
-895  R/devtools_verbatim.R         parse_check_results  277     0
-897  R/devtools_verbatim.R         parse_check_results  278     0
-898  R/devtools_verbatim.R         parse_check_results  279     0
-899  R/devtools_verbatim.R         parse_check_results  280     0
-901  R/devtools_verbatim.R         parse_check_results  281     0
-903  R/devtools_verbatim.R         parse_check_results  282     0
-905  R/devtools_verbatim.R         parse_check_results  283     0
-907  R/devtools_verbatim.R         parse_check_results  284     0
-908  R/devtools_verbatim.R         parse_check_results  285     0
-909  R/devtools_verbatim.R         print.check_results  289     0
-910  R/devtools_verbatim.R         print.check_results  290     0
-911  R/devtools_verbatim.R         print.check_results  292     0
-912  R/devtools_verbatim.R         print.check_results  293     0
-913  R/devtools_verbatim.R     summarise_check_results  297     0
-914  R/devtools_verbatim.R     summarise_check_results  298     0
-915  R/devtools_verbatim.R     summarise_check_results  299     0
-916  R/devtools_verbatim.R     summarise_check_results  300     0
-917  R/devtools_verbatim.R     summarise_check_results  301     0
-918  R/devtools_verbatim.R     summarise_check_results  302     0
-919  R/devtools_verbatim.R                  show_count  306     0
-920  R/devtools_verbatim.R                  show_count  307     0
-921  R/devtools_verbatim.R                  show_count  308     0
-922  R/devtools_verbatim.R                  show_count  309     0
-923  R/devtools_verbatim.R                  show_count  310     0
-929  R/devtools_verbatim.R                package_file  315     0
+894  R/devtools_verbatim.R         parse_check_results  277     0
+895  R/devtools_verbatim.R         parse_check_results  278     0
+896  R/devtools_verbatim.R         parse_check_results  279     0
+897  R/devtools_verbatim.R         parse_check_results  280     0
+899  R/devtools_verbatim.R         parse_check_results  281     0
+901  R/devtools_verbatim.R         parse_check_results  282     0
+903  R/devtools_verbatim.R         parse_check_results  283     0
+905  R/devtools_verbatim.R         parse_check_results  284     0
+906  R/devtools_verbatim.R         parse_check_results  285     0
+907  R/devtools_verbatim.R         print.check_results  289     0
+908  R/devtools_verbatim.R         print.check_results  290     0
+909  R/devtools_verbatim.R         print.check_results  292     0
+910  R/devtools_verbatim.R         print.check_results  293     0
+911  R/devtools_verbatim.R     summarise_check_results  297     0
+912  R/devtools_verbatim.R     summarise_check_results  298     0
+913  R/devtools_verbatim.R     summarise_check_results  299     0
+914  R/devtools_verbatim.R     summarise_check_results  300     0
+915  R/devtools_verbatim.R     summarise_check_results  301     0
+916  R/devtools_verbatim.R     summarise_check_results  302     0
+917  R/devtools_verbatim.R                  show_count  306     0
+918  R/devtools_verbatim.R                  show_count  307     0
+919  R/devtools_verbatim.R                  show_count  308     0
+920  R/devtools_verbatim.R                  show_count  309     0
+922  R/devtools_verbatim.R                  show_count  310     0
+928  R/devtools_verbatim.R                package_file  315     0
 937  R/devtools_verbatim.R                package_file  320     0
 943  R/devtools_verbatim.R                package_file  323     0
 951  R/devtools_verbatim.R                package_file  328     0
@@ -183,31 +183,31 @@
 977  R/devtools_verbatim.R               cran_comments  344     0
 979  R/devtools_verbatim.R               cran_comments  345     0
 981  R/devtools_verbatim.R               cran_comments  346     0
-983  R/devtools_verbatim.R               cran_comments  347     0
-985  R/devtools_verbatim.R               cran_comments  348     0
-986  R/devtools_verbatim.R               cran_comments  349     0
-987  R/devtools_verbatim.R               cran_comments  351     0
-988  R/devtools_verbatim.R              as.object_size  354     0
-989  R/devtools_verbatim.R                  maintainer  357     0
-990  R/devtools_verbatim.R                  maintainer  359     0
-991  R/devtools_verbatim.R                  maintainer  360     0
-992  R/devtools_verbatim.R                  maintainer  361     0
-994  R/devtools_verbatim.R                  maintainer  362     0
-995  R/devtools_verbatim.R                  maintainer  363     0
-996  R/devtools_verbatim.R                  maintainer  364     0
+982  R/devtools_verbatim.R               cran_comments  347     0
+983  R/devtools_verbatim.R               cran_comments  348     0
+984  R/devtools_verbatim.R               cran_comments  349     0
+985  R/devtools_verbatim.R               cran_comments  351     0
+986  R/devtools_verbatim.R              as.object_size  354     0
+987  R/devtools_verbatim.R                  maintainer  357     0
+988  R/devtools_verbatim.R                  maintainer  359     0
+990  R/devtools_verbatim.R                  maintainer  360     0
+991  R/devtools_verbatim.R                  maintainer  361     0
+992  R/devtools_verbatim.R                  maintainer  362     0
+993  R/devtools_verbatim.R                  maintainer  363     0
+995  R/devtools_verbatim.R                  maintainer  364     0
 997  R/devtools_verbatim.R                  maintainer  365     0
 999  R/devtools_verbatim.R                  maintainer  366     0
 1001 R/devtools_verbatim.R                  maintainer  367     0
 1003 R/devtools_verbatim.R                  maintainer  368     0
 1005 R/devtools_verbatim.R                  maintainer  369     0
 1007 R/devtools_verbatim.R                  maintainer  370     0
-1009 R/devtools_verbatim.R                  maintainer  371     0
-1011 R/devtools_verbatim.R                  maintainer  372     0
-1012 R/devtools_verbatim.R                  maintainer  373     0
-1013 R/devtools_verbatim.R                  maintainer  375     0
-1014 R/devtools_verbatim.R                  maintainer  376     0
-1015 R/devtools_verbatim.R                  maintainer  377     0
-1016 R/devtools_verbatim.R                  maintainer  378     0
+1008 R/devtools_verbatim.R                  maintainer  371     0
+1009 R/devtools_verbatim.R                  maintainer  372     0
+1010 R/devtools_verbatim.R                  maintainer  373     0
+1011 R/devtools_verbatim.R                  maintainer  375     0
+1012 R/devtools_verbatim.R                  maintainer  376     0
+1013 R/devtools_verbatim.R                  maintainer  377     0
+1014 R/devtools_verbatim.R                  maintainer  378     0
 12                 R/git.R                  git_commit    6     0
 15                 R/git.R                  git_commit    7     0
 19                 R/git.R                  git_commit    8     0
@@ -222,17 +222,8 @@
 677           R/internal.R                   use_devel  188     0
 681           R/internal.R                   use_devel  189     0
 685           R/internal.R                   use_devel  190     0
-826           R/internal.R                  travis_cli  249     0
-830           R/internal.R                  travis_cli  250     0
-833           R/internal.R                  travis_cli  251     0
-836           R/internal.R                  travis_cli  252     0
-840           R/internal.R                  travis_cli  253     0
-843           R/internal.R                  travis_cli  254     0
-845           R/internal.R                  travis_cli  255     0
-847           R/internal.R                  travis_cli  256     0
-849           R/internal.R                  travis_cli  257     0
 853           R/internal.R                  travis_cli  258     0
-3       R/lintr_modified.R                   fill_with    3     0
+4       R/lintr_modified.R                   fill_with    3     0
 17      R/lintr_modified.R            highlight_string    7     0
 21      R/lintr_modified.R            highlight_string    8     0
 27      R/lintr_modified.R            highlight_string    9     0
@@ -272,7 +263,7 @@
 88            R/makelist.R           provide_make_list   20     0
 95            R/makelist.R           provide_make_list   21     0
 102           R/makelist.R           provide_make_list   22     0
-5              R/options.R                    .options    3     0
+3              R/options.R                    .options    3     0
 127            R/options.R                 set_options   28     0
 133            R/options.R                 set_options   29     0
 140            R/options.R                 set_options   30     0
@@ -415,19 +406,8 @@
 672              R/tools.R       provide_cran_comments  187     0
 676              R/tools.R       provide_cran_comments  188     0
 680              R/tools.R       provide_cran_comments  189     0
-944              R/tools.R      add_github_url_to_desc  324     0
-946              R/tools.R      add_github_url_to_desc  325     0
-947              R/tools.R      add_github_url_to_desc  326     0
-948              R/tools.R      add_github_url_to_desc  327     0
-950              R/tools.R      add_github_url_to_desc  328     0
-952              R/tools.R      add_github_url_to_desc  329     0
-954              R/tools.R      add_github_url_to_desc  330     0
-956              R/tools.R      add_github_url_to_desc  331     0
-958              R/tools.R      add_github_url_to_desc  332     0
-960              R/tools.R      add_github_url_to_desc  333     0
-965              R/tools.R      add_github_url_to_desc  336     0
-966              R/tools.R      add_github_url_to_desc  337     0
-967              R/tools.R      add_github_url_to_desc  338     0
+1017             R/tools.R                 print_lints  420     0
+1018             R/tools.R                 print_lints  421     0
 1019             R/tools.R                 print_lints  422     0
 1020             R/tools.R                 print_lints  423     0
 1021             R/tools.R                 print_lints  424     0
@@ -440,8 +420,8 @@
 1028             R/tools.R                 print_lints  431     0
 1029             R/tools.R                 print_lints  432     0
 1030             R/tools.R                 print_lints  433     0
-1031             R/tools.R                 print_lints  434     0
-1032             R/tools.R                 print_lints  435     0
+1031             R/tools.R                 print_lints  436     0
+1032             R/tools.R                 print_lints  437     0
 1033             R/tools.R                 print_lints  438     0
 1034             R/tools.R                 print_lints  439     0
 1035             R/tools.R                 print_lints  440     0
@@ -450,11 +430,9 @@
 1038             R/tools.R                 print_lints  443     0
 1039             R/tools.R                 print_lints  444     0
 1040             R/tools.R                 print_lints  445     0
-1041             R/tools.R                 print_lints  446     0
-1042             R/tools.R                 print_lints  447     0
 48         R/update_deps.R                 update_deps   13     0
 55         R/update_deps.R                 update_deps   14     0
-packager Coverage: 56.33%
+packager Coverage: 58.37%
 R/lintr_modified.R: 0.00%
 R/makelist.R: 0.00%
 R/options.R: 0.00%
@@ -464,7 +442,7 @@ R/update_deps.R: 0.00%
 R/git.R: 42.86%
 R/devtools_verbatim.R: 47.88%
 R/devtools_modified.R: 54.01%
-R/tools.R: 64.09%
+R/tools.R: 69.72%
 R/main.R: 87.93%
-R/internal.R: 91.35%
+R/internal.R: 96.22%
 R/throw.R: 100.00%

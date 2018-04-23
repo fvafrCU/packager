@@ -1,3 +1,7 @@
+# packager 0.10.1
+
+* Using names for old tags in tagging.
+
 # packager 0.10.0
 
 * Added update\_deps() for updating package dependencies like internals from
