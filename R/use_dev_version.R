@@ -3,7 +3,7 @@
 #' @param path Path to your package's directory.
 #' @return The return value of \code{\link{use_dev_news}}.
 #' @export
-use_dev_version <- function(path) {
+use_dev_version <- function(path = ".") {
     devtools::use_dev_version(pkg = path)
     status <- use_dev_news(path = path)
     return(status)
