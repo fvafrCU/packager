@@ -2,9 +2,9 @@
 % Please edit documentation in R/use_dev_version.R
 \name{use_dev_version}
 \alias{use_dev_version}
-\title{Use a Development Version in DESCRPITION and NEWS.md}
+\title{Use a Development Version in DESCRIPTION and NEWS.md}
 \usage{
-use_dev_version(path)
+use_dev_version(path = ".")
 }
 \arguments{
 \item{path}{Path to your package's directory.}
@@ -13,5 +13,5 @@ use_dev_version(path)
 The return value of \code{\link{use_dev_news}}.
 }
 \description{
-Use a Development Version in DESCRPITION and NEWS.md
+Use a Development Version in DESCRIPTION and NEWS.md
 }
