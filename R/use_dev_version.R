@@ -1,11 +1,12 @@
 #' Use a Development Version in DESCRIPTION and NEWS.md
 #'
 #' @param path Path to your package's directory.
-#' @return The return value of \code{\link{use_dev_news}}.
+#' @return The return value of \code{\link{git_add_commit}}.
 #' @export
 use_dev_version <- function(path = ".") {
     devtools::use_dev_version(pkg = path)
-    status <- use_dev_news(path = path)
+    use_dev_news(path = path)
+    status <- git_add_commit(path, message = "Use development version in NEWS")
     return(status)
 }
 
