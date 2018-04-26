@@ -58,7 +58,7 @@ build_win:
 
 .PHONY: use_dev_version
 use_dev_version:
-	$(Rscript) --vanilla -e 'use_dev_version()'
+	$(Rscript) --vanilla -e 'packager::use_dev_version()'
 
 # install
 cran-comments.md:  $(LOG_DIR)/install.Rout

@@ -1,3 +1,7 @@
+# packager 0.11.1
+
+* Fix Makefile
+
 # packager 0.11.0
 
 * Added functions use\_dev\_version() and use\_dev\_news().
