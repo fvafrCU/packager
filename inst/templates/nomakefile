@@ -28,7 +28,7 @@ devel: build_win release use_dev_version tag_release release force_release rhub
 
 .PHONY: tag_release
 tag_release:
-	$(R) --vanilla -e 'packager::git_tag()'
+	$(R) --vanilla -e 'packager::git_tag(message = " ")'
 
 .PHONY: force_release
 force_release:  
@@ -58,7 +58,7 @@ build_win:
 
 .PHONY: use_dev_version
 use_dev_version:
-	$(Rscript) --vanilla -e 'devtools::use_dev_version()'
+	$(Rscript) --vanilla -e 'use_dev_version()'
 
 # install
 cran-comments.md:  $(LOG_DIR)/install.Rout

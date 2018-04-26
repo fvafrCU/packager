@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2018-01-30 r74185) -- "Unsuffered Consequences"
+R Under development (unstable) (2018-03-19 r74426) -- "Unsuffered Consequences"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -78,5 +78,7 @@ The following objects are masked from ‘package:devtools’:
     install_svn, install_url, install_version, package_deps,
     update_packages
 
+Writing use_dev_version.Rd
+Writing use_dev_news.Rd
 > 
 > 

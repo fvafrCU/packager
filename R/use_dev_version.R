@@ -1,3 +1,8 @@
+#' Use a Development Version in DESCRIPTION and NEWS.md
+#'
+#' @param path Path to your package's directory.
+#' @return The return value of \code{\link{use_dev_news}}.
+#' @export
 use_dev_version <- function(path) {
     devtools::use_dev_version(pkg = path)
     status <- use_dev_news(path = path)
@@ -5,10 +10,20 @@ use_dev_version <- function(path) {
 }
 
 
+#' Use a Development Version in NEWS.md
+#'
+#' @param path Path to your package's directory or the the NEWS file.
+#' @return TRUE on success, FALSE otherwise.
+#' @export
 use_dev_news <- function(path = ".") {
-    news_file <- file.path(path, "NEWS.md")
+    if (file.info(path)[["isdir"]]) {
+        news_file <- file.path(path, "NEWS.md")
+    } else {
+        news_file <- path
+    }
     if (! file.exists(news_file)) {
         status = FALSE
+        warning(news_file, " does not exist!")
     } else {
         news <- readLines(news_file)
         dev_paragraph <- paste("#", desc::desc_get("Package"), 
