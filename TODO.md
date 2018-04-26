@@ -1,4 +1,3 @@
-- add R/use_dev_news.R
 - implement update_cyclocomp_deps from devel.R
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:
