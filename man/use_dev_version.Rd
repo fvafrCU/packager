@@ -10,7 +10,7 @@ use_dev_version(path = ".")
 \item{path}{Path to your package's directory.}
 }
 \value{
-The return value of \code{\link{use_dev_news}}.
+The return value of \code{\link{git_add_commit}}.
 }
 \description{
 Use a Development Version in DESCRIPTION and NEWS.md

@@ -259,10 +259,10 @@ NO COPY: R/tools.R:433:44: style: Closing curly-braces should always be on their
 NO COPY: R/tools.R:444:9: warning: local variable ‘has_lints’ assigned but may not be used
     if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
         ^~~~~~~~~
-NO COPY: R/use_dev_version.R:25:16: style: Use <-, not =, for assignment.
+NO COPY: R/use_dev_version.R:26:16: style: Use <-, not =, for assignment.
         status = FALSE
                ^
-NO COPY: R/use_dev_version.R:29:63: style: Trailing whitespace is superfluous.
+NO COPY: R/use_dev_version.R:30:63: style: Trailing whitespace is superfluous.
         dev_paragraph <- paste("#", desc::desc_get("Package"), 
                                                               ^
 COPY: inst/files/a_verbatim.R:2:1: style: lines should not be more than 80 characters.

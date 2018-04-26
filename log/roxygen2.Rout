@@ -78,6 +78,5 @@ The following objects are masked from ‘package:devtools’:
     install_svn, install_url, install_version, package_deps,
     update_packages
 
-Writing use_dev_version.Rd
 > 
 > 

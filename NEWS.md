@@ -1,6 +1,6 @@
-# packager 0.11.1.9000
+# packager 0.11.2
 
-* FIXME
+* Added auto git commit of changed devel NEWS file.
 
 # packager 0.11.1
 

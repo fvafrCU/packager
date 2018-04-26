@@ -4,7 +4,7 @@
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
 * checking for file ‘packager/DESCRIPTION’ ... OK
-* this is package ‘packager’ version ‘0.11.1’
+* this is package ‘packager’ version ‘0.11.2’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’

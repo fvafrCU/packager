@@ -1,12 +1,12 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-* Fix Makefile
+* Added auto git commit of changed devel NEWS file.
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.11.1
+# Package packager 0.11.2
 ## Test  environments 
 - R Under development (unstable) (2018-03-19 r74426)
   Platform: x86_64-pc-linux-gnu (64-bit)
