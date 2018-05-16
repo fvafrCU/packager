@@ -1,4 +1,4 @@
-# packager 0.11.2.9000
+# packager 0.12.0
 
 * FIXME
 
