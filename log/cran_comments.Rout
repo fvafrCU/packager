@@ -3,11 +3,10 @@ Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://travis-ci.org/fvafrCU/packager.svg?branch=master
 InvalidProxyEnvironmentVariable "https_proxy" "https://10.127.255.17:8080"
 
-checking dependencies in R code ... WARNING
-'::' or ':::' import not declared from: ‘codetools’
-
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+
+Version contains large components (0.12.0.9000)
 
 Found the following (possibly) invalid URLs:
   URL: https://github.com/fvafrCU/packager
@@ -20,11 +19,11 @@ Found the following (possibly) invalid URLs:
     Status: Error
     Message: libcurl error code 35:
       	gnutls_handshake() failed: An unexpected TLS packet was received.
-
-checking R code for possible problems ... NOTE
-check_usage: no visible global function definition for ‘capture.output’
-Undefined global functions or variables:
-  capture.output
-Consider adding
-  importFrom("utils", "capture.output")
-to your NAMESPACE file.
+SSL error: could not verify peer
+Error in if (file.exists(file.path(path, travis_session_info))) { : 
+  argument is of length zero
+Calls: <Anonymous>
+In addition: Warning message:
+In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
+  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
+Execution halted

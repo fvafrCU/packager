@@ -1,6 +1,4 @@
-<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/nik/git/cs/fvafrcu/packager/R/check_usage.R: line 13 counts 84 characters.
- /home/nik/git/cs/fvafrcu/packager/R/check_usage.R  check_usage  line 4: found width 84 max_line_width was 80
-R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R: line 3 counts 86 characters.
+<cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R: line 3 counts 86 characters.
 /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R: line 257 counts 82 characters.
  /home/nik/git/cs/fvafrcu/packager/R/devtools_modified.R  use_template  found 7 arguments, max_num_arguments was 5
 R/   /home/nik/git/cs/fvafrcu/packager/R/devtools_verbatim.R: line 86 counts 83 characters.

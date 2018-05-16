@@ -15,6 +15,7 @@ Imports:
     methods,
     utils,
     rprojroot,
+    codetools,
     devtools,
     crayon,
     git2r,

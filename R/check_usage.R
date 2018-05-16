@@ -10,7 +10,8 @@ check_usage <- function(path = ".") {
     root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
     devtools::load_all(root)
     package_name <- as.character(desc::desc_get("Package", path)) 
-    issues <- capture.output(codetools::checkUsagePackage(package_name, all = TRUE))
+    issues <- utils::capture.output(codetools::checkUsagePackage(package_name, 
+                                                                 all = TRUE))
     return(issues)
 }
 

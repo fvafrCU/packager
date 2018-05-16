@@ -19,6 +19,7 @@ Type 'q()' to quit R.
 
 > roxygen2::roxygenize(".")
 Loading required package: rprojroot
+Loading required package: codetools
 Loading required package: devtools
 Loading required package: crayon
 Loading required package: git2r

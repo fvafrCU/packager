@@ -1,6 +1,6 @@
 # packager 0.12.0.9000
 
-* FIXME
+* Added codetools to DESCRIPTION.
 
 # packager 0.12.0
 
