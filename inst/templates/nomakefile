@@ -83,7 +83,8 @@ $(PKGNAME)_$(PKGVERS).tar.gz: NEWS.md README.md DESCRIPTION LICENSE \
 	$(RUNIT_FILES) $(VIGNETTES_FILES) $(INST_FILES) $(LOG_DIR)/spell.Rout \
 	$(LOG_DIR)/check_codetags.Rout $(LOG_DIR)/news.Rout $(LOG_DIR)/runit.Rout \
 	$(LOG_DIR)/testthat.Rout $(LOG_DIR)/covr.Rout $(LOG_DIR)/cleanr.Rout \
-	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout $(LOG_DIR)/vignettes.Rout
+	$(LOG_DIR)/lintr.Rout $(LOG_DIR)/cyclocomp.Rout $(LOG_DIR)/vignettes.Rout \
+	$(LOG_DIR)/usage.Rout 
 	$(R_release) --vanilla CMD build $(PKGSRC)
 
 .PHONY: vignettes
@@ -131,6 +132,11 @@ $(LOG_DIR)/make.png: .log.Rout Makefile $(R_FILES) $(MAN_FILES) \
 	make -Bnd all devel utils| make2graph | dot -Tpng -o $(LOG_DIR)/make.png
 
 # checks
+.PHONY: usage
+usage: $(LOG_DIR)/usage.Rout 
+$(LOG_DIR)/usage.Rout: .log.Rout $(R_FILES) $(LOG_DIR)/dependencies.Rout
+	$(Rscript) --vanilla -e 'packager::check_usage(".")' > $(LOG_DIR)/usage.Rout 2>&1 
+
 .PHONY: cleanr
 cleanr: $(LOG_DIR)/cleanr.Rout 
 $(LOG_DIR)/cleanr.Rout: .log.Rout $(R_FILES) $(LOG_DIR)/dependencies.Rout

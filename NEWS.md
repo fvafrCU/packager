@@ -1,6 +1,6 @@
 # packager 0.12.0
 
-* FIXME
+* Added function check\_usage() as a wrapper to codetools::checkUsagePackage().
 
 # packager 0.11.2
 

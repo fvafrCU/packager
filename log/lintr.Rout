@@ -196,6 +196,15 @@ NO COPY: inst/templates/test-throw.R:5:60: style: Closing curly-braces should al
 NO COPY: inst/templates/test-throw.R:5:61: error: unexpected ':::'
                         testthat::expect_error({{{package}}}:::throw(string),
                                                             ^
+NO COPY: R/check_usage.R:12:66: style: Trailing whitespace is superfluous.
+    package_name <- as.character(desc::desc_get("Package", path)) 
+                                                                 ^
+NO COPY: R/check_usage.R:13:1: style: lines should not be more than 80 characters.
+    issues <- capture.output(codetools::checkUsagePackage(package_name, all = TRUE))
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NO COPY: R/check_usage.R:16:1: style: Trailing blank lines are superfluous.
+
+^
 NO COPY: R/git.R:3:66: style: Trailing whitespace is superfluous.
     repo_config <- tryCatch(git2r::default_signature(repository), 
                                                                  ^

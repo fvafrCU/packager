@@ -6,6 +6,7 @@ cran           provide_cran_comments.Rd:35,36,39
 cyclomatic     check_cyclomatic_complexity.Rd:16
 Cyclomatic     check_cyclomatic_complexity.Rd:5
 dev            check_codetags.Rd:26, provide_cran_comments.Rd:12
+developement   check_usage.Rd:18
 devtools       packager-package.Rd:9,12, description:1
 Devtools       provide_cran_comments.Rd:39
 exlusions      check_codetags.Rd:14
