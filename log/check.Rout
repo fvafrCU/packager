@@ -4,14 +4,12 @@
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
 * checking for file ‘packager/DESCRIPTION’ ... OK
-* this is package ‘packager’ version ‘0.12.0.9000’
+* this is package ‘packager’ version ‘0.13.0’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
 
 New submission
-
-Version contains large components (0.12.0.9000)
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -29,7 +27,7 @@ Version contains large components (0.12.0.9000)
 * checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+FailedConnectionException "www.r-pkg.org" 443
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK

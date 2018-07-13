@@ -5,14 +5,14 @@ Executing test function test_union_write  ...  done successfully.
 
 
 Executing test function test_use_git  ... * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/fakePackge/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpq2rX9a/fakePackge/.gitignore
 * Adding files and committing
 * Git is already initialized
  done successfully.
 
 
 
-Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpO6wROm/fakePackge/.gitignore
+Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/Rtmpq2rX9a/fakePackge/.gitignore
  done successfully.
 
 
@@ -26,7 +26,7 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 Executing test function test_git  ... Error in git2r::repository(path, discover = TRUE) : 
   The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/file216e43f39f53/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpq2rX9a/file3092593ca513/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -80,7 +80,7 @@ Executing test function test_cran_comments  ...  done successfully.
 
 
 
-Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpO6wROm'
+Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/Rtmpq2rX9a'
 No DESCRIPTION found. Creating with values:
 
 
@@ -97,7 +97,7 @@ LazyData: true
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
 Not a git repository.Error in warn_and_stop("Not a git repository.") : Not a git repository.
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/fake/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpq2rX9a/fake/.gitignore
 * Adding files and committing
 Package version bumped from ‘0.0.0.9000’ to ‘0.1.0’
 Uncommited changes, aborting.Error in warn_and_stop("Uncommited changes, aborting.") : 
@@ -108,7 +108,7 @@ File DESCRIPTION has version 0.0.3, but I found 0.1.0 in the git repository's ta
 
 
 
-Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpO6wROm'
+Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/Rtmpq2rX9a'
 No DESCRIPTION found. Creating with values:
 
 
@@ -123,7 +123,7 @@ Encoding: UTF-8
 LazyData: true
 * Creating `fake.Rproj` from template.
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
-Creating package 'fake' in '/tmp/RtmpO6wROm'
+Creating package 'fake' in '/tmp/Rtmpq2rX9a'
 No DESCRIPTION found. Creating with values:
 
 
@@ -142,7 +142,7 @@ LazyData: true
 
 
 
-Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpO6wROm'
+Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/Rtmpq2rX9a'
 No DESCRIPTION found. Creating with values:
 
 
@@ -155,9 +155,9 @@ Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmpO6wROm/fakePackge/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmpO6wROm/fakePackge/.gitignore
-* Adding `fakePackge.Rcheck` to /tmp/RtmpO6wROm/fakePackge/.gitignore
+* Adding `.Rprofile` to /tmp/Rtmpq2rX9a/fakePackge/.gitignore
+* Adding `*.tar.gz` to /tmp/Rtmpq2rX9a/fakePackge/.gitignore
+* Adding `fakePackge.Rcheck` to /tmp/Rtmpq2rX9a/fakePackge/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -180,7 +180,7 @@ LazyData: true
 * Adding `make.R` to `.Rbuildignore`.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmpO6wROm/fakePackge/DESCRIPTION
+Updating roxygen version in /tmp/Rtmpq2rX9a/fakePackge/DESCRIPTION
 Writing NAMESPACE
 Writing fakePackge-package.Rd
 Writing throw.Rd

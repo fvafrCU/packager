@@ -1,5 +1,6 @@
-# packager 0.12.0.9000
+# packager 0.13.0
 
+* Added fixed for git2r: Stefan Widgren switched from S4 back to S3.
 * Added codetools to DESCRIPTION.
 
 # packager 0.12.0
