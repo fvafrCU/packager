@@ -23,7 +23,9 @@ fakemake::make(".log.Rout", ml)
 fakemake::visualize(ml)
 
 
-packager::create("../cuwintest")
+path <-"/tmp/test" 
+packager::create(path)
+packager::git_tag(path = path)
 
 
 
