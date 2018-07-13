@@ -1,25 +1,17 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
-pandoc: Could not fetch https://travis-ci.org/fvafrCU/packager.svg?branch=master
-InvalidProxyEnvironmentVariable "https_proxy" "https://10.127.255.17:8080"
+pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
 
-Version contains large components (0.12.0.9000)
+New submission
 
-Found the following (possibly) invalid URLs:
-  URL: https://github.com/fvafrCU/packager
-    From: DESCRIPTION
-    Status: Error
-    Message: libcurl error code 35:
-      	gnutls_handshake() failed: An unexpected TLS packet was received.
-  URL: https://github.com/travis-ci/travis.rb
-    From: man/provide_cran_comments.Rd
-    Status: Error
-    Message: libcurl error code 35:
-      	gnutls_handshake() failed: An unexpected TLS packet was received.
-SSL error: could not verify peer
+Version contains large components (0.12.0.9000)
+displaying logs for fvafrCU/packager#232.1
+undefined method `each_pair' for #<String:0x00560e543f17a0>
+Did you mean?  each_char
 Error in if (file.exists(file.path(path, travis_session_info))) { : 
   argument is of length zero
 Calls: <Anonymous>

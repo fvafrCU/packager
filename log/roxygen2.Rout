@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2018-01-30 r74185) -- "Unsuffered Consequences"
+R Under development (unstable) (2018-07-01 r74950) -- "Unsuffered Consequences"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -58,6 +58,10 @@ The following objects are masked from ‘package:devtools’:
 
 Loading required package: whoami
 Loading required package: cyclocomp
+Registered S3 methods overwritten by 'remotes':
+  method              from    
+  print.package_deps  devtools
+  update.package_deps devtools
 Loading required package: httr
 
 Attaching package: ‘httr’

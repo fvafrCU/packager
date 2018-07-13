@@ -5,14 +5,14 @@ Executing test function test_union_write  ...  done successfully.
 
 
 Executing test function test_use_git  ... * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpkXjvgy/fakePackge/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/fakePackge/.gitignore
 * Adding files and committing
 * Git is already initialized
  done successfully.
 
 
 
-Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpkXjvgy/fakePackge/.gitignore
+Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpO6wROm/fakePackge/.gitignore
  done successfully.
 
 
@@ -23,9 +23,10 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 
 
 
-Executing test function test_git  ... Error in .local(path, ...) : The 'path' is not in a git repository
+Executing test function test_git  ... Error in git2r::repository(path, discover = TRUE) : 
+  The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpkXjvgy/file17f4166fd676/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/file216e43f39f53/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -43,12 +44,7 @@ Executing test function test_is_null_or_true  ...  done successfully.
 
 
 
-Executing test function test_travis  ... SSL error: could not verify peer
-Error in (k + 1):(k + 3) : argument of length 0
-In addition: Warning message:
-In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
- done successfully.
+Executing test function test_travis  ...  done successfully.
 
 
 
@@ -84,7 +80,7 @@ Executing test function test_cran_comments  ...  done successfully.
 
 
 
-Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpkXjvgy'
+Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpO6wROm'
 No DESCRIPTION found. Creating with values:
 
 
@@ -93,7 +89,7 @@ Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
@@ -101,7 +97,7 @@ LazyData: true
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
 Not a git repository.Error in warn_and_stop("Not a git repository.") : Not a git repository.
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpkXjvgy/fake/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpO6wROm/fake/.gitignore
 * Adding files and committing
 Package version bumped from ‘0.0.0.9000’ to ‘0.1.0’
 Uncommited changes, aborting.Error in warn_and_stop("Uncommited changes, aborting.") : 
@@ -112,7 +108,7 @@ File DESCRIPTION has version 0.0.3, but I found 0.1.0 in the git repository's ta
 
 
 
-Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpkXjvgy'
+Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpO6wROm'
 No DESCRIPTION found. Creating with values:
 
 
@@ -121,13 +117,13 @@ Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 * Creating `fake.Rproj` from template.
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
-Creating package 'fake' in '/tmp/RtmpkXjvgy'
+Creating package 'fake' in '/tmp/RtmpO6wROm'
 No DESCRIPTION found. Creating with values:
 
 
@@ -136,7 +132,7 @@ Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
@@ -146,7 +142,7 @@ LazyData: true
 
 
 
-Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpkXjvgy'
+Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpO6wROm'
 No DESCRIPTION found. Creating with values:
 
 
@@ -155,13 +151,13 @@ Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/RtmpkXjvgy/fakePackge/.gitignore
-* Adding `*.tar.gz` to /tmp/RtmpkXjvgy/fakePackge/.gitignore
-* Adding `fakePackge.Rcheck` to /tmp/RtmpkXjvgy/fakePackge/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpO6wROm/fakePackge/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpO6wROm/fakePackge/.gitignore
+* Adding `fakePackge.Rcheck` to /tmp/RtmpO6wROm/fakePackge/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -184,24 +180,16 @@ LazyData: true
 * Adding `make.R` to `.Rbuildignore`.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/RtmpkXjvgy/fakePackge/DESCRIPTION
+Updating roxygen version in /tmp/RtmpO6wROm/fakePackge/DESCRIPTION
 Writing NAMESPACE
 Writing fakePackge-package.Rd
 Writing throw.Rd
 * Adding .9000 to version
 * Checking into git
 Error in packager::check_news(path) : Version 0.1.0.9000 not covered!
-In addition: Warning messages:
-1: In add_github_url_to_desc(path = path) :
-  Could not retrieve github user name. Set the URL in DESCRIPTION manually!
-2: In add_github_url_to_desc(path = path, default_gh_user = NA) :
-  Found 0 git remotes refering to `fake`.
-3: In add_github_url_to_desc(path = path, default_gh_user = NA) :
-  Could not retrieve github user name. Set the URL in DESCRIPTION manually!
-4: In update_description(path = path, title = tools::toTitleCase(title),  :
+In addition: Warning message:
+In update_description(path = path, title = tools::toTitleCase(title),  :
   Argument 'author_at_r' is missing, using default.
-5: In add_github_url_to_desc(path = path) :
-  Could not retrieve github user name. Set the URL in DESCRIPTION manually!
 Package version bumped from ‘0.1.0.9000’ to ‘0.2.0’
 Error in packager::check_news(path) : Version 0.2.0 not covered!
  done successfully.
