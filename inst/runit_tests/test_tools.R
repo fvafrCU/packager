@@ -118,8 +118,8 @@ test_git_tag <- function() {
     # initial repo
     packager:::use_git(path)
     result <- packager::git_tag(path = path)
-    RUnit::checkIdentical("0.0.0.9000", methods::slot(result, "name"))
-    RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
+    RUnit::checkIdentical("0.0.0.9000", getElement(result, "name"))
+    RUnit::checkIdentical("CRAN release", getElement(result, "message"))
     desc::desc_bump_version("minor", file = path)
     
     # uncommitted changes
@@ -128,8 +128,8 @@ test_git_tag <- function() {
     # commited changes
     git_add_commit(path = path)
     result <- packager::git_tag(path = path)
-    RUnit::checkIdentical("0.1.0", methods::slot(result, "name"))
-    RUnit::checkIdentical("CRAN release", methods::slot(result, "message"))
+    RUnit::checkIdentical("0.1.0", getElement(result, "name"))
+    RUnit::checkIdentical("CRAN release", getElement(result, "message"))
 
     # version number lower than in tags
     desc::desc_set(Version = "0.0.3", file = path)
