@@ -1,6 +1,7 @@
 image: rocker/r-devel:latest
 test:
   script:
+    - sudo apt-get install libssl-dev
     - R --vanilla -e 'install.packages("desc", repos = "https://cloud.r-project.org/")'
     - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, repos = "https://cloud.r-project.org/")}'
     - R --vanilla -e 'print(sessionInfo())'
