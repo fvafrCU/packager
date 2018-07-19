@@ -11,4 +11,8 @@ test:
     - R CMD build . --no-build-vignettes --no-manual
     - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
     - R CMD check "${PKG_FILE_NAME}"  --as-cran 
-    - R --vanilla -e 'covr::package_coverage()'
+    
+job1:
+  script: R --vanilla -e 'covr::package_coverage()'
+  coverage: '/^.*\s*Coverage:\s*\d+.\d+\%$/'
+
