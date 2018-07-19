@@ -2,6 +2,7 @@
 output: github_document
 ---
 [![pipeline status](https://gitlab.com/fvafrcu/packager/badges/master/pipeline.svg)](https://gitlab.com/fvafrcu/packager/commits/master)    
+[![coverage report](https://gitlab.com/fvafrcu/packager/badges/master/coverage.svg)](https://gitlab.com/fvafrcu/packager/commits/master)
 [![Build Status](https://travis-ci.org/fvafrCU/packager.svg?branch=master)](https://travis-ci.org/fvafrCU/packager)
 [![Coverage Status](https://codecov.io/github/fvafrCU/packager/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/packager?branch=master)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/packager)](https://cran.r-project.org/package=packager)
