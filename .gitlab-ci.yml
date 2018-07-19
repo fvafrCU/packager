@@ -1,16 +1,12 @@
 image: rocker/r-devel:latest
 before_script:
-    - apt-get -y install libssl-dev
+    - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev
     - R --vanilla -e 'install.packages("desc", repos = "https://cloud.r-project.org/")'
     - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, repos = "https://cloud.r-project.org/")}'
     - R --vanilla -e 'print(sessionInfo())'
 
 test:
-  script:
     - R CMD build . --no-build-vignettes --no-manual
     - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
     - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual --as-cran 
-
-coverage:
-    script:
-        - R --vanilla -e 'covr::package_coverage()'
+    - R --vanilla -e 'covr::package_coverage()'
