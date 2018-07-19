@@ -12,3 +12,4 @@ test:
     - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
     - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual --as-cran 
     - R --vanilla -e 'covr::package_coverage()'
+    - # R --vanilla -e 'covr::package_coverage(token = 20f3e0cc90e248d6be7efc7417390536)'
