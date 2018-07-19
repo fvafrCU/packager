@@ -1,7 +1,7 @@
 image: jangorecki/r-base-dev
 test:
   script:
-    - R --vanilla -e 'install.packages("desc")'
+    - R --vanilla -e 'install.packages("desc", repos = "https://cloud.r-project.org/")'
     - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, character.only = TRUE)}'
     - R --vanilla -e 'print(sessionInfo())'
     - R CMD build . --no-build-vignettes --no-manual
