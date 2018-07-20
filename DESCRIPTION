@@ -5,10 +5,10 @@ Authors@R:
     person(given = c("Andreas", "Dominik"),
            family = "Cullmann",
            role = c("aut", "cre"),
-           email = "adc-r@arcor.de")
+           email = "fvafrcu@mailbox.org")
 Description: Helper functions for a build system, heavily borrowing from and extending package `devtools 1.13.3`.
 License: BSD_2_clause + file LICENSE
-URL: https://github.com/fvafrCU/packager
+URL: https://gitlab.com/fvafrCU/packager
 Depends:
     R (>= 3.3.0)
 Imports:
