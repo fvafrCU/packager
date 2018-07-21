@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 # packager
 ## Introduction
 Please read the
-[vignette](https://htmlpreview.github.io/?https://github.com/fvafrCU/packager/blob/master/inst/doc/An_Introduction_to_packager.html).
+[vignette](https://fvafrcu.gitlab.io/packager/inst/doc/An_Introduction_to_packager.html)
 
 Or, after installation, the help page:
 ```{r, eval = FALSE}
