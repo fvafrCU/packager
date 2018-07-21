@@ -72,13 +72,19 @@ use_template <- function(template, save_as = template, data = list(),
 
 # adjust use_readme_rmd to not pass the argument \code{open} with use_template()
 # and fix the test on file.exists()
+# added git_user to pkg
 use_readme_rmd <- function(path = ".", ...) {
     pkg <- devtools::as.package(path)
+    if (uses_git(path)) {
+        pkg[["git_user"]] <- tryCatch(git2r::default_signature(path)[["name"]], 
+                                 error = function(e) return(NULL))
+    }
+
     if (uses_github(pkg$path)) {
         pkg$github <- github_info(pkg$path)
     }
     pkg$Rmd <- TRUE
-    use_template("omni-README", save_as = "README.Rmd", data = pkg,
+    use_template("README.Rmd", save_as = "README.Rmd", data = pkg,
                  ignore = TRUE, pkg = pkg, ...)
     use_build_ignore("^README-.*\\.png$", escape = FALSE, pkg = pkg)
     if (uses_git(pkg$path) && !file.exists(file.path(pkg$path, ".git",
