@@ -1,6 +1,6 @@
 # packager 0.13.0.9000
 
-* FIXME
+* Fixed for using gitlab instead of github.
 
 # packager 0.13.0
 
