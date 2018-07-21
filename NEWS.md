@@ -1,4 +1,4 @@
-# packager 0.13.0.9000
+# packager 0.14.0
 
 * Fixed for using gitlab instead of github.
 
