@@ -16,3 +16,14 @@ job1:
   script: R --vanilla -e 'install.packages("covr", repos = "https://cloud.r-project.org/"); covr::package_coverage()'
   coverage: '/^.*\s*Coverage:\s*\d+.\d+\%$/'
 
+pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
