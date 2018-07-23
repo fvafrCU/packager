@@ -92,6 +92,8 @@ vignettes: $(LOG_DIR)/vignettes.Rout
 $(LOG_DIR)/vignettes.Rout:	$(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
 	$(Rscript) --vanilla -e 'devtools::build_vignettes(); lapply(tools::pkgVignettes(dir = ".")[["docs"]], function(x) knitr::purl(x, output = file.path(".", "inst", "doc", sub("\\.Rmd$$", ".R", basename(x))), documentation = 0))' > $(LOG_DIR)/vignettes.Rout 2>&1 
 
+index.hml: README.md
+	pandoc  README.md -o index.html
 README.md: README.Rmd R/$(PKGNAME)-package.R
 	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
 
