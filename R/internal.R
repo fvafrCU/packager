@@ -258,3 +258,9 @@ travis_cli <- function(path) {
     return(travis_session_info)
 }
 
+use_gitlab_ci <- function(path = ".", ...) {
+    pkg <- as.package(path)
+    use_template(".gitlab-ci.yml", ".gitlab-ci.yml", ignore = TRUE,
+        pkg = pkg, ...)
+    return(invisible(NULL))
+}
