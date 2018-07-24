@@ -1,4 +1,4 @@
-RUNIT TEST PROTOCOL -- Fri Jul 13 23:27:05 2018 
+RUNIT TEST PROTOCOL -- Tue Jul 24 15:53:53 2018 
 *********************************************** 
 Number of test functions: 17 
 Number of errors: 0 
@@ -40,5 +40,5 @@ Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runi
 test_add_commit: (3 checks) ... OK (0.01 seconds)
 test_cran_comments: (1 checks) ... OK (0.05 seconds)
 test_git_tag: (7 checks) ... OK (0.07 seconds)
-test_githuburl: (4 checks) ... OK (1.07 seconds)
-test_news: (5 checks) ... OK (1 seconds)
+test_githuburl: (4 checks) ... OK (1.1 seconds)
+test_news: (5 checks) ... OK (1.01 seconds)

@@ -4,18 +4,27 @@
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
 * checking for file ‘packager/DESCRIPTION’ ... OK
-* this is package ‘packager’ version ‘0.13.0’
+* this is package ‘packager’ version ‘0.14.0.9000’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
 New submission
+
+Version contains large components (0.14.0.9000)
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  inst/templates/.gitlab-ci.yml
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+
+CRAN-pack does not know about
+  inst/templates/.gitlab-ci.yml
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
@@ -27,7 +36,9 @@ New submission
 * checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+Non-standard file/directory found at top level:
+  ‘index.html’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -65,4 +76,4 @@ FailedConnectionException "www.r-pkg.org" 443
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 WARNING, 1 NOTE
+Status: 1 WARNING, 2 NOTEs

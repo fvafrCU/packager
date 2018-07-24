@@ -1,14 +1,27 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+Non-standard file/directory found at top level:
+  ‘index.html’
 
 checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
 New submission
-displaying logs for fvafrCU/packager#232.1
-undefined method `each_pair' for #<String:0x00555c8ef5bb18>
+
+Version contains large components (0.14.0.9000)
+
+checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  inst/templates/.gitlab-ci.yml
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+
+CRAN-pack does not know about
+  inst/templates/.gitlab-ci.yml
+displaying logs for fvafrCU/packager#242.1
+undefined method `each_pair' for #<String:0x0055c6e2dd38b8>
 Did you mean?  each_char
 Error in if (file.exists(file.path(path, travis_session_info))) { : 
   argument is of length zero

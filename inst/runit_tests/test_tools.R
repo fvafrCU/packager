@@ -156,11 +156,7 @@ test_githuburl <- function() {
     }
     
     #% No git remote set
-    if (Sys.info()[["nodename"]] %in% c("h6")) {
-        expectation <- TRUE
-    } else {
-        expectation <- FALSE
-    }
+    expectation <- FALSE
     result <- add_github_url_to_desc(path = path, default_gh_user = NA)
     RUnit::checkIdentical(expectation, result)
 
@@ -181,19 +177,16 @@ test_githuburl <- function() {
     RUnit::checkIdentical(url, desc::desc_get_urls(path))
 
     #% user given
-    if (Sys.info()[["nodename"]] %in% c("h6")) {
-        # whoami is better than remote url
-        expectation <- paste0("https://github.com/fvafrCU/fake")
-    } else {
-        expectation <- paste0("https://github.com/", user, "/fake")
-    }
-    if (Sys.info()[["nodename"]] %in% c("h5")) {
+    if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         # doubled entry from above
         expectation <- c("https://github.com/fvafrCU/fake",
                          paste0("https://github.com/", user, "/fake"))
+    } else {
+        expectation <- paste0("https://github.com/", user, "/fake")
     }
+
     add_github_url_to_desc(path = path, default_gh_user = user)
     result <- desc::desc_get_urls(file = path)
     RUnit::checkIdentical(expectation, result)
-    readLines(file.path(path, "DESCRIPTION"))
+
 }

@@ -1,5 +1,5 @@
 <cleanr in cleanr::check_directory("R/", check_return = FALSE): R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R: line 3 counts 86 characters.
-/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R: line 257 counts 82 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R: line 263 counts 82 characters.
  /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R  use_template  found 7 arguments, max_num_arguments was 5
 R/   /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 86 counts 83 characters.
 /home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R: line 126 counts 81 characters.
@@ -17,6 +17,14 @@ R/   /home/qwer/git/cyclops/fvafrcu/packager/R/main.R  set_package_info  found 6
 R/   /home/qwer/git/cyclops/fvafrcu/packager/R/options.R: line 24 counts 83 characters.
 /home/qwer/git/cyclops/fvafrcu/packager/R/options.R: line 58 counts 87 characters.
 R/   /home/qwer/git/cyclops/fvafrcu/packager/R/remotes_modified.R  install_packages  found 6 arguments, max_num_arguments was 5
-R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 446 lines in file.
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 309 counts 82 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 310 counts 88 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: line 313 counts 85 characters.
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R: 399 lines in file.
  /home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_cran_comments  found 67 lines, max_lines was 65
-provide_cran_comments  found 65 lines of code, max_lines_of_code was 50>
+provide_cran_comments  found 65 lines of code, max_lines_of_code was 50
+/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R  provide_gitlab_url  line 9: found width 82 max_line_width was 80
+line 10: found width 88 max_line_width was 80
+line 13: found width 85 max_line_width was 80
+R/   /home/qwer/git/cyclops/fvafrcu/packager/R/use_dev_version.R: line 9 counts 90 characters.
+ /home/qwer/git/cyclops/fvafrcu/packager/R/use_dev_version.R  use_dev_version  line 3: found width 90 max_line_width was 80>
