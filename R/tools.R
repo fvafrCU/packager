@@ -270,7 +270,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
         warning("The package's name and root directory differ, ",
                 "sticking with the name as retrieved from file DESCRIPTION.")
     if (! is.null(gh_username) && is.na(gh_username)) {
-        git_url <- get_github_url(get_remote_url(path))
+        git_url <- get_git_url(get_remote_url(path), type = "github")
         num_of_remotes <- length(grep(paste0(package_name, "$"), git_url))
         if (num_of_remotes == 1) {
             gh_username <- sub(paste0("^https://github.com/(.*)/", package_name,
@@ -295,6 +295,32 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
         status <- TRUE
     }
     return(invisible(status))
+}
+
+provide_gitlab_url <- function(path = ".") {
+    url <- get_git_url(get_remote_url(path))
+    if (is.null(url)) {
+        repository <- tryCatch(git2r::repository(path = path),
+                               error = identity)
+        if (inherits(repository, "error")) {
+            throw(paste(path, "is not a git repository"))
+        } else {
+            package_dir <- basename(rprojroot::find_root(path = path,
+                                                         rprojroot::is_r_package))
+            package_name <- strip_off_attributes(desc::desc_get("Package", file = path))
+            if (package_name != package_dir)
+                warning("The package's name and root directory differ, ",
+                        "sticking with the name as retrieved from file DESCRIPTION.")
+            repo_config <- git2r::default_signature(repository) 
+            name <- methods::slot(repo_config, "name")
+            url <- paste("https://githubb.com", name, package_name,
+                            sep = "/")
+
+        }
+
+
+    }
+    return(url)
 }
 
 

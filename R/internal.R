@@ -219,23 +219,25 @@ get_remote_url <- function(path, discover = TRUE) {
     return(res)
 }
 
-get_github_url <- function(x,
-                           force = is_force(),
-                           return_only_one = FALSE) {
+get_git_url <- function(x,
+                        type = c("gitlab", "github"),
+                        force = is_force(),
+                        return_only_one = FALSE) {
+    type <- match.arg(type)
     if (length(x) == 0) {
         res <- NULL
     } else {
-        index_github <- grep("^https://github.com", x)
+        index_github <- grep(paste0("^https://", type, ".com"), x)
         if (length(index_github) == 0) {
             res <- NULL
         } else {
             if (isTRUE(return_only_one) && length(index_github) > 1) {
                 if (isTRUE(force)) {
-                    warning("Found multiple github URL, ",
+                    warning("Found multiple ", type, " URL, ",
                             "using the first.")
                     res <- x[index_github[1]]
                 } else {
-                    throw("Found multiple github URL.")
+                    throw(paste0("Found multiple ", type, " URL."))
                 }
             } else {
                 res <- x[index_github]
