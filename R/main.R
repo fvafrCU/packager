@@ -66,6 +66,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
                                       ".Rcheck"), pkg = path)
     devtools::use_build_ignore("cran-comments.md", pkg = path)
     devtools::use_build_ignore(".Rprofile", pkg = path)
+    devtools::use_build_ignore("index.html", pkg = path)
     use_git_ignore(".Rprofile", path = path)
     use_git_ignore("*.tar.gz", path = path)
     use_git_ignore(paste0(devtools::as.package(path)[["package"]],

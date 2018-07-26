@@ -1,4 +1,3 @@
-- FIXME: use_buildignore on index.html and .gitlab-ci.yml
 - FIXME: add_gitlab_url
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:

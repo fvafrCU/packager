@@ -183,7 +183,7 @@ provide_throw <- function(path = ".",
 
 use_devel <- function(path = ".",
                       force = is_force(),
-                      ignore = TRUE, ...) {
+                      ignore = TRUE) {
     pkg <- devtools::as.package(path)
     use_template("devel.R", data = pkg, pkg = pkg, force = force,
                  ignore = ignore)
@@ -260,9 +260,11 @@ travis_cli <- function(path) {
     return(travis_session_info)
 }
 
-use_gitlab_ci <- function(path = ".", ...) {
+use_gitlab_ci <- function(path = ".",
+                         force = is_force(),
+                         ignore = TRUE) {
     pkg <- as.package(path)
-    use_template(".gitlab-ci.yml", ".gitlab-ci.yml", ignore = TRUE,
-        pkg = pkg, ...)
+    use_template("dot_gitlab-ci.yml", ".gitlab-ci.yml", ignore = ignore,
+        force = force, pkg = pkg)
     return(invisible(NULL))
 }
