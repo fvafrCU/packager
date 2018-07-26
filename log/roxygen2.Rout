@@ -83,7 +83,5 @@ The following objects are masked from ‘package:devtools’:
     install_svn, install_url, install_version, package_deps,
     update_packages
 
-Writing set_options.Rd
-Writing is_r_package.Rd
 > 
 > 

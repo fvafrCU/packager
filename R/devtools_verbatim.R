@@ -1,7 +1,7 @@
 # verbatim copies of internals and dependencies of internals from devtools
 # 1.13.3 but with "#' @export" tags removed.
 has_description <- function(path) {
-  file.exists(file.path(path, 'DESCRIPTION'))
+  file.exists(file.path(path, "DESCRIPTION"))
 }
 
 strip_slashes <- function(x) {
@@ -66,17 +66,17 @@ check_dep_version <- function(dep_name, dep_ver = NA, dep_compare = NA) {
 
   if (xor(is.na(dep_ver), is.na(dep_compare))) {
     stop("dep_ver and dep_compare must be both NA or both non-NA")
-
-  } else if(!is.na(dep_ver) && !is.na(dep_compare)) {
-
+  } else if (!is.na(dep_ver) && !is.na(dep_compare)) {
     compare <- match.fun(dep_compare)
     if (!compare(
       as.numeric_version(getNamespaceVersion(dep_name)),
-      as.numeric_version(dep_ver))) {
-
-      warning("Need ", dep_name, " ", dep_compare,
+      as.numeric_version(dep_ver)
+    )) {
+      warning(
+        "Need ", dep_name, " ", dep_compare,
         " ", dep_ver,
-        " but loaded version is ", getNamespaceVersion(dep_name))
+        " but loaded version is ", getNamespaceVersion(dep_name)
+      )
     }
   }
   return(TRUE)
@@ -103,33 +103,36 @@ parse_deps <- function(string) {
   have_version <- grepl("\\(.*\\)", versions_str)
   versions_str[!have_version] <- NA
 
-  compare  <- sub(".*\\((\\S+)\\s+.*\\)", "\\1", versions_str)
+  compare <- sub(".*\\((\\S+)\\s+.*\\)", "\\1", versions_str)
   versions <- sub(".*\\(\\S+\\s+(.*)\\)", "\\1", versions_str)
 
   # Check that non-NA comparison operators are valid
-  compare_nna   <- compare[!is.na(compare)]
+  compare_nna <- compare[!is.na(compare)]
   compare_valid <- compare_nna %in% c(">", ">=", "==", "<=", "<")
-  if(!all(compare_valid)) {
-    stop("Invalid comparison operator in dependency: ",
-      paste(compare_nna[!compare_valid], collapse = ", "))
+  if (!all(compare_valid)) {
+    stop(
+      "Invalid comparison operator in dependency: ",
+      paste(compare_nna[!compare_valid], collapse = ", ")
+    )
   }
 
-  deps <- data.frame(name = names, compare = compare,
-    version = versions, stringsAsFactors = FALSE)
+  deps <- data.frame(
+    name = names, compare = compare,
+    version = versions, stringsAsFactors = FALSE
+  )
 
   # Remove R dependency
   deps[names != "R", ]
 }
 
 suggests_dep <- function(pkg) {
-
   suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
   deps <- parse_deps(suggests)
 
   found <- which(deps$name == pkg)[1L]
 
   if (!length(found)) {
-     stop(sQuote(pkg), " is not in Suggests: for devtools!", call. = FALSE)
+    stop(sQuote(pkg), " is not in Suggests: for devtools!", call. = FALSE)
   }
   deps[found, ]
 }
@@ -154,14 +157,16 @@ render_template <- function(name, data = list()) {
 }
 
 github_info <- function(path = ".", remote_name = NULL) {
-  if (!uses_github(path))
+  if (!uses_github(path)) {
     return(github_dummy)
+  }
 
   r <- git2r::repository(path, discover = TRUE)
   r_remote_urls <- grep("github", remote_urls(r), value = TRUE)
 
-  if (!is.null(remote_name) && !remote_name %in% names(r_remote_urls))
+  if (!is.null(remote_name) && !remote_name %in% names(r_remote_urls)) {
     stop("no github-related remote named ", remote_name, " found")
+  }
 
   remote_name <- c(remote_name, "origin", names(r_remote_urls))
   x <- r_remote_urls[remote_name]
@@ -180,7 +185,7 @@ add_desc_package <- function(pkg = ".", field, name) {
     new <- name
     changed <- TRUE
   } else {
-    if (!grepl(paste0('\\b', name, '\\b'), old)) {
+    if (!grepl(paste0("\\b", name, "\\b"), old)) {
       new <- paste0(old, ",\n    ", name)
       changed <- TRUE
     } else {
@@ -228,8 +233,9 @@ remote_urls <- function(r) {
 }
 
 uses_github <- function(path = ".") {
-  if (!uses_git(path))
+  if (!uses_git(path)) {
     return(FALSE)
+  }
 
   r <- git2r::repository(path, discover = TRUE)
   r_remote_urls <- git2r::remote_url(r)
@@ -276,9 +282,9 @@ parse_check_results <- function(path) {
 
   structure(
     list(
-      errors =   pieces[grepl("... ERROR", pieces, fixed = TRUE)],
+      errors = pieces[grepl("... ERROR", pieces, fixed = TRUE)],
       warnings = pieces[grepl("... WARN", pieces, fixed = TRUE)],
-      notes =    pieces[grepl("... NOTE", pieces, fixed = TRUE)]
+      notes = pieces[grepl("... NOTE", pieces, fixed = TRUE)]
     ),
     path = path,
     class = "check_results"
@@ -344,7 +350,8 @@ cran_comments <- function(pkg = ".") {
     warning("Can't find cran-comments.md.\n",
       "This file gives CRAN volunteers comments about the submission,\n",
       "and it must exist. Create it with use_cran_comments().\n",
-      call. = FALSE)
+      call. = FALSE
+    )
     return(character())
   }
 
@@ -377,4 +384,3 @@ maintainer <- function(pkg = ".") {
     email = maintainer$email
   )
 }
-

@@ -328,99 +328,45 @@ COPY: R/devtools_modified.R:9:3: style: Commented code should be removed.
 COPY: R/devtools_modified.R:11:3: style: Commented code should be removed.
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:32:5: warning: local variable ‘never_used’ assigned but may not be used
-    never_used <- create # this was part of the interaction.
-    ^~~~~~~~~~
-COPY: R/devtools_modified.R:79:80: style: Trailing whitespace is superfluous.
-        pkg[["git_user"]] <- tryCatch(git2r::default_signature(path)[["name"]], 
-                                                                               ^
-COPY: R/devtools_modified.R:237:17: style: Variable and function names should be all lowercase.
+COPY: R/devtools_modified.R:34:3: warning: local variable ‘never_used’ assigned but may not be used
+  never_used <- create # this was part of the interaction.
+  ^~~~~~~~~~
+COPY: R/devtools_modified.R:216:9: style: Commas should never have a space before.
+      } ,
+       ~^
+COPY: R/devtools_modified.R:266:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
-COPY: R/devtools_modified.R:263:1: style: lines should not be more than 80 characters.
+COPY: R/devtools_modified.R:294:1: style: lines should not be more than 80 characters.
 git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:283:7: style: Commented code should be removed.
-#     message(ab[1], " ahead of remote")
-      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:285:7: style: Commented code should be removed.
-#     message(ab[2], " behind remote")
-      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:4:31: style: Only use double-quotes.
-  file.exists(file.path(path, 'DESCRIPTION'))
-                              ^~~~~~~~~~~~~
+COPY: R/devtools_modified.R:314:9: style: Commented code should be removed.
+  #     message(ab[1], " ahead of remote")
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COPY: R/devtools_modified.R:316:9: style: Commented code should be removed.
+  #     message(ab[2], " behind remote")
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COPY: R/devtools_verbatim.R:8:13: warning: Do not use absolute paths.
   x <- sub("/*$", "", x)
             ^~~
 COPY: R/devtools_verbatim.R:32:39: warning: Do not use absolute paths.
     files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
                                       ^~~~~
-COPY: R/devtools_verbatim.R:70:12: style: Place a space before left parenthesis, except in a function call.
-  } else if(!is.na(dep_ver) && !is.na(dep_compare)) {
-           ^
 COPY: R/devtools_verbatim.R:86:1: style: lines should not be more than 80 characters.
   installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:112:5: style: Place a space before left parenthesis, except in a function call.
-  if(!all(compare_valid)) {
-    ^
-COPY: R/devtools_verbatim.R:126:1: style: lines should not be more than 80 characters.
+COPY: R/devtools_verbatim.R:129:1: style: lines should not be more than 80 characters.
   suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:183:23: style: Only use double-quotes.
-    if (!grepl(paste0('\\b', name, '\\b'), old)) {
-                      ^~~~~
-COPY: R/devtools_verbatim.R:183:36: style: Only use double-quotes.
-    if (!grepl(paste0('\\b', name, '\\b'), old)) {
-                                   ^~~~~
-COPY: R/devtools_verbatim.R:204:7: style: Commented code should be removed.
+COPY: R/devtools_verbatim.R:209:7: style: Commented code should be removed.
     # git@github.com:hadley/devtools.git
       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:223:1: style: lines should not be more than 80 characters.
+COPY: R/devtools_verbatim.R:228:1: style: lines should not be more than 80 characters.
 github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:300:1: style: lines should not be more than 80 characters.
+COPY: R/devtools_verbatim.R:306:1: style: lines should not be more than 80 characters.
     show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:380:1: style: Trailing blank lines are superfluous.
-
-^
-COPY: R/lintr_modified.R:20:1: style: lines should not be more than 80 characters.
-    cat(sep = "", crayon::bold(x$mark, " ", x$filename, ":", as.character(x$line_number),
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/lintr_modified.R:21:1: style: lines should not be more than 80 characters.
-                               ":", as.character(x$column_number), ": ", sep = ""),
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/lintr_modified.R:27:1: style: Trailing blank lines are superfluous.
-
-^
-COPY: R/remotes_modified.R:20:77: style: Trailing whitespace is superfluous.
-    withr::with_envvar(c(R_LIBS = lib, R_LIBS_USER = lib, R_LIBS_SITE = lib, 
-                                                                            ^
-COPY: R/remotes_modified.R:24:67: style: Trailing whitespace is superfluous.
-install_packages <- function(packages, repos = getOption("repos"), 
-                                                                  ^
-COPY: R/remotes_modified.R:25:58: style: Trailing whitespace is superfluous.
-                             type = getOption("pkgType"), 
-                                                         ^
-COPY: R/remotes_modified.R:27:33: style: Trailing whitespace is superfluous.
-    if (identical(type, "both")) 
-                                ^
-COPY: R/remotes_modified.R:29:24: style: Trailing whitespace is superfluous.
-    if (is.null(quiet)) 
-                       ^
-COPY: R/remotes_modified.R:31:60: style: Trailing whitespace is superfluous.
-    message("Installing ", length(packages), " packages: ", 
-                                                           ^
-COPY: R/remotes_modified.R:33:64: style: Trailing whitespace is superfluous.
-    safe_install_packages(packages, repos = repos, type = type, 
-                                                               ^
-COPY: R/remotes_modified.R:40:73: style: Trailing whitespace is superfluous.
-        message("Skipping ", length(ahead), " packages not available: ", 
-                                                                        ^
-COPY: R/remotes_modified.R:45:75: style: Trailing whitespace is superfluous.
-        message("Skipping ", length(missing), " packages ahead of CRAN: ", 
-                                                                          ^
-COPY: R/remotes_modified.R:54:64: style: Trailing whitespace is superfluous.
-        install_packages(behind, repos = attr(object, "repos"), 
-                                                               ^
+COPY: R/lintr_modified.R:22:1: style: lines should not be more than 80 characters.
+    sep = "", crayon::bold(x$mark, " ", x$filename, ":", as.character(x$line_number),
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
