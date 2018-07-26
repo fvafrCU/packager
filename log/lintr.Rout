@@ -232,12 +232,12 @@ NO COPY: R/main.R:79:6: style: Commented code should be removed.
 NO COPY: R/main.R:135:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
-NO COPY: R/options.R:42:35: style: Trailing whitespace is superfluous.
+NO COPY: R/options.R:43:35: style: Trailing whitespace is superfluous.
             .options(package_name, 
                                   ^
-NO COPY: R/options.R:58:1: style: lines should not be more than 80 characters.
-get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = TRUE) {
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NO COPY: R/options.R:59:65: style: Trailing whitespace is superfluous.
+get_options <- function(package_name, ..., remove_names = FALSE, 
+                                                                ^
 NO COPY: R/release.R:32:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^
@@ -247,49 +247,58 @@ NO COPY: R/tools.R:178:10: style: Trailing whitespace is superfluous.
 NO COPY: R/tools.R:184:74: style: Trailing whitespace is superfluous.
                 check_output <- grep("^Status", travis_log, value = TRUE) 
                                                                          ^
-NO COPY: R/tools.R:309:1: style: lines should not be more than 80 characters.
-                                                         rprojroot::is_r_package))
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/tools.R:310:1: style: lines should not be more than 80 characters.
-            package_name <- strip_off_attributes(desc::desc_get("Package", file = path))
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/tools.R:313:1: style: lines should not be more than 80 characters.
-                        "sticking with the name as retrieved from file DESCRIPTION.")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/tools.R:314:64: style: Trailing whitespace is superfluous.
-            repo_config <- git2r::default_signature(repository) 
-                                                               ^
-NO COPY: R/tools.R:375:27: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:348:27: style: Trailing whitespace is superfluous.
     pattern <- paste0("(", 
                           ^
-NO COPY: R/tools.R:376:36: style: Commas should always have a space after.
+NO COPY: R/tools.R:349:36: style: Commas should always have a space after.
                       paste0("^.*",file_name_markers , ".*$", 
                                    ^
-NO COPY: R/tools.R:376:54: style: Commas should never have a space before.
+NO COPY: R/tools.R:349:54: style: Commas should never have a space before.
                       paste0("^.*",file_name_markers , ".*$", 
                                                     ~^
-NO COPY: R/tools.R:376:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:349:62: style: Trailing whitespace is superfluous.
                       paste0("^.*",file_name_markers , ".*$", 
                                                              ^
-NO COPY: R/tools.R:380:40: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:353:40: style: Trailing whitespace is superfluous.
         if (grepl(pattern, x$filename)) 
                                        ^
-NO COPY: R/tools.R:386:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+NO COPY: R/tools.R:359:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     x <- lapply(x, function(x) {set_mark(x)})
                                ^
-NO COPY: R/tools.R:386:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+NO COPY: R/tools.R:359:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
     x <- lapply(x, function(x) {set_mark(x)})
                                            ^
-NO COPY: R/tools.R:397:9: warning: local variable ‘has_lints’ assigned but may not be used
+NO COPY: R/tools.R:370:9: warning: local variable ‘has_lints’ assigned but may not be used
     if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
         ^~~~~~~~~
-NO COPY: R/use_dev_version.R:9:1: style: lines should not be more than 80 characters.
-    status <- git_add_commit(path, message = "Use development version in NEWS -- skip ci")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/use_dev_version.R:26:16: style: Use <-, not =, for assignment.
+NO COPY: R/tools.R:381:16: style: Trailing whitespace is superfluous.
+is_r_package <- 
+               ^
+NO COPY: R/tools.R:403:62: style: Trailing whitespace is superfluous.
+        # could use uses_git(path) as condition, but if TRUE, 
+                                                             ^
+NO COPY: R/tools.R:404:77: style: Trailing whitespace is superfluous.
+        # I would have to call gitr::repository in the TRUE suite of the if. 
+                                                                            ^
+NO COPY: R/tools.R:411:79: style: Trailing whitespace is superfluous.
+                package_name <- strip_off_attributes(desc::desc_get("Package", 
+                                                                              ^
+NO COPY: R/tools.R:416:78: style: Trailing whitespace is superfluous.
+                            "sticking with the name as retrieved from file ", 
+                                                                             ^
+NO COPY: R/tools.R:421:64: style: Trailing whitespace is superfluous.
+            repo_config <- git2r::default_signature(repository) 
+                                                               ^
+NO COPY: R/tools.R:431:1: style: Trailing blank lines are superfluous.
+
+^
+NO COPY: R/use_dev_version.R:9:35: style: Trailing whitespace is superfluous.
+    status <- git_add_commit(path, 
+                                  ^
+NO COPY: R/use_dev_version.R:28:16: style: Use <-, not =, for assignment.
         status = FALSE
                ^
-NO COPY: R/use_dev_version.R:30:63: style: Trailing whitespace is superfluous.
+NO COPY: R/use_dev_version.R:32:63: style: Trailing whitespace is superfluous.
         dev_paragraph <- paste("#", desc::desc_get("Package"), 
                                                               ^
 COPY: inst/files/a_verbatim.R:2:1: style: lines should not be more than 80 characters.

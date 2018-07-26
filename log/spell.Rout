@@ -11,7 +11,7 @@ devtools       packager-package.Rd:9,12, description:1
 Devtools       provide_cran_comments.Rd:39
 exlusions      check_codetags.Rd:14
 gh             add_github_url_to_desc.Rd:27
-github         add_github_url_to_desc.Rd:5,20,28,31
+github         add_github_url_to_desc.Rd:5,20,28,31, provide_gitlab_url.Rd:13
 https          check_codetags.Rd:26
 lintr's        print_lints.Rd:27
 linux          provide_cran_comments.Rd:24

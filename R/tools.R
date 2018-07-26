@@ -297,33 +297,6 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
     return(invisible(status))
 }
 
-provide_gitlab_url <- function(path = ".") {
-    url <- get_git_url(get_remote_url(path))
-    if (is.null(url)) {
-        repository <- tryCatch(git2r::repository(path = path),
-                               error = identity)
-        if (inherits(repository, "error")) {
-            throw(paste(path, "is not a git repository"))
-        } else {
-            package_dir <- basename(rprojroot::find_root(path = path,
-                                                         rprojroot::is_r_package))
-            package_name <- strip_off_attributes(desc::desc_get("Package", file = path))
-            if (package_name != package_dir)
-                warning("The package's name and root directory differ, ",
-                        "sticking with the name as retrieved from file DESCRIPTION.")
-            repo_config <- git2r::default_signature(repository) 
-            name <- methods::slot(repo_config, "name")
-            url <- paste("https://githubb.com", name, package_name,
-                            sep = "/")
-
-        }
-
-
-    }
-    return(url)
-}
-
-
 #' Provide File \command{make.R}
 #'
 #' @param path Where to create the file.
@@ -397,3 +370,62 @@ print_lints <- function(x, sort = TRUE, invert = FALSE,
     if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
     return(invisible(x))
 }
+
+#' Is a Directory an R Package Directory?
+#' 
+#' Just a convenience wrapper to
+#' \code{\link[rprojroot:is_r_package]{rprojroot::is_r_package}}.
+#' @param path The path to the directory or one of its subdirectories.
+#' @return TRUE if the directory is an \R package directory.
+#' @export
+is_r_package <- 
+    rprojroot::as.root_criterion(rprojroot::is_r_package)[["testfun"]][[1]]
+
+#' Provide a \code{gitlab} \code{url} for a Given Path
+#'
+#' @param path The path to the directory or one of its subdirectories.
+#' @return a character string giving a github \code{url}.
+#' @examples
+#' path <- file.path(tempdir(), "foo")
+#' unlink(path, recursive = TRUE)
+#' devtools::create(path)
+#' try(provide_gitlab_url(path))
+#' git2r::init(path)
+#' provide_gitlab_url(path)
+#' invisible(desc::desc_set(Package = "bar", file = path))
+#' provide_gitlab_url(path)
+#' @export
+provide_gitlab_url <- function(path = ".") {
+    url <- get_git_url(get_remote_url(path))
+    if (is.null(url)) {
+        repository <- tryCatch(git2r::repository(path = path),
+                               error = identity)
+        # could use uses_git(path) as condition, but if TRUE, 
+        # I would have to call gitr::repository in the TRUE suite of the if. 
+        # So I do it above.
+        if (inherits(repository, "error")) {
+            throw(paste(path, "is not a git repository"))
+        } else {
+            directory <- basename(git2r::workdir(repository))
+            if (is_r_package(path)) {
+                package_name <- strip_off_attributes(desc::desc_get("Package", 
+                                                                    file = path)
+                )
+                if (package_name != directory) {
+                    warning("The package's name and root directory differ, ",
+                            "sticking with the name as retrieved from file ", 
+                            "DESCRIPTION.")
+                    directory <- package_name
+                }
+            }
+            repo_config <- git2r::default_signature(repository) 
+            name <- getElement(repo_config, "name")
+            url <- paste("https://githubb.com", name, directory, sep = "/")
+
+        }
+
+
+    }
+    return(url)
+}
+

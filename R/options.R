@@ -21,7 +21,8 @@
 #' 
 #' set_options("cleanr", defaults)
 #' getOption("cleanr")
-#' set_options("cleanr", list(max_line_width = 3, max_lines = "This is nonsense!"))
+#' set_options("cleanr", list(max_line_width = 3, 
+#'             max_lines = "This is nonsense!"))
 #' set_options("cleanr", check_return = NULL, max_lines = 4000)
 #' get_options("cleanr")
 set_options <- function(package_name, ..., overwrite = TRUE) {
@@ -55,7 +56,8 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
 #' @param flatten_list [boolean(1)]\cr Return a vector?
 #' @return a (possibly named) list or a vector.
 #' @export
-get_options <- function(package_name, ..., remove_names = FALSE, flatten_list = TRUE) {
+get_options <- function(package_name, ..., remove_names = FALSE, 
+                        flatten_list = TRUE) {
     checkmate::qassert(remove_names, "B1")
     checkmate::qassert(flatten_list, "B1")
     if (missing(...)) {

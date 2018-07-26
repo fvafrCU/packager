@@ -1,6 +1,6 @@
 # packager 0.14.0.9000
 
-* FIXME
+* Added new functions is\_r\_package() and provide\_gitlab\_url().
 
 # packager 0.14.0
 

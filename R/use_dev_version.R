@@ -6,7 +6,9 @@
 use_dev_version <- function(path = ".") {
     devtools::use_dev_version(pkg = path)
     use_dev_news(path = path)
-    status <- git_add_commit(path, message = "Use development version in NEWS -- skip ci")
+    status <- git_add_commit(path, 
+                             message = paste0("Use development version in NEWS",
+                                              " -- skip ci"))
     return(status)
 }
 

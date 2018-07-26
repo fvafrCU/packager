@@ -1,7 +1,5 @@
 - FIXME: use_buildignore on index.html and .gitlab-ci.yml
 - FIXME: add_gitlab_url
-- FIXME: provide_gitlab_url with uses_git() and make robust for non-R-package
-  dirs
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:
         check <- parse_check_results(file.path(path, check_log))
