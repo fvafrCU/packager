@@ -1,4 +1,4 @@
-- FIXME: add_gitlab_url
+- use gitlabr instead of travis to provide cran-comments.md
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:
         check <- parse_check_results(file.path(path, check_log))

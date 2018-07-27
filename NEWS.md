@@ -1,5 +1,7 @@
-# packager 0.14.0.9000
+# packager 0.15.0
 
+* Added new functions set\_desc\_url(), which, using provide\_gitlab\_url(),
+  sets the DESCRIPTION's URL to a hopefully reasonable URL while infect()ing.
 * Added new functions is\_r\_package() and provide\_gitlab\_url().
 
 # packager 0.14.0
