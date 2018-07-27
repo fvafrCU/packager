@@ -9,9 +9,11 @@ Testing packager
 ⠏ |  0       | test throw⠋ |  1       | test throw✔ |  1       | test throw
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 0.1 s
+Duration: 0.2 s
 
 OK:       1
 Failed:   0
 Warnings: 0
 Skipped:  0
+
+HUZZAH - superior code.

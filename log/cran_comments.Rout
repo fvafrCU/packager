@@ -10,7 +10,7 @@ New submission
 
 Version contains large components (0.14.0.9000)
 displaying logs for fvafrCU/packager#242.1
-undefined method `each_pair' for #<String:0x0055c2e5c489e0>
+undefined method `each_pair' for #<String:0x0055635d757248>
 Did you mean?  each_char
 Error in if (file.exists(file.path(path, travis_session_info))) { : 
   argument is of length zero

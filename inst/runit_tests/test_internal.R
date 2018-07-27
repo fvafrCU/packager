@@ -64,11 +64,6 @@ test_warn_and_stop <- function()
 
 test_url <- function() {
     #% get_remote_url
-    ##% no such url
-    expectation <- NULL
-    result <- packager:::get_remote_url()
-    RUnit::checkTrue(identical(result, expectation))
-
     path <- file.path(tempdir(), "fakePackge")
     dir.create(path)
     on.exit(unlink(path, recursive = TRUE))
@@ -83,7 +78,7 @@ test_url <- function() {
     #% get_git_url
     ##% no such url
     expectation <- NULL
-    url <- packager:::get_remote_url()
+    url <- packager:::get_remote_url(path = tempdir())
     result <- packager:::get_git_url(url)
     RUnit::checkIdentical(result, expectation)
 

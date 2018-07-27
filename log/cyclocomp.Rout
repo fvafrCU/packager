@@ -8,4 +8,5 @@
 ** installing vignettes
 ** testing if installed package can be loaded
 * DONE (packager)
-<error in packager::check_cyclomatic_complexity(): Exceeding maximum cyclomatic complexity of 10 for add_github_url_to_desc by 2.>
+<error in packager::check_cyclomatic_complexity(): Exceeding maximum cyclomatic complexity of 10 for add_github_url_to_desc by 2.
+Exceeding maximum cyclomatic complexity of 10 for release by 1.>

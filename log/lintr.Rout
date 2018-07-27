@@ -31,31 +31,31 @@ NO COPY: inst/runit_tests/test_internal.R:46:13: warning: no visible global func
 NO COPY: inst/runit_tests/test_internal.R:61:33: style: Trailing whitespace is superfluous.
 test_warn_and_stop <- function() 
                                 ^
-NO COPY: inst/runit_tests/test_internal.R:75:30: style: Trailing whitespace is superfluous.
+NO COPY: inst/runit_tests/test_internal.R:70:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-NO COPY: inst/runit_tests/test_internal.R:77:39: warning: Do not use absolute paths.
+NO COPY: inst/runit_tests/test_internal.R:72:39: warning: Do not use absolute paths.
     git2r::remote_add(repo, "local", "~/git/fakePackage")
                                       ^~~~~~~~~~~~~~~~~
-NO COPY: inst/runit_tests/test_internal.R:107:63: style: Trailing whitespace is superfluous.
+NO COPY: inst/runit_tests/test_internal.R:102:63: style: Trailing whitespace is superfluous.
     expectation <- c("https://github.com/fvafrCU/fakePackage", 
                                                               ^
-NO COPY: inst/runit_tests/test_internal.R:116:1: style: lines should not be more than 80 characters.
+NO COPY: inst/runit_tests/test_internal.R:111:1: style: lines should not be more than 80 characters.
     result <- packager:::get_git_url(url, return_only_one = TRUE, type = "github")
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: inst/runit_tests/test_internal.R:120:78: style: Trailing whitespace is superfluous.
+NO COPY: inst/runit_tests/test_internal.R:115:78: style: Trailing whitespace is superfluous.
     RUnit::checkException(packager:::get_git_url(url, return_only_one = TRUE, 
                                                                              ^
-NO COPY: inst/runit_tests/test_internal.R:121:1: style: lines should not be more than 80 characters.
+NO COPY: inst/runit_tests/test_internal.R:116:1: style: lines should not be more than 80 characters.
                                                  force = FALSE, type = "github"))
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: inst/runit_tests/test_internal.R:129:30: style: Trailing whitespace is superfluous.
+NO COPY: inst/runit_tests/test_internal.R:124:30: style: Trailing whitespace is superfluous.
     repo <- git2r::init(path)  
                              ^~
-NO COPY: inst/runit_tests/test_internal.R:134:10: style: Commented code should be removed.
+NO COPY: inst/runit_tests/test_internal.R:129:10: style: Commented code should be removed.
         #RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: inst/runit_tests/test_internal.R:137:1: style: Trailing blank lines are superfluous.
+NO COPY: inst/runit_tests/test_internal.R:132:1: style: Trailing blank lines are superfluous.
 
 ^
 NO COPY: inst/runit_tests/test_tools.R:7:61: style: Trailing whitespace is superfluous.
@@ -220,6 +220,9 @@ NO COPY: R/git.R:92:1: style: Trailing blank lines are superfluous.
 NO COPY: R/internal.R:89:52: style: Trailing whitespace is superfluous.
     stop <- start + attr(match, "match.length") - 1 
                                                    ^
+NO COPY: R/internal.R:215:6: style: Trailing whitespace is superfluous.
+    }     
+     ^~~~~
 NO COPY: R/main.R:22:39: style: Trailing whitespace is superfluous.
 create <- function(path, force = TRUE, 
                                       ^
@@ -238,7 +241,7 @@ NO COPY: R/options.R:43:35: style: Trailing whitespace is superfluous.
 NO COPY: R/options.R:59:65: style: Trailing whitespace is superfluous.
 get_options <- function(package_name, ..., remove_names = FALSE, 
                                                                 ^
-NO COPY: R/release.R:32:69: style: Trailing whitespace is superfluous.
+NO COPY: R/release.R:34:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^
 NO COPY: R/tools.R:178:10: style: Trailing whitespace is superfluous.
@@ -274,19 +277,19 @@ NO COPY: R/tools.R:370:9: warning: local variable ‘has_lints’ assigned but m
 NO COPY: R/tools.R:381:16: style: Trailing whitespace is superfluous.
 is_r_package <- 
                ^
-NO COPY: R/tools.R:403:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:405:62: style: Trailing whitespace is superfluous.
         # could use uses_git(path) as condition, but if TRUE, 
                                                              ^
-NO COPY: R/tools.R:404:77: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:406:77: style: Trailing whitespace is superfluous.
         # I would have to call gitr::repository in the TRUE suite of the if. 
                                                                             ^
-NO COPY: R/tools.R:411:79: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:413:79: style: Trailing whitespace is superfluous.
                 package_name <- strip_off_attributes(desc::desc_get("Package", 
                                                                               ^
-NO COPY: R/tools.R:416:78: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:418:78: style: Trailing whitespace is superfluous.
                             "sticking with the name as retrieved from file ", 
                                                                              ^
-NO COPY: R/tools.R:421:64: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:423:64: style: Trailing whitespace is superfluous.
             repo_config <- git2r::default_signature(repository) 
                                                                ^
 NO COPY: R/tools.R:431:1: style: Trailing blank lines are superfluous.
@@ -331,19 +334,19 @@ COPY: R/devtools_modified.R:11:3: style: Commented code should be removed.
 COPY: R/devtools_modified.R:34:3: warning: local variable ‘never_used’ assigned but may not be used
   never_used <- create # this was part of the interaction.
   ^~~~~~~~~~
-COPY: R/devtools_modified.R:216:9: style: Commas should never have a space before.
+COPY: R/devtools_modified.R:221:9: style: Commas should never have a space before.
       } ,
        ~^
-COPY: R/devtools_modified.R:266:17: style: Variable and function names should be all lowercase.
+COPY: R/devtools_modified.R:271:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
-COPY: R/devtools_modified.R:294:1: style: lines should not be more than 80 characters.
+COPY: R/devtools_modified.R:299:1: style: lines should not be more than 80 characters.
 git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:314:9: style: Commented code should be removed.
+COPY: R/devtools_modified.R:319:9: style: Commented code should be removed.
   #     message(ab[1], " ahead of remote")
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:316:9: style: Commented code should be removed.
+COPY: R/devtools_modified.R:321:9: style: Commented code should be removed.
   #     message(ab[2], " behind remote")
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COPY: R/devtools_verbatim.R:8:13: warning: Do not use absolute paths.
