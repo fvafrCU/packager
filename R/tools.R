@@ -461,6 +461,7 @@ provide_gitlab_url <- function(path = ".") {
 #' unlink(path, recursive = TRUE)
 #' devtools::create(path)
 #' repo <- git2r::init(path)
+#' git2r::config(repo, user.name = "foobar", user.email = "foobar@nowhe.re")
 #' git2r::add(repo = repo, path = "*")
 #' git2r::commit(repo = repo, message = "Initial commit")
 #' url <- provide_gitlab_url(path = path)

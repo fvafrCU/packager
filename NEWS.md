@@ -1,10 +1,11 @@
-# packager 0.15.1.9000
+# packager 0.15.2
 
-* FIXME
+* Hardboiled examples for incevt() against missing git default config.
+
 
 # packager 0.15.1
 
-* Fix broken pipeline by hardening provide\_gitlab\_url() against missing git
+* Fixed broken pipeline by hardening provide\_gitlab\_url() against missing git
   default config.
 
 # packager 0.15.0

@@ -1,6 +1,6 @@
 Package: packager
 Title: Helps Me Build Packages
-Version: 0.15.1.9000
+Version: 0.15.2
 Authors@R:
     person(given = c("Andreas", "Dominik"),
            family = "Cullmann",
