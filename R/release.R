@@ -8,9 +8,11 @@
 #' @param stop_on_git Stop if git has uncommited changes or is not synced with
 #' the origin?
 #' @param force Skip user interaction?
+#' @param verbose Be verbose?
 #' @return \code{\link[base:invisible]{Invisibly} \link{NULL}}
 #' @export
-release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
+release <- function(path = ".", stop_on_git = TRUE, force = FALSE,
+                    verbose = TRUE) {
     if (uses_git(path) && isTRUE(stop_on_git)) {
         if (is_git_uncommitted(path = path) )
             throw("You have uncommitted changes.")
@@ -32,7 +34,7 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE) {
                        "git tag -a ", desc::desc_get_version(), " ", 
                        git2r::reflog(r)[[1]][["sha"]], " -m 'CRAN release'"
                       )
-            message(m)
+            if (isTRUE(verbose)) message(m)
             union_write(file.path(path, "TODO.md"), m)
             git_add_commit(path, "Submitted to CRAN")
         }
