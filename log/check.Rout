@@ -29,7 +29,7 @@ Version contains large components (0.14.0.9000)
 * checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+FailedConnectionException "www.r-pkg.org" 443
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK

@@ -223,16 +223,13 @@ NO COPY: R/internal.R:89:52: style: Trailing whitespace is superfluous.
 NO COPY: R/internal.R:215:6: style: Trailing whitespace is superfluous.
     }     
      ^~~~~
-NO COPY: R/main.R:22:39: style: Trailing whitespace is superfluous.
-create <- function(path, force = TRUE, 
-                                      ^
-NO COPY: R/main.R:31:75: style: Trailing whitespace is superfluous.
+NO COPY: R/main.R:29:75: style: Trailing whitespace is superfluous.
     desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
                                                                           ^
-NO COPY: R/main.R:80:6: style: Commented code should be removed.
+NO COPY: R/main.R:78:6: style: Commented code should be removed.
     #FIXME: add_gitlab_url_to_desc(path = path)
      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/main.R:136:35: style: Trailing whitespace is superfluous.
+NO COPY: R/main.R:134:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
 NO COPY: R/options.R:43:35: style: Trailing whitespace is superfluous.
@@ -277,19 +274,19 @@ NO COPY: R/tools.R:370:9: warning: local variable ‘has_lints’ assigned but m
 NO COPY: R/tools.R:381:16: style: Trailing whitespace is superfluous.
 is_r_package <- 
                ^
-NO COPY: R/tools.R:405:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:403:62: style: Trailing whitespace is superfluous.
         # could use uses_git(path) as condition, but if TRUE, 
                                                              ^
-NO COPY: R/tools.R:406:77: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:404:77: style: Trailing whitespace is superfluous.
         # I would have to call gitr::repository in the TRUE suite of the if. 
                                                                             ^
-NO COPY: R/tools.R:413:79: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:411:79: style: Trailing whitespace is superfluous.
                 package_name <- strip_off_attributes(desc::desc_get("Package", 
                                                                               ^
-NO COPY: R/tools.R:418:78: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:416:78: style: Trailing whitespace is superfluous.
                             "sticking with the name as retrieved from file ", 
                                                                              ^
-NO COPY: R/tools.R:423:64: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:421:64: style: Trailing whitespace is superfluous.
             repo_config <- git2r::default_signature(repository) 
                                                                ^
 NO COPY: R/tools.R:431:1: style: Trailing blank lines are superfluous.

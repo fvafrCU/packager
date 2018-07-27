@@ -4,7 +4,7 @@
 \alias{release}
 \title{Release a Package to CRAN}
 \usage{
-release(path = ".", stop_on_git = TRUE, force = FALSE)
+release(path = ".", stop_on_git = TRUE, force = FALSE, verbose = TRUE)
 }
 \arguments{
 \item{path}{The package's root directory.}
@@ -13,6 +13,8 @@ release(path = ".", stop_on_git = TRUE, force = FALSE)
 the origin?}
 
 \item{force}{Skip user interaction?}
+
+\item{verbose}{Be verbose?}
 }
 \value{
 \code{\link[base:invisible]{Invisibly} \link{NULL}}

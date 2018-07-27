@@ -24,7 +24,7 @@ git_add_commit <- function(path, message = "Uncommented Changes: Backing Up",
 }
 
 git_commit <- function(repository, commit_message,
-                       verbose = isTRUE(getOption("packager")[["verbose"]])) {
+                       verbose = getOption("packager")[["verbose"]]) {
     repo_config <- tryCatch(git2r::default_signature(repository), 
                             error = identity)
     if (inherits(repo_config, "error")) {

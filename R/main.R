@@ -6,7 +6,6 @@
 #'
 #'
 #' @param path See \code{\link[devtools:create]{devtools::create}}.
-#' @param verbose Be verbose?
 #' @param force Recursively \code{\link{unlink}} the path before calling
 #' \code{\link[devtools:create]{devtools::create}(path)}?
 #' @param ... Arguments to be passed to \code{\link{infect}}.
@@ -19,8 +18,7 @@
 #' packager::create(path = path)
 #' list.files(path)
 #' unlink(path, recursive = TRUE)
-create <- function(path, force = TRUE, 
-                   verbose = isTRUE(getOption("packager")[["verbose"]]), ...) {
+create <- function(path, force = TRUE, ...) {
     if (isTRUE(force)) unlink(path, recursive = TRUE)
     devtools::create(path = path, rstudio = FALSE, check = FALSE)
     r <- git2r::init(path = path)
