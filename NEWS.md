@@ -1,6 +1,6 @@
-# packager 0.15.2.9000
+# packager 0.15.3
 
-* FIXME
+* Roxygenized the examples from 0.15.2.
 
 # packager 0.15.2
 
