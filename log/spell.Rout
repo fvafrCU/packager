@@ -17,7 +17,7 @@ lintr's        print_lints.Rd:27
 linux          provide_cran_comments.Rd:24
 LTS            provide_cran_comments.Rd:25
 Makelist       provide_make_list.Rd:5,14
-md             check_news.Rd:5,14,17, provide_cran_comments.Rd:36,39,41, use_dev_news.Rd:5,16, use_dev_version.Rd:5,16
+md             check_news.Rd:5,14,17, provide_cran_comments.Rd:36,39,41, set_desc_url.Rd:26, use_dev_news.Rd:5,16, use_dev_version.Rd:5,16
 pc             provide_cran_comments.Rd:24
 Rbuildignore   provide_make.Rd:12
 Rscript        provide_cran_comments.Rd:19

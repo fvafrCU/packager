@@ -429,10 +429,10 @@ provide_gitlab_url <- function(path = ".") {
     return(url)
 }
 
-#' Set a DESCRIPTION File's \cde{URL} Field
+#' Set a DESCRIPTION File's \code{URL} Field
 #' 
 #' I frequently forget to add an \code{URL} to my packages' DESCRIPTION files,
-#' and when I do not, I often forget to check that the \cde{URL} is valid,
+#' and when I do not, I often forget to check that the \code{URL} is valid,
 #' respectively the one I want. \cr
 #' So this is a wrapper to functions from \pkg{desc} and \pkg{git2r} and i
 #' messaging and/or adding
@@ -441,12 +441,14 @@ provide_gitlab_url <- function(path = ".") {
 #' DESCRIPTION.
 #' @param path Path to the DESCRIPTION file, see
 #' \code{\link[desc:desc_get_urls]{desc::desc_get_urls}}.
-#' @param normalize See
-#' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
+#' @param normalize See \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
 #' @param do_commit Commit the updated DESCRIPTION?
 #' @param do_remind Write a reminder into the package's TODO.md?
 #' @param verbose Be verbose?
+#' @param overwrite Set (overwrite) the \code{URL} field in DESCRIPTION instead
+#' adding the \code{URL} given to the \code{URL} field in DESCRIPTION?
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}}
+#' @export
 #' @examples
 #' path <- file.path(tempdir(), "foo")
 #' unlink(path, recursive = TRUE)
@@ -455,18 +457,20 @@ provide_gitlab_url <- function(path = ".") {
 #' git2r::add(repo = repo, path = "*")
 #' git2r::commit(repo = repo, message = "Initial commit")
 #' url <- provide_gitlab_url(path = path)
-#' set_desc_url(url, path = path, append = FALSE, normalize = TRUE)
+#' set_desc_url(url, path = path)
 #' git2r::commits(repo)
 #' git2r::status(repo)
 #' readLines(file.path(path, "TODO.md"))
 set_desc_url <- function(url, path = ".", normalize = TRUE, 
-                         append = getOption("packager")[["url_append"]],
+                         overwrite = FALSE,
                          do_commit = is_force(), 
-                         do_remind = !isTRUE(getOption("packager")[["url_force"]]),
+                         do_remind = !isTRUE(getOption("packager")[["force"]]),
                          verbose = getOption("packager")[["verbose"]]
                          ) {
     status <- FALSE
-    if (isTRUE(append)) {
+    if (isTRUE(overwrite)) {
+        # do nothing
+    } else {
         desc_url <- desc::desc_get_urls(path)
         url <- c(desc_url, url)
     }
@@ -487,5 +491,3 @@ set_desc_url <- function(url, path = ".", normalize = TRUE,
     status <- TRUE
     return(invisible(status))
 }
-
-

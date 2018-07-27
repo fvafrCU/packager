@@ -1,7 +1,7 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
@@ -10,7 +10,7 @@ New submission
 
 Version contains large components (0.14.0.9000)
 displaying logs for fvafrCU/packager#242.1
-undefined method `each_pair' for #<String:0x0055b2a7017ae8>
+undefined method `each_pair' for #<String:0x005621e2f2b8e0>
 Did you mean?  each_char
 Error in if (file.exists(file.path(path, travis_session_info))) { : 
   argument is of length zero

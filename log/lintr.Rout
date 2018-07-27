@@ -226,10 +226,7 @@ NO COPY: R/internal.R:215:6: style: Trailing whitespace is superfluous.
 NO COPY: R/main.R:29:75: style: Trailing whitespace is superfluous.
     desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
                                                                           ^
-NO COPY: R/main.R:78:6: style: Commented code should be removed.
-    #FIXME: add_gitlab_url_to_desc(path = path)
-     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/main.R:134:35: style: Trailing whitespace is superfluous.
+NO COPY: R/main.R:135:35: style: Trailing whitespace is superfluous.
 set_package_info <- function(path, 
                                   ^
 NO COPY: R/options.R:43:35: style: Trailing whitespace is superfluous.
@@ -289,9 +286,15 @@ NO COPY: R/tools.R:416:78: style: Trailing whitespace is superfluous.
 NO COPY: R/tools.R:421:64: style: Trailing whitespace is superfluous.
             repo_config <- git2r::default_signature(repository) 
                                                                ^
-NO COPY: R/tools.R:431:1: style: Trailing blank lines are superfluous.
-
-^
+NO COPY: R/tools.R:464:60: style: Trailing whitespace is superfluous.
+set_desc_url <- function(url, path = ".", normalize = TRUE, 
+                                                           ^
+NO COPY: R/tools.R:466:49: style: Trailing whitespace is superfluous.
+                         do_commit = is_force(), 
+                                                ^
+NO COPY: R/tools.R:482:53: style: Trailing whitespace is superfluous.
+        invisible(tryCatch(git2r::commit(repository, 
+                                                    ^
 NO COPY: R/use_dev_version.R:9:35: style: Trailing whitespace is superfluous.
     status <- git_add_commit(path, 
                                   ^

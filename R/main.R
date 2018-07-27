@@ -75,7 +75,8 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
     use_devtools(path = path)
     use_travis(path = path)
     use_gitlab_ci(path = path)
-    #FIXME: add_gitlab_url_to_desc(path = path)
+    set_desc_url(provide_gitlab_url(path = path), path = path, overwrite = TRUE,
+                 do_remind = TRUE, do_commit = FALSE)
     add_github_url_to_desc(path = path)
     use_bsd2clause_license(path = path)
     withr::with_dir(path, usethis::use_testthat())

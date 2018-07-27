@@ -6,7 +6,7 @@
 \usage{
 set_desc_url(url, path = ".", normalize = TRUE, overwrite = FALSE,
   do_commit = is_force(),
-  do_remind = !isTRUE(getOption("packager")[["url_force"]]),
+  do_remind = !isTRUE(getOption("packager")[["force"]]),
   verbose = getOption("packager")[["verbose"]])
 }
 \arguments{
@@ -16,8 +16,10 @@ DESCRIPTION.}
 \item{path}{Path to the DESCRIPTION file, see
 \code{\link[desc:desc_get_urls]{desc::desc_get_urls}}.}
 
-\item{normalize}{See
-\code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.}
+\item{normalize}{See \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.}
+
+\item{overwrite}{Set (overwrite) the \code{URL} field in DESCRIPTION instead
+adding the \code{URL} given to the \code{URL} field in DESCRIPTION?}
 
 \item{do_commit}{Commit the updated DESCRIPTION?}
 
