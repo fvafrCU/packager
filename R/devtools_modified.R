@@ -167,14 +167,19 @@ use_git <- function(path = ".", message = "Initial commit") {
 }
 
 # Modified copy of devtools' unexported version
-union_write <- function(path, new_lines) {
+# added argument 'prepend'
+union_write <- function(path, new_lines, prepend = FALSE) {
   if (file.exists(path)) {
     lines <- readLines(path, warn = FALSE)
   }
   else {
     lines <- character()
   }
-  all <- union(lines, new_lines)
+  if (isTRUE(prepend)) {
+      all <- union(new_lines, lines)
+  } else {
+      all <- union(lines, new_lines)
+  }
   writeLines(all, path)
 }
 
