@@ -36,7 +36,7 @@ Registered S3 methods overwritten by 'remotes':
 [31] "provide_cran_comments: parameter ‘name’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R:129-138)"                                                 
 [32] "provide_cran_comments: parameter ‘travis_session_info’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R:174-190)"                                  
 [33] "safe_install_packages: local variable ‘i.p’ used as function with no apparent local function definition (/home/qwer/git/cyclops/fvafrcu/packager/R/remotes_modified.R:16)" 
-[34] "set_desc_url: parameter ‘url’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R:475)"                                                               
+[34] "set_desc_url: parameter ‘url’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/tools.R:482)"                                                               
 [35] "strip_off_attributes: parameter ‘x’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/internal.R:2)"                                                        
 [36] "strip_slashes: parameter ‘x’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R:8)"                                                      
 [37] "update_description: parameter ‘author_at_r’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/internal.R:63-72)"                                            

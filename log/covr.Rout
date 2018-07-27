@@ -442,13 +442,18 @@
 1018             R/tools.R          provide_gitlab_url  416     0
 1019             R/tools.R          provide_gitlab_url  417     0
 1020             R/tools.R          provide_gitlab_url  418     0
-1027             R/tools.R                set_desc_url  474     0
-1028             R/tools.R                set_desc_url  475     0
-1031             R/tools.R                set_desc_url  479     0
-1032             R/tools.R                set_desc_url  480     0
-1033             R/tools.R                set_desc_url  482     0
-1034             R/tools.R                set_desc_url  483     0
-1035             R/tools.R                set_desc_url  484     0
+1024             R/tools.R          provide_gitlab_url  424     0
+1025             R/tools.R          provide_gitlab_url  425     0
+1026             R/tools.R          provide_gitlab_url  426     0
+1027             R/tools.R          provide_gitlab_url  427     0
+1028             R/tools.R          provide_gitlab_url  428     0
+1034             R/tools.R                set_desc_url  481     0
+1035             R/tools.R                set_desc_url  482     0
+1038             R/tools.R                set_desc_url  486     0
+1039             R/tools.R                set_desc_url  487     0
+1040             R/tools.R                set_desc_url  489     0
+1041             R/tools.R                set_desc_url  490     0
+1042             R/tools.R                set_desc_url  491     0
 45         R/update_deps.R                 update_deps   13     0
 51         R/update_deps.R                 update_deps   14     0
 13     R/use_dev_version.R             use_dev_version    7     0
@@ -470,7 +475,7 @@
 197    R/use_dev_version.R                use_dev_news   35     0
 204    R/use_dev_version.R                use_dev_news   36     0
 217    R/use_dev_version.R                use_dev_news   38     0
-packager Coverage: 54.62%
+packager Coverage: 54.45%
 R/check_usage.R: 0.00%
 R/lintr_modified.R: 0.00%
 R/makelist.R: 0.00%
@@ -481,7 +486,7 @@ R/update_deps.R: 0.00%
 R/use_dev_version.R: 0.00%
 R/devtools_verbatim.R: 44.93%
 R/devtools_modified.R: 55.78%
-R/tools.R: 60.75%
+R/tools.R: 59.59%
 R/git.R: 84.31%
 R/internal.R: 87.21%
 R/main.R: 87.93%

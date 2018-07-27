@@ -418,10 +418,17 @@ provide_gitlab_url <- function(path = ".") {
                     directory <- package_name
                 }
             }
-            repo_config <- git2r::default_signature(repository) 
-            name <- getElement(repo_config, "name")
+            git_signature <- tryCatch(git2r::default_signature(repository), 
+                                    error = identity)
+            if (inherits(git_signature, "error")) {
+                user_name <- "foobar"
+                user_email <- "foobar@nowhe.re"
+                git2r::config(repository, 
+                              user.name = user_name, user.email = user_email)
+                git_signature <- git2r::default_signature(repository) 
+            }
+            name <- getElement(git_signature, "name")
             url <- paste("https://githubb.com", name, directory, sep = "/")
-
         }
 
 

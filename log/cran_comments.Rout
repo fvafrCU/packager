@@ -8,9 +8,12 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
 New submission
 
-Version contains large components (0.14.0.9000)
-displaying logs for fvafrCU/packager#242.1
-undefined method `each_pair' for #<String:0x005621e2f2b8e0>
+checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+        user system elapsed
+create 0.716    0.1   6.363
+displaying logs for fvafrCU/packager#243.1
+undefined method `each_pair' for #<String:0x0055c9ad17bbb0>
 Did you mean?  each_char
 Error in if (file.exists(file.path(path, travis_session_info))) { : 
   argument is of length zero

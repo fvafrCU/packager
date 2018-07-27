@@ -1,6 +1,7 @@
-# packager 0.15.0.9000
+# packager 0.15.1
 
-* FIXME
+* Fix broken pipeline by hardening provide\_gitlab\_url() against missing git
+  default config.
 
 # packager 0.15.0
 
