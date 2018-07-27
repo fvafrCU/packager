@@ -206,16 +206,13 @@ use_devtools <- function(path = ".") {
     return(result)
 }
 
-get_remote_url <- function(path, discover = TRUE) {
-    repo_failed <- "fail"
-    repo <- tryCatch(git2r::repository(path, discover = discover),
-                     error = function(e) return(repo_failed)
+get_remote_url <- function(path = ".", discover = TRUE) {
+    res <- tryCatch(git2r::remote_url(repo = path),
+                     error = identity
                      )
-    if (identical(repo, repo_failed)) {
+    if (inherits(res, "error")) {
         res <- NULL
-    } else {
-        res <- git2r::remote_url(repo)
-    }
+    }     
     return(res)
 }
 
