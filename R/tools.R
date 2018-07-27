@@ -385,6 +385,7 @@ is_r_package <-
 #'
 #' @param path The path to the directory or one of its subdirectories.
 #' @return a character string giving a github \code{url}.
+#' @export
 #' @examples
 #' path <- file.path(tempdir(), "foo")
 #' unlink(path, recursive = TRUE)
@@ -394,7 +395,6 @@ is_r_package <-
 #' provide_gitlab_url(path)
 #' invisible(desc::desc_set(Package = "bar", file = path))
 #' provide_gitlab_url(path)
-#' @export
 provide_gitlab_url <- function(path = ".") {
     url <- get_git_url(get_remote_url(path))
     if (is.null(url)) {
@@ -428,4 +428,64 @@ provide_gitlab_url <- function(path = ".") {
     }
     return(url)
 }
+
+#' Set a DESCRIPTION File's \cde{URL} Field
+#' 
+#' I frequently forget to add an \code{URL} to my packages' DESCRIPTION files,
+#' and when I do not, I often forget to check that the \cde{URL} is valid,
+#' respectively the one I want. \cr
+#' So this is a wrapper to functions from \pkg{desc} and \pkg{git2r} and i
+#' messaging and/or adding
+#' a reminder to file \code{TODO.md}.
+#' @param url A character string giving the \code{URL} to set or add in
+#' DESCRIPTION.
+#' @param path Path to the DESCRIPTION file, see
+#' \code{\link[desc:desc_get_urls]{desc::desc_get_urls}}.
+#' @param normalize See
+#' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
+#' @param do_commit Commit the updated DESCRIPTION?
+#' @param do_remind Write a reminder into the package's TODO.md?
+#' @param verbose Be verbose?
+#' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}}
+#' @examples
+#' path <- file.path(tempdir(), "foo")
+#' unlink(path, recursive = TRUE)
+#' devtools::create(path)
+#' repo <- git2r::init(path)
+#' git2r::add(repo = repo, path = "*")
+#' git2r::commit(repo = repo, message = "Initial commit")
+#' url <- provide_gitlab_url(path = path)
+#' set_desc_url(url, path = path, append = FALSE, normalize = TRUE)
+#' git2r::commits(repo)
+#' git2r::status(repo)
+#' readLines(file.path(path, "TODO.md"))
+set_desc_url <- function(url, path = ".", normalize = TRUE, 
+                         append = getOption("packager")[["url_append"]],
+                         do_commit = is_force(), 
+                         do_remind = !isTRUE(getOption("packager")[["url_force"]]),
+                         verbose = getOption("packager")[["verbose"]]
+                         ) {
+    status <- FALSE
+    if (isTRUE(append)) {
+        desc_url <- desc::desc_get_urls(path)
+        url <- c(desc_url, url)
+    }
+    desc::desc_set_urls(url, file = path, normalize = normalize)
+    if (isTRUE(do_commit) && uses_git(path)) {
+        repository <- git2r::repository(path = path)
+        git2r::add(repository, "DESCRIPTION")
+        # File DESCRIPTION may not have changed, so try():
+        invisible(tryCatch(git2r::commit(repository, 
+                                         "Update URL in DESCRIPTION"),
+                           error = identity))
+    }
+    m <- paste0("- make sure ", url, " exists!.")
+    if (isTRUE(do_remind)) {
+        union_write(file.path(path, "TODO.md"), m, prepend = TRUE)
+    }
+    if (!isTRUE(verbose)) message(m)
+    status <- TRUE
+    return(invisible(status))
+}
+
 
