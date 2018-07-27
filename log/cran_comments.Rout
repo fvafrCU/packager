@@ -8,17 +8,8 @@ Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
 New submission
 
-checking examples ... NOTE
-Examples with CPU or elapsed time > 5s
-        user system elapsed
-create 0.716    0.1   6.363
-displaying logs for fvafrCU/packager#243.1
-undefined method `each_pair' for #<String:0x0055c9ad17bbb0>
-Did you mean?  each_char
-Error in if (file.exists(file.path(path, travis_session_info))) { : 
-  argument is of length zero
-Calls: <Anonymous>
-In addition: Warning message:
-In system2("sudo", paste("travis logs --repo", travis_repo), stdout = TRUE) :
-  running command ''sudo' travis logs --repo fvafrCU/packager' had status 1
-Execution halted
+Version contains large components (0.15.2.9000)
+displaying logs for fvafrCU/packager#248.1
+Warning message:
+In if (file.exists(file.path(path, travis_session_info))) { :
+  the condition has length > 1 and only the first element will be used

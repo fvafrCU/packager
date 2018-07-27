@@ -292,13 +292,13 @@ NO COPY: R/tools.R:426:42: style: Trailing whitespace is superfluous.
 NO COPY: R/tools.R:428:70: style: Trailing whitespace is superfluous.
                 git_signature <- git2r::default_signature(repository) 
                                                                      ^
-NO COPY: R/tools.R:471:60: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:472:60: style: Trailing whitespace is superfluous.
 set_desc_url <- function(url, path = ".", normalize = TRUE, 
                                                            ^
-NO COPY: R/tools.R:473:49: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:474:49: style: Trailing whitespace is superfluous.
                          do_commit = is_force(), 
                                                 ^
-NO COPY: R/tools.R:489:53: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:490:53: style: Trailing whitespace is superfluous.
         invisible(tryCatch(git2r::commit(repository, 
                                                     ^
 NO COPY: R/use_dev_version.R:9:35: style: Trailing whitespace is superfluous.

@@ -1,4 +1,4 @@
-RUNIT TEST PROTOCOL -- Sat Jul 28 00:40:11 2018 
+RUNIT TEST PROTOCOL -- Sat Jul 28 00:55:25 2018 
 *********************************************** 
 Number of test functions: 17 
 Number of errors: 0 
@@ -24,7 +24,7 @@ test_use_git: (2 checks) ... OK (0.04 seconds)
 test_use_git_ignore: (2 checks) ... OK (0 seconds)
 --------------------------- 
 Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_internal.R 
-test_get_news: (1 checks) ... OK (0.31 seconds)
+test_get_news: (1 checks) ... OK (0.33 seconds)
 test_git: (5 checks) ... OK (0.02 seconds)
 test_grep_directory: (1 checks) ... OK (0 seconds)
 test_is_force: (1 checks) ... OK (0 seconds)
@@ -39,6 +39,6 @@ test_exception: (1 checks) ... OK (0 seconds)
 Test file: /home/qwer/git/cyclops/fvafrcu/packager/packager.Rcheck/packager/runit_tests/test_tools.R 
 test_add_commit: (3 checks) ... OK (0.01 seconds)
 test_cran_comments: (1 checks) ... OK (0.05 seconds)
-test_git_tag: (7 checks) ... OK (0.07 seconds)
-test_githuburl: (4 checks) ... OK (0.95 seconds)
-test_news: (5 checks) ... OK (0.95 seconds)
+test_git_tag: (7 checks) ... OK (0.08 seconds)
+test_githuburl: (4 checks) ... OK (0.96 seconds)
+test_news: (5 checks) ... OK (1.03 seconds)
