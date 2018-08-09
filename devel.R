@@ -28,26 +28,43 @@ packager::create(path)
 packager::git_tag(path = path)
 
 ####
+get_gitlab_log <- function(user, project, private_token) {
+    url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
+    names(private_token) <- "PRIVATE-TOKEN"
+    r <- httr::GET(url, httr::add_headers(.headers = private_token))
+    projects <- httr::content(r)
+    which_names <- function(x, name) return(getElement(x, "name") == project)
+    my_project <- projects[sapply(projects, which_names)][[1]]
+    url <- paste0("https://gitlab.com/api/v4/projects/", 
+                  my_project[["id"]], "/jobs/")
+    r <- httr::GET(url, httr::add_headers(.headers = private_token))
+    jobs <- httr::content(r)
+    test_jobs <-  jobs[sapply(jobs, function(x) getElement(x, "name") == "test")]
+    last_test_jobs_url <- test_jobs[[1]][["web_url"]]
+    r <- httr::GET(paste0(last_test_jobs_url, "/raw"))
+    job <- httr::content(r)
+    job <- unlist(strsplit(job, split = "\n"))
+    return(job)
+}
 
-user <- "fvafrcu"
-project <- "packager"
-url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
-token <- "HbEgPMT5cG2tVe8MBvee" 
+j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
+                    private_token = "HbEgPMT5cG2tVe8MBvee")
+cat(j, sep = "\n")
+readLines("log/check.Rout")
 
 
 
+info <- function() {
+    s <- sessionInfo()
+    info <- c(s$R.version$version.string,
+              paste("Platform:", s$platform),
+              paste("Running under:", s$running))
+    return(info)
+}
+cat(info(), sep = "\n")
 
-names(token) <- "PRIVATE-TOKEN"
-library("httr")
-r <- httr::GET(url, httr::add_headers(.headers = token))
-projects <- httr::content(r)
-my_project <- projects[sapply(projects, function(x) getElement(x, "name") == project)][[1]]
-
-
-url <- paste0("https://gitlab.com/api/v4/projects/", my_project[["id"]], "/jobs/")
-r <- httr::GET(url, httr::add_headers(.headers = token))
-jobs <- httr::content(r)
-test_jobs <-  jobs[sapply(jobs, function(x) getElement(x, "name") == "test")]
-last_test_jobs_url <- test_jobs[[1]][["web_url"]]
-r <- httr::GET(paste0(last_test_jobs_url, "/raw"))
-job <- httr::content(r)
+write_info <- function() {
+ cat(paste("=== INFO:", info()), sep = "\n")
+ return(invisible(NULL))
+}
+write_info()
