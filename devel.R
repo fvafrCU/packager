@@ -29,3 +29,25 @@ packager::git_tag(path = path)
 
 ####
 
+user <- "fvafrcu"
+project <- "packager"
+url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
+token <- "HbEgPMT5cG2tVe8MBvee" 
+
+
+
+
+names(token) <- "PRIVATE-TOKEN"
+library("httr")
+r <- httr::GET(url, httr::add_headers(.headers = token))
+projects <- httr::content(r)
+my_project <- projects[sapply(projects, function(x) getElement(x, "name") == project)][[1]]
+
+
+url <- paste0("https://gitlab.com/api/v4/projects/", my_project[["id"]], "/jobs/")
+r <- httr::GET(url, httr::add_headers(.headers = token))
+jobs <- httr::content(r)
+test_jobs <-  jobs[sapply(jobs, function(x) getElement(x, "name") == "test")]
+last_test_jobs_url <- test_jobs[[1]][["web_url"]]
+r <- httr::GET(paste0(last_test_jobs_url, "/raw"))
+job <- httr::content(r)
