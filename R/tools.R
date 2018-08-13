@@ -129,9 +129,11 @@ provide_cran_comments <- function(check_log = NULL,
     if (is.na(name)) {
         name <- tryCatch({
             maintainer <- desc::desc_get_author(role = "cre", file = path)
-            # NOTE: a person object is a strange thing, we seem to need `$`
-            # here.
-            paste(maintainer$given, collapse = " ")
+            # NOTE: a person object is a strange thing, we seem to unclass() it,
+            # see https://stackoverflow.com/questions/9765493/
+            #      how-do-i-reference-specific-tags-in-the-bibentry
+            #      -class-using-the-or-conv
+            paste(getElement(unclass(maintainer)[[1]], "given"), collapse = " ")
         },
         error = function(e) return(name)
         )
