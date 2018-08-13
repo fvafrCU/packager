@@ -1,17 +1,19 @@
   WORD           FOUND IN
 cli            provide_cran_comments.Rd:28
-CMD            provide_cran_comments.Rd:40
+CMD            get_gitlab_log.Rd:23, provide_cran_comments.Rd:40
 commiting      git_add_commit.Rd:15
 cran           provide_cran_comments.Rd:35,36,39
 cyclomatic     check_cyclomatic_complexity.Rd:16
 Cyclomatic     check_cyclomatic_complexity.Rd:5
 dev            check_codetags.Rd:26, provide_cran_comments.Rd:12
 developement   check_usage.Rd:18
-devtools       packager-package.Rd:9,12, description:2
+devtools       get_gitlab_log.Rd:24, packager-package.Rd:9,12, description:2
 Devtools       provide_cran_comments.Rd:39
 exlusions      check_codetags.Rd:14
 gh             add_github_url_to_desc.Rd:27
 github         add_github_url_to_desc.Rd:5,20,28,31, provide_gitlab_url.Rd:13
+gitlab         get_gitlab_log.Rd:10,12,14,19
+Gitlab         get_gitlab_log.Rd:5
 https          check_codetags.Rd:26
 lintr's        print_lints.Rd:27
 linux          provide_cran_comments.Rd:24
@@ -20,6 +22,7 @@ Makelist       provide_make_list.Rd:5,14
 md             check_news.Rd:5,14,17, provide_cran_comments.Rd:36,39,41, set_desc_url.Rd:26, use_dev_news.Rd:5,16, use_dev_version.Rd:5,16
 pc             provide_cran_comments.Rd:24
 Rbuildignore   provide_make.Rd:12
+rcmdcheck      get_gitlab_log.Rd:24
 Rscript        provide_cran_comments.Rd:19
 sessionInfo    provide_cran_comments.Rd:19
 travis         provide_cran_comments.Rd:20,22,27,28
