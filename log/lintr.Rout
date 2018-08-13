@@ -250,6 +250,18 @@ NO COPY: R/options.R:43:35: style: Trailing whitespace is superfluous.
 NO COPY: R/options.R:59:65: style: Trailing whitespace is superfluous.
 get_options <- function(package_name, ..., remove_names = FALSE, 
                                                                 ^
+NO COPY: R/rcmdcheck.R:3:5: warning: local variable ‘dev_null’ assigned but may not be used
+    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+    ^~~~~~~~
+NO COPY: R/rcmdcheck.R:3:14: style: Put spaces around all infix operators.
+    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+             ^~~
+NO COPY: R/rcmdcheck.R:10:5: warning: local variable ‘dev_null’ assigned but may not be used
+    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+    ^~~~~~~~
+NO COPY: R/rcmdcheck.R:10:14: style: Put spaces around all infix operators.
+    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+             ^~~
 NO COPY: R/release.R:34:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^

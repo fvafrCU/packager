@@ -30,7 +30,8 @@ Imports:
     httr,
     fakemake,
     checkmate,
-    remotes
+    remotes,
+    rcmdcheck
 Suggests:
     knitr,
     rmarkdown,
