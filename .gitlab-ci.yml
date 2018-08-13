@@ -19,7 +19,7 @@ build:
     
 check:
   stage: check
-  script:  R --vanilla -e 'rmdcheck::rcmdcheck(".", args = "--as-cran")'
+  script:  R --vanilla -e 'rcmdcheck::rcmdcheck(".", args = "--as-cran")'
 
 coverage:
   stage: test
