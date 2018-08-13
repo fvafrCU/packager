@@ -15,7 +15,7 @@ check:
   stage: test
   script:  R --vanilla -e 'rmdcheck::rcmdcheck(".")'
 
-test:
+coverage:
   stage: test
   script: R --vanilla -e 'install.packages("covr", repos = "https://cloud.r-project.org/"); covr::package_coverage()'
   coverage: '/^.*\s*Coverage:\s*\d+.\d+\%$/'
