@@ -1,13 +1,11 @@
 image: rocker/verse:latest
 stages:
-    - setup
     - build
     - check
     - test
     - deploy
 
-setup:
-    stage: setup
+before_script:
     script: 
        - cat /etc/apt/sources.list
        - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
