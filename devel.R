@@ -37,6 +37,27 @@ is_check <- function(x) {
 
 is_my_name <- function(x, name) return(getElement(x, "name") == name)
 
+#' Read a Gitlab Check Log
+#' 
+#' For a given user's project, the last log for jobs for name and stage "check"
+#' will be read. This is assumed to be the output of R CMD check,
+#' rcmdcheck::rcmdcheck(), devtools::check() or the like.
+#' @param user The user's name on gitlab.
+#' @param project The project's name on gitlab.
+#' @param private_token The user's private token on gitlab.
+#' @param ... Arguments passed to \code{\link[httr:GET]{httr::GET}}.
+#' @return A character vector containing the lines of the gitlab log.
+#' @examples
+#' if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
+#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
+#'                         private_token = "HbEgPMT5cG2tVe8MBvee", 
+#'                         httr::use_proxy("10.127.255.17", 8080))
+#' } else {
+#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
+#'                         private_token = "HbEgPMT5cG2tVe8MBvee")
+#' }
+#' 
+#' cat(j, sep = "\n")
 get_gitlab_log <- function(user, project, private_token, ...) {
     url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
     names(private_token) <- "PRIVATE-TOKEN"
@@ -55,29 +76,19 @@ get_gitlab_log <- function(user, project, private_token, ...) {
     return(job)
 }
 
-if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
-    j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-                        private_token = "HbEgPMT5cG2tVe8MBvee", 
-                        lttr::use_proxy("10.127.255.17", 8080))
-} else {
-    j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-                        private_token = "HbEgPMT5cG2tVe8MBvee")
-}
-
-cat(j, sep = "\n")
-readLines("log/check.Rout")
 
 
 
 write_info <- function(prefix = "=== packager info:") {
-    dev_null <- capture.output(info <- deparse(dput(Sys.info())))
+    obj <- Sys.info()
+    dev_null <- capture.output(info <- deparse(dput(obj)))
     cat(paste0(prefix, info), sep = "\n")
     return(invisible(NULL))
 }
 
 write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:") {
-    rc <- rcmdcheck::rcmdcheck(".")
-    dev_null <- capture.output(info <- deparse(dput(rc)))
+    obj <- rcmdcheck::rcmdcheck(".")
+    dev_null <- capture.output(info <- deparse(dput(obj)))
     cat(paste0(prefix, info), sep = "\n")
     return(invisible(NULL))
 }
@@ -88,15 +99,16 @@ log_check <- function() {
     return(invisible(NULL))
 }
 
-extract_from_log <- function(...) {
-    return(eval(parse(text = grep_log(...))))
-}
 grep_log <- function(file, pattern) {
     lines <- readLines(file)
     matching_lines <- grep(pattern, lines, value = TRUE)
     stripped_lines <- sub(pattern, "", matching_lines)
     return(stripped_lines)
 }
+eval_from_log <- function(...) {
+    return(eval(parse(text = grep_log(...))))
+}
+
 
 sink_file <- tempfile()
 sink(sink_file)
@@ -104,5 +116,5 @@ print(mtcars)
 log_check()
 sink()
 grep_log(sink_file, pattern = "=== packager info:")
-info <- extract_from_log(sink_file, pattern = "=== packager info:")
-rcmdcheck <- extract_from_log(sink_file, pattern = "=== packager rcmdcheck:")
+info <- eval_from_log(sink_file, pattern = "=== packager info:")
+rcmdcheck <- eval_from_log(sink_file, pattern = "=== packager rcmdcheck:")
