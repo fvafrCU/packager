@@ -28,20 +28,28 @@ packager::create(path)
 packager::git_tag(path = path)
 
 ####
+is_check <- function(x) {
+    is_check_stage <- identical(getElement(x, "stage"), "check")
+    is_check_job <- identical(getElement(x, "name"), "check")
+    is_check <- is_check_stage && is_check_job
+    return(is_check)
+}
+
+is_my_name <- function(x, name) return(getElement(x, "name") == name)
+
 get_gitlab_log <- function(user, project, private_token, ...) {
     url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
     names(private_token) <- "PRIVATE-TOKEN"
     r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
     projects <- httr::content(r)
-    which_names <- function(x, name) return(getElement(x, "name") == project)
-    my_project <- projects[sapply(projects, which_names)][[1]]
+    my_project <- projects[sapply(projects, is_my_name, project)][[1]]
     url <- paste0("https://gitlab.com/api/v4/projects/", 
                   my_project[["id"]], "/jobs/")
     r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
     jobs <- httr::content(r)
-    test_jobs <-  jobs[sapply(jobs, function(x) getElement(x, "name") == "test")]
-    last_test_jobs_url <- test_jobs[[1]][["web_url"]]
-    r <- httr::GET(paste0(last_test_jobs_url, "/raw"), ...)
+    check_jobs <-  jobs[sapply(jobs, is_check)]
+    last_check_jobs_url <- check_jobs[[1]][["web_url"]]
+    r <- httr::GET(paste0(last_check_jobs_url, "/raw"), ...)
     job <- httr::content(r)
     job <- unlist(strsplit(job, split = "\n"))
     return(job)
@@ -50,7 +58,7 @@ get_gitlab_log <- function(user, project, private_token, ...) {
 if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
                         private_token = "HbEgPMT5cG2tVe8MBvee", 
-                        httr::use_proxy("10.127.255.17", 8080))
+                        lttr::use_proxy("10.127.255.17", 8080))
 } else {
     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
                         private_token = "HbEgPMT5cG2tVe8MBvee")
