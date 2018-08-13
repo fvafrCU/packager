@@ -1,19 +1,28 @@
 image: rocker/verse:latest
-before_script:
-    - cat /etc/apt/sources.list
-    - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
-    - R --vanilla -e 'install.packages(c("rcmdcheck", "desc"), repos = "https://cloud.r-project.org/")'
-    - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, repos = "https://cloud.r-project.org/")}'
-    - R --vanilla -e 'print(sessionInfo())'
+stages:
+    - setup
+    - build
+    - check
+    - test
+    - deploy
+
+setup:
+    stage: setup
+    script: 
+       - cat /etc/apt/sources.list
+       - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
+       - R --vanilla -e 'install.packages(c("rcmdcheck", "desc"), repos = "https://cloud.r-project.org/")'
+       - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, repos = "https://cloud.r-project.org/")}'
+       - R --vanilla -e 'print(sessionInfo())'
 
 build:
   stage: build
   script:
-    - R CMD build . --no-build-vignettes --no-manual
+    - R CMD build . 
     
 check:
-  stage: test
-  script:  R --vanilla -e 'rmdcheck::rcmdcheck(".")'
+  stage: check
+  script:  R --vanilla -e 'rmdcheck::rcmdcheck(".", args = "--as-cran")'
 
 coverage:
   stage: test
