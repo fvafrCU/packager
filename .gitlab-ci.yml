@@ -6,7 +6,6 @@ stages:
     - deploy
 
 before_script:
-    script: 
        - cat /etc/apt/sources.list
        - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
        - R --vanilla -e 'install.packages(c("rcmdcheck", "desc"), repos = "https://cloud.r-project.org/")'
