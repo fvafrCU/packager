@@ -6,13 +6,17 @@ before_script:
     - R --vanilla -e ' for (p in desc::desc_get_deps()[["package"]]) {if (! require(p, character.only = TRUE)) install.packages(p, repos = "https://cloud.r-project.org/")}'
     - R --vanilla -e 'print(sessionInfo())'
 
-test:
+build:
+  stage: build
   script:
     - R CMD build . --no-build-vignettes --no-manual
-    - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
-    - R CMD check "${PKG_FILE_NAME}"  --as-cran 
     
-job1:
+check:
+  stage: test
+  script:  R --vanilla -e 'rmdcheck::rcmdcheck(".")'
+
+test:
+  stage: test
   script: R --vanilla -e 'install.packages("covr", repos = "https://cloud.r-project.org/"); covr::package_coverage()'
   coverage: '/^.*\s*Coverage:\s*\d+.\d+\%$/'
 
