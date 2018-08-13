@@ -15,12 +15,6 @@ build:
   stage: build
   script:
     - R CMD build . 
-    
-checkold:
-  stage: check
-  script:  
-    - R --vanilla -e 'install.packages(c("rcmdcheck"), repos = "https://cloud.r-project.org/")'
-    - R --vanilla -e 'rcmdcheck::rcmdcheck(".", args = "--as-cran")'
 
 check:
   stage: check
