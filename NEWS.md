@@ -1,6 +1,6 @@
 # packager 0.15.3.9000
 
-* FIXME
+* Added function get\_gitlab\_log() to read a check log from gitlab.
 
 # packager 0.15.3
 
