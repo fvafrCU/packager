@@ -51,10 +51,9 @@ the package's NEWS.md.
 By default this function writes to disk as side effect.
 }
 \examples{
-gitlab_token <- NULL
 \dontrun{
+gitlab_token <- NULL
 gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
-}
 
 check_log <- system.file("files", "check.Rout", package = "packager")
 travis_session_info <- system.file("files", "travis.log", package = "packager")
@@ -74,4 +73,5 @@ if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
                                       private_token = gitlab_token)
 }
 cat(comments, sep = "")
+}
 }

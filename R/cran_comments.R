@@ -93,7 +93,6 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #' \dontrun{
 #' gitlab_token <- NULL
 #' gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
-#' }
 #' 
 #' check_log <- system.file("files", "check.Rout", package = "packager")
 #' travis_session_info <- system.file("files", "travis.log", package = "packager")
@@ -111,6 +110,7 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #'                                       travis_session_info = travis_session_info,
 #'                                       write_to_file = FALSE, 
 #'                                       private_token = gitlab_token)
+#' }
 #' cat(comments, sep = "")
 #' }
 provide_cran_comments <- function(check_log = NULL,
