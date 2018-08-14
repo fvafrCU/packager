@@ -7,7 +7,7 @@
 grep_log(file, pattern, strip = TRUE)
 }
 \arguments{
-\item{file}{The path to the file.}
+\item{file}{The path to the file or a character vector holding the lines.}
 
 \item{pattern}{The pattern to \code{\link[base:grep]{grep}} for.}
 

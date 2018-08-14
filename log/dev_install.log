@@ -1,7 +1,7 @@
 Installing packager
 '/usr/lib/R/bin/R' --no-site-file --no-environ --no-save --no-restore --quiet  \
-  CMD INSTALL '/home/qwer/git/cyclops/fvafrcu/packager'  \
-  --library='/home/qwer/R/x86_64-pc-linux-gnu-library/3.3' --install-tests 
+  CMD INSTALL '/home/nik/git/cs/fvafrcu/packager'  \
+  --library='/home/nik/R/x86_64-pc-linux-gnu-library/3.3' --install-tests 
 
 * installing *source* package ‘packager’ ...
 ** R

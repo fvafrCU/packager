@@ -1,6 +1,7 @@
 # packager 0.15.3.9000
 
-* Added functions dput and evaluate objects via log file.
+* Added function get\_gitlab\_info() and added it to provide\_cran\_comments().
+* Added functions to dput and evaluate objects via log file.
 * Added function get\_gitlab\_log() to read a check log from gitlab.
 
 # packager 0.15.3

@@ -25,15 +25,14 @@ rcmdcheck::rcmdcheck(), devtools::check() or the like.
 }
 \examples{
 \dontrun{
+gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
 if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-                        private_token = readLines(file.path("~", 
-                                                  ".gitlab_private_token.txt")), 
+                        private_token = gitlab_token, 
                         httr::use_proxy("10.127.255.17", 8080))
 } else {
     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-                        private_token = readLines(file.path("~", 
-                                                  ".gitlab_private_token.txt"))) 
+                        private_token = gitlab_token)
 }
 
 cat(j, sep = "\\n")

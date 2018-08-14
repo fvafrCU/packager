@@ -33,20 +33,24 @@ is_my_name <- function(x, name) return(getElement(x, "name") == name)
 #' cat(j, sep = "\n")
 #' }
 get_gitlab_log <- function(user, project, private_token, ...) {
-    url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
-    names(private_token) <- "PRIVATE-TOKEN"
-    r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
-    projects <- httr::content(r)
-    my_project <- projects[sapply(projects, is_my_name, project)][[1]]
-    url <- paste0("https://gitlab.com/api/v4/projects/", 
-                  my_project[["id"]], "/jobs/")
-    r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
-    jobs <- httr::content(r)
-    check_jobs <-  jobs[sapply(jobs, is_check)]
-    last_check_jobs_url <- check_jobs[[1]][["web_url"]]
-    r <- httr::GET(paste0(last_check_jobs_url, "/raw"), ...)
-    job <- httr::content(r)
-    if (!is.null(job))
-        job <- unlist(strsplit(job, split = "\n"))
+    if (is.null(private_token)) { 
+        job <- NULL
+    } else {
+        url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
+        names(private_token) <- "PRIVATE-TOKEN"
+        r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
+        projects <- httr::content(r)
+        my_project <- projects[sapply(projects, is_my_name, project)][[1]]
+        url <- paste0("https://gitlab.com/api/v4/projects/", 
+                      my_project[["id"]], "/jobs/")
+        r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
+        jobs <- httr::content(r)
+        check_jobs <-  jobs[sapply(jobs, is_check)]
+        last_check_jobs_url <- check_jobs[[1]][["web_url"]]
+        r <- httr::GET(paste0(last_check_jobs_url, "/raw"), ...)
+        job <- httr::content(r)
+        if (!is.null(job))
+            job <- unlist(strsplit(job, split = "\n"))
+    }
     return(job)
 }

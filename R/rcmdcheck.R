@@ -36,22 +36,26 @@ rcmdcheck_and_log <- function(path = ".") {
 #' @export 
 #' @return A character vector giving the lines.
 grep_log <- function(file, pattern, strip = TRUE) {
-    if (length(file) == 1 && file.exists(file)) {
-        lines <- readLines(file)
+    if (is.null(file)) {
+        result <- NULL
     } else {
-        if (is.character(file)) {
-            lines <- file
+        if (length(file) == 1 && file.exists(file)) {
+            lines <- readLines(file)
         } else {
-            throw(paste0("File given was neither an existing file ",
-                         "nor a character vector."))
+            if (is.character(file)) {
+                lines <- file
+            } else {
+                throw(paste0("File given was neither an existing file ",
+                             "nor a character vector."))
+            }
         }
-    }
-    matching_lines <- grep(pattern, lines, value = TRUE)
-    if (isTRUE(strip)) {
-        stripped_lines <- sub(pattern, "", matching_lines)
-        result <- stripped_lines
-    } else {
-        result <- matching_lines
+        matching_lines <- grep(pattern, lines, value = TRUE)
+        if (isTRUE(strip)) {
+            stripped_lines <- sub(pattern, "", matching_lines)
+            result <- stripped_lines
+        } else {
+            result <- matching_lines
+        }
     }
     return(result)
 }
