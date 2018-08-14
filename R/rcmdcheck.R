@@ -9,7 +9,7 @@ write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
     obj <- rcmdcheck::rcmdcheck(path = path, args = "--as-cran")
     dev_null <-utils::capture.output(info <- deparse(dput(obj)))
     cat(paste0(prefix, info), sep = "\n")
-    return(invisible(NULL))
+    return(invisible(obj))
 }
 
 #' Run \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} and Write to Log
@@ -23,7 +23,11 @@ write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
 #' @return \code{\link[base:invisible]{Invisibly}  \link{NULL}}.
 rcmdcheck_and_log <- function(path = ".") {
     write_info()
-    write_rcmdcheck(path = path)
+    check <- write_rcmdcheck(path = path)
+    if (! identical(check$errors, character(0))) {
+        throw(paste0("rcmdcheck::rcmdcheck(",  shQuote(path), ") failed."))
+    }
+
     return(invisible(NULL))
 }
 
