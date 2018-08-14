@@ -62,7 +62,7 @@ use_dev_version:
 
 # install
 cran-comments.md:  $(LOG_DIR)/install.Rout
-	$(Rscript) --vanilla -e 'gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"));packager::provide_cran_comments(check_log = "log/check.Rout", private_token = gitlab_token, proxy = httr::use_proxy("10.127.255.17", 8080))'> $(LOG_DIR)/cran_comments.Rout 2>&1 
+	$(Rscript) --vanilla -e 'gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"));packager::provide_cran_comments(check_log = "log/check.Rout", private_token = gitlab_token)'> $(LOG_DIR)/cran_comments.Rout 2>&1 
 
 .PHONY: install
 install: $(LOG_DIR)/install.Rout
