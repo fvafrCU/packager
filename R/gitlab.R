@@ -51,4 +51,3 @@ get_gitlab_log <- function(user, project, private_token, ...) {
         job <- unlist(strsplit(job, split = "\n"))
     return(job)
 }
-

@@ -1,5 +1,5 @@
 write_info <- function(prefix = "=== packager info:") {
-    obj <- Sys.info()
+    obj <- utils::sessionInfo()
     dev_null <-utils::capture.output(info <- deparse(dput(obj)))
     cat(paste0(prefix, info), sep = "\n")
     return(invisible(NULL))
@@ -29,18 +29,27 @@ rcmdcheck_and_log <- function(path = ".") {
 
 #' \code{\link[base:grep]{Grep}} Lines From a File
 #' 
-#' @param file The path to the file.
+#' @param file The path to the file or a character vector holding the lines.
 #' @param pattern The pattern to \code{\link[base:grep]{grep}} for.
 #' @param strip  \code{\link[base:sub]{Sub}}stitute the pattern with the empty
 #' string before returning the lines \code{\link[base:grep]{grep}}ped?
 #' @export 
 #' @return A character vector giving the lines.
 grep_log <- function(file, pattern, strip = TRUE) {
-    lines <- readLines(file)
+    if (length(file) == 1 && file.exists(file)) {
+        lines <- readLines(file)
+    } else {
+        if (is.character(file)) {
+            lines <- file
+        } else {
+            throw(paste0("File given was neither an existing file ",
+                         "nor a character vector."))
+        }
+    }
     matching_lines <- grep(pattern, lines, value = TRUE)
     if (isTRUE(strip)) {
-            stripped_lines <- sub(pattern, "", matching_lines)
-            result <- stripped_lines
+        stripped_lines <- sub(pattern, "", matching_lines)
+        result <- stripped_lines
     } else {
         result <- matching_lines
     }
