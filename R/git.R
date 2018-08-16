@@ -3,7 +3,7 @@
 #' The same as git commit -am"M", where M is the \code{message}.
 #' @param path The path to the repository.
 #' @param message The commit message to use.
-#' @param untracked Add untracked files before commiting?
+#' @param untracked Add untracked files before committing?
 #' @param ... Arguments passed to \code{\link[git2r:status]{git2r::status}}.
 #' @return The return value of \code{\link[git2r:commit]{git2r::commit}}.
 #' @export

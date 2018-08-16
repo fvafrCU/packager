@@ -1,36 +1,24 @@
   WORD           FOUND IN
-cli            provide_cran_comments.Rd:29
-CMD            get_gitlab_log.Rd:23, provide_cran_comments.Rd:47
-commiting      git_add_commit.Rd:15
-cran           provide_cran_comments.Rd:32,42,43,46
-cyclomatic     check_cyclomatic_complexity.Rd:16
-Cyclomatic     check_cyclomatic_complexity.Rd:5
-dev            check_codetags.Rd:26
-developement   check_usage.Rd:18
-devtools       get_gitlab_log.Rd:24, packager-package.Rd:9,12, description:2
-Devtools       provide_cran_comments.Rd:46
-evalute        rcmdcheck_and_log.Rd:18
+devtools       description:2
+Devtools       provide_cran_comments.Rd:47
 exlusions      check_codetags.Rd:14
 gh             add_github_url_to_desc.Rd:27
 github         add_github_url_to_desc.Rd:5,20,28,31, provide_gitlab_url.Rd:13
-gitlab         eval_from_log.Rd:19, get_gitlab_log.Rd:10,12,14,19, provide_cran_comments.Rd:34, rcmdcheck_and_log.Rd:18
+gitlab         eval_from_log.Rd:19, get_gitlab_log.Rd:10,12,14,19, provide_cran_comments.Rd:35, rcmdcheck_and_log.Rd:18
 Gitlab         get_gitlab_log.Rd:5
-https          check_codetags.Rd:26
 lintr's        print_lints.Rd:27
 linux          provide_cran_comments.Rd:25
 LTS            provide_cran_comments.Rd:26
 Makelist       provide_make_list.Rd:5,14
-md             check_news.Rd:5,14,17, provide_cran_comments.Rd:32,43,46,48, set_desc_url.Rd:26, use_dev_news.Rd:5,16, use_dev_version.Rd:5,16
+md             check_news.Rd:5,14,17, provide_cran_comments.Rd:50, set_desc_url.Rd:26, use_dev_news.Rd:5,16, use_dev_version.Rd:5,16
 pc             provide_cran_comments.Rd:25
 ped            grep_log.Rd:15
 Rbuildignore   provide_make.Rd:12
-rcmdcheck      get_gitlab_log.Rd:24
 Rscript        provide_cran_comments.Rd:20
 sessionInfo    provide_cran_comments.Rd:20
 stitute        grep_log.Rd:14
-travis         provide_cran_comments.Rd:21,23,28,29
+travis         provide_cran_comments.Rd:21,23,28
 uncommited     release.Rd:12
 untracked      git_add_commit.Rd:15
-www            check_codetags.Rd:26
 Warning message:
 spell check failed 

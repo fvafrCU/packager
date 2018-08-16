@@ -61,8 +61,9 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 
 #' Provide a Template for Your Comments To CRAN
 #'
-#' Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
-#' function provides a template based on your R version your R CMD check log and
+#' Devtools' \code{\link{release}} reads a file \file{cran-comments.md}. This
+#' function provides a template based on your R version your 
+#' \command{R CMD check log} and
 #' the package's NEWS.md.
 #' @param path The path to the package.
 #' @param initial Is this an initial release?
@@ -78,16 +79,17 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #'                     Running under: Ubuntu precise (12.04.5 LTS) \cr
 #'                     ")\cr
 #' Or provide a path to a file containing the current travis log.\cr
-#' Set to `travis-cli` to retrieve Session info automatically if your system is
+#' Set to \dQuote{\verb{travis-cli}} to retrieve Session info automatically if
+#' your system is
 #' set up to use \url{https://github.com/travis-ci/travis.rb}.
 #' @param name The name to sign with, if NA, the given name of the package
 #' maintainer as stated in file DESCRIPTION is used.
-#' @param write_to_file Do write the comment to \emph{cran-comment.md}?
+#' @param write_to_file Do write the comment to \file{cran-comment.md}?
 #' @param private_token A private token to access gitlab.com.
 #' @param proxy A proxy to use.
 #' @note By default this function writes to disk as side effect.
-#' @return Character vector containing the cran comments, which are written to
-#' cran-comments.md (see Note).
+#' @return Character vector containing the \acronym{CRAN} comments, which are 
+#' written to \file{cran-comments.md} (see Note).
 #' @export
 #' @examples
 #' \dontrun{

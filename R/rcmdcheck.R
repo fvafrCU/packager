@@ -16,7 +16,7 @@ write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
 #' 
 #' The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and 
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and 
-#' \code{\link{cat}}ed so we can evalute them from reading logs (on gitlab, for
+#' \code{\link{cat}}ed so we can evaluate them from reading logs (on gitlab, for
 #' example)
 #' @param path The path to the package directory.
 #' @export 

@@ -32,11 +32,11 @@ help("packager-package", package = "packager")
 #> Description:
 #> 
 #>      Helper functions for a build system, heavily borrowing from and
-#>      extending package `devtools 1.13.3`.
+#>      extending package 'devtools' 1.13.3.
 #> 
 #> Details:
 #> 
-#>      I find devtools very helpful but it lacks some functionality I
+#>      I find 'devtools' very helpful but it lacks some functionality I
 #>      would want while creating and building a package.  Maybe
 #>      'packager' should be two packages.
 ```

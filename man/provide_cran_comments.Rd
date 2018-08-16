@@ -26,10 +26,11 @@ travis_session_info <- c("\cr
                     Running under: Ubuntu precise (12.04.5 LTS) \cr
                     ")\cr
 Or provide a path to a file containing the current travis log.\cr
-Set to `travis-cli` to retrieve Session info automatically if your system is
+Set to \dQuote{\verb{travis-cli}} to retrieve Session info automatically if
+your system is
 set up to use \url{https://github.com/travis-ci/travis.rb}.}
 
-\item{write_to_file}{Do write the comment to \emph{cran-comment.md}?}
+\item{write_to_file}{Do write the comment to \file{cran-comment.md}?}
 
 \item{private_token}{A private token to access gitlab.com.}
 
@@ -39,12 +40,13 @@ maintainer as stated in file DESCRIPTION is used.}
 \item{proxy}{A proxy to use.}
 }
 \value{
-Character vector containing the cran comments, which are written to
-cran-comments.md (see Note).
+Character vector containing the \acronym{CRAN} comments, which are 
+written to \file{cran-comments.md} (see Note).
 }
 \description{
-Devtools' \code{\link{release}} reads a file \emph{cran-comments.md}. This
-function provides a template based on your R version your R CMD check log and
+Devtools' \code{\link{release}} reads a file \file{cran-comments.md}. This
+function provides a template based on your R version your 
+\command{R CMD check log} and
 the package's NEWS.md.
 }
 \note{

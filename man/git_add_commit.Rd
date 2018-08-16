@@ -12,7 +12,7 @@ git_add_commit(path, message = "Uncommented Changes: Backing Up",
 
 \item{message}{The commit message to use.}
 
-\item{untracked}{Add untracked files before commiting?}
+\item{untracked}{Add untracked files before committing?}
 
 \item{...}{Arguments passed to \code{\link[git2r:status]{git2r::status}}.}
 }

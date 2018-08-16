@@ -10,8 +10,9 @@ is_my_name <- function(x, name) return(getElement(x, "name") == name)
 #' Read a Gitlab Check Log
 #' 
 #' For a given user's project, the last log for jobs for name and stage "check"
-#' will be read. This is assumed to be the output of R CMD check,
-#' rcmdcheck::rcmdcheck(), devtools::check() or the like.
+#' will be read. This is assumed to be the output of \command{R CMD check},
+#' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}}
+#' \code{\link[devtools:check]{devtools::check}}, or the like.
 #' @param user The user's name on gitlab.
 #' @param project The project's name on gitlab.
 #' @param private_token The user's private token on gitlab.

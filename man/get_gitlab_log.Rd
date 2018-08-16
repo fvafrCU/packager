@@ -20,8 +20,9 @@ A character vector containing the lines of the gitlab log.
 }
 \description{
 For a given user's project, the last log for jobs for name and stage "check"
-will be read. This is assumed to be the output of R CMD check,
-rcmdcheck::rcmdcheck(), devtools::check() or the like.
+will be read. This is assumed to be the output of \command{R CMD check},
+\code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}}
+\code{\link[devtools:check]{devtools::check}}, or the like.
 }
 \examples{
 \dontrun{
