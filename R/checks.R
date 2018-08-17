@@ -56,12 +56,12 @@ check_cyclomatic_complexity <- function(path = ".", max_complexity = 10) {
     return(invisible(TRUE))
 }
 
-#' Check for NEWS.md Being Up to Date
+#' Check for \file{NEWS.md} Being Up to Date
 #'
-#' Compare your NEWS.md file to the 'Version' entry in DESCRIPTION.
+#' Compare your \file{NEWS.md} file to the 'Version' entry in DESCRIPTION.
 #' @param path The directory to search.
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
-#' NEWS.md matches DESCRIPTION, throws an error otherwise.
+#' \file{NEWS.md} matches DESCRIPTION, throws an error otherwise.
 #' @export
 check_news <- function(path = ".") {
     root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
@@ -95,7 +95,7 @@ check_news <- function(path = ".") {
 #' (see \href{https://www.python.org/dev/peps/pep-0350/}{PEP 350} for example).
 #' This functions searches for files under a directory containing such tags.
 #' @param path The directory to search.
-#' @param exclude_pattern A pattern for exlusions based on the file names.
+#' @param exclude_pattern A pattern for exclusions based on the file names.
 #' Stronger than \code{include_pattern}.
 #' @param include_pattern A pattern for inclusions based on the file names.
 #' @param pattern The pattern to search for.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/tools.R
 \name{provide_gitlab_url}
 \alias{provide_gitlab_url}
-\title{Provide a \code{gitlab} \code{url} for a Given Path}
+\title{Provide a \verb{gitlab} \acronym{URL} for a Given Path}
 \usage{
 provide_gitlab_url(path = ".")
 }
@@ -10,10 +10,10 @@ provide_gitlab_url(path = ".")
 \item{path}{The path to the directory or one of its subdirectories.}
 }
 \value{
-a character string giving a github \code{url}.
+a character string giving a \verb{github} \acronym{URL}.
 }
 \description{
-Provide a \code{gitlab} \code{url} for a Given Path
+Provide a \verb{gitlab} \acronym{URL} for a Given Path
 }
 \examples{
 path <- file.path(tempdir(), "foo")

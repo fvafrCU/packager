@@ -1,4 +1,4 @@
-#' Use a Development Version in DESCRIPTION and NEWS.md
+#' Use a Development Version in DESCRIPTION and \file{NEWS.md}
 #'
 #' @param path Path to your package's directory.
 #' @return The return value of \code{\link{git_add_commit}}.
@@ -13,9 +13,9 @@ use_dev_version <- function(path = ".") {
 }
 
 
-#' Use a Development Version in NEWS.md
+#' Use a Development Version in \file{NEWS.md}
 #'
-#' @param path Path to your package's directory or the the NEWS file.
+#' @param path Path to your package's directory or the the \file{NEWS.md} file.
 #' @return TRUE on success, FALSE otherwise.
 #' @export
 use_dev_news <- function(path = ".") {

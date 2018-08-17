@@ -2,7 +2,7 @@
 % Please edit documentation in R/tools.R
 \name{add_github_url_to_desc}
 \alias{add_github_url_to_desc}
-\title{Add a github URL to File DESCRIPTION}
+\title{Add a \verb{github} \acronym{URL} to File \file{DESCRIPTION}}
 \usage{
 add_github_url_to_desc(path = ".", default_gh_user = NULL,
   normalize = TRUE)
@@ -17,18 +17,23 @@ add_github_url_to_desc(path = ".", default_gh_user = NULL,
 }
 \value{
 \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
-adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
+adding a \verb{github} \acronym{URL}, \code{\link[base:logical]{FALSE}}
+otherwise.
 }
 \description{
-The URL is constructed by the package's name as read from it's file
-DESCRIPTION, and the username returned by
+\acronym{URL}.
+}
+\details{
+The \acronym{URL} is constructed by the package's name as read from it's file
+\file{DESCRIPTION}, and the username returned by
 \code{\link[whoami:gh_username]{whoami::gh_username}}.
 \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
-this is given by default_gh_user. You can specify \code{default_gh_user =
-NA}, to try to retrieve the username by searching remotes on github if the
+this is given by \code{default_gh_user}. 
+You can specify \code{default_gh_user = NA}, to try to retrieve the username
+by searching remotes on \verb{github} if the
 package is a git repository. We do not use
 \code{\link[git2r:config]{git2r::config}} since there's no way to make sure
-the configured git user name, locally or globally, is a github username.
+the configured git user name, locally or globally, is a \verb{github} username.
 }
 \examples{
 tmp <- tempfile()

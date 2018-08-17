@@ -2,7 +2,7 @@
 % Please edit documentation in R/tools.R
 \name{set_desc_url}
 \alias{set_desc_url}
-\title{Set a DESCRIPTION File's \code{URL} Field}
+\title{Set a \file{DESCRIPTION} File's \acronym{URL} Field}
 \usage{
 set_desc_url(url, path = ".", normalize = TRUE, overwrite = FALSE,
   do_commit = is_force(),
@@ -10,20 +10,23 @@ set_desc_url(url, path = ".", normalize = TRUE, overwrite = FALSE,
   verbose = getOption("packager")[["verbose"]])
 }
 \arguments{
-\item{url}{A character string giving the \code{URL} to set or add in
-DESCRIPTION.}
+\item{url}{A character string giving the \acronym{URL} to set or add in
+\file{DESCRIPTION}.}
 
-\item{path}{Path to the DESCRIPTION file, see
+\item{path}{Path to the \file{DESCRIPTION} file, see
 \code{\link[desc:desc_get_urls]{desc::desc_get_urls}}.}
 
 \item{normalize}{See \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.}
 
-\item{overwrite}{Set (overwrite) the \code{URL} field in DESCRIPTION instead
-adding the \code{URL} given to the \code{URL} field in DESCRIPTION?}
+\item{overwrite}{Set (overwrite) the \acronym{URL} field in
+\file{DESCRIPTION}
+instead
+adding the \acronym{URL} given to the \acronym{URL} field in
+\file{DESCRIPTION}?}
 
-\item{do_commit}{Commit the updated DESCRIPTION?}
+\item{do_commit}{Commit the updated \file{DESCRIPTION}?}
 
-\item{do_remind}{Write a reminder into the package's TODO.md?}
+\item{do_remind}{Write a reminder into the package's \file{TODO.md}?}
 
 \item{verbose}{Be verbose?}
 }
@@ -31,8 +34,9 @@ adding the \code{URL} given to the \code{URL} field in DESCRIPTION?}
 \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}}
 }
 \description{
-I frequently forget to add an \code{URL} to my packages' DESCRIPTION files,
-and when I do not, I often forget to check that the \code{URL} is valid,
+I frequently forget to add an \acronym{URL} to my packages'
+\file{DESCRIPTION} files,
+and when I do not, I often forget to check that the \acronym{URL} is valid,
 respectively the one I want. \cr
 So this is a wrapper to functions from \pkg{desc} and \pkg{git2r} and i
 messaging and/or adding

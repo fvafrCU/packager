@@ -1,4 +1,4 @@
-#' Provide a Makelist Suitable for Packages with \pkg{packager}.
+#' Provide a \code{makelist} Suitable for Packages with \pkg{packager}
 #'
 #' @return An extension of \pkg{fakemake}'s \code{makelist} provided by
 #' \code{\link[fakemake:provide_make_list]{provide_make_list}}.

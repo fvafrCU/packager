@@ -2,16 +2,16 @@
 % Please edit documentation in R/use_dev_version.R
 \name{use_dev_news}
 \alias{use_dev_news}
-\title{Use a Development Version in NEWS.md}
+\title{Use a Development Version in \file{NEWS.md}}
 \usage{
 use_dev_news(path = ".")
 }
 \arguments{
-\item{path}{Path to your package's directory or the the NEWS file.}
+\item{path}{Path to your package's directory or the the \file{NEWS.md} file.}
 }
 \value{
 TRUE on success, FALSE otherwise.
 }
 \description{
-Use a Development Version in NEWS.md
+Use a Development Version in \file{NEWS.md}
 }

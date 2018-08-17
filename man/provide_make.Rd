@@ -9,7 +9,7 @@ provide_make(path, Rbuildignore = TRUE)
 \arguments{
 \item{path}{Where to create the file.}
 
-\item{Rbuildignore}{Add the file to .Rbuildignore under the given
+\item{Rbuildignore}{Add the file to \file{.Rbuildignore} under the given
 \code{path}?}
 }
 \value{

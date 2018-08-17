@@ -84,6 +84,7 @@ The following objects are masked from ‘package:devtools’:
     update_packages
 
 Loading required package: rcmdcheck
-Writing get_gitlab_log.Rd
+Writing git_add_commit.Rd
+Writing release.Rd
 > 
 > 

@@ -5,7 +5,7 @@
 #' interactive checks.
 #'
 #' @param path The package's root directory.
-#' @param stop_on_git Stop if git has uncommited changes or is not synced with
+#' @param stop_on_git Stop if git has uncommitted changes or is not synced with
 #' the origin?
 #' @param force Skip user interaction?
 #' @param verbose Be verbose?

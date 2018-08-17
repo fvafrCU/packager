@@ -11,8 +11,8 @@ grep_log(file, pattern, strip = TRUE)
 
 \item{pattern}{The pattern to \code{\link[base:grep]{grep}} for.}
 
-\item{strip}{\code{\link[base:sub]{Sub}}stitute the pattern with the empty
-string before returning the lines \code{\link[base:grep]{grep}}ped?}
+\item{strip}{\code{\link[base:sub]{Substitute}} the pattern with the empty
+string before returning the lines \code{\link[base:grep]{grepped}}?}
 }
 \value{
 A character vector giving the lines.

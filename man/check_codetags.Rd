@@ -11,7 +11,7 @@ check_codetags(path = ".", exclude_pattern = "\\\\.Rcheck/",
 \arguments{
 \item{path}{The directory to search.}
 
-\item{exclude_pattern}{A pattern for exlusions based on the file names.
+\item{exclude_pattern}{A pattern for exclusions based on the file names.
 Stronger than \code{include_pattern}.}
 
 \item{include_pattern}{A pattern for inclusions based on the file names.}

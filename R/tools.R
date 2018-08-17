@@ -31,26 +31,29 @@ use_bsd2clause_license <- function (path = ".") {
 }
 
 
-#' Add a github URL to File DESCRIPTION
+#' Add a \verb{github} \acronym{URL} to File \file{DESCRIPTION}
 #'
-#" When writing packages, I often forget to add the appropriate github URL.
+#" When writing packages, I often forget to add the appropriate \verb{github}
+#' \acronym{URL}.
 #'
-#' The URL is constructed by the package's name as read from it's file
-#' DESCRIPTION, and the username returned by
+#' The \acronym{URL} is constructed by the package's name as read from it's file
+#' \file{DESCRIPTION}, and the username returned by
 #' \code{\link[whoami:gh_username]{whoami::gh_username}}.
 #' \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
-#' this is given by default_gh_user. You can specify \code{default_gh_user =
-#' NA}, to try to retrieve the username by searching remotes on github if the
+#' this is given by \code{default_gh_user}. 
+#' You can specify \code{default_gh_user = NA}, to try to retrieve the username
+#' by searching remotes on \verb{github} if the
 #' package is a git repository. We do not use
 #' \code{\link[git2r:config]{git2r::config}} since there's no way to make sure
-#' the configured git user name, locally or globally, is a github username.
+#' the configured git user name, locally or globally, is a \verb{github} username.
 #'
 #' @param path The path to the package.
 #' @param default_gh_user See details.
 #' @param normalize Passed to
 #' \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
-#' adding a github URL, \code{\link[base:logical]{FALSE}} otherwise.
+#' adding a \verb{github} \acronym{URL}, \code{\link[base:logical]{FALSE}}
+#' otherwise.
 #' @export
 #' @examples
 #' tmp <- tempfile()
@@ -103,7 +106,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
 #' Provide File \command{make.R}
 #'
 #' @param path Where to create the file.
-#' @param Rbuildignore Add the file to .Rbuildignore under the given
+#' @param Rbuildignore Add the file to \file{.Rbuildignore} under the given
 #' \code{path}?
 #' @return \code{\link[base:invisible]{Invisibly}}
 #' \code{\link[base:logical]{TRUE}} on success, 
@@ -119,7 +122,7 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #' 
 #' I often use internals from other packages and save them in files 
 #' named ..._internals..., ..._verbatim... of ..._modified... .
-#' \cr I want these to be marked in lintr's output.
+#' \cr I want these to be marked in \pkg{lintr}'s output.
 #'
 #' @param x A list of lints.
 #' @param file_name_markers Parts of the file name which mark copied code.
@@ -184,10 +187,10 @@ print_lints <- function(x, sort = TRUE, invert = FALSE,
 is_r_package <- 
     rprojroot::as.root_criterion(rprojroot::is_r_package)[["testfun"]][[1]]
 
-#' Provide a \code{gitlab} \code{url} for a Given Path
+#' Provide a \verb{gitlab} \acronym{URL} for a Given Path
 #'
 #' @param path The path to the directory or one of its subdirectories.
-#' @return a character string giving a github \code{url}.
+#' @return a character string giving a \verb{github} \acronym{URL}.
 #' @export
 #' @examples
 #' path <- file.path(tempdir(), "foo")
@@ -237,24 +240,28 @@ provide_gitlab_url <- function(path = ".") {
     return(url)
 }
 
-#' Set a DESCRIPTION File's \code{URL} Field
+#' Set a \file{DESCRIPTION} File's \acronym{URL} Field
 #' 
-#' I frequently forget to add an \code{URL} to my packages' DESCRIPTION files,
-#' and when I do not, I often forget to check that the \code{URL} is valid,
+#' I frequently forget to add an \acronym{URL} to my packages'
+#' \file{DESCRIPTION} files,
+#' and when I do not, I often forget to check that the \acronym{URL} is valid,
 #' respectively the one I want. \cr
 #' So this is a wrapper to functions from \pkg{desc} and \pkg{git2r} and i
 #' messaging and/or adding
 #' a reminder to file \code{TODO.md}.
-#' @param url A character string giving the \code{URL} to set or add in
-#' DESCRIPTION.
-#' @param path Path to the DESCRIPTION file, see
+#' @param url A character string giving the \acronym{URL} to set or add in
+#' \file{DESCRIPTION}.
+#' @param path Path to the \file{DESCRIPTION} file, see
 #' \code{\link[desc:desc_get_urls]{desc::desc_get_urls}}.
 #' @param normalize See \code{\link[desc:desc_set_urls]{desc::desc_set_urls}}.
-#' @param do_commit Commit the updated DESCRIPTION?
-#' @param do_remind Write a reminder into the package's TODO.md?
+#' @param do_commit Commit the updated \file{DESCRIPTION}?
+#' @param do_remind Write a reminder into the package's \file{TODO.md}?
 #' @param verbose Be verbose?
-#' @param overwrite Set (overwrite) the \code{URL} field in DESCRIPTION instead
-#' adding the \code{URL} given to the \code{URL} field in DESCRIPTION?
+#' @param overwrite Set (overwrite) the \acronym{URL} field in
+#' \file{DESCRIPTION}
+#' instead
+#' adding the \acronym{URL} given to the \acronym{URL} field in
+#' \file{DESCRIPTION}?
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}}
 #' @export
 #' @examples

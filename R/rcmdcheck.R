@@ -16,8 +16,8 @@ write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
 #' 
 #' The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and 
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and 
-#' \code{\link{cat}}ed so we can evaluate them from reading logs (on gitlab, for
-#' example)
+#' \code{\link{cat}}ed so we can evaluate them from reading logs (on
+#' \verb{gitlab}, for example)
 #' @param path The path to the package directory.
 #' @export 
 #' @return \code{\link[base:invisible]{Invisibly}  \link{NULL}}.
@@ -35,8 +35,8 @@ rcmdcheck_and_log <- function(path = ".") {
 #' 
 #' @param file The path to the file or a character vector holding the lines.
 #' @param pattern The pattern to \code{\link[base:grep]{grep}} for.
-#' @param strip  \code{\link[base:sub]{Sub}}stitute the pattern with the empty
-#' string before returning the lines \code{\link[base:grep]{grep}}ped?
+#' @param strip  \code{\link[base:sub]{Substitute}} the pattern with the empty
+#' string before returning the lines \code{\link[base:grep]{grepped}}?
 #' @export 
 #' @return A character vector giving the lines.
 grep_log <- function(file, pattern, strip = TRUE) {
@@ -69,7 +69,8 @@ grep_log <- function(file, pattern, strip = TRUE) {
 #' Just a wrapper for evaluating the tagged code obtained via
 #' \code{\link{grep_log}}.
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are
-#' \code{\link{cat}}ed so we can evaluate them from reading logs (on gitlab, for
+#' \code{\link{cat}}ed so we can evaluate them from reading logs (on
+#' \verb{gitlab}, for
 #' example)
 #' @param ... Arguments passed to \code{\link{grep_log}}.
 #' @export 

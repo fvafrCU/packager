@@ -9,8 +9,6 @@
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
-New submission
-
 Version contains large components (0.15.3.9000)
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -29,7 +27,7 @@ Version contains large components (0.15.3.9000)
 * checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-FailedConnectionException "www.r-pkg.org" 443
+TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK

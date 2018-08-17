@@ -9,7 +9,7 @@ release(path = ".", stop_on_git = TRUE, force = FALSE, verbose = TRUE)
 \arguments{
 \item{path}{The package's root directory.}
 
-\item{stop_on_git}{Stop if git has uncommited changes or is not synced with
+\item{stop_on_git}{Stop if git has uncommitted changes or is not synced with
 the origin?}
 
 \item{force}{Skip user interaction?}

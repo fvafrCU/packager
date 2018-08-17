@@ -16,7 +16,8 @@ The object obtained by evaluating the file.
 Just a wrapper for evaluating the tagged code obtained via
 \code{\link{grep_log}}.
 \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are
-\code{\link{cat}}ed so we can evaluate them from reading logs (on gitlab, for
+\code{\link{cat}}ed so we can evaluate them from reading logs (on
+\verb{gitlab}, for
 example)
 }
 \examples{

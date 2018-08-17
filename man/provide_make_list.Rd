@@ -2,7 +2,7 @@
 % Please edit documentation in R/makelist.R
 \name{provide_make_list}
 \alias{provide_make_list}
-\title{Provide a Makelist Suitable for Packages with \pkg{packager}.}
+\title{Provide a \code{makelist} Suitable for Packages with \pkg{packager}}
 \usage{
 provide_make_list()
 }
@@ -11,5 +11,5 @@ An extension of \pkg{fakemake}'s \code{makelist} provided by
 \code{\link[fakemake:provide_make_list]{provide_make_list}}.
 }
 \description{
-Provide a Makelist Suitable for Packages with \pkg{packager}.
+Provide a \code{makelist} Suitable for Packages with \pkg{packager}
 }

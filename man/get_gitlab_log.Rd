@@ -2,21 +2,21 @@
 % Please edit documentation in R/gitlab.R
 \name{get_gitlab_log}
 \alias{get_gitlab_log}
-\title{Read a Gitlab Check Log}
+\title{Read a \verb{gitlab} Check Log}
 \usage{
 get_gitlab_log(user, project, private_token, ...)
 }
 \arguments{
-\item{user}{The user's name on gitlab.}
+\item{user}{The user's name on \verb{gitlab}.}
 
-\item{project}{The project's name on gitlab.}
+\item{project}{The project's name on \verb{gitlab}.}
 
-\item{private_token}{The user's private token on gitlab.}
+\item{private_token}{The user's private token on \verb{gitlab}.}
 
 \item{...}{Arguments passed to \code{\link[httr:GET]{httr::GET}}.}
 }
 \value{
-A character vector containing the lines of the gitlab log.
+A character vector containing the lines of the \verb{gitlab} log.
 }
 \description{
 For a given user's project, the last log for jobs for name and stage "check"

@@ -1,135 +1,31 @@
-Installing 4 packages: openssl, pkgconfig, processx, ps
-trying URL 'http://cloud.r-project.org/src/contrib/openssl_1.0.2.tar.gz'
-Content type 'application/x-gzip' length 1194883 bytes (1.1 MB)
+Installing 1 packages: rlang
+trying URL 'http://cloud.r-project.org/src/contrib/rlang_0.2.2.tar.gz'
+Content type 'application/x-gzip' length 325128 bytes (317 KB)
 ==================================================
-downloaded 1.1 MB
+downloaded 317 KB
 
-trying URL 'http://cloud.r-project.org/src/contrib/pkgconfig_2.0.2.tar.gz'
-Content type 'application/x-gzip' length 6024 bytes
-==================================================
-downloaded 6024 bytes
-
-trying URL 'http://cloud.r-project.org/src/contrib/processx_3.2.0.tar.gz'
-Content type 'application/x-gzip' length 97959 bytes (95 KB)
-==================================================
-downloaded 95 KB
-
-trying URL 'http://cloud.r-project.org/src/contrib/ps_1.1.0.tar.gz'
-Content type 'application/x-gzip' length 242390 bytes (236 KB)
-==================================================
-downloaded 236 KB
-
-* installing *source* package ‘openssl’ ...
-** package ‘openssl’ successfully unpacked and MD5 sums checked
-Found pkg-config cflags and libs!
-Using PKG_CFLAGS=
-Using PKG_LIBS=-l:libssl.so.1.1 -l:libcrypto.so.1.1
+* installing *source* package ‘rlang’ ...
+** package ‘rlang’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/RtmpQKzsbP/R.INSTALL36e86f784971/openssl/src'
-rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o openssl.so
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c base64.c -o base64.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c bignum.c -o bignum.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c cert.c -o cert.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c compatibility.c -o compatibility.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c diffie.c -o diffie.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c envelope.c -o envelope.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c error.c -o error.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c hash.c -o hash.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c info.c -o info.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keygen.c -o keygen.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c keys.c -o keys.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c onload.c -o onload.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c openssh.c -o openssh.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c password.c -o password.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pem.c -o pem.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs12.c -o pkcs12.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pkcs7.c -o pkcs7.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rand.c -o rand.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c rsa.c -o rsa.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c signing.c -o signing.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c ssl.c -o ssl.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c stream.c -o stream.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c write.c -o write.o
-gcc -shared -L/usr/local/lib -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o -l:libssl.so.1.1 -l:libcrypto.so.1.1
-make[1]: Leaving directory '/tmp/RtmpQKzsbP/R.INSTALL36e86f784971/openssl/src'
-installing to /tmp/Rtmp9PF8pu/file368b62055373/openssl/libs
+make[1]: Entering directory '/tmp/Rtmp1FODir/R.INSTALL56755c0fe6df/rlang/src'
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c capture.c -o capture.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c export.c -o export.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c internal.c -o internal.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c lib.c -o lib.o
+gcc -shared -L/usr/local/lib -o rlang.so capture.o export.o internal.o lib.o
+make[1]: Leaving directory '/tmp/Rtmp1FODir/R.INSTALL56755c0fe6df/rlang/src'
+installing to /tmp/Rtmp01tDFH/file55fce4f5abe/rlang/libs
 ** R
-** inst
 ** byte-compile and prepare package for lazy loading
 ** help
 *** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded
-* DONE (openssl)
-* installing *source* package ‘pkgconfig’ ...
-** package ‘pkgconfig’ successfully unpacked and MD5 sums checked
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
+*** copying figures
 ** building package indices
 ** testing if installed package can be loaded
-* DONE (pkgconfig)
-* installing *source* package ‘ps’ ...
-** package ‘ps’ successfully unpacked and MD5 sums checked
-** libs
-make[1]: Entering directory '/tmp/RtmpfTOQ64/R.INSTALL37b320fea336/ps/src'
-gcc -g -O2  -Wall px.c -o px
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c api-common.c -o api-common.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c common.c -o common.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c extra.c -o extra.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c dummy.c -o dummy.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c posix.c -o posix.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c api-posix.c -o api-posix.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c linux.c -o linux.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c api-linux.c -o api-linux.o
-gcc -shared -L/usr/local/lib -o ps.so init.o api-common.o common.o extra.o dummy.o posix.o api-posix.o linux.o api-linux.o
-make[1]: Leaving directory '/tmp/RtmpfTOQ64/R.INSTALL37b320fea336/ps/src'
-installing via 'install.libs.R' to /tmp/Rtmp9PF8pu/file368b62055373/ps
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded
-* DONE (ps)
-* installing *source* package ‘processx’ ...
-** package ‘processx’ successfully unpacked and MD5 sums checked
-** libs
-make[1]: Entering directory '/tmp/RtmpEIRiFn/R.INSTALL37f83de40ebc/processx/src'
-gcc -g -O2  -Wall tools/px.c -o tools/px
-gcc -g -O2  supervisor/supervisor.c supervisor/utils.c \
-      -o supervisor/supervisor
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c poll.c -o poll.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c processx-connection.c -o processx-connection.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c processx-vector.c -o processx-vector.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c create-time.c -o create-time.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/childlist.c -o unix/childlist.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/connection.c -o unix/connection.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/processx.c -o unix/processx.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/utils.c -o unix/utils.o
-gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
-gcc -shared -L/usr/local/lib -o processx.so init.o poll.o processx-connection.o processx-vector.o create-time.o unix/childlist.o unix/connection.o unix/processx.o unix/sigchld.o unix/utils.o unix/named_pipe.o
-make[1]: Leaving directory '/tmp/RtmpEIRiFn/R.INSTALL37f83de40ebc/processx/src'
-installing via 'install.libs.R' to /tmp/Rtmp9PF8pu/file368b62055373/processx
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded
-* DONE (processx)
+* DONE (rlang)
 
 The downloaded source packages are in
-	‘/tmp/Rtmp9PF8pu/downloaded_packages’
+	‘/tmp/Rtmp01tDFH/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst

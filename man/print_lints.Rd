@@ -24,7 +24,7 @@ The list of lints with names marked.
 \description{
 I often use internals from other packages and save them in files 
 named ..._internals..., ..._verbatim... of ..._modified... .
-\cr I want these to be marked in lintr's output.
+\cr I want these to be marked in \pkg{lintr}'s output.
 }
 \examples{
 files <- list.files(system.file("files", package = "packager"), 

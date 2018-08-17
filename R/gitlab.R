@@ -7,17 +7,17 @@ is_check <- function(x) {
 
 is_my_name <- function(x, name) return(getElement(x, "name") == name)
 
-#' Read a Gitlab Check Log
+#' Read a \verb{gitlab} Check Log
 #' 
 #' For a given user's project, the last log for jobs for name and stage "check"
 #' will be read. This is assumed to be the output of \command{R CMD check},
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}}
 #' \code{\link[devtools:check]{devtools::check}}, or the like.
-#' @param user The user's name on gitlab.
-#' @param project The project's name on gitlab.
-#' @param private_token The user's private token on gitlab.
+#' @param user The user's name on \verb{gitlab}.
+#' @param project The project's name on \verb{gitlab}.
+#' @param private_token The user's private token on \verb{gitlab}.
 #' @param ... Arguments passed to \code{\link[httr:GET]{httr::GET}}.
-#' @return A character vector containing the lines of the gitlab log.
+#' @return A character vector containing the lines of the \verb{gitlab} log.
 #' @export
 #' @examples
 #' \dontrun{

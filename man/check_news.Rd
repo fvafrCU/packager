@@ -2,7 +2,7 @@
 % Please edit documentation in R/checks.R
 \name{check_news}
 \alias{check_news}
-\title{Check for NEWS.md Being Up to Date}
+\title{Check for \file{NEWS.md} Being Up to Date}
 \usage{
 check_news(path = ".")
 }
@@ -11,8 +11,8 @@ check_news(path = ".")
 }
 \value{
 \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
-NEWS.md matches DESCRIPTION, throws an error otherwise.
+\file{NEWS.md} matches DESCRIPTION, throws an error otherwise.
 }
 \description{
-Compare your NEWS.md file to the 'Version' entry in DESCRIPTION.
+Compare your \file{NEWS.md} file to the 'Version' entry in DESCRIPTION.
 }
