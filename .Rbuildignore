@@ -16,3 +16,4 @@
 ^\.Rprofile$
 ^\.gitlab-ci\.yml$
 ^index\.html$
+^\.lintr$
