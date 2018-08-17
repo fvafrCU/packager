@@ -62,7 +62,7 @@ use_dev_version:
 
 # install
 cran-comments.md:  $(LOG_DIR)/install.Rout
-	$(Rscript) --vanilla -e 'packager::provide_cran_comments(check_log = "log/check.Rout", travis_session_info = "travis-cli")' > $(LOG_DIR)/cran_comments.Rout 2>&1 
+	$(Rscript) --vanilla -e 'gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"));packager::provide_cran_comments(check_log = "log/check.Rout", private_token = gitlab_token)'> $(LOG_DIR)/cran_comments.Rout 2>&1 
 
 .PHONY: install
 install: $(LOG_DIR)/install.Rout
@@ -94,6 +94,7 @@ $(LOG_DIR)/vignettes.Rout:	$(R_FILES) $(MAN_FILES) $(VIGNETTES_FILES)
 
 index.hml: README.md
 	pandoc  README.md -o index.html
+
 README.md: README.Rmd R/$(PKGNAME)-package.R
 	$(Rscript) --vanilla -e 'knitr::knit("README.Rmd")'
 
@@ -177,7 +178,7 @@ $(LOG_DIR)/check_codetags.Rout: .log.Rout $(LOG_DIR)/dependencies.Rout
 .PHONY: spell
 spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: .log.Rout DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES) $(LOG_DIR)/dependencies.Rout
-	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
+	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(ignore = c("devtools")); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
 .PHONY: cyclocomp
 cyclocomp: $(LOG_DIR)/cyclocomp.Rout

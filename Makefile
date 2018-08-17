@@ -178,7 +178,7 @@ $(LOG_DIR)/check_codetags.Rout: .log.Rout $(LOG_DIR)/dependencies.Rout
 .PHONY: spell
 spell: $(LOG_DIR)/spell.Rout
 $(LOG_DIR)/spell.Rout: .log.Rout DESCRIPTION $(LOG_DIR)/roxygen2.Rout $(MAN_FILES) $(LOG_DIR)/dependencies.Rout
-	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
+	$(Rscript) --vanilla -e 'spell <- devtools::spell_check(ignore = c("devtools")); if (length(spell) > 0) {print(spell); warning("spell check failed")} ' > $(LOG_DIR)/spell.Rout 2>&1 
 
 .PHONY: cyclocomp
 cyclocomp: $(LOG_DIR)/cyclocomp.Rout
