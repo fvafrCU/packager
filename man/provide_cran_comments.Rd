@@ -60,19 +60,21 @@ gitlab_token <- NULL
 gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
 
 check_log <- system.file("files", "check.Rout", package = "packager")
-travis_session_info <- system.file("files", "travis.log", package = "packager")
+tsi <- system.file("files", "travis.log",
+                                   package = "packager")
 if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
+    proxy <- httr::use_proxy("10.127.255.17", 8080)
     comments <- provide_cran_comments(path = ".",
                                       check_log = check_log,
-                                      travis_session_info = travis_session_info,
+                                      travis_session_info = tsi,
                                       write_to_file = TRUE, 
                                       private_token = gitlab_token,
-                                      proxy = httr::use_proxy("10.127.255.17", 8080))
+                                      proxy = proxy)
 
 } else {
     comments <- provide_cran_comments(path = ".",
                                       check_log = check_log,
-                                      travis_session_info = travis_session_info,
+                                      travis_session_info = tsi,
                                       write_to_file = FALSE, 
                                       private_token = gitlab_token)
 }

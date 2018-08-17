@@ -199,73 +199,67 @@ NO COPY: R/checks.R:13:79: style: Trailing whitespace is superfluous.
 NO COPY: R/cran_comments.R:2:26: style: Trailing whitespace is superfluous.
     if (is.null(session)) 
                          ^
-NO COPY: R/cran_comments.R:12:3: style: Commented code should be removed.
-# get_travis_info(travis_session_info = system.file("files", "travis_log.txt", package = "packager"))
-  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:18:16: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+NO COPY: R/cran_comments.R:19:16: style: Opening curly braces should never go on their own line and should always be followed by a new line.
         } else { 
                ^
-NO COPY: R/cran_comments.R:18:17: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:19:17: style: Trailing whitespace is superfluous.
         } else { 
                 ^
-NO COPY: R/cran_comments.R:25:50: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:26:50: style: Trailing whitespace is superfluous.
                 throw(paste0(travis_session_info, 
                                                  ^
-NO COPY: R/cran_comments.R:26:79: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:27:79: style: Trailing whitespace is superfluous.
                              "is neither the string `travis-cli` nor a path ", 
                                                                               ^
-NO COPY: R/cran_comments.R:37:3: style: Commented code should be removed.
+NO COPY: R/cran_comments.R:38:3: style: Commented code should be removed.
 # get_gitlab_info()
   ^~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:38:3: style: Commented code should be removed.
+NO COPY: R/cran_comments.R:39:3: style: Commented code should be removed.
 # gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:39:3: style: Commented code should be removed.
-# get_gitlab_info(path = ".", private_token = gitlab_token, httr::use_proxy("10.127.255.17", 8080))
-  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:48:1: style: lines should not be more than 80 characters.
-        log <- get_gitlab_log(user = user, project = project, private_token, ...)
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:52:34: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:50:77: style: Trailing whitespace is superfluous.
+        log <- get_gitlab_log(user = user, project = project, private_token, 
+                                                                            ^
+NO COPY: R/cran_comments.R:55:34: style: Trailing whitespace is superfluous.
         status <- grep("^Status", 
                                  ^
-NO COPY: R/cran_comments.R:53:77: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:56:77: style: Trailing whitespace is superfluous.
                        strsplit(rcmdcheck$output$stdout, split = "\n")[[1]], 
                                                                             ^
-NO COPY: R/cran_comments.R:57:1: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:60:1: style: Trailing whitespace is superfluous.
     
 ^~~~
-NO COPY: R/cran_comments.R:133:20: style: Commented code should be removed.
+NO COPY: R/cran_comments.R:138:20: style: Commented code should be removed.
             #      -class-using-the-or-conv
                    ^~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:171:62: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:176:62: style: Trailing whitespace is superfluous.
     travis_info <- get_travis_info(travis_session_info, path) 
                                                              ^
-NO COPY: R/cran_comments.R:172:31: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:177:31: style: Trailing whitespace is superfluous.
     if (!is.null(travis_info)) 
                               ^
-NO COPY: R/cran_comments.R:173:1: style: lines should not be more than 80 characters.
-        comments <- c(comments, paste(c("- travis-ci.org", travis_info), collapse = "\n  "), "\n")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:175:1: style: lines should not be more than 80 characters.
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:175:90: style: Trailing whitespace is superfluous.
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
-                                                                                         ^
-NO COPY: R/cran_comments.R:177:1: style: lines should not be more than 80 characters.
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:177:90: style: Trailing whitespace is superfluous.
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
-                                                                                         ^
-NO COPY: R/cran_comments.R:179:31: style: Trailing whitespace is superfluous.
+NO COPY: R/cran_comments.R:178:73: style: Trailing whitespace is superfluous.
+        comments <- c(comments, paste(c("- travis-ci.org", travis_info), 
+                                                                        ^
+NO COPY: R/cran_comments.R:181:52: style: Trailing whitespace is superfluous.
+        gitlab_info <- get_gitlab_info(path = path, 
+                                                   ^
+NO COPY: R/cran_comments.R:182:70: style: Trailing whitespace is superfluous.
+                                       private_token = private_token) 
+                                                                     ^
+NO COPY: R/cran_comments.R:184:52: style: Trailing whitespace is superfluous.
+        gitlab_info <- get_gitlab_info(path = path, 
+                                                   ^
+NO COPY: R/cran_comments.R:185:77: style: Trailing whitespace is superfluous.
+                                       private_token = private_token, proxy) 
+                                                                            ^
+NO COPY: R/cran_comments.R:187:31: style: Trailing whitespace is superfluous.
     if (!is.null(gitlab_info)) 
                               ^
-NO COPY: R/cran_comments.R:180:1: style: lines should not be more than 80 characters.
-        comments <- c(comments, paste(c("- gitlab.com", gitlab_info), collapse = "\n  "), "\n")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-NO COPY: R/cran_comments.R:187:1: style: Trailing blank lines are superfluous.
+NO COPY: R/cran_comments.R:188:70: style: Trailing whitespace is superfluous.
+        comments <- c(comments, paste(c("- gitlab.com", gitlab_info), 
+                                                                     ^
+NO COPY: R/cran_comments.R:196:1: style: Trailing blank lines are superfluous.
 
 ^
 NO COPY: R/git.R:28:66: style: Trailing whitespace is superfluous.
@@ -328,61 +322,61 @@ NO COPY: R/rcmdcheck.R:10:14: style: Put spaces around all infix operators.
 NO COPY: R/release.R:34:69: style: Trailing whitespace is superfluous.
                        "git tag -a ", desc::desc_get_version(), " ", 
                                                                     ^
-NO COPY: R/tools.R:154:27: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:155:27: style: Trailing whitespace is superfluous.
     pattern <- paste0("(", 
                           ^
-NO COPY: R/tools.R:155:36: style: Commas should always have a space after.
+NO COPY: R/tools.R:156:36: style: Commas should always have a space after.
                       paste0("^.*",file_name_markers , ".*$", 
                                    ^
-NO COPY: R/tools.R:155:54: style: Commas should never have a space before.
+NO COPY: R/tools.R:156:54: style: Commas should never have a space before.
                       paste0("^.*",file_name_markers , ".*$", 
                                                     ~^
-NO COPY: R/tools.R:155:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:156:62: style: Trailing whitespace is superfluous.
                       paste0("^.*",file_name_markers , ".*$", 
                                                              ^
-NO COPY: R/tools.R:159:40: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:160:40: style: Trailing whitespace is superfluous.
         if (grepl(pattern, x$filename)) 
                                        ^
-NO COPY: R/tools.R:165:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
+NO COPY: R/tools.R:166:32: style: Opening curly braces should never go on their own line and should always be followed by a new line.
     x <- lapply(x, function(x) {set_mark(x)})
                                ^
-NO COPY: R/tools.R:165:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
+NO COPY: R/tools.R:166:44: style: Closing curly-braces should always be on their own line, unless it's followed by an else.
     x <- lapply(x, function(x) {set_mark(x)})
                                            ^
-NO COPY: R/tools.R:176:9: warning: local variable ‘has_lints’ assigned but may not be used
+NO COPY: R/tools.R:177:9: warning: local variable ‘has_lints’ assigned but may not be used
     if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
         ^~~~~~~~~
-NO COPY: R/tools.R:187:16: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:188:16: style: Trailing whitespace is superfluous.
 is_r_package <- 
                ^
-NO COPY: R/tools.R:209:62: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:210:62: style: Trailing whitespace is superfluous.
         # could use uses_git(path) as condition, but if TRUE, 
                                                              ^
-NO COPY: R/tools.R:210:77: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:211:77: style: Trailing whitespace is superfluous.
         # I would have to call gitr::repository in the TRUE suite of the if. 
                                                                             ^
-NO COPY: R/tools.R:217:79: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:218:79: style: Trailing whitespace is superfluous.
                 package_name <- strip_off_attributes(desc::desc_get("Package", 
                                                                               ^
-NO COPY: R/tools.R:222:78: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:223:78: style: Trailing whitespace is superfluous.
                             "sticking with the name as retrieved from file ", 
                                                                              ^
-NO COPY: R/tools.R:227:76: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:228:76: style: Trailing whitespace is superfluous.
             git_signature <- tryCatch(git2r::default_signature(repository), 
                                                                            ^
-NO COPY: R/tools.R:232:42: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:233:42: style: Trailing whitespace is superfluous.
                 git2r::config(repository, 
                                          ^
-NO COPY: R/tools.R:234:70: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:235:70: style: Trailing whitespace is superfluous.
                 git_signature <- git2r::default_signature(repository) 
                                                                      ^
-NO COPY: R/tools.R:280:60: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:281:60: style: Trailing whitespace is superfluous.
 set_desc_url <- function(url, path = ".", normalize = TRUE, 
                                                            ^
-NO COPY: R/tools.R:282:49: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:283:49: style: Trailing whitespace is superfluous.
                          do_commit = is_force(), 
                                                 ^
-NO COPY: R/tools.R:298:53: style: Trailing whitespace is superfluous.
+NO COPY: R/tools.R:299:53: style: Trailing whitespace is superfluous.
         invisible(tryCatch(git2r::commit(repository, 
                                                     ^
 NO COPY: R/use_dev_version.R:9:35: style: Trailing whitespace is superfluous.
@@ -409,34 +403,34 @@ COPY: inst/runit_tests/test_devtools_modified.R:57:1: style: Trailing blank line
 COPY: inst/runit_tests/test_devtools_modified.R:58:1: style: Trailing blank lines are superfluous.
 
 ^
-COPY: R/devtools_modified.R:3:2: style: Commented code should be removed.
-## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
- ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COPY: R/devtools_modified.R:4:2: style: Commented code should be removed.
+## #' \link[usethis]{use_testthat}.
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COPY: R/devtools_modified.R:5:2: style: Commented code should be removed.
 ## #' @rdname devtools-deprecated
  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:9:3: style: Commented code should be removed.
+COPY: R/devtools_modified.R:10:3: style: Commented code should be removed.
 # # devtools_1.13.3.tar.gz	2017-08-02 09:05
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:11:3: style: Commented code should be removed.
+COPY: R/devtools_modified.R:12:3: style: Commented code should be removed.
 # # usethis_1.0.0.tar.gz	2017-10-22 19:36
   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:34:3: warning: local variable ‘never_used’ assigned but may not be used
+COPY: R/devtools_modified.R:35:3: warning: local variable ‘never_used’ assigned but may not be used
   never_used <- create # this was part of the interaction.
   ^~~~~~~~~~
-COPY: R/devtools_modified.R:221:9: style: Commas should never have a space before.
+COPY: R/devtools_modified.R:222:9: style: Commas should never have a space before.
       } ,
        ~^
-COPY: R/devtools_modified.R:271:17: style: Variable and function names should be all lowercase.
+COPY: R/devtools_modified.R:272:17: style: Variable and function names should be all lowercase.
   new_url$query$strErr
                 ^~~~~~
-COPY: R/devtools_modified.R:299:1: style: lines should not be more than 80 characters.
-git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:319:9: style: Commented code should be removed.
+COPY: R/devtools_modified.R:300:60: style: Trailing whitespace is superfluous.
+git_sync_status <- function(path = ".", check_ahead = TRUE, 
+                                                           ^
+COPY: R/devtools_modified.R:321:9: style: Commented code should be removed.
   #     message(ab[1], " ahead of remote")
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_modified.R:321:9: style: Commented code should be removed.
+COPY: R/devtools_modified.R:323:9: style: Commented code should be removed.
   #     message(ab[2], " behind remote")
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COPY: R/devtools_verbatim.R:8:13: warning: Do not use absolute paths.
@@ -445,21 +439,18 @@ COPY: R/devtools_verbatim.R:8:13: warning: Do not use absolute paths.
 COPY: R/devtools_verbatim.R:32:39: warning: Do not use absolute paths.
     files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
                                       ^~~~~
-COPY: R/devtools_verbatim.R:86:1: style: lines should not be more than 80 characters.
-  installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:129:1: style: lines should not be more than 80 characters.
-  suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:209:7: style: Commented code should be removed.
+COPY: R/devtools_verbatim.R:86:60: style: Trailing whitespace is superfluous.
+  installed_version <- tryCatch(utils::packageVersion(pkg), 
+                                                           ^
+COPY: R/devtools_verbatim.R:130:50: style: Trailing whitespace is superfluous.
+  suggests <- read_dcf(system.file("DESCRIPTION", 
+                                                 ^
+COPY: R/devtools_verbatim.R:211:7: style: Commented code should be removed.
     # git@github.com:hadley/devtools.git
       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:228:1: style: lines should not be more than 80 characters.
-github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/devtools_verbatim.R:306:1: style: lines should not be more than 80 characters.
-    show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-COPY: R/lintr_modified.R:22:1: style: lines should not be more than 80 characters.
-    sep = "", crayon::bold(x$mark, " ", x$filename, ":", as.character(x$line_number),
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+COPY: R/devtools_verbatim.R:230:63: style: Trailing whitespace is superfluous.
+github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", 
+                                                              ^
+COPY: R/lintr_modified.R:22:57: style: Trailing whitespace is superfluous.
+    sep = "", crayon::bold(x$mark, " ", x$filename, ":", 
+                                                        ^

@@ -9,7 +9,8 @@ info <- function(session = NULL) {
     return(info)
 }
 
-# get_travis_info(travis_session_info = system.file("files", "travis_log.txt", package = "packager"))
+# get_travis_info(travis_session_info = system.file("files", "travis_log.txt", 
+#                                                   package = "packager"))
 get_travis_info <- function(travis_session_info = NULL, path = ".") {
     if (! is.null(travis_session_info)) {
         if (identical(travis_session_info, "travis-cli")) {
@@ -36,7 +37,8 @@ get_travis_info <- function(travis_session_info = NULL, path = ".") {
 
 # get_gitlab_info()
 # gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
-# get_gitlab_info(path = ".", private_token = gitlab_token, httr::use_proxy("10.127.255.17", 8080))
+# get_gitlab_info(path = ".", private_token = gitlab_token, 
+#                 httr::use_proxy("10.127.255.17", 8080))
 get_gitlab_info <- function(path = ".", private_token, ...) {
     if (missing(private_token) || is.null(private_token)) {
         warning("You need a private token to access gitlab.")
@@ -45,7 +47,8 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
         url <- get_git_url(get_remote_url(path))
         project <- basename(url)
         user <- tolower(basename(dirname(url)))
-        log <- get_gitlab_log(user = user, project = project, private_token, ...)
+        log <- get_gitlab_log(user = user, project = project, private_token, 
+                              ...)
         info <- eval_from_log(file = log, pattern = "=== packager info:")
         info <- info(info)
         rcmdcheck <- eval_from_log(log, pattern = "=== packager rcmdcheck:")
@@ -99,19 +102,21 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #' gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
 #' 
 #' check_log <- system.file("files", "check.Rout", package = "packager")
-#' travis_session_info <- system.file("files", "travis.log", package = "packager")
+#' tsi <- system.file("files", "travis.log",
+#'                                    package = "packager")
 #' if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
+#'     proxy <- httr::use_proxy("10.127.255.17", 8080)
 #'     comments <- provide_cran_comments(path = ".",
 #'                                       check_log = check_log,
-#'                                       travis_session_info = travis_session_info,
+#'                                       travis_session_info = tsi,
 #'                                       write_to_file = TRUE, 
 #'                                       private_token = gitlab_token,
-#'                                       proxy = httr::use_proxy("10.127.255.17", 8080))
+#'                                       proxy = proxy)
 #' 
 #' } else {
 #'     comments <- provide_cran_comments(path = ".",
 #'                                       check_log = check_log,
-#'                                       travis_session_info = travis_session_info,
+#'                                       travis_session_info = tsi,
 #'                                       write_to_file = FALSE, 
 #'                                       private_token = gitlab_token)
 #' }
@@ -170,14 +175,18 @@ provide_cran_comments <- function(check_log = NULL,
     comments <- c(comments, "- ", paste(here, collapse = "\n    "), "\n")
     travis_info <- get_travis_info(travis_session_info, path) 
     if (!is.null(travis_info)) 
-        comments <- c(comments, paste(c("- travis-ci.org", travis_info), collapse = "\n  "), "\n")
+        comments <- c(comments, paste(c("- travis-ci.org", travis_info), 
+                                      collapse = "\n  "), "\n")
     if (is.null(proxy)) {
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
+        gitlab_info <- get_gitlab_info(path = path, 
+                                       private_token = private_token) 
     } else {
-        gitlab_info <- get_gitlab_info(path = path, private_token = private_token, proxy) 
+        gitlab_info <- get_gitlab_info(path = path, 
+                                       private_token = private_token, proxy) 
     }
     if (!is.null(gitlab_info)) 
-        comments <- c(comments, paste(c("- gitlab.com", gitlab_info), collapse = "\n  "), "\n")
+        comments <- c(comments, paste(c("- gitlab.com", gitlab_info), 
+                                      collapse = "\n  "), "\n")
     comments <- c(comments, "- win-builder (devel)", "\n")
     if (! as.logical(file.access(".", mode = 2))) # see ?file.acces return/note
         if (isTRUE(write_to_file))

@@ -84,7 +84,8 @@ The following objects are masked from ‘package:devtools’:
     update_packages
 
 Loading required package: rcmdcheck
-Writing git_add_commit.Rd
-Writing release.Rd
+Writing packager-package.Rd
+Writing rcmdcheck_and_log.Rd
+Writing add_github_url_to_desc.Rd
 > 
 > 

@@ -83,7 +83,8 @@ check_dep_version <- function(dep_name, dep_ver = NA, dep_compare = NA) {
 }
 
 is_installed <- function(pkg, version = 0) {
-  installed_version <- tryCatch(utils::packageVersion(pkg), error = function(e) NA)
+  installed_version <- tryCatch(utils::packageVersion(pkg), 
+                                error = function(e) NA)
   !is.na(installed_version) && installed_version >= version
 }
 
@@ -126,7 +127,8 @@ parse_deps <- function(string) {
 }
 
 suggests_dep <- function(pkg) {
-  suggests <- read_dcf(system.file("DESCRIPTION", package = "devtools"))$Suggests
+  suggests <- read_dcf(system.file("DESCRIPTION", 
+                                   package = "devtools"))$Suggests
   deps <- parse_deps(suggests)
 
   found <- which(deps$name == pkg)[1L]
@@ -225,7 +227,8 @@ uses_git <- function(path = ".") {
   !is.null(git2r::discover_repository(path, ceiling = 0))
 }
 
-github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", fullname = "<USERNAME>/<REPO>")
+github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", 
+                     fullname = "<USERNAME>/<REPO>")
 
 remote_urls <- function(r) {
   remotes <- git2r::remotes(r)
@@ -303,7 +306,8 @@ summarise_check_results <- function(x, colour = FALSE) {
   n <- lapply(x, length)
   paste0(
     show_count(n$errors, "error ", "errors", colour && n$errors > 0), " | ",
-    show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0), " | ",
+    show_count(n$warnings, "warning ", "warnings", colour && n$warnings > 0),
+    " | ",
     show_count(n$notes, "note ", "notes")
   )
 }

@@ -14,7 +14,7 @@ write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
 
 #' Run \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} and Write to Log
 #' 
-#' The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and 
+#' The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and 
 #' \code{\link{cat}}ed so we can evaluate them from reading logs (on
 #' \verb{gitlab}, for example)

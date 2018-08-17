@@ -33,7 +33,8 @@ You can specify \code{default_gh_user = NA}, to try to retrieve the username
 by searching remotes on \verb{github} if the
 package is a git repository. We do not use
 \code{\link[git2r:config]{git2r::config}} since there's no way to make sure
-the configured git user name, locally or globally, is a \verb{github} username.
+the configured git user name, locally or globally, is a \verb{github}
+username.
 }
 \examples{
 tmp <- tempfile()

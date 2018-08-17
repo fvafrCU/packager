@@ -1,6 +1,7 @@
 # infrastructure.R in devtools 1.13.3 states:
 ## #' @details
-## #' Instead of the use_xyz functions from devtools use \link[usethis]{use_testthat}.
+## #' Instead of the use_xyz functions from devtools use 
+## #' \link[usethis]{use_testthat}.
 ## #' @rdname devtools-deprecated
 # and then heavily uses
 ## #'@importsFrom usethis
@@ -296,7 +297,8 @@ upload_cran <- function(pkg, built_path, cran_submission_url = NULL) {
 
 # sanitize the return value. Should be TRUE if in sync.
 # In devtools, there's a wrapper, `git_check_sync_status` that just does this.
-git_sync_status <- function(path = ".", check_ahead = TRUE, check_behind = TRUE) {
+git_sync_status <- function(path = ".", check_ahead = TRUE, 
+                            check_behind = TRUE) {
   r <- git2r::repository(path, discover = TRUE)
 
   r_head <- git2r::head(r)

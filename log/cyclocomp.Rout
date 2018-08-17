@@ -7,14 +7,14 @@ downloaded 317 KB
 * installing *source* package ‘rlang’ ...
 ** package ‘rlang’ successfully unpacked and MD5 sums checked
 ** libs
-make[1]: Entering directory '/tmp/Rtmp1FODir/R.INSTALL56755c0fe6df/rlang/src'
+make[1]: Entering directory '/tmp/RtmpuLlSxK/R.INSTALL183b6dee492e/rlang/src'
 gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c capture.c -o capture.o
 gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c export.c -o export.o
 gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c internal.c -o internal.o
 gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./lib/  -I/usr/local/include   -fpic  -g -O2  -c lib.c -o lib.o
 gcc -shared -L/usr/local/lib -o rlang.so capture.o export.o internal.o lib.o
-make[1]: Leaving directory '/tmp/Rtmp1FODir/R.INSTALL56755c0fe6df/rlang/src'
-installing to /tmp/Rtmp01tDFH/file55fce4f5abe/rlang/libs
+make[1]: Leaving directory '/tmp/RtmpuLlSxK/R.INSTALL183b6dee492e/rlang/src'
+installing to /tmp/Rtmp8EV7V3/file17d56795af26/rlang/libs
 ** R
 ** byte-compile and prepare package for lazy loading
 ** help
@@ -25,7 +25,7 @@ installing to /tmp/Rtmp01tDFH/file55fce4f5abe/rlang/libs
 * DONE (rlang)
 
 The downloaded source packages are in
-	‘/tmp/Rtmp01tDFH/downloaded_packages’
+	‘/tmp/Rtmp8EV7V3/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
