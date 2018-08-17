@@ -22,18 +22,18 @@ print_lints(x, sort = TRUE, invert = FALSE,
 The list of lints with names marked.
 }
 \description{
-I often use internals from other packages and save them in files 
+I often use internals from other packages and save them in files
 named ..._internals..., ..._verbatim... of ..._modified... .
 \cr I want these to be marked in \pkg{lintr}'s output.
 }
 \examples{
-files <- list.files(system.file("files", package = "packager"), 
+files <- list.files(system.file("files", package = "packager"),
                     full.names = TRUE)
 lints <- lintr:::flatten_lints(lapply(files, function(file) {
                                           if (interactive()) {
                                               message(".", appendLF = FALSE)
                                           }
-                                          lintr::lint(file, 
+                                          lintr::lint(file,
                                                       parse_settings = FALSE)
                                      }))
 

@@ -4,25 +4,25 @@ test_add_commit <- function() {
     dir.create(path)
     r <- git2r::init(path)
     writeLines("hello, world!", file.path(path, "f"))
-    expectation <- structure(list(staged = structure(list(), 
+    expectation <- structure(list(staged = structure(list(),
                                                      .Names = character(0)),
-                                  unstaged = structure(list(), 
-                                                       .Names = character(0)), 
-                                  untracked = structure(list(untracked = "f"), 
-                                                        .Names = "untracked")), 
-                             .Names = c("staged", "unstaged", "untracked"), 
+                                  unstaged = structure(list(),
+                                                       .Names = character(0)),
+                                  untracked = structure(list(untracked = "f"),
+                                                        .Names = "untracked")),
+                             .Names = c("staged", "unstaged", "untracked"),
                              class = "git_status")
     result <- git2r::status(r)
     RUnit::checkIdentical(expectation, result)
     RUnit::checkException(git_add_commit(path = path))
     git_add_commit(path = path, untracked = TRUE)
-    expectation <- structure(list(staged = structure(list(), 
+    expectation <- structure(list(staged = structure(list(),
                                                     .Names = character(0)),
-                                 unstaged = structure(list(), 
-                                                      .Names = character(0)), 
-                                 untracked = structure(list(), 
-                                                       .Names = character(0))), 
-                            .Names = c("staged", "unstaged", "untracked"), 
+                                 unstaged = structure(list(),
+                                                      .Names = character(0)),
+                                 untracked = structure(list(),
+                                                       .Names = character(0))),
+                            .Names = c("staged", "unstaged", "untracked"),
                             class = "git_status")
     result <- git2r::status(r)
     RUnit::checkIdentical(expectation, result)
@@ -32,19 +32,21 @@ provide_fake_package <- function() {
     tmp <- tempfile()
     dir.create(tmp)
     path <- file.path(tmp, "fakePackage")
-    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)),
                               error = identity
     )
     return(path)
 }
 
 
-notest_cyclocomp <- function() { # somehow fails on install...
+notest_cyclocomp <- function() {
+    # somehow fails on install...
     path <- file.path(tempdir(), "fakePackge")
     on.exit(unlink(path, recursive = TRUE))
     packager::create(path)
     result <- packager::check_cyclomatic_complexity(path)
     # news too new
+    news_file <- file.path(path, "NEWS.md")
     writeLines(c("# fakePackge 0.1.1", new), news_file)
     RUnit::checkTrue(packager::check_news(path))
 
@@ -85,28 +87,6 @@ test_news <- function() {
     RUnit::checkException(packager::check_news(path))
 }
 
-# test_cran_comments <- function() {
-#     path <- provide_fake_package()
-#     on.exit(unlink(path, recursive = TRUE))
-#     expectation <- 
-#         structure(c("Dear CRAN Team,\n", "this is a resubmission of package '",
-#                     "fakePackage", "'. I have added the following changes:\n", 
-#                     "\nXXX: State your changes and consider using a NEWS.md\n\n",
-#                     "Please upload to CRAN.\n", "Best, ", "First", 
-#                     "\n\n# Package ",
-#                     "fakePackage", " ", "0.0.0.9000", 
-#                     "\n## Test  environments ",
-#                     "\n", "- ", 
-#                     "R version 3.3.3 (2017-03-06)\n  Platform: x86_64-pc-linux-gnu (64-bit)\n  Running under: Debian GNU/Linux 9 (stretch)",
-#                     "\n", "- win-builder (devel)", "\n", "\n## R CMD check results\n",
-#                     "ERROR: No check log given!", "\n"))
-#     expectation <- grep("^R ", expectation, value = TRUE, invert = TRUE)
-#     result <- packager::provide_cran_comments(path = path)
-#     result <- grep("^R ", result, value = TRUE, invert = TRUE)
-#     RUnit::checkIdentical(expectation, result)
-# }
-
-
 test_git_tag <- function() {
     path <- file.path(tempdir(), "fake")
     on.exit(unlink(path, recursive = TRUE))
@@ -121,7 +101,7 @@ test_git_tag <- function() {
     RUnit::checkIdentical("0.0.0.9000", getElement(result, "name"))
     RUnit::checkIdentical("CRAN release", getElement(result, "message"))
     desc::desc_bump_version("minor", file = path)
-    
+
     # uncommitted changes
     RUnit::checkException(packager::git_tag(path = path))
 
@@ -154,23 +134,23 @@ test_githuburl <- function() {
     } else {
         # FIXME: on travis??
     }
-    
+
     #% No git remote set
     expectation <- FALSE
     result <- add_github_url_to_desc(path = path, default_gh_user = NA)
     RUnit::checkIdentical(expectation, result)
 
-    #% remote set 
+    #% remote set
     if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         # whoami is better than remote url
-        url <- paste0("https://github.com/fvafrCU/fake")
+        url <- "https://github.com/fvafrCU/fake"
     } else {
-        url <- paste0("https://github.com/", user, "/fake")
+        url <- paste("https://github.com", user, "fake", sep = "/")
     }
 
     unlink(path, recursive = TRUE)
     devtools::create(path)
-    repo <- git2r::init(path)  
+    repo <- git2r::init(path)
     git2r::remote_add(repo, "github", url)
     result <- add_github_url_to_desc(path = path, default_gh_user = NA)
     RUnit::checkTrue(result)
@@ -180,9 +160,9 @@ test_githuburl <- function() {
     if (Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         # doubled entry from above
         expectation <- c("https://github.com/fvafrCU/fake",
-                         paste0("https://github.com/", user, "/fake"))
+                         paste("https://github.com", user, "fake", sep = "/"))
     } else {
-        expectation <- paste0("https://github.com/", user, "/fake")
+        expectation <- paste("https://github.com", user, "fake", sep = "/")
     }
 
     add_github_url_to_desc(path = path, default_gh_user = user)

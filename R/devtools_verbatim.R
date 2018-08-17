@@ -5,7 +5,7 @@ has_description <- function(path) {
 }
 
 strip_slashes <- function(x) {
-  x <- sub("/*$", "", x)
+  x <- sub("/*$", "", x) # Exclude Linting
   x
 }
 
@@ -29,7 +29,7 @@ use_build_ignore <- function(files, escape = TRUE, pkg = ".") {
   pkg <- as.package(pkg)
 
   if (escape) {
-    files <- paste0("^", gsub("\\.", "\\\\.", files), "$")
+    files <- paste0("^", gsub("\\.", "\\\\.", files), "$") # Exclude Linting
   }
 
   path <- file.path(pkg$path, ".Rbuildignore")
@@ -83,7 +83,7 @@ check_dep_version <- function(dep_name, dep_ver = NA, dep_compare = NA) {
 }
 
 is_installed <- function(pkg, version = 0) {
-  installed_version <- tryCatch(utils::packageVersion(pkg), 
+  installed_version <- tryCatch(utils::packageVersion(pkg),
                                 error = function(e) NA)
   !is.na(installed_version) && installed_version >= version
 }
@@ -127,7 +127,7 @@ parse_deps <- function(string) {
 }
 
 suggests_dep <- function(pkg) {
-  suggests <- read_dcf(system.file("DESCRIPTION", 
+  suggests <- read_dcf(system.file("DESCRIPTION",
                                    package = "devtools"))$Suggests
   deps <- parse_deps(suggests)
 
@@ -206,9 +206,6 @@ github_remote_parse <- function(x) {
   if (!grepl("github", x)) return(github_dummy)
 
   if (grepl("^(https|git)", x)) {
-    # https://github.com/hadley/devtools.git
-    # https://github.com/hadley/devtools
-    # git@github.com:hadley/devtools.git
     re <- "github[^/:]*[/:]([^/]+)/(.*?)(?:\\.git)?$"
   } else {
     stop("Unknown GitHub repo format", call. = FALSE)
@@ -227,7 +224,7 @@ uses_git <- function(path = ".") {
   !is.null(git2r::discover_repository(path, ceiling = 0))
 }
 
-github_dummy <- list(username = "<USERNAME>", repo = "<REPO>", 
+github_dummy <- list(username = "<USERNAME>", repo = "<REPO>",
                      fullname = "<USERNAME>/<REPO>")
 
 remote_urls <- function(r) {

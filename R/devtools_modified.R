@@ -1,6 +1,7 @@
+# Begin Exclude Linting
 # infrastructure.R in devtools 1.13.3 states:
 ## #' @details
-## #' Instead of the use_xyz functions from devtools use 
+## #' Instead of the use_xyz functions from devtools use
 ## #' \link[usethis]{use_testthat}.
 ## #' @rdname devtools-deprecated
 # and then heavily uses
@@ -14,7 +15,7 @@
 # what they did.
 # So I just got copies of the imported functions from usethis by calling the
 # functions via devtools at the time. And then I modified most of them.
-
+# End Exclude Linting
 
 # add devtools:: to the call for build():
 build_cran <- function(pkg, args = NULL) {
@@ -32,7 +33,6 @@ build_cran <- function(pkg, args = NULL) {
 # get rid of the interactive() part using yesno() to create the package.
 # Blow if there is none!
 load_pkg_description <- function(path, create) {
-  never_used <- create # this was part of the interaction.
   path_desc <- file.path(path, "DESCRIPTION")
   if (!file.exists(path_desc)) {
     stop("No description at ", path_desc, call. = FALSE)
@@ -219,7 +219,7 @@ check_suggested <- function(pkg, version = NULL, compare = NA) {
         ""
       } else {
         paste0(" >= ", version)
-      } ,
+      },
       " must be installed for this functionality."
     )
     if (interactive()) {
@@ -269,7 +269,7 @@ upload_cran <- function(pkg, built_path, cran_submission_url = NULL) {
   r <- httr::POST(cran_submission_url, body = body)
   httr::stop_for_status(r)
   new_url <- httr::parse_url(r$url)
-  new_url$query$strErr
+  new_url$query$strErr # Exclude Linting
 
   # Confirmation -----------
   message("Confirming submission")
@@ -297,7 +297,7 @@ upload_cran <- function(pkg, built_path, cran_submission_url = NULL) {
 
 # sanitize the return value. Should be TRUE if in sync.
 # In devtools, there's a wrapper, `git_check_sync_status` that just does this.
-git_sync_status <- function(path = ".", check_ahead = TRUE, 
+git_sync_status <- function(path = ".", check_ahead = TRUE,
                             check_behind = TRUE) {
   r <- git2r::repository(path, discover = TRUE)
 
@@ -317,11 +317,12 @@ git_sync_status <- function(path = ".", check_ahead = TRUE,
   c2 <- git2r::lookup(r, git2r::branch_target(upstream))
   ab <- git2r::ahead_behind(c1, c2)
 
+  # Begin Exclude Linting
   #   if (ab[1] > 0)
   #     message(ab[1], " ahead of remote")
   #   if (ab[2] > 0)
   #     message(ab[2], " behind remote")
-
+  # End Exclude Linting
   is_ahead <- ab[[1]] != 0
   is_behind <- ab[[2]] != 0
   check <- (check_ahead && is_ahead) || (check_behind && is_behind)

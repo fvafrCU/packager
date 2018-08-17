@@ -2,6 +2,7 @@ strip_off_attributes <- function(x) {
     attributes(x) <- NULL
     return(x)
 }
+
 is_null_or_true <- function(x) isTRUE(x) || is.null(x)
 is_force <- function() return(is_null_or_true(getOption("packager")[["force"]]))
 
@@ -86,7 +87,7 @@ unpatch_r_version <- function(path = ".") {
     Rdep <- deps[deps[["package"]] == "R", "version"]
     match <- regexpr("[0-9]*\\.[0-9]*\\.[0-9]*", Rdep)
     start <- as.numeric(match)
-    stop <- start + attr(match, "match.length") - 1 
+    stop <- start + attr(match, "match.length") - 1
     r_version <- as.package_version(substring(Rdep, start, stop))
     numeric_version <- unlist(r_version[[1]])
     numeric_version[3] <- 0
@@ -212,7 +213,7 @@ get_remote_url <- function(path = ".", discover = TRUE) {
                      )
     if (inherits(res, "error")) {
         res <- NULL
-    }     
+    }
     return(res)
 }
 

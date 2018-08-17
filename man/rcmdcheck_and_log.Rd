@@ -14,7 +14,7 @@ rcmdcheck_and_log(path = ".")
 }
 \description{
 The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and
-\code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and 
+\code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and
 \code{\link{cat}}ed so we can evaluate them from reading logs (on
 \verb{gitlab}, for example)
 }

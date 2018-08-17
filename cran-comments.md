@@ -1,14 +1,13 @@
 Dear CRAN Team,
 this is a resubmission of package 'packager'. I have added the following changes:
 
-* Added function get\_gitlab\_info() and added it to provide\_cran\_comments().
-* Added functions to dput and evaluate objects via log file.
-* Added function get\_gitlab\_log() to read a check log from gitlab.
+* provide\_cran\_comments() now reads info from logs on gitlab.com, given that
+  .gitlab-ci.yml from this package (via packager:::use_gitlab_ci()) is used.
 
 Please upload to CRAN.
 Best, Andreas Dominik
 
-# Package packager 0.15.3.9000
+# Package packager 0.16.0
 ## Test  environments 
 - R Under development (unstable) (2018-07-01 r74950)
     Platform: x86_64-pc-linux-gnu (64-bit)

@@ -28,7 +28,7 @@ The \acronym{URL} is constructed by the package's name as read from it's file
 \file{DESCRIPTION}, and the username returned by
 \code{\link[whoami:gh_username]{whoami::gh_username}}.
 \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
-this is given by \code{default_gh_user}. 
+this is given by \code{default_gh_user}.
 You can specify \code{default_gh_user = NA}, to try to retrieve the username
 by searching remotes on \verb{github} if the
 package is a git repository. We do not use

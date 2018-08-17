@@ -28,11 +28,11 @@ will be read. This is assumed to be the output of \command{R CMD check},
 \dontrun{
 gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
 if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
-    j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-                        private_token = gitlab_token, 
+    j <- get_gitlab_log(user = "fvafrcu", project = "packager",
+                        private_token = gitlab_token,
                         httr::use_proxy("10.127.255.17", 8080))
 } else {
-    j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
+    j <- get_gitlab_log(user = "fvafrcu", project = "packager",
                         private_token = gitlab_token)
 }
 

@@ -25,7 +25,7 @@ following three lines. This could read\cr
 travis_session_info <- c("
                     R version 3.4.0 (2017-04-21)
                     Platform: x86_64-pc-linux-gnu (64-bit)
-                    Running under: Ubuntu precise (12.04.5 LTS) 
+                    Running under: Ubuntu precise (12.04.5 LTS)
                     ")}
 Or provide a path to a file containing the current \verb{travis} log.\cr
 Set to \dQuote{\verb{travis-cli}} to retrieve Session info automatically if
@@ -42,12 +42,12 @@ maintainer as stated in file DESCRIPTION is used.}
 \item{proxy}{A proxy to use.}
 }
 \value{
-Character vector containing the \acronym{CRAN} comments, which are 
+Character vector containing the \acronym{CRAN} comments, which are
 written to \file{cran-comments.md} (see Note).
 }
 \description{
 \code{\link{release}} reads a file \file{cran-comments.md}. This
-function provides a template based on your R version your 
+function provides a template based on your R version your
 \command{R CMD check log} and
 the package's \file{NEWS.md}.
 }
@@ -67,7 +67,7 @@ if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
     comments <- provide_cran_comments(path = ".",
                                       check_log = check_log,
                                       travis_session_info = tsi,
-                                      write_to_file = TRUE, 
+                                      write_to_file = TRUE,
                                       private_token = gitlab_token,
                                       proxy = proxy)
 
@@ -75,7 +75,7 @@ if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
     comments <- provide_cran_comments(path = ".",
                                       check_log = check_log,
                                       travis_session_info = tsi,
-                                      write_to_file = FALSE, 
+                                      write_to_file = FALSE,
                                       private_token = gitlab_token)
 }
 cat(comments, sep = "")

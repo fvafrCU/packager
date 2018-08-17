@@ -1,25 +1,25 @@
 write_info <- function(prefix = "=== packager info:") {
     obj <- utils::sessionInfo()
-    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+    invisible(utils::capture.output(info <- deparse(dput(obj))))
     cat(paste0(prefix, info), sep = "\n")
     return(invisible(NULL))
 }
 
 write_rcmdcheck <- function(prefix = "=== packager rcmdcheck:", path = ".") {
     obj <- rcmdcheck::rcmdcheck(path = path, args = "--as-cran")
-    dev_null <-utils::capture.output(info <- deparse(dput(obj)))
+    invisible(utils::capture.output(info <- deparse(dput(obj))))
     cat(paste0(prefix, info), sep = "\n")
     return(invisible(obj))
 }
 
 #' Run \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} and Write to Log
-#' 
+#'
 #' The \code{\link{deparse}}d  \code{\link{dput}}s of \code{\link{Sys.info}} and
-#' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and 
+#' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are tagged and
 #' \code{\link{cat}}ed so we can evaluate them from reading logs (on
 #' \verb{gitlab}, for example)
 #' @param path The path to the package directory.
-#' @export 
+#' @export
 #' @return \code{\link[base:invisible]{Invisibly}  \link{NULL}}.
 rcmdcheck_and_log <- function(path = ".") {
     write_info()
@@ -32,12 +32,12 @@ rcmdcheck_and_log <- function(path = ".") {
 }
 
 #' \code{\link[base:grep]{Grep}} Lines From a File
-#' 
+#'
 #' @param file The path to the file or a character vector holding the lines.
 #' @param pattern The pattern to \code{\link[base:grep]{grep}} for.
 #' @param strip  \code{\link[base:sub]{Substitute}} the pattern with the empty
 #' string before returning the lines \code{\link[base:grep]{grepped}}?
-#' @export 
+#' @export
 #' @return A character vector giving the lines.
 grep_log <- function(file, pattern, strip = TRUE) {
     if (is.null(file)) {
@@ -65,7 +65,7 @@ grep_log <- function(file, pattern, strip = TRUE) {
 }
 
 #' Evaluate a File's Tagged Lines
-#' 
+#'
 #' Just a wrapper for evaluating the tagged code obtained via
 #' \code{\link{grep_log}}.
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}} are
@@ -73,9 +73,9 @@ grep_log <- function(file, pattern, strip = TRUE) {
 #' \verb{gitlab}, for
 #' example)
 #' @param ... Arguments passed to \code{\link{grep_log}}.
-#' @export 
+#' @export
 #' @return The object obtained by evaluating the file.
-#' @examples 
+#' @examples
 #' sink_file <- tempfile()
 #' sink(sink_file)
 #' packager:::write_info()

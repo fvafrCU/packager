@@ -1,5 +1,5 @@
 foo <- function(x) {
-    # print("this is a lint")
+    # print("this is a lint") # Exclude Linting  
     return(NULL)
 }
 

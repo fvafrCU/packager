@@ -1,4 +1,4 @@
-- use gitlabr instead of travis to provide cran-comments.md
+- check_usage.log
 - get rid of file.path() with relative paths
   in provide\_cran\_comments:
         check <- parse_check_results(file.path(path, check_log))

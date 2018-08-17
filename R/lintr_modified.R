@@ -19,7 +19,7 @@ print_lint <- function(x, ...) {
     style = crayon::blue, crayon::bold
   )
   cat(
-    sep = "", crayon::bold(x$mark, " ", x$filename, ":", 
+    sep = "", crayon::bold(x$mark, " ", x$filename, ":",
                            as.character(x$line_number),
       ":", as.character(x$column_number), ": ",
       sep = ""

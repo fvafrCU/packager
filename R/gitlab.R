@@ -8,7 +8,7 @@ is_check <- function(x) {
 is_my_name <- function(x, name) return(getElement(x, "name") == name)
 
 #' Read a \verb{gitlab} Check Log
-#' 
+#'
 #' For a given user's project, the last log for jobs for name and stage "check"
 #' will be read. This is assumed to be the output of \command{R CMD check},
 #' \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck}}
@@ -23,32 +23,33 @@ is_my_name <- function(x, name) return(getElement(x, "name") == name)
 #' \dontrun{
 #' gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
 #' if (Sys.info()[["nodename"]] == "fvafrdebianCU") {
-#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
-#'                         private_token = gitlab_token, 
+#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager",
+#'                         private_token = gitlab_token,
 #'                         httr::use_proxy("10.127.255.17", 8080))
 #' } else {
-#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager", 
+#'     j <- get_gitlab_log(user = "fvafrcu", project = "packager",
 #'                         private_token = gitlab_token)
 #' }
-#' 
+#'
 #' cat(j, sep = "\n")
 #' }
 get_gitlab_log <- function(user, project, private_token, ...) {
-    if (is.null(private_token)) { 
+    if (is.null(private_token)) {
         job <- NULL
     } else {
-        url <- paste0("https://gitlab.com/api/v4/users/", user, "/projects/")
+        url <- paste("https://gitlab.com/api/v4/users", user, "projects/",
+                     sep = "/")
         names(private_token) <- "PRIVATE-TOKEN"
         r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
         projects <- httr::content(r)
         my_project <- projects[sapply(projects, is_my_name, project)][[1]]
-        url <- paste0("https://gitlab.com/api/v4/projects/", 
-                      my_project[["id"]], "/jobs/")
+        url <- paste("https://gitlab.com/api/v4/projects",
+                      my_project[["id"]], "jobs/", sep = "/")
         r <- httr::GET(url, httr::add_headers(.headers = private_token), ...)
         jobs <- httr::content(r)
         check_jobs <-  jobs[sapply(jobs, is_check)]
         last_check_jobs_url <- check_jobs[[1]][["web_url"]]
-        r <- httr::GET(paste0(last_check_jobs_url, "/raw"), ...)
+        r <- httr::GET(paste(last_check_jobs_url, "raw", sep = "/"), ...)
         job <- httr::content(r)
         if (!is.null(job))
             job <- unlist(strsplit(job, split = "\n"))

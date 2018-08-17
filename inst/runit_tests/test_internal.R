@@ -4,7 +4,7 @@ provide_fake_package <- function() {
     tmp <- tempfile()
     dir.create(tmp)
     path <- file.path(tmp, "fakePackage")
-    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)),
                               error = identity
     )
     return(path)
@@ -25,25 +25,27 @@ test_is_force <- function() {
 }
 
 test_get_news <- function() {
-    path <- provide_fake_package()
+    path <- provide_fake_package() # Exclude Linting  
     on.exit(unlink(path, recursive = TRUE))
     devtools::use_news_md(path)
     result <- packager:::get_news(path)
-    expectation <- "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
+    expectation <-
+        "\n* Added a `NEWS.md` file to track changes to the package.\n\n\n"
     RUnit::checkIdentical(result, expectation)
 }
 
 test_grep_directory <- function() {
     path <- system.file("runit_tests", package = "packager")
-    result <- unlist(strsplit(packager:::grep_directory(path = path, 
-                                             pattern = "runit_tests.*packager"), 
+    result <- unlist(strsplit(packager:::grep_directory(path = path,
+                                             pattern = "runit_tests.*packager"),
                               split = ":"))[2]
-    expectation <- "     path <- system.file(\"runit_tests\", package = \"packager\")"
+    expectation <-
+        "     path <- system.file(\"runit_tests\", package = \"packager\")"
     RUnit::checkIdentical(result, expectation)
 }
 
 test_git <- function() {
-    path <- provide_fake_package()
+    path <- provide_fake_package() # Exclude Linting  
     on.exit(unlink(path, recursive = TRUE))
     RUnit::checkTrue(! packager:::is_git_clone(path),
                           msg = "Not a git repo.")
@@ -58,7 +60,7 @@ test_git <- function() {
                      msg = "Uncommited changes.")
 }
 
-test_warn_and_stop <- function() 
+test_warn_and_stop <- function()
     RUnit::checkException(packager:::warn_and_stop("foo"))
 
 
@@ -67,9 +69,9 @@ test_url <- function() {
     path <- file.path(tempdir(), "fakePackge")
     dir.create(path)
     on.exit(unlink(path, recursive = TRUE))
-    repo <- git2r::init(path)  
+    repo <- git2r::init(path)
     git2r::remote_add(repo, "github", "https://github.com/fvafrCU/fakePackage")
-    git2r::remote_add(repo, "local", "~/git/fakePackage")
+    git2r::remote_add(repo, "local", "./some_path/git/fakePackage")
     ##% package's url
     expectation <- "https://github.com/fvafrCU/fakePackage"
     result <- grep(value = TRUE, "github", packager:::get_remote_url(path))
@@ -99,7 +101,7 @@ test_url <- function() {
     git2r::remote_add(repo, "github1", "https://github.com/fvafrCU/fakepackage")
 
     ###% return all url
-    expectation <- c("https://github.com/fvafrCU/fakePackage", 
+    expectation <- c("https://github.com/fvafrCU/fakePackage",
                      "https://github.com/fvafrCU/fakepackage")
     url <- packager:::get_remote_url(path)
     result <- packager:::get_git_url(url, type = "github")
@@ -108,12 +110,14 @@ test_url <- function() {
     ###% return first url
     expectation <- c("https://github.com/fvafrCU/fakePackage")
     url <- packager:::get_remote_url(path)
-    result <- packager:::get_git_url(url, return_only_one = TRUE, type = "github")
+    result <- packager:::get_git_url(url, return_only_one = TRUE,
+                                     type = "github")
     RUnit::checkIdentical(result, expectation)
 
     ###% throw on multiple
-    RUnit::checkException(packager:::get_git_url(url, return_only_one = TRUE, 
-                                                 force = FALSE, type = "github"))
+    RUnit::checkException(packager:::get_git_url(url, return_only_one = TRUE,
+                                                 force = FALSE,
+                                                 type = "github"))
 }
 
 
@@ -121,12 +125,9 @@ test_travis <- function() {
     path <- file.path(tempdir(), "fakePackge")
     dir.create(path)
     on.exit(unlink(path, recursive = TRUE))
-    repo <- git2r::init(path)  
+    repo <- git2r::init(path)
     git2r::remote_add(repo, "github", "https://github.com/fvafrCU/packager")
     if (! Sys.info()[["nodename"]] %in% c("h5", "h6")) {
         RUnit::checkException(packager:::travis_cli(path))
-    } else {
-        #RUnit::checkIdentical(class(packager:::travis_cli(path)), "character")
     }
 }
-

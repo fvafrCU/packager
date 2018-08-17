@@ -6,7 +6,7 @@
 use_dev_version <- function(path = ".") {
     devtools::use_dev_version(pkg = path)
     use_dev_news(path = path)
-    status <- git_add_commit(path, 
+    status <- git_add_commit(path,
                              message = paste0("Use development version in NEWS",
                                               " -- skip ci"))
     return(status)
@@ -25,11 +25,11 @@ use_dev_news <- function(path = ".") {
         news_file <- path
     }
     if (! file.exists(news_file)) {
-        status = FALSE
+        status <- FALSE
         warning(news_file, " does not exist!")
     } else {
         news <- readLines(news_file)
-        dev_paragraph <- paste("#", desc::desc_get("Package"), 
+        dev_paragraph <- paste("#", desc::desc_get("Package"),
                                desc::desc_get_version())
         news <- c(dev_paragraph, "", "* FIXME", "", news)
         writeLines(news, news_file)

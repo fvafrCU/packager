@@ -1,5 +1,5 @@
 info <- function(session = NULL) {
-    if (is.null(session)) 
+    if (is.null(session))
         session <- utils::sessionInfo()
     if (!identical(class(session), "sessionInfo"))
         warning("Argument session is not of class `sessionInfo`!")
@@ -9,22 +9,20 @@ info <- function(session = NULL) {
     return(info)
 }
 
-# get_travis_info(travis_session_info = system.file("files", "travis_log.txt", 
-#                                                   package = "packager"))
 get_travis_info <- function(travis_session_info = NULL, path = ".") {
     if (! is.null(travis_session_info)) {
         if (identical(travis_session_info, "travis-cli")) {
             info <- tryCatch(travis_cli(path),
                              error = function(e) return(NULL))
-        } else { 
+        } else {
             if (file.exists(travis_session_info)) {
                 travis_log <- readLines(travis_session_info)
                 k <- grep("sessionInfo()", travis_log)
                 info <- travis_log[(k + 1): (k + 3)]
                 info <- c(info, grep("^Status", travis_log, value = TRUE))
             } else {
-                throw(paste0(travis_session_info, 
-                             "is neither the string `travis-cli` nor a path ", 
+                throw(paste0(travis_session_info,
+                             "is neither the string `travis-cli` nor a path ",
                              "to existing file."))
             }
         }
@@ -35,10 +33,6 @@ get_travis_info <- function(travis_session_info = NULL, path = ".") {
     return(info)
 }
 
-# get_gitlab_info()
-# gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
-# get_gitlab_info(path = ".", private_token = gitlab_token, 
-#                 httr::use_proxy("10.127.255.17", 8080))
 get_gitlab_info <- function(path = ".", private_token, ...) {
     if (missing(private_token) || is.null(private_token)) {
         warning("You need a private token to access gitlab.")
@@ -47,25 +41,23 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
         url <- get_git_url(get_remote_url(path))
         project <- basename(url)
         user <- tolower(basename(dirname(url)))
-        log <- get_gitlab_log(user = user, project = project, private_token, 
+        log <- get_gitlab_log(user = user, project = project, private_token,
                               ...)
         info <- eval_from_log(file = log, pattern = "=== packager info:")
         info <- info(info)
         rcmdcheck <- eval_from_log(log, pattern = "=== packager rcmdcheck:")
-        status <- grep("^Status", 
-                       strsplit(rcmdcheck$output$stdout, split = "\n")[[1]], 
+        status <- grep("^Status",
+                       strsplit(rcmdcheck$output$stdout, split = "\n")[[1]],
                        value = TRUE)
         info <- c(info, status)
     }
-    
-
     return(info)
 }
 
 #' Provide a Template for Your Comments To CRAN
 #'
 #'  \code{\link{release}} reads a file \file{cran-comments.md}. This
-#' function provides a template based on your R version your 
+#' function provides a template based on your R version your
 #' \command{R CMD check log} and
 #' the package's \file{NEWS.md}.
 #' @param path The path to the package.
@@ -81,7 +73,7 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #' travis_session_info <- c("
 #'                     R version 3.4.0 (2017-04-21)
 #'                     Platform: x86_64-pc-linux-gnu (64-bit)
-#'                     Running under: Ubuntu precise (12.04.5 LTS) 
+#'                     Running under: Ubuntu precise (12.04.5 LTS)
 #'                     ")}
 #' Or provide a path to a file containing the current \verb{travis} log.\cr
 #' Set to \dQuote{\verb{travis-cli}} to retrieve Session info automatically if
@@ -93,14 +85,14 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #' @param private_token A private token to access \url{https://gitlab.com}.
 #' @param proxy A proxy to use.
 #' @note By default this function writes to disk as side effect.
-#' @return Character vector containing the \acronym{CRAN} comments, which are 
+#' @return Character vector containing the \acronym{CRAN} comments, which are
 #' written to \file{cran-comments.md} (see Note).
 #' @export
 #' @examples
 #' \dontrun{
 #' gitlab_token <- NULL
 #' gitlab_token <- readLines(file.path("~", ".gitlab_private_token.txt"))
-#' 
+#'
 #' check_log <- system.file("files", "check.Rout", package = "packager")
 #' tsi <- system.file("files", "travis.log",
 #'                                    package = "packager")
@@ -109,15 +101,15 @@ get_gitlab_info <- function(path = ".", private_token, ...) {
 #'     comments <- provide_cran_comments(path = ".",
 #'                                       check_log = check_log,
 #'                                       travis_session_info = tsi,
-#'                                       write_to_file = TRUE, 
+#'                                       write_to_file = TRUE,
 #'                                       private_token = gitlab_token,
 #'                                       proxy = proxy)
-#' 
+#'
 #' } else {
 #'     comments <- provide_cran_comments(path = ".",
 #'                                       check_log = check_log,
 #'                                       travis_session_info = tsi,
-#'                                       write_to_file = FALSE, 
+#'                                       write_to_file = FALSE,
 #'                                       private_token = gitlab_token)
 #' }
 #' cat(comments, sep = "")
@@ -132,10 +124,12 @@ provide_cran_comments <- function(check_log = NULL,
     if (is.na(name)) {
         name <- tryCatch({
             maintainer <- desc::desc_get_author(role = "cre", file = path)
+            # Begin Exclude Linting
             # NOTE: a person object is a strange thing, we seem to unclass() it,
             # see https://stackoverflow.com/questions/9765493/
             #      how-do-i-reference-specific-tags-in-the-bibentry
             #      -class-using-the-or-conv
+            # End Exclude Linting
             paste(getElement(unclass(maintainer)[[1]], "given"), collapse = " ")
         },
         error = function(e) return(name)
@@ -173,19 +167,19 @@ provide_cran_comments <- function(check_log = NULL,
     comments <- c(comments, "# Package ", pkg$package, " ",
                   pkg$version, "\n## Test  environments ", "\n")
     comments <- c(comments, "- ", paste(here, collapse = "\n    "), "\n")
-    travis_info <- get_travis_info(travis_session_info, path) 
-    if (!is.null(travis_info)) 
-        comments <- c(comments, paste(c("- travis-ci.org", travis_info), 
+    travis_info <- get_travis_info(travis_session_info, path)
+    if (!is.null(travis_info))
+        comments <- c(comments, paste(c("- travis-ci.org", travis_info),
                                       collapse = "\n  "), "\n")
     if (is.null(proxy)) {
-        gitlab_info <- get_gitlab_info(path = path, 
-                                       private_token = private_token) 
+        gitlab_info <- get_gitlab_info(path = path,
+                                       private_token = private_token)
     } else {
-        gitlab_info <- get_gitlab_info(path = path, 
-                                       private_token = private_token, proxy) 
+        gitlab_info <- get_gitlab_info(path = path,
+                                       private_token = private_token, proxy)
     }
-    if (!is.null(gitlab_info)) 
-        comments <- c(comments, paste(c("- gitlab.com", gitlab_info), 
+    if (!is.null(gitlab_info))
+        comments <- c(comments, paste(c("- gitlab.com", gitlab_info),
                                       collapse = "\n  "), "\n")
     comments <- c(comments, "- win-builder (devel)", "\n")
     if (! as.logical(file.access(".", mode = 2))) # see ?file.acces return/note
@@ -193,4 +187,3 @@ provide_cran_comments <- function(check_log = NULL,
             writeLines(comments, con = comments_file, sep = "")
     return(invisible(comments))
 }
-

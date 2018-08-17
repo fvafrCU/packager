@@ -28,7 +28,7 @@ defaults <- list(max_file_width = 80, max_file_length = 300,
 
 set_options("cleanr", defaults)
 getOption("cleanr")
-set_options("cleanr", list(max_line_width = 3, 
+set_options("cleanr", list(max_line_width = 3,
             max_lines = "This is nonsense!"))
 set_options("cleanr", check_return = NULL, max_lines = 4000)
 get_options("cleanr")

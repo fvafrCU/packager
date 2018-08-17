@@ -9,19 +9,19 @@
 #'
 #' @param package_name The package's name.
 #' @param overwrite [boolean(1)]\cr Overwrite options already set?
-#' @param ... See \code{\link{options}}. 
+#' @param ... See \code{\link{options}}.
 #' @return invisible(TRUE)
 #' @export
-#' @examples 
+#' @examples
 #' options("cleanr" = NULL)
 #' defaults <- list(max_file_width = 80, max_file_length = 300,
 #'                  max_lines = 65, max_lines_of_code = 50,
 #'                  max_num_arguments = 5, max_nesting_depth = 3,
 #'                  max_line_width = 80, check_return = TRUE)
-#' 
+#'
 #' set_options("cleanr", defaults)
 #' getOption("cleanr")
-#' set_options("cleanr", list(max_line_width = 3, 
+#' set_options("cleanr", list(max_line_width = 3,
 #'             max_lines = "This is nonsense!"))
 #' set_options("cleanr", check_return = NULL, max_lines = 4000)
 #' get_options("cleanr")
@@ -40,7 +40,7 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
     } else {
         is_option_unset <- ! (names(option_list) %in% names(options_set))
         if (any(is_option_unset))
-            .options(package_name, 
+            .options(package_name,
                      append(options_set, option_list[is_option_unset]))
     }
     return(invisible(TRUE))
@@ -56,7 +56,7 @@ set_options <- function(package_name, ..., overwrite = TRUE) {
 #' @param flatten_list [boolean(1)]\cr Return a vector?
 #' @return a (possibly named) list or a vector.
 #' @export
-get_options <- function(package_name, ..., remove_names = FALSE, 
+get_options <- function(package_name, ..., remove_names = FALSE,
                         flatten_list = TRUE) {
     checkmate::qassert(remove_names, "B1")
     checkmate::qassert(flatten_list, "B1")

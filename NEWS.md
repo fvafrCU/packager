@@ -1,8 +1,7 @@
-# packager 0.15.3.9000
+# packager 0.16.0
 
-* Added function get\_gitlab\_info() and added it to provide\_cran\_comments().
-* Added functions to dput and evaluate objects via log file.
-* Added function get\_gitlab\_log() to read a check log from gitlab.
+* provide\_cran\_comments() now reads info from logs on gitlab.com, given that
+  .gitlab-ci.yml from this package (via packager:::use_gitlab_ci()) is used.
 
 # packager 0.15.3
 

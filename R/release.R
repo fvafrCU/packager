@@ -31,7 +31,7 @@ release <- function(path = ".", stop_on_git = TRUE, force = FALSE,
             m <- paste0("- Tag commit ", git2r::reflog(r)[[1]][["sha"]],
                        " as ", desc::desc_get_version(),
                        ", once package is on CRAN using", "\n\t",
-                       "git tag -a ", desc::desc_get_version(), " ", 
+                       "git tag -a ", desc::desc_get_version(), " ",
                        git2r::reflog(r)[[1]][["sha"]], " -m 'CRAN release'"
                       )
             if (isTRUE(verbose)) message(m)

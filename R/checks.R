@@ -5,12 +5,12 @@
 #' @param path Path to the package directory.
 #' @return A character vector of issues found by
 #' \code{\link{checkUsagePackage}}.
-#' @export 
+#' @export
 check_usage <- function(path = ".") {
     root <- rprojroot::find_root(path = path, rprojroot::is_r_package)
     devtools::load_all(root)
-    package_name <- as.character(desc::desc_get("Package", path)) 
-    issues <- utils::capture.output(codetools::checkUsagePackage(package_name, 
+    package_name <- as.character(desc::desc_get("Package", path))
+    issues <- utils::capture.output(codetools::checkUsagePackage(package_name,
                                                                  all = TRUE))
     return(issues)
 }
@@ -21,7 +21,7 @@ check_usage <- function(path = ".") {
 #' \code{\link[cyclocomp:cyclocomp_package_dir]{cyclocomp_package_dir}} on the
 #' package throwing an error when the maximum complexity is exceeded.
 #' @param path The package's root directory.
-#' @param max_complexity The maximum \verb{cyclomatic complexity} 
+#' @param max_complexity The maximum \verb{cyclomatic complexity}
 #'        (which should not be exceeded).
 #' @return \code{\link[base:invisible]{Invisibly} \link[base:logical]{TRUE}} if
 #' maximum \verb{cyclomatic complexity} is not exceeded, throws an error

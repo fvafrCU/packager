@@ -26,7 +26,7 @@ create <- function(path, force = TRUE, ...) {
     git2r::add(r, paths)
     git_commit(r, "Initial Commit")
     unpatch_r_version(path = path)
-    desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"), 
+    desc::desc_set_version("0.1.0", file = file.path(path, "DESCRIPTION"),
                            normalize = FALSE)
     git_add_commit(path, "Clean DESCRIPTION")
     infect(path = path, ...)
@@ -132,7 +132,7 @@ infect <- function(path, make = FALSE, git_add_and_commit = TRUE, ...) {
 #' readLines(package_desc)
 #' readLines(package_info_file)
 #' unlink(path, recursive = TRUE)
-set_package_info <- function(path, 
+set_package_info <- function(path,
                              author_at_r = getOption("packager")[["whoami"]],
                              title = "What it Does (One Line, Title Case)",
                              description = NULL, details = NA, ...) {

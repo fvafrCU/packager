@@ -40,7 +40,7 @@ use_bsd2clause_license <- function (path = ".") {
 #' \file{DESCRIPTION}, and the username returned by
 #' \code{\link[whoami:gh_username]{whoami::gh_username}}.
 #' \code{\link[whoami:gh_username]{whoami::gh_username}} allows for a fallback,
-#' this is given by \code{default_gh_user}. 
+#' this is given by \code{default_gh_user}.
 #' You can specify \code{default_gh_user = NA}, to try to retrieve the username
 #' by searching remotes on \verb{github} if the
 #' package is a git repository. We do not use
@@ -110,7 +110,7 @@ add_github_url_to_desc <- function(path = ".", default_gh_user = NULL,
 #' @param Rbuildignore Add the file to \file{.Rbuildignore} under the given
 #' \code{path}?
 #' @return \code{\link[base:invisible]{Invisibly}}
-#' \code{\link[base:logical]{TRUE}} on success, 
+#' \code{\link[base:logical]{TRUE}} on success,
 #' \code{\link[base:invisible]{Invisibly}}
 #' \code{\link[base:logical]{FALSE}} otherwise.
 #' @export
@@ -120,8 +120,8 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 }
 
 #' Print Lints by Name Suffix
-#' 
-#' I often use internals from other packages and save them in files 
+#'
+#' I often use internals from other packages and save them in files
 #' named ..._internals..., ..._verbatim... of ..._modified... .
 #' \cr I want these to be marked in \pkg{lintr}'s output.
 #'
@@ -133,16 +133,16 @@ provide_make <- function(path, Rbuildignore = TRUE) {
 #' @return The list of lints with names marked.
 #' @export
 #' @examples
-#' files <- list.files(system.file("files", package = "packager"), 
+#' files <- list.files(system.file("files", package = "packager"),
 #'                     full.names = TRUE)
 #' lints <- lintr:::flatten_lints(lapply(files, function(file) {
 #'                                           if (interactive()) {
 #'                                               message(".", appendLF = FALSE)
 #'                                           }
-#'                                           lintr::lint(file, 
+#'                                           lintr::lint(file,
 #'                                                       parse_settings = FALSE)
 #'                                      }))
-#' 
+#'
 #' print_lints(lints, invert = FALSE)
 #' print_lints(lints, invert = TRUE)
 print_lints <- function(x, sort = TRUE, invert = FALSE,
@@ -152,19 +152,21 @@ print_lints <- function(x, sort = TRUE, invert = FALSE,
 
     mark <- "COPY:"
     nomark <- "NO COPY:"
-    pattern <- paste0("(", 
-                      paste0("^.*",file_name_markers , ".*$", 
+    pattern <- paste0("(",
+                      paste0("^.*", file_name_markers, ".*$",
                              collapse = "|"),
                       ")")
     set_mark <- function(x) {
-        if (grepl(pattern, x$filename)) 
+        if (grepl(pattern, x$filename))
             x$mark <- mark
         else
             x$mark <- nomark
         return(x)
     }
-    x <- lapply(x, function(x) {set_mark(x)})
-
+    x <- lapply(x, function(x) {
+                    set_mark(x)
+                      }
+    )
 
     if (isTRUE(sort)) {
         marked <- sapply(x, function(x) return(x[["mark"]] == mark))
@@ -174,18 +176,18 @@ print_lints <- function(x, sort = TRUE, invert = FALSE,
             x <- c(x[! marked], x[marked])
 
     }
-    if (has_lints <- length(x) > 0) invisible(lapply(x, print_lint))
+    if (length(x) > 0) invisible(lapply(x, print_lint))
     return(invisible(x))
 }
 
 #' Is a Directory an R Package Directory?
-#' 
+#'
 #' Just a convenience wrapper to
 #' \code{\link[rprojroot:is_r_package]{rprojroot::is_r_package}}.
 #' @param path The path to the directory or one of its subdirectories.
 #' @return TRUE if the directory is an \R package directory.
 #' @export
-is_r_package <- 
+is_r_package <-
     rprojroot::as.root_criterion(rprojroot::is_r_package)[["testfun"]][[1]]
 
 #' Provide a \verb{gitlab} \acronym{URL} for a Given Path
@@ -207,32 +209,32 @@ provide_gitlab_url <- function(path = ".") {
     if (is.null(url)) {
         repository <- tryCatch(git2r::repository(path = path),
                                error = identity)
-        # could use uses_git(path) as condition, but if TRUE, 
-        # I would have to call gitr::repository in the TRUE suite of the if. 
+        # could use uses_git(path) as condition, but if TRUE,
+        # I would have to call gitr::repository in the TRUE suite of the if.
         # So I do it above.
         if (inherits(repository, "error")) {
             throw(paste(path, "is not a git repository"))
         } else {
             directory <- basename(git2r::workdir(repository))
             if (is_r_package(path)) {
-                package_name <- strip_off_attributes(desc::desc_get("Package", 
+                package_name <- strip_off_attributes(desc::desc_get("Package",
                                                                     file = path)
                 )
                 if (package_name != directory) {
                     warning("The package's name and root directory differ, ",
-                            "sticking with the name as retrieved from file ", 
+                            "sticking with the name as retrieved from file ",
                             "DESCRIPTION.")
                     directory <- package_name
                 }
             }
-            git_signature <- tryCatch(git2r::default_signature(repository), 
+            git_signature <- tryCatch(git2r::default_signature(repository),
                                     error = identity)
             if (inherits(git_signature, "error")) {
                 user_name <- "foobar"
                 user_email <- "foobar@nowhe.re"
-                git2r::config(repository, 
+                git2r::config(repository,
                               user.name = user_name, user.email = user_email)
-                git_signature <- git2r::default_signature(repository) 
+                git_signature <- git2r::default_signature(repository)
             }
             name <- getElement(git_signature, "name")
             url <- paste("https://gitlab.com", name, directory, sep = "/")
@@ -242,7 +244,7 @@ provide_gitlab_url <- function(path = ".") {
 }
 
 #' Set a \file{DESCRIPTION} File's \acronym{URL} Field
-#' 
+#'
 #' I frequently forget to add an \acronym{URL} to my packages'
 #' \file{DESCRIPTION} files,
 #' and when I do not, I often forget to check that the \acronym{URL} is valid,
@@ -278,9 +280,9 @@ provide_gitlab_url <- function(path = ".") {
 #' git2r::commits(repo)
 #' git2r::status(repo)
 #' readLines(file.path(path, "TODO.md"))
-set_desc_url <- function(url, path = ".", normalize = TRUE, 
+set_desc_url <- function(url, path = ".", normalize = TRUE,
                          overwrite = FALSE,
-                         do_commit = is_force(), 
+                         do_commit = is_force(),
                          do_remind = !isTRUE(getOption("packager")[["force"]]),
                          verbose = getOption("packager")[["verbose"]]
                          ) {
@@ -296,7 +298,7 @@ set_desc_url <- function(url, path = ".", normalize = TRUE,
         repository <- git2r::repository(path = path)
         git2r::add(repository, "DESCRIPTION")
         # File DESCRIPTION may not have changed, so try():
-        invisible(tryCatch(git2r::commit(repository, 
+        invisible(tryCatch(git2r::commit(repository,
                                          "Update URL in DESCRIPTION"),
                            error = identity))
     }

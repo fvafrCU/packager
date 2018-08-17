@@ -2,7 +2,7 @@
 arguments <- commandArgs(trailingOnly = TRUE)
 
 target_arguments <- c("-t", "--target")
-if (all(target_arguments %in% arguments)) stop(paste("got both", 
+if (all(target_arguments %in% arguments)) stop(paste("got both",
                                                    paste(target_arguments,
                                                          collapse = " and ")))
 for (target_argument in target_arguments) {
@@ -27,4 +27,3 @@ if (! exists("target_name")) {
 makelist <- packager::provide_make_list()
 
 fakemake::make(target_name, makelist, verbose = FALSE)
-

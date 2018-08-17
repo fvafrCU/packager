@@ -4,7 +4,7 @@ provide_fake_package <- function() {
     tmp <- tempfile()
     dir.create(tmp)
     path <- file.path(tmp, "fakePackage")
-    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)), 
+    tryCatch(suppressMessages(devtools::create(path, quiet = TRUE)),
                               error = identity
     )
     return(path)
@@ -54,5 +54,3 @@ test_use_git <- function() {
     result <- packager:::use_git(path = path)
     RUnit::checkIdentical(result, expectation)
 }
-
-

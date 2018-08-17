@@ -9,7 +9,7 @@ check_cyclomatic_complexity(path = ".", max_complexity = 10)
 \arguments{
 \item{path}{The package's root directory.}
 
-\item{max_complexity}{The maximum \verb{cyclomatic complexity} 
+\item{max_complexity}{The maximum \verb{cyclomatic complexity}
 (which should not be exceeded).}
 }
 \value{

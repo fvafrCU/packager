@@ -6,4 +6,4 @@ TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
-Version contains large components (0.15.3.9000)
+New submission

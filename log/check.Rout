@@ -4,12 +4,12 @@
 * using session charset: UTF-8
 * using options ‘--run-donttest --as-cran’
 * checking for file ‘packager/DESCRIPTION’ ... OK
-* this is package ‘packager’ version ‘0.15.3.9000’
+* this is package ‘packager’ version ‘0.16.0’
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
-Version contains large components (0.15.3.9000)
+New submission
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
