@@ -4,7 +4,8 @@
 \alias{release}
 \title{Release a Package to CRAN}
 \usage{
-release(path = ".", stop_on_git = TRUE, force = FALSE, verbose = TRUE)
+release(path = ".", stop_on_git = TRUE, force = FALSE,
+  verbose = TRUE)
 }
 \arguments{
 \item{path}{The package's root directory.}

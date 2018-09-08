@@ -5,8 +5,8 @@
 \title{Provide a Template for Your Comments To CRAN}
 \usage{
 provide_cran_comments(check_log = NULL, path = ".", initial = FALSE,
-  travis_session_info = NULL, write_to_file = TRUE, private_token = NULL,
-  name = NA, proxy = NULL)
+  travis_session_info = NULL, write_to_file = TRUE,
+  private_token = NULL, name = NA, proxy = NULL)
 }
 \arguments{
 \item{check_log}{Path to the check log relative to \code{path}. Typically

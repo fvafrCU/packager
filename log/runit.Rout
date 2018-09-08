@@ -5,14 +5,14 @@ Executing test function test_union_write  ...  done successfully.
 
 
 Executing test function test_use_git  ... * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpl3y70t/fakePackge/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpYcMAtM/fakePackge/.gitignore
 * Adding files and committing
 * Git is already initialized
  done successfully.
 
 
 
-Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/Rtmpl3y70t/fakePackge/.gitignore
+Executing test function test_use_git_ignore  ... * Adding `foo`, `bar` to /tmp/RtmpYcMAtM/fakePackge/.gitignore
  done successfully.
 
 
@@ -26,7 +26,7 @@ Executing test function test_get_news  ... * Creating `NEWS.md` from template.
 Executing test function test_git  ... Error in git2r::repository(path, discover = TRUE) : 
   The 'path' is not in a git repository
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpl3y70t/file1e21d56b277/fakePackage/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpYcMAtM/file307f2d1f0e82/fakePackage/.gitignore
 * Adding files and committing
  done successfully.
 
@@ -76,7 +76,7 @@ In value[[3L]](cond) : Nothing added.
 
 
 
-Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/Rtmpl3y70t'
+Executing test function test_git_tag  ... Creating package 'fake' in '/tmp/RtmpYcMAtM'
 No DESCRIPTION found. Creating with values:
 
 
@@ -93,7 +93,7 @@ LazyData: true
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
 Not a git repository.Error in warn_and_stop("Not a git repository.") : Not a git repository.
 * Initialising repo
-* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/Rtmpl3y70t/fake/.gitignore
+* Adding `.Rproj.user`, `.Rhistory`, `.RData` to /tmp/RtmpYcMAtM/fake/.gitignore
 * Adding files and committing
 Package version bumped from ‘0.0.0.9000’ to ‘0.1.0’
 Uncommited changes, aborting.Error in warn_and_stop("Uncommited changes, aborting.") : 
@@ -104,7 +104,7 @@ File DESCRIPTION has version 0.0.3, but I found 0.1.0 in the git repository's ta
 
 
 
-Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/Rtmpl3y70t'
+Executing test function test_githuburl  ... Creating package 'fake' in '/tmp/RtmpYcMAtM'
 No DESCRIPTION found. Creating with values:
 
 
@@ -119,7 +119,7 @@ Encoding: UTF-8
 LazyData: true
 * Creating `fake.Rproj` from template.
 * Adding `.Rproj.user`, `.Rhistory`, `.RData` to ./.gitignore
-Creating package 'fake' in '/tmp/Rtmpl3y70t'
+Creating package 'fake' in '/tmp/RtmpYcMAtM'
 No DESCRIPTION found. Creating with values:
 
 
@@ -138,7 +138,7 @@ LazyData: true
 
 
 
-Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/Rtmpl3y70t'
+Executing test function test_news  ... Creating package 'fakePackge' in '/tmp/RtmpYcMAtM'
 No DESCRIPTION found. Creating with values:
 
 
@@ -151,9 +151,9 @@ Depends: R (>= 3.6.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-* Adding `.Rprofile` to /tmp/Rtmpl3y70t/fakePackge/.gitignore
-* Adding `*.tar.gz` to /tmp/Rtmpl3y70t/fakePackge/.gitignore
-* Adding `fakePackge.Rcheck` to /tmp/Rtmpl3y70t/fakePackge/.gitignore
+* Adding `.Rprofile` to /tmp/RtmpYcMAtM/fakePackge/.gitignore
+* Adding `*.tar.gz` to /tmp/RtmpYcMAtM/fakePackge/.gitignore
+* Adding `fakePackge.Rcheck` to /tmp/RtmpYcMAtM/fakePackge/.gitignore
 * Creating `Makefile` from template.
 * Adding `Makefile` to `.Rbuildignore`.
 * Creating `vignettes`.
@@ -167,7 +167,7 @@ LazyData: true
 * Creating `.gitlab-ci.yml` from template.
 * Adding `.gitlab-ci.yml` to `.Rbuildignore`.
 - make sure https://gitlab.com/fvafrcu/fakePackge exists!.
-✔ Setting active project to '/tmp/Rtmpl3y70t/fakePackge'
+✔ Setting active project to '/tmp/RtmpYcMAtM/fakePackge'
 ✔ Adding 'testthat' to Suggests field in DESCRIPTION
 ✔ Creating 'tests/testthat/'
 ✔ Writing 'tests/testthat.R'
@@ -180,8 +180,9 @@ LazyData: true
 * Adding `make.R` to `.Rbuildignore`.
 * Creating `log`.
 * Adding `log` to `.Rbuildignore`.
-Updating roxygen version in /tmp/Rtmpl3y70t/fakePackge/DESCRIPTION
+Updating roxygen version in /tmp/RtmpYcMAtM/fakePackge/DESCRIPTION
 Writing NAMESPACE
+Loading fakePackge
 Writing fakePackge-package.Rd
 Writing throw.Rd
 * Adding .9000 to version

@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2018-07-01 r74950) -- "Unsuffered Consequences"
+R Under development (unstable) (2018-09-07 r75253) -- "Unsuffered Consequences"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -18,71 +18,16 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > roxygen2::roxygenize(".")
-Loading required package: rprojroot
-Loading required package: codetools
-Loading required package: devtools
-Loading required package: crayon
-Loading required package: git2r
-
-Attaching package: ‘git2r’
-
-The following object is masked from ‘package:crayon’:
-
-    reset
-
-Loading required package: tools
-Loading required package: whisker
-Loading required package: desc
-Loading required package: withr
-
-Attaching package: ‘withr’
-
-The following objects are masked from ‘package:devtools’:
-
-    with_collate, with_envvar, with_libpaths, with_locale,
-    with_makevars, with_options, with_par, with_path
-
-Loading required package: usethis
-
-Attaching package: ‘usethis’
-
-The following objects are masked from ‘package:devtools’:
-
-    use_appveyor, use_build_ignore, use_code_of_conduct, use_coverage,
-    use_cran_badge, use_cran_comments, use_data, use_data_raw,
-    use_dev_version, use_git, use_git_hook, use_github,
-    use_github_links, use_gpl3_license, use_mit_license, use_news_md,
-    use_package, use_package_doc, use_rcpp, use_readme_md,
-    use_readme_rmd, use_revdep, use_rstudio, use_test, use_testthat,
-    use_travis, use_vignette
-
-Loading required package: whoami
-Loading required package: cyclocomp
+Updating roxygen version in /home/qwer/git/cyclops/fvafrcu/packager/DESCRIPTION
+Writing NAMESPACE
+Loading packager
 Registered S3 methods overwritten by 'remotes':
   method              from    
   print.package_deps  devtools
   update.package_deps devtools
-Loading required package: httr
-
-Attaching package: ‘httr’
-
-The following objects are masked from ‘package:git2r’:
-
-    config, content
-
-Loading required package: fakemake
-Loading required package: checkmate
-Loading required package: remotes
-
-Attaching package: ‘remotes’
-
-The following objects are masked from ‘package:devtools’:
-
-    dev_package_deps, github_pull, github_release, install_bitbucket,
-    install_deps, install_git, install_github, install_local,
-    install_svn, install_url, install_version, package_deps,
-    update_packages
-
-Loading required package: rcmdcheck
+Writing NAMESPACE
+Writing provide_cran_comments.Rd
+Writing get_options.Rd
+Writing release.Rd
 > 
 > 

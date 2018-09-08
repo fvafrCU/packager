@@ -1,3 +1,113 @@
+Installing 2 packages: digest, fs
+trying URL 'http://cloud.r-project.org/src/contrib/digest_0.6.16.tar.gz'
+Content type 'application/x-gzip' length 123969 bytes (121 KB)
+==================================================
+downloaded 121 KB
+
+trying URL 'http://cloud.r-project.org/src/contrib/fs_1.2.6.tar.gz'
+Content type 'application/x-gzip' length 799325 bytes (780 KB)
+==================================================
+downloaded 780 KB
+
+* installing *source* package ‘digest’ ...
+** package ‘digest’ successfully unpacked and MD5 sums checked
+** libs
+make[1]: Entering directory '/tmp/Rtmpq0Gm9Z/R.INSTALL433649f1acbf/digest/src'
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c aes.c -o aes.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c crc32.c -o crc32.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c digest.c -o digest.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c init.c -o init.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c md5.c -o md5.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c pmurhash.c -o pmurhash.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c raes.c -o raes.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha1.c -o sha1.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha2.c -o sha2.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c sha256.c -o sha256.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2  -c xxhash.c -o xxhash.o
+gcc -shared -L/usr/local/lib -o digest.so aes.o crc32.o digest.o init.o md5.o pmurhash.o raes.o sha1.o sha2.o sha256.o xxhash.o
+make[1]: Leaving directory '/tmp/Rtmpq0Gm9Z/R.INSTALL433649f1acbf/digest/src'
+installing to /tmp/RtmpnyKNkd/file3da5244e903f/digest/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (digest)
+* installing *source* package ‘fs’ ...
+** package ‘fs’ successfully unpacked and MD5 sums checked
+** libs
+make[1]: Entering directory '/tmp/RtmpLec0le/R.INSTALL43c4373b94d6/fs/src'
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c id.cc -o id.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c fs.cc -o fs.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c file.cc -o file.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c path.cc -o path.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c link.cc -o link.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c utils.cc -o utils.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c dir.cc -o dir.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c error.cc -o error.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c unix/getmode.cc -o unix/getmode.o
+g++ -std=gnu++11 -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c RcppExports.cpp -o RcppExports.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c bsd/setmode.c -o bsd/setmode.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c bsd/strmode.c -o bsd/strmode.o
+gcc -I"/home/qwer/svn/R/r-devel/build/include" -DNDEBUG -I./libuv/include -I. -I"/home/qwer/svn/R/r-devel/build/library/Rcpp/include" -I/usr/local/include   -fpic  -g -O2  -c bsd/reallocarray.c -o bsd/reallocarray.o
+cp -p -f libuv/m4/lt_obsolete.m4 libuv/m4/lt~obsolete.m4
+(cd libuv \
+	&& touch aclocal.m4 \
+	&& touch -r aclocal.m4 configure Makefile.in \
+&& CC="gcc" CFLAGS="-g -O2  -fpic -fvisibility=hidden" AR="ar" RANLIB="ranlib" LDFLAGS="-L/usr/local/lib" ./configure --quiet)
+make --directory=libuv \
+	HAVE_DTRACE=0
+make[2]: Entering directory '/tmp/RtmpLec0le/R.INSTALL43c4373b94d6/fs/src/libuv'
+  CC       src/libuv_la-fs-poll.lo
+  CC       src/libuv_la-inet.lo
+  CC       src/libuv_la-threadpool.lo
+  CC       src/libuv_la-uv-common.lo
+  CC       src/libuv_la-version.lo
+  CC       src/unix/libuv_la-async.lo
+  CC       src/unix/libuv_la-core.lo
+  CC       src/unix/libuv_la-dl.lo
+  CC       src/unix/libuv_la-fs.lo
+  CC       src/unix/libuv_la-getaddrinfo.lo
+  CC       src/unix/libuv_la-getnameinfo.lo
+  CC       src/unix/libuv_la-loop-watcher.lo
+  CC       src/unix/libuv_la-loop.lo
+  CC       src/unix/libuv_la-pipe.lo
+  CC       src/unix/libuv_la-poll.lo
+  CC       src/unix/libuv_la-process.lo
+  CC       src/unix/libuv_la-signal.lo
+  CC       src/unix/libuv_la-stream.lo
+  CC       src/unix/libuv_la-tcp.lo
+  CC       src/unix/libuv_la-thread.lo
+  CC       src/unix/libuv_la-timer.lo
+  CC       src/unix/libuv_la-tty.lo
+  CC       src/unix/libuv_la-udp.lo
+  CC       src/unix/libuv_la-linux-core.lo
+  CC       src/unix/libuv_la-linux-inotify.lo
+  CC       src/unix/libuv_la-linux-syscalls.lo
+  CC       src/unix/libuv_la-procfs-exepath.lo
+  CC       src/unix/libuv_la-proctitle.lo
+  CC       src/unix/libuv_la-sysinfo-loadavg.lo
+  CC       src/unix/libuv_la-sysinfo-memory.lo
+  CCLD     libuv.la
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: Leaving directory '/tmp/RtmpLec0le/R.INSTALL43c4373b94d6/fs/src/libuv'
+g++ -std=gnu++11 -shared -L/usr/local/lib -o fs.so id.o fs.o file.o path.o link.o utils.o dir.o error.o unix/getmode.o RcppExports.o bsd/setmode.o bsd/strmode.o bsd/reallocarray.o ./libuv/.libs/libuv.a
+make[1]: Leaving directory '/tmp/RtmpLec0le/R.INSTALL43c4373b94d6/fs/src'
+installing to /tmp/RtmpnyKNkd/file3da5244e903f/fs/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (fs)
+
+The downloaded source packages are in
+	‘/tmp/RtmpnyKNkd/downloaded_packages’
 * installing *source* package ‘packager’ ...
 ** R
 ** inst
@@ -10,3 +120,6 @@
 * DONE (packager)
 <error in packager::check_cyclomatic_complexity(): Exceeding maximum cyclomatic complexity of 10 for add_github_url_to_desc by 2.
 Exceeding maximum cyclomatic complexity of 10 for release by 1.>
+Warning messages:
+1: untar(compressed=) is deprecated 
+2: untar(compressed=) is deprecated 

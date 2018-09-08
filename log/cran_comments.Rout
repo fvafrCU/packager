@@ -1,9 +1,15 @@
 checking top-level files ... WARNING
 Conversion of ‘README.md’ failed:
 pandoc: Could not fetch https://www.r-pkg.org/badges/version/packager
-TlsExceptionHostPort (HandshakeFailed Error_EOF) "www.r-pkg.org" 443
+TlsExceptionHostPort (HandshakeFailed (Error_Misc "user error (unexpected type received. expecting handshake and got: Alert [(AlertLevel_Fatal,HandshakeFailure)])")) "www.r-pkg.org" 443
 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <fvafrcu@mailbox.org>’
 
 New submission
+
+Version contains large components (0.16.0.9000)
+Error in strsplit(rcmdcheck$output$stdout, split = "\n") : 
+  non-character argument
+Calls: <Anonymous> -> get_gitlab_info -> grep -> strsplit
+Execution halted

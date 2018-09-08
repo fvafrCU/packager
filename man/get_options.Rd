@@ -4,7 +4,8 @@
 \alias{get_options}
 \title{Get options For Packages}
 \usage{
-get_options(package_name, ..., remove_names = FALSE, flatten_list = TRUE)
+get_options(package_name, ..., remove_names = FALSE,
+  flatten_list = TRUE)
 }
 \arguments{
 \item{package_name}{The package's name.}
