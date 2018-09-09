@@ -1,3 +1,9 @@
 NO COPY: inst/doc/An_Introduction_to_packager.R:1:1: style: Trailing blank lines are superfluous.
 
 ^
+COPY: R/devtools_modified.R:255:1: style: Trailing whitespace is superfluous.
+      
+^~~~~~
+COPY: R/devtools_modified.R:275:1: style: lines should not be more than 80 characters.
+        message("Package submission successful.\n", "Check your email for confirmation link.")
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

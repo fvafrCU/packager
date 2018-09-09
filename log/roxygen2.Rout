@@ -18,7 +18,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > roxygen2::roxygenize(".")
-Updating roxygen version in /home/qwer/git/cyclops/fvafrcu/packager/DESCRIPTION
 Writing NAMESPACE
 Loading packager
 Registered S3 methods overwritten by 'remotes':
@@ -26,8 +25,5 @@ Registered S3 methods overwritten by 'remotes':
   print.package_deps  devtools
   update.package_deps devtools
 Writing NAMESPACE
-Writing provide_cran_comments.Rd
-Writing get_options.Rd
-Writing release.Rd
 > 
 > 

@@ -41,7 +41,7 @@ Registered S3 methods overwritten by 'remotes':
 [36] "strip_off_attributes: parameter ‘x’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/internal.R:2)"                                                        
 [37] "strip_slashes: parameter ‘x’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R:8)"                                                      
 [38] "update_description: parameter ‘author_at_r’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/internal.R:64-73)"                                            
-[39] "upload_cran: parameter ‘pkg’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R:255)"                                                    
+[39] "upload_cran: parameter ‘pkg’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_modified.R:257)"                                                    
 [40] "use_build_ignore: parameter ‘files’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R:32)"                                              
 [41] "use_build_ignore: parameter ‘pkg’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R:29)"                                                
 [42] "use_directory: parameter ‘pkg’ changed by assignment (/home/qwer/git/cyclops/fvafrcu/packager/R/devtools_verbatim.R:42)"                                                   

@@ -1,6 +1,6 @@
 # packager 0.16.0.9000
 
-* FIXME
+* Use devtools::upload\_cran() from version 1.13.6.
 
 # packager 0.16.0
 
