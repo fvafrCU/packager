@@ -15,3 +15,5 @@
 - add release() conditionally to makelist.
 - fix todo in git\_add\_commit() (git2r::status)
 - try to re-implement use digest::sha1() for unit testing.
+- Tag commit 4f4d62853be51b5ccbe87b6affa84304bc604cd0 as 0.16.0.9000, once package is on CRAN using
+	git tag -a 0.16.0.9000 4f4d62853be51b5ccbe87b6affa84304bc604cd0 -m 'CRAN release'
