@@ -1,19 +1,0 @@
-Loading packager
-Loading required package: testthat
-Registered S3 methods overwritten by 'remotes':
-  method              from    
-  print.package_deps  devtools
-  update.package_deps devtools
-Testing packager
-✔ | OK F W S | Context
-⠏ |  0       | test throw⠋ |  1       | test throw✔ |  1       | test throw
-
-══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 0.1 s
-
-OK:       1
-Failed:   0
-Warnings: 0
-Skipped:  0
-
-You rock!
